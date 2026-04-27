@@ -1065,7 +1065,7 @@
     <h1 class="hero-title">
       에너지 절감의<br/>
       <span class="blue">확실한 선택</span><br/>
-      <span class="highlight">(주)효일종합상사</span>
+      <span class="highlight">효일종합상사</span>
     </h1>
     <p class="hero-desc">
       1995년 설립 이후 세계 최대 펌프기업 그런포스와의 파트너십으로
@@ -1272,21 +1272,16 @@
 <section id="projects">
   <div class="container">
     <div class="section-label reveal">납품 실적 · Projects</div>
-    <h2 class="section-title reveal">국내 주요 건물<br/>95건+ 납품 실적</h2>
+    <h2 class="section-title reveal">국내 주요 건물<br/>83건+ 납품 실적</h2>
     <p class="section-desc reveal">
       역삼동 스타타워, 분당 서울대병원, 용산 민자역사, 서울아산병원,
-      삼성 I'PARK, 목동 현대 하이페리온 등 국내 대표 건물에 납품했습니다.
+      목동 현대 하이페리온, 롯데캐슬 등 국내 대표 건물에 납품했습니다.
     </p>
-    <div style="margin-top:24px;" class="reveal">
-      <a href="projects.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:white;padding:13px 28px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#1a3a6e'" onmouseout="this.style.background='var(--navy)'">
-        전체 납품실적 보기 (83건+) &rarr;
-      </a>
-    </div>
 
     <!-- Achievement Strip -->
     <div class="achievement-strip reveal">
       <div class="ach-item">
-        <div class="ach-num">95<sup>+</sup></div>
+        <div class="ach-num">83<sup>+</sup></div>
         <div class="ach-label">납품 프로젝트</div>
       </div>
       <div class="ach-item">
@@ -1303,152 +1298,82 @@
       </div>
     </div>
 
-    <div class="projects-filter reveal">
-      <button class="filter-btn active" onclick="filterProjects('all',this)">전체</button>
-      <button class="filter-btn" onclick="filterProjects('hospital',this)">병원</button>
-      <button class="filter-btn" onclick="filterProjects('residential',this)">주거</button>
-      <button class="filter-btn" onclick="filterProjects('commercial',this)">상업/업무</button>
-      <button class="filter-btn" onclick="filterProjects('public',this)">공공/교통</button>
-    </div>
+    <!-- 대표 실적 8개 (번호 기반 실제 이미지) -->
+    <div class="projects-masonry reveal" style="margin-top:32px;">
 
-    <div class="projects-masonry" id="projectsGrid">
-
-      <!-- 병원 -->
-      <div class="project-card" data-cat="hospital">
-        <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600&q=80" alt="분당 서울대병원"/>
-        <div class="project-overlay">
-          <div class="project-name">분당 서울대병원</div>
-          <div class="project-meta"><span>병원</span><span>현대건설</span></div>
-        </div>
-      </div>
-
-      <!-- 주거 -->
-      <div class="project-card" data-cat="residential">
-        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80" alt="목동 현대 하이페리온 I/II"/>
-        <div class="project-overlay">
-          <div class="project-name">목동 현대 하이페리온 I/II</div>
-          <div class="project-meta"><span>주거</span><span>현대건설</span></div>
-        </div>
-      </div>
-
-      <!-- 상업 -->
-      <div class="project-card" data-cat="commercial">
-        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80" alt="역삼동 스타타워"/>
-        <div class="project-overlay">
-          <div class="project-name">역삼동 스타타워</div>
-          <div class="project-meta"><span>업무</span><span>삼성건설</span></div>
-        </div>
-      </div>
-
-      <!-- 공공 -->
-      <div class="project-card" data-cat="public">
-        <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=600&q=80" alt="용산 민자역사"/>
-        <div class="project-overlay">
-          <div class="project-name">용산 민자역사</div>
-          <div class="project-meta"><span>교통</span><span>롯데건설</span></div>
-        </div>
-      </div>
-
-      <!-- 주거 2 -->
-      <div class="project-card" data-cat="residential">
-        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=80" alt="서초동 슈퍼빌"/>
-        <div class="project-overlay">
-          <div class="project-name">서초동 슈퍼빌</div>
-          <div class="project-meta"><span>주거</span><span>현대산업개발</span></div>
-        </div>
-      </div>
-
-      <!-- 상업 2 -->
-      <div class="project-card" data-cat="commercial">
-        <img src="https://images.unsplash.com/photo-1555636222-cae831e670b3?w=600&q=80" alt="현대 백화점"/>
-        <div class="project-overlay">
-          <div class="project-name">현대 백화점</div>
-          <div class="project-meta"><span>상업</span><span>현대건설</span></div>
-        </div>
-      </div>
-
-      <!-- 병원 2 -->
-      <div class="project-card" data-cat="hospital">
-        <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80" alt="서울아산병원"/>
-        <div class="project-overlay">
-          <div class="project-name">서울아산병원</div>
-          <div class="project-meta"><span>병원</span></div>
-        </div>
-      </div>
-
-      <!-- 주거 3 -->
-      <div class="project-card" data-cat="residential">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="삼성 I'PARK"/>
-        <div class="project-overlay">
-          <div class="project-name">삼성 I'PARK</div>
-          <div class="project-meta"><span>주거</span><span>현대산업개발</span></div>
-        </div>
-      </div>
-
-      <!-- 상업 3 -->
-      <div class="project-card" data-cat="commercial">
-        <img src="https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?w=600&q=80" alt="킨텍스 제2전시장"/>
-        <div class="project-overlay">
-          <div class="project-name">킨텍스 제2전시장</div>
-          <div class="project-meta"><span>공공</span></div>
-        </div>
-      </div>
-
-      <!-- 주거 4 - 하남미사 스카이폴리스 -->
-      <div class="project-card" data-cat="residential">
-        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80" alt="하남미사 스카이폴리스"/>
+      <div class="project-card" onclick="location.href='projects.html'">
+        <img src="images/83.jpg" alt="하남미사 스카이폴리스" onerror="this.src='https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80'"/>
         <div class="project-overlay">
           <div class="project-name">하남미사 스카이폴리스</div>
-          <div class="project-meta"><span>주거</span><span>롯데건설</span><span>315,240㎡</span></div>
+          <div class="project-meta"><span>상업</span><span>롯데건설</span><span>315,240㎡</span></div>
         </div>
       </div>
 
-      <!-- 주거 5 - 화성동탄 복합환승중심 -->
-      <div class="project-card" data-cat="commercial">
-        <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&q=80" alt="화성동탄 복합환승중심 앵커블럭"/>
+      <div class="project-card" onclick="location.href='projects.html'">
+        <img src="images/82.jpg" alt="화성동탄 복합환승중심 앵커블럭" onerror="this.src='https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&q=80'"/>
         <div class="project-overlay">
-          <div class="project-name">화성동탄 복합환승중심 앵커블럭</div>
+          <div class="project-name">화성동탄(2) 복합환승중심</div>
           <div class="project-meta"><span>상업</span><span>롯데건설</span><span>505,255㎡</span></div>
         </div>
       </div>
 
-      <!-- 주거 6 - 상도역 롯데캐슬 -->
-      <div class="project-card" data-cat="residential">
-        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80" alt="상도역세권 롯데캐슬"/>
+      <div class="project-card" onclick="location.href='projects.html'">
+        <img src="images/81.jpg" alt="상도역세권 롯데캐슬" onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80'"/>
         <div class="project-overlay">
           <div class="project-name">상도역세권 롯데캐슬</div>
           <div class="project-meta"><span>주거</span><span>롯데건설</span><span>950세대</span></div>
         </div>
       </div>
 
-      <!-- 병원 3 -->
-      <div class="project-card" data-cat="hospital">
-        <img src="https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?w=600&q=80" alt="한양대학교 한마음 국제의료원"/>
+      <div class="project-card" onclick="location.href='projects.html'">
+        <img src="images/77.jpg" alt="한양대학교 한마음 국제의료원" onerror="this.src='https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?w=600&q=80'"/>
         <div class="project-overlay">
-          <div class="project-name">한양대학교 한마음 국제의료원</div>
+          <div class="project-name">한양대 한마음 국제의료원</div>
           <div class="project-meta"><span>병원</span></div>
         </div>
       </div>
 
-      <!-- 주거 7 - 부산 하이페리온 -->
-      <div class="project-card" data-cat="residential">
-        <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?w=600&q=80" alt="부산 현대 하이페리온"/>
+      <div class="project-card" onclick="location.href='projects.html'">
+        <img src="images/31.jpg" alt="서울 아산병원 신관" onerror="this.src='https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80'"/>
         <div class="project-overlay">
-          <div class="project-name">부산 현대 하이페리온</div>
+          <div class="project-name">서울 아산병원 신관</div>
+          <div class="project-meta"><span>병원</span></div>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="location.href='projects.html'">
+        <img src="images/21.jpg" alt="용산 민자역사" onerror="this.src='https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=600&q=80'"/>
+        <div class="project-overlay">
+          <div class="project-name">용산 민자역사</div>
+          <div class="project-meta"><span>공공</span><span>롯데건설</span></div>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="location.href='projects.html'">
+        <img src="images/15.png" alt="목동 하이페리온 I" onerror="this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80'"/>
+        <div class="project-overlay">
+          <div class="project-name">목동 하이페리온 I</div>
           <div class="project-meta"><span>주거</span><span>현대건설</span></div>
         </div>
       </div>
 
-      <!-- 상업 4 -->
-      <div class="project-card" data-cat="commercial">
-        <img src="https://images.unsplash.com/photo-1577086664693-894d8405334a?w=600&q=80" alt="KB국민은행 통합IT센터"/>
+      <div class="project-card" onclick="location.href='projects.html'">
+        <img src="images/14.jpg" alt="서울대 분당병원 II" onerror="this.src='https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600&q=80'"/>
         <div class="project-overlay">
-          <div class="project-name">KB국민은행 통합IT센터</div>
-          <div class="project-meta"><span>업무</span></div>
+          <div class="project-name">서울대 분당병원 II</div>
+          <div class="project-meta"><span>병원</span></div>
         </div>
       </div>
 
     </div><!-- end masonry -->
+
+    <!-- 전체 보기 버튼 -->
+    <div style="text-align:center; margin-top:40px;" class="reveal">
+      <a href="projects.html" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px;">
+        전체 납품실적 83건 모두 보기 &rarr;
+      </a>
+    </div>
+
   </div>
 </section>
 
@@ -1689,18 +1614,7 @@
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => observer.observe(el));
 
-  // Project filter
-  function filterProjects(cat, btn) {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelectorAll('.project-card').forEach(card => {
-      if (cat === 'all' || card.dataset.cat === cat) {
-        card.style.display = 'block';
-      } else {
-        card.style.display = 'none';
-      }
-    });
-  }
+  // 전체 실적은 projects.html 에서 확인
 
   // Smooth active nav on scroll
   const sections = document.querySelectorAll('section[id]');
