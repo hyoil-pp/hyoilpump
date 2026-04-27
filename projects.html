@@ -147,16 +147,13 @@
 </div>
 
 <script>
-const IMG={
-  주거:['https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=75','https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=75','https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=75','https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=75','https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=600&q=75','https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=75'],
-  병원:['https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600&q=75','https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=75','https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?w=600&q=75','https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=600&q=75'],
-  상업:['https://images.unsplash.com/photo-1555636222-cae831e670b3?w=600&q=75','https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&q=75','https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?w=600&q=75','https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=75'],
-  업무:['https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=75','https://images.unsplash.com/photo-1577086664693-894d8405334a?w=600&q=75','https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=75','https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=75'],
-  공공:['https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=600&q=75','https://images.unsplash.com/photo-1606768666853-403c90a981ad?w=600&q=75','https://images.unsplash.com/photo-1590650153855-d9e808231d41?w=600&q=75'],
-  산업:['https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&q=75','https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=600&q=75','https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=75'],
-  호텔:['https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=75','https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=75','https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=600&q=75']
-};
-function getImg(cat,idx){const a=IMG[cat]||IMG['업무'];return a[idx%a.length]}
+// 각 프로젝트 번호에 맞는 이미지 경로 (images/01.jpg ~ images/83.jpg)
+// 확장자가 다른 항목 처리 (04.png, 13.png, 15.png, 16.gif)
+const IMG_EXT={4:'png',13:'png',15:'png',16:'gif'};
+function getImg(no){
+  const ext=IMG_EXT[no]||'jpg';
+  return 'images/'+String(no).padStart(2,'0')+'.'+ext;
+}
 
 const PROJECTS=[
   {no:1,name:'한국방송회관',cat:'업무',builder:'한국방송공사',year:'1990년대',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222448775524'},
@@ -245,8 +242,6 @@ const PROJECTS=[
 ];
 
 let currentFilter='전체';
-let imgIdx={};
-function nextImg(cat){if(!imgIdx[cat])imgIdx[cat]=0;const i=getImg(cat,imgIdx[cat]++);return i}
 
 function renderCards(){
   imgIdx={};
@@ -262,7 +257,7 @@ function renderCards(){
   grid.innerHTML=filtered.map(p=>`
     <div class="project-card" onclick='openModal(${JSON.stringify(p)})'>
       <div class="card-img-wrap">
-        <img src="${nextImg(p.cat)}" alt="${p.name}" loading="lazy"/>
+        <img src="${getImg(p.no)}" alt="${p.name}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=75'"/>
         <span class="card-cat">${p.cat}</span>
         <span class="card-num">No.${String(p.no).padStart(2,'0')}</span>
       </div>
@@ -285,8 +280,7 @@ function setFilter(cat,btn){
 }
 
 function openModal(p){
-  const arr=IMG[p.cat]||IMG['업무'];
-  document.getElementById('modalImg').src=arr[p.no%arr.length];
+  document.getElementById('modalImg').src=getImg(p.no);
   document.getElementById('modalCat').textContent=p.cat;
   document.getElementById('modalTitle').textContent=`No.${String(p.no).padStart(2,'0')}  ${p.name}`;
   const fields=[['건설사',p.builder&&p.builder!=='-'?p.builder:null,'🏢'],['준공연도',p.year,'📅'],['연면적',p.area||null,'📐'],['세대수',p.units||null,'🏠']];
