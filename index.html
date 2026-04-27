@@ -1539,47 +1539,52 @@
 
       <div class="inquiry-form reveal reveal-delay-1">
         <h3>제품 및 납품 문의</h3>
-        <div class="form-row">
-          <div class="form-group">
-            <label>성명 *</label>
-            <input type="text" placeholder="홍길동"/>
+        <!-- Formspree: YOUR_FORM_ID 를 Formspree에서 받은 ID로 교체하세요 (예: xpzgkwrb) -->
+        <form id="contactForm" action="https://formspree.io/f/mbdqeyar" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label>성명 *</label>
+              <input type="text" name="성명" placeholder="홍길동" required/>
+            </div>
+            <div class="form-group">
+              <label>회사명</label>
+              <input type="text" name="회사명" placeholder="(주)회사명"/>
+            </div>
           </div>
-          <div class="form-group">
-            <label>회사명</label>
-            <input type="text" placeholder="(주)회사명"/>
+          <div class="form-row">
+            <div class="form-group">
+              <label>연락처 *</label>
+              <input type="tel" name="연락처" placeholder="010-0000-0000" required/>
+            </div>
+            <div class="form-group">
+              <label>이메일</label>
+              <input type="email" name="email" placeholder="email@example.com"/>
+            </div>
           </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>연락처 *</label>
-            <input type="tel" placeholder="010-0000-0000"/>
+          <div class="form-row">
+            <div class="form-group form-full">
+              <label>문의 유형</label>
+              <select name="문의유형">
+                <option>제품 문의</option>
+                <option>납품 문의</option>
+                <option>A/S 요청</option>
+                <option>견적 문의</option>
+                <option>기타</option>
+              </select>
+            </div>
           </div>
-          <div class="form-group">
-            <label>이메일</label>
-            <input type="email" placeholder="email@example.com"/>
+          <div class="form-row">
+            <div class="form-group form-full">
+              <label>문의 내용 *</label>
+              <textarea name="문의내용" placeholder="문의하실 내용을 입력해 주세요. (현장명, 납품 제품, 수량 등을 함께 기재해 주시면 빠른 답변이 가능합니다.)" required></textarea>
+            </div>
           </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group form-full">
-            <label>문의 유형</label>
-            <select>
-              <option>제품 문의</option>
-              <option>납품 문의</option>
-              <option>A/S 요청</option>
-              <option>견적 문의</option>
-              <option>기타</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group form-full">
-            <label>문의 내용 *</label>
-            <textarea placeholder="문의하실 내용을 입력해 주세요. (현장명, 납품 제품, 수량 등을 함께 기재해 주시면 빠른 답변이 가능합니다.)"></textarea>
-          </div>
-        </div>
-        <button class="form-submit" onclick="alert('문의가 접수되었습니다. 빠른 시일 내 연락드리겠습니다.')">
-          문의 보내기 →
-        </button>
+          <!-- 스팸 방지 허니팟 -->
+          <input type="text" name="_gotcha" style="display:none"/>
+          <input type="hidden" name="_subject" value="[효일종합상사] 홈페이지 문의 접수"/>
+          <button type="submit" class="form-submit" id="submitBtn">문의 보내기 →</button>
+          <div id="formMsg" style="display:none; margin-top:14px; padding:14px; border-radius:6px; font-size:14px; font-weight:600; text-align:center;"></div>
+        </form>
       </div>
     </div>
   </div>
@@ -1631,6 +1636,45 @@
 </footer>
 
 <script>
+  // Formspree 폼 전송 처리
+  const form = document.getElementById('contactForm');
+  if (form) {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      const msg = document.getElementById('formMsg');
+      btn.textContent = '전송 중...';
+      btn.disabled = true;
+      btn.style.opacity = '0.7';
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          msg.style.display = 'block';
+          msg.style.background = '#d1fae5';
+          msg.style.color = '#065f46';
+          msg.textContent = '✅ 문의가 접수되었습니다! 빠른 시일 내 연락드리겠습니다.';
+          form.reset();
+          btn.textContent = '전송 완료 ✓';
+          btn.style.background = '#059669';
+        } else {
+          throw new Error();
+        }
+      } catch {
+        msg.style.display = 'block';
+        msg.style.background = '#fee2e2';
+        msg.style.color = '#991b1b';
+        msg.textContent = '❌ 전송에 실패했습니다. 직접 이메일(hyoilpp@gmail.com)로 문의해 주세요.';
+        btn.textContent = '문의 보내기 →';
+        btn.disabled = false;
+        btn.style.opacity = '1';
+      }
+    });
+  }
+
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
