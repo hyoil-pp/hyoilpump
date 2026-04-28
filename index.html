@@ -124,10 +124,12 @@
       overflow: hidden;
     }
 
-    .hero-bg {
+    .hero-bg::before {
+      content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, #0a1628 0%, #122040 40%, #1a3a6e 100%);
+      background: rgba(10, 22, 40, 0.28);
+      z-index: 1;
     }
 
     .hero-bg video {
@@ -136,8 +138,10 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.32;
+      object-position: center center;
+      opacity: 1;
       pointer-events: none;
+      z-index: 0;
     }
 
     /* Grid lines overlay */
@@ -146,9 +150,10 @@
       position: absolute;
       inset: 0;
       background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);;
       background-size: 80px 80px;
+      z-index: 2;
     }
 
     .hero-content {
@@ -1016,8 +1021,7 @@
       .projects-masonry { columns: 2; }
       .footer-top { grid-template-columns: 1fr 1fr; }
     }
-
-    @media (max-width: 768px) {
+  @media (max-width: 768px) {
       nav { display: none; }
       .products-grid { grid-template-columns: 1fr 1fr; }
       .projects-masonry { columns: 1; }
@@ -1026,11 +1030,60 @@
       .timeline { grid-template-columns: 1fr 1fr; }
       .form-row { grid-template-columns: 1fr; }
     }
+  #home {
+    height: 72vh;
+    min-height: 520px;
+    margin-top: 0;
+  }
 
+  .hero-bg video {
+    object-fit: cover;
+    object-position: center center;
+  }
+
+  .hero-bg::before {
+    background: rgba(10, 22, 40, 0.18);
+  }
+
+  .scroll-hint {
+    bottom: 18px;
+  }
     @media (max-width: 480px) {
       .products-grid { grid-template-columns: 1fr; }
       .achievement-strip { grid-template-columns: 1fr 1fr; }
     }
+      #home {
+    height: 62vh;
+    min-height: 460px;
+  }
+
+  .hero-bg video {
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .header-main {
+    height: 72px;
+    padding: 0 18px;
+  }
+
+  .header-top {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+
+  .logo img {
+    width: 58px !important;
+    height: 58px !important;
+  }
+
+  .logo-text .name {
+    font-size: 14px;
+  }
+  .logo-text .sub {
+    font-size: 9px;
+  }
+}
   </style>
 </head>
 <body>
