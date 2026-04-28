@@ -68,7 +68,7 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 4px;
       text-decoration: none;
     }
 
@@ -87,7 +87,7 @@
     }
 
     .logo-text { color: white; }
-    .logo-text .name { font-size: 16px; font-weight: 700; letter-spacing: -0.3px; display: block; }
+    .logo-text .name { font-size: 17px; font-weight: 700; letter-spacing: -0.5px; display: block; }
     .logo-text .sub { font-size: 10px; color: var(--gray-mid); letter-spacing: 1px; text-transform: uppercase; }
 
     nav { display: flex; align-items: center; gap: 6px; }
@@ -1040,7 +1040,7 @@
   </div>
   <div class="header-main">
     <a href="#home" class="logo">
-      <img src="images/logo.png" alt="효일종합상사 로고" style="width:80px;height:80px;object-fit:contain;"/>
+      <img src="images/logo.png" alt="효일종합상사 로고" style="width:72px;height:72px;object-fit:contain;display:block;"/>
       <div class="logo-text">
         <span class="name">(주)효일종합상사</span>
         <span class="sub">HYOIL Co., Ltd.</span>
@@ -1112,12 +1112,17 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-visual reveal">
-        <img class="about-img-main"
-          src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&q=80"
-          alt="펌프 설비 납품 현장"/>
-        <img class="about-img-accent"
-          src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=500&q=80"
-          alt="그런포스 펌프"/>
+        <!-- 유튜브 영상 (about-img-main 사이즈 동일하게) -->
+        <div style="position:relative;width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.2);">
+          <iframe
+            src="https://www.youtube.com/embed/j6VXEd9ITms?rel=0&modestbranding=1"
+            title="효일종합상사 홍보영상"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="position:absolute;top:0;left:0;width:100%;height:100%;border-radius:12px;">
+          </iframe>
+        </div>
         <div class="about-badge-float">
           <strong>1995</strong>설립 이래 30년<br/>신뢰와 기술력
         </div>
