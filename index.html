@@ -130,12 +130,14 @@
       background: linear-gradient(135deg, #0a1628 0%, #122040 40%, #1a3a6e 100%);
     }
 
-    .hero-bg::before {
-      content: '';
+    .hero-bg video {
       position: absolute;
       inset: 0;
-      background: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80') center/cover no-repeat;
-      opacity: 0.18;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.32;
+      pointer-events: none;
     }
 
     /* Grid lines overlay */
@@ -1058,31 +1060,18 @@
 
 <!-- HERO -->
 <section id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-content container">
-    <div class="hero-badge">
-      <span></span>
-      GRUNDFOS 공식 대리점
-    </div>
-    <h1 class="hero-title">
-      에너지 절감의<br/>
-      <span class="blue">확실한 선택</span><br/>
-      <span class="highlight">(주)효일종합상사</span>
-    </h1>
-    <p class="hero-desc">
-      1995년 설립 이후 세계 최대 펌프기업 그런포스와의 파트너십으로
-      국내 1군 건설사 현장에 최고 품질의 펌프를 납품해 온
-      신뢰의 전문 기업입니다.
-    </p>
-    <div class="hero-actions">
-      <a href="projects.html" class="btn-primary">
-        납품 실적 보기 &rarr;
-      </a>
-      <a href="#contact" class="btn-outline">
-        제품 문의하기
-      </a>
-    </div>
-  </div>
+  <div class="hero-bg">
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    poster="images/home-poster.jpg"
+  >
+    <source src="images/home.mp4" type="video/mp4"/>
+  </video>
+</div>
   <div class="hero-stats">
     <div class="stat-card">
       <div class="stat-num">100<span>+</span></div>
