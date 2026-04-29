@@ -109,13 +109,72 @@
     .feature-title { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 10px; letter-spacing: -0.5px; }
     .feature-desc { font-size: 13.5px; color: var(--gray-dark); line-height: 1.7; }
 
-    /* GALLERY */
-    .gallery { background: white; padding: 100px 30px; }
-    .gallery-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 50px; }
-    .gallery-item { border-radius: 12px; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; }
-    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; display: block; }
-    .gallery-item:hover img { transform: scale(1.06); }
-    .gallery-item.wide { grid-column: span 2; aspect-ratio: 16/7; }
+    /* GALLERY - SLIDESHOW */
+    .gallery { background: var(--navy); padding: 100px 30px; }
+    .gallery .section-label { color: #60a5fa; }
+    .gallery .section-title { color: white; }
+
+    .slideshow-wrap {
+      position: relative; margin-top: 50px; border-radius: 16px; overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+      background: #000;
+    }
+    .slides-track {
+      display: flex; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+    }
+    .slide {
+      min-width: 100%; position: relative;
+    }
+    .slide img {
+      width: 100%; display: block;
+      object-fit: contain; max-height: 70vh;
+      background: #0a0f1e;
+    }
+
+    /* 좌우 화살표 버튼 */
+    .slide-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: rgba(10,22,40,0.75); border: 1px solid rgba(255,255,255,0.15);
+      color: white; width: 52px; height: 52px; border-radius: 50%;
+      font-size: 20px; cursor: pointer; z-index: 10;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s; backdrop-filter: blur(6px);
+    }
+    .slide-btn:hover { background: rgba(232,57,42,0.85); border-color: transparent; transform: translateY(-50%) scale(1.08); }
+    .slide-btn.prev { left: 20px; }
+    .slide-btn.next { right: 20px; }
+
+    /* 하단 인디케이터 */
+    .slide-dots {
+      display: flex; justify-content: center; gap: 8px; margin-top: 24px;
+    }
+    .slide-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,0.25); cursor: pointer; transition: all 0.3s;
+      border: none; padding: 0;
+    }
+    .slide-dot.active { background: var(--accent); width: 24px; border-radius: 4px; }
+
+    /* 카운터 */
+    .slide-counter {
+      position: absolute; bottom: 16px; right: 20px;
+      background: rgba(0,0,0,0.55); color: rgba(255,255,255,0.8);
+      font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 20px;
+      backdrop-filter: blur(4px); pointer-events: none;
+    }
+
+    /* 썸네일 스트립 */
+    .thumb-strip {
+      display: flex; gap: 8px; margin-top: 16px; overflow-x: auto;
+      padding-bottom: 4px; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.2) transparent;
+    }
+    .thumb {
+      min-width: 90px; height: 60px; border-radius: 6px; overflow: hidden;
+      cursor: pointer; border: 2px solid transparent; transition: all 0.2s; flex-shrink: 0;
+    }
+    .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .thumb.active { border-color: var(--accent); }
+    .thumb:hover { border-color: rgba(255,255,255,0.4); }
 
     /* SPECS */
     .specs { background: var(--navy); padding: 100px 30px; }
@@ -149,12 +208,15 @@
       .hero-inner { grid-template-columns: 1fr; gap: 40px; }
       .features-grid { grid-template-columns: 1fr 1fr; }
       .specs-grid { grid-template-columns: 1fr 1fr; }
-      .gallery-grid { grid-template-columns: 1fr 1fr; }
-      .gallery-item.wide { grid-column: span 2; }
+      .slide-btn { width: 40px; height: 40px; font-size: 16px; }
+      .thumb { min-width: 70px; height: 48px; }
     }
     @media (max-width: 600px) {
-      .features-grid, .specs-grid, .gallery-grid { grid-template-columns: 1fr; }
-      .gallery-item.wide { grid-column: span 1; }
+      .features-grid, .specs-grid { grid-template-columns: 1fr; }
+      .slide-btn { width: 36px; height: 36px; font-size: 14px; }
+      .slide-btn.prev { left: 10px; }
+      .slide-btn.next { right: 10px; }
+      .thumb { min-width: 56px; height: 38px; }
     }
   </style>
 </head>
@@ -243,37 +305,92 @@
   <div class="container">
     <div class="section-label">제품 이미지 · Gallery</div>
     <h2 class="section-title">GENIECON<br/>상세 이미지</h2>
-    <div class="gallery-grid">
-      <div class="gallery-item wide">
-        <img src="images/CA01.png" alt="GENIECON 컨트롤러 전면"/>
+
+    <div class="slideshow-wrap">
+      <div class="slides-track" id="slidesTrack">
+        <div class="slide"><img src="images/CA01.png" alt="GENIECON 01"/></div>
+        <div class="slide"><img src="images/CA02.png" alt="GENIECON 02"/></div>
+        <div class="slide"><img src="images/CA03.png" alt="GENIECON 03"/></div>
+        <div class="slide"><img src="images/CA04.png" alt="GENIECON 04"/></div>
+        <div class="slide"><img src="images/CA05.png" alt="GENIECON 05"/></div>
+        <div class="slide"><img src="images/CA06.png" alt="GENIECON 06"/></div>
+        <div class="slide"><img src="images/CA07.png" alt="GENIECON 07"/></div>
+        <div class="slide"><img src="images/CA08.png" alt="GENIECON 08"/></div>
+        <div class="slide"><img src="images/CA09.png" alt="GENIECON 09"/></div>
       </div>
-      <div class="gallery-item">
-        <img src="images/CA02.png" alt="GENIECON 설치 예시"/>
-      </div>
-      <div class="gallery-item">
-        <img src="images/CA03.png" alt="GENIECON 상세"/>
-      </div>
-      <div class="gallery-item">
-        <img src="images/CA04.png" alt="GENIECON 화면"/>
-      </div>
-      <div class="gallery-item">
-        <img src="images/CA05.png" alt="GENIECON 기능"/>
-      </div>
-      <div class="gallery-item">
-        <img src="images/CA06.png" alt="GENIECON 설명"/>
-      </div>
-      <div class="gallery-item">
-        <img src="images/CA07.png" alt="GENIECON 시스템"/>
-      </div>
-      <div class="gallery-item">
-        <img src="images/CA08.png" alt="GENIECON 적용 사례"/>
-      </div>
-      <div class="gallery-item">
-        <img src="images/CA09.png" alt="GENIECON 인증"/>
-      </div>
+
+      <button class="slide-btn prev" onclick="moveSlide(-1)">&#8592;</button>
+      <button class="slide-btn next" onclick="moveSlide(1)">&#8594;</button>
+      <div class="slide-counter" id="slideCounter">1 / 9</div>
     </div>
+
+    <!-- 썸네일 -->
+    <div class="thumb-strip" id="thumbStrip">
+      <div class="thumb active" onclick="goToSlide(0)"><img src="images/CA01.png"/></div>
+      <div class="thumb" onclick="goToSlide(1)"><img src="images/CA02.png"/></div>
+      <div class="thumb" onclick="goToSlide(2)"><img src="images/CA03.png"/></div>
+      <div class="thumb" onclick="goToSlide(3)"><img src="images/CA04.png"/></div>
+      <div class="thumb" onclick="goToSlide(4)"><img src="images/CA05.png"/></div>
+      <div class="thumb" onclick="goToSlide(5)"><img src="images/CA06.png"/></div>
+      <div class="thumb" onclick="goToSlide(6)"><img src="images/CA07.png"/></div>
+      <div class="thumb" onclick="goToSlide(7)"><img src="images/CA08.png"/></div>
+      <div class="thumb" onclick="goToSlide(8)"><img src="images/CA09.png"/></div>
+    </div>
+
+    <!-- 인디케이터 점 -->
+    <div class="slide-dots" id="slideDots"></div>
   </div>
 </section>
+
+<script>
+  let current = 0;
+  const total = 9;
+  const track = document.getElementById('slidesTrack');
+  const counter = document.getElementById('slideCounter');
+  const thumbs = document.getElementById('thumbStrip').querySelectorAll('.thumb');
+  const dotsWrap = document.getElementById('slideDots');
+
+  // 점 생성
+  for (let i = 0; i < total; i++) {
+    const d = document.createElement('button');
+    d.className = 'slide-dot' + (i === 0 ? ' active' : '');
+    d.onclick = () => goToSlide(i);
+    dotsWrap.appendChild(d);
+  }
+
+  function updateUI() {
+    track.style.transform = `translateX(-${current * 100}%)`;
+    counter.textContent = `${current + 1} / ${total}`;
+    document.querySelectorAll('.slide-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+    thumbs.forEach((t, i) => t.classList.toggle('active', i === current));
+    // 썸네일 스크롤
+    thumbs[current].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+  }
+
+  function moveSlide(dir) {
+    current = (current + dir + total) % total;
+    updateUI();
+  }
+
+  function goToSlide(idx) {
+    current = idx;
+    updateUI();
+  }
+
+  // 키보드 지원
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') moveSlide(-1);
+    if (e.key === 'ArrowRight') moveSlide(1);
+  });
+
+  // 터치 스와이프 지원
+  let startX = 0;
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) moveSlide(diff > 0 ? 1 : -1);
+  });
+</script>
 
 <!-- SPECS -->
 <section class="specs">
