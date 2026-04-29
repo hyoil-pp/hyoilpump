@@ -1007,6 +1007,11 @@
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
 
+    /* SFA 단일 카드 그리드 */
+    .sfa-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
       .about-grid, .grundfos-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -1020,6 +1025,7 @@
       .video-section-inner { padding: 40px 20px !important; }
       nav { display: none; }
       .products-grid { grid-template-columns: 1fr 1fr; }
+      .sfa-grid { grid-template-columns: 1fr 1fr; }
       .projects-masonry { columns: 1; }
       .achievement-strip { grid-template-columns: 1fr 1fr; padding: 30px; }
       .footer-top { grid-template-columns: 1fr; }
@@ -1029,6 +1035,7 @@
 
     @media (max-width: 480px) {
       .products-grid { grid-template-columns: 1fr; }
+      .sfa-grid { grid-template-columns: 1fr; }
       .achievement-strip { grid-template-columns: 1fr 1fr; }
     }
   </style>
@@ -1125,20 +1132,20 @@
     </div>
     <!-- 핵심 메시지 4개 -->
     <div class="video-key-cards" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px;max-width:960px;margin-left:auto;margin-right:auto;">
-      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px 16px;text-align:center;">
-        <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px;">1995년 설립</div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:28px 16px;text-align:center;">
+        <div style="font-size:13px;font-weight:700;color:white;margin-bottom:8px;">1995년 설립</div>
         <div style="font-size:11.5px;color:rgba(255,255,255,0.5);line-height:1.5;">그런포스 공식 대리점<br/>BB+ 신용등급</div>
       </div>
-      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px 16px;text-align:center;">
-        <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px;">AI 스마트 제어</div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:28px 16px;text-align:center;">
+        <div style="font-size:13px;font-weight:700;color:white;margin-bottom:8px;">AI 스마트 제어</div>
         <div style="font-size:11.5px;color:rgba(255,255,255,0.5);line-height:1.5;">AI 시대를 선도하는<br/>스마트 펌프 제어</div>
       </div>
-      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px 16px;text-align:center;">
-        <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px;">신뢰의 파트너</div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:28px 16px;text-align:center;">
+        <div style="font-size:13px;font-weight:700;color:white;margin-bottom:8px;">신뢰의 파트너</div>
         <div style="font-size:11.5px;color:rgba(255,255,255,0.5);line-height:1.5;">신뢰로 검증된<br/>펌프 솔루션 파트너</div>
       </div>
-      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px 16px;text-align:center;">
-        <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px;">SFA 펌프</div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:28px 16px;text-align:center;">
+        <div style="font-size:13px;font-weight:700;color:white;margin-bottom:8px;">SFA 펌프</div>
         <div style="font-size:11.5px;color:rgba(255,255,255,0.5);line-height:1.5;">SFA 펌프 전문<br/>취급 및 납품</div>
       </div>
     </div>
@@ -1321,7 +1328,7 @@
         <div style="width:4px;height:32px;background:var(--accent);border-radius:2px;"></div>
         <h3 style="font-size:20px;font-weight:800;color:var(--navy);letter-spacing:-0.5px;">SFA PUMPS 제품군</h3>
       </div>
-      <div class="products-grid" style="grid-template-columns:repeat(3,1fr);">
+      <div class="products-grid sfa-grid">
 
         <a class="product-card reveal" href="https://sfa-korea.co.kr/ko/category/free-standing-lifting-stations" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
           <img class="product-img" src="images/F.png" alt="SFA 펌프"
