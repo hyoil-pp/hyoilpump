@@ -47,13 +47,17 @@
 
     .header-top {
       background: var(--accent);
-      text-align: center;
-      padding: 6px 20px;
+      display: flex;
+      align-items: center;
+      padding: 6px 30px;
       font-size: 12px;
       font-weight: 500;
       color: #fff;
       letter-spacing: 0.5px;
+      position: relative;
     }
+    .top-phone { font-size: 11.5px; font-weight: 600; white-space: nowrap; }
+    .top-center { position: absolute; left: 50%; transform: translateX(-50%); white-space: nowrap; letter-spacing: 0.5px; }
 
     .header-main {
       display: flex;
@@ -177,19 +181,19 @@
     .hero-badge span { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
 
     .hero-title {
-      font-size: clamp(42px, 6vw, 78px);
+      font-size: clamp(20px, 3vw, 42px);
       font-weight: 900;
       color: white;
-      line-height: 1.08;
-      letter-spacing: -2px;
+      line-height: 1.25;
+      letter-spacing: -0.5px;
       margin-bottom: 20px;
       animation: fadeInUp 0.6s ease 0.1s both;
     }
 
     .hero-title .highlight {
       color: #ffffff;
-      font-size: clamp(42px, 6vw, 78px);
-      letter-spacing: -2px;
+      font-size: clamp(20px, 3vw, 42px);
+      letter-spacing: -0.5px;
       text-shadow:
         0 2px 4px rgba(0,0,0,0.5),
         0 8px 24px rgba(0,0,0,0.4),
@@ -306,7 +310,7 @@
     /* ── GRUNDFOS PARTNER BANNER ── */
     .partner-bar {
       background: var(--navy);
-      padding: 40px 30px;
+      padding: 18px 30px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -320,9 +324,6 @@
       letter-spacing: 2px;
       text-transform: uppercase;
     }
-
-    .gf-logo-img { display: inline; }
-    .gf-logo-text { display: none; font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: white; letter-spacing: 2px; }
 
     .grundfos-logo {
       display: flex;
@@ -712,7 +713,6 @@
     }
 
     #grundfos .section-title { color: white; }
-    #products .section-title { font-size: clamp(22px, 3vw, 38px); white-space: nowrap; }
     #grundfos .section-label { color: #60a5fa; }
     #grundfos .section-desc { color: rgba(255,255,255,0.65); }
 
@@ -972,7 +972,7 @@
       gap: 10px;
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.1);
-      padding: 6px 24px;
+      padding: 8px 16px;
       border-radius: 6px;
       font-size: 12px;
       color: rgba(255,255,255,0.6);
@@ -1011,11 +1011,6 @@
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
 
-    /* SFA 단일 카드 그리드 */
-    .sfa-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
       .about-grid, .grundfos-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -1029,21 +1024,15 @@
       .video-section-inner { padding: 40px 20px !important; }
       nav { display: none; }
       .products-grid { grid-template-columns: 1fr 1fr; }
-      .sfa-grid { grid-template-columns: 1fr 1fr; }
       .projects-masonry { columns: 1; }
       .achievement-strip { grid-template-columns: 1fr 1fr; padding: 30px; }
       .footer-top { grid-template-columns: 1fr; }
       .timeline { grid-template-columns: 1fr 1fr; }
       .form-row { grid-template-columns: 1fr; }
-      .partner-bar { gap: 12px; padding: 14px 16px; }
-      .partner-bar-text { font-size: 10px; letter-spacing: 1px; white-space: nowrap; }
-      .gf-logo-img { display: none; }
-      .gf-logo-text { display: inline; }
     }
 
     @media (max-width: 480px) {
       .products-grid { grid-template-columns: 1fr; }
-      .sfa-grid { grid-template-columns: 1fr; }
       .achievement-strip { grid-template-columns: 1fr 1fr; }
     }
   </style>
@@ -1053,16 +1042,18 @@
 <!-- HEADER -->
 <header>
   <div class="header-top">
-    한국그런포스펌프(주) 공식 대리점 &nbsp;|&nbsp; BB+ 신용등급 인증 기업 &nbsp;|&nbsp; 1995년 설립
+    <span class="top-phone">📞 032.347.0815~7</span>
+    <span class="top-center">한국그런포스펌프(주) 프리미엄 공식 대리점 &nbsp;|&nbsp; 1995년 설립</span>
   </div>
   <div class="header-main">
     <a href="#home" class="logo">
-      <img src="images/logo.png" alt="효일종합상사 로고" style="height:52px;width:auto;object-fit:contain;display:block;"/>
+      <img src="images/logo.png" alt="효일종합상사 로고" style="height:60px;width:auto;max-width:220px;object-fit:contain;display:block;"/>
     </a>
     <nav>
       <a href="#about">회사소개</a>
       <a href="#products">제품소개</a>
       <a href="projects.html">납품실적</a>
+      <a href="https://blog.naver.com/hyoil-pp" target="_blank" rel="noopener">Blog</a>
       <a href="#grundfos">그런포스</a>
       <a href="#contact" class="nav-cta">문의하기</a>
     </nav>
@@ -1075,17 +1066,17 @@
   <div class="hero-content container">
     <div class="hero-badge">
       <span></span>
-      GRUNDFOS 공식 대리점
+      GRUNDFOS 프리미엄 공식 대리점
     </div>
     <h1 class="hero-title">
-      에너지 절감의<br/>
-      <span class="blue">확실한 선택</span><br/>
-      <span class="highlight">(주)효일종합상사</span>
+      에너지 절감의 확실한 선택!<br/>
+      <span class="blue">세계 최고 프리미엄 브랜드의</span><br/>
+      <span class="highlight">고품질 고효율 그런포스 펌프!</span>
     </h1>
     <p class="hero-desc">
-      1995년 설립 이후 세계 최대 펌프기업 그런포스와의 파트너십으로
-      국내 1군 건설사 현장에 최고 품질의 펌프를 납품해 온
-      신뢰의 전문 기업입니다.
+      1995년 설립 이후, 세계 최대 펌프 기업 Grundfos와 함께해 온 국내 유일의 프리미엄 공식 대리점.<br/>
+      국내 1군 건설사 현장에 최고 품질의 펌프 솔루션을 공급하며<br/>
+      신뢰와 기술력을 쌓아온 전문 기업입니다.
     </p>
     <div class="hero-actions">
       <a href="projects.html" class="btn-primary">
@@ -1116,10 +1107,7 @@
 <!-- PARTNER BAR -->
 <div class="partner-bar">
   <span class="partner-bar-text">Official Partner of</span>
-  <div class="grundfos-logo">
-    <img src="images/grundfoslogo.png" alt="GRUNDFOS" class="gf-logo-img" style="height:140px;width:auto;object-fit:contain;vertical-align:middle;max-width:400px;"/>
-    <span class="gf-logo-text">GRUNDFOS</span>
-  </div>
+  <div class="grundfos-logo">GRUNDFOS <span class="x-mark"> ✕</span></div>
   <span class="partner-bar-text">한국그런포스펌프(주) 공식 대리점</span>
 </div>
 
@@ -1133,7 +1121,7 @@
     <!-- 유튜브 자동반복재생 전폭 영상 -->
     <div style="position:relative;width:100%;max-width:960px;margin:0 auto;aspect-ratio:16/9;border-radius:16px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.6);">
       <iframe
-        src="https://www.youtube.com/embed/eadH5WJq2uE?autoplay=1&mute=1&loop=1&playlist=eadH5WJq2uE&rel=0&modestbranding=1&controls=1"
+        src="https://www.youtube.com/embed/j6VXEd9ITms?autoplay=1&mute=1&loop=1&playlist=j6VXEd9ITms&rel=0&modestbranding=1&controls=1"
         title="효일종합상사 홍보영상"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -1143,20 +1131,24 @@
     </div>
     <!-- 핵심 메시지 4개 -->
     <div class="video-key-cards" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px;max-width:960px;margin-left:auto;margin-right:auto;">
-      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:28px 16px;text-align:center;">
-        <div style="font-size:13px;font-weight:700;color:white;margin-bottom:8px;">1995년 설립</div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px 16px;text-align:center;">
+        <div style="font-size:26px;margin-bottom:8px;">🏆</div>
+        <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px;">1995년 설립</div>
         <div style="font-size:11.5px;color:rgba(255,255,255,0.5);line-height:1.5;">그런포스 공식 대리점<br/>BB+ 신용등급</div>
       </div>
-      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:28px 16px;text-align:center;">
-        <div style="font-size:13px;font-weight:700;color:white;margin-bottom:8px;">AI 스마트 제어</div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px 16px;text-align:center;">
+        <div style="font-size:26px;margin-bottom:8px;">🤖</div>
+        <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px;">AI 스마트 제어</div>
         <div style="font-size:11.5px;color:rgba(255,255,255,0.5);line-height:1.5;">AI 시대를 선도하는<br/>스마트 펌프 제어</div>
       </div>
-      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:28px 16px;text-align:center;">
-        <div style="font-size:13px;font-weight:700;color:white;margin-bottom:8px;">신뢰의 파트너</div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px 16px;text-align:center;">
+        <div style="font-size:26px;margin-bottom:8px;">🔧</div>
+        <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px;">신뢰의 파트너</div>
         <div style="font-size:11.5px;color:rgba(255,255,255,0.5);line-height:1.5;">신뢰로 검증된<br/>펌프 솔루션 파트너</div>
       </div>
-      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:28px 16px;text-align:center;">
-        <div style="font-size:13px;font-weight:700;color:white;margin-bottom:8px;">SFA 펌프</div>
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:20px 16px;text-align:center;">
+        <div style="font-size:26px;margin-bottom:8px;">⚙️</div>
+        <div style="font-size:13px;font-weight:700;color:white;margin-bottom:4px;">SFA 펌프</div>
         <div style="font-size:11.5px;color:rgba(255,255,255,0.5);line-height:1.5;">SFA 펌프 전문<br/>취급 및 납품</div>
       </div>
     </div>
@@ -1172,7 +1164,7 @@
           src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&q=80"
           alt="펌프 설비 납품 현장"/>
         <img class="about-img-accent"
-          src="images/pump.png"
+          src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=500&q=80"
           alt="그런포스 펌프"/>
         <div class="about-badge-float">
           <strong>1995</strong>설립 이래 30년<br/>신뢰와 기술력
@@ -1255,105 +1247,74 @@
 <section id="products">
   <div class="container">
     <div class="section-label reveal">제품 소개 · Products</div>
-    <h2 class="section-title reveal">(주)효일종합상사 납품군</h2>
+    <h2 class="section-title reveal">그런포스 대표<br/>납품 제품군</h2>
     <p class="section-desc reveal">
       에너지 절감을 위한 최적의 고효율 제품을 선정하여 납품합니다.
     </p>
 
-    <!-- 그런포스 제품군 -->
-    <div style="margin-top:56px;">
-      <div style="display:flex;align-items:center;gap:16px;margin-bottom:28px;">
-        <div style="width:4px;height:32px;background:var(--blue-light);border-radius:2px;"></div>
-        <h3 style="font-size:20px;font-weight:800;color:var(--navy);letter-spacing:-0.5px;">그런포스(Grundfos) 제품군</h3>
-      </div>
-      <div class="products-grid">
+    <div class="products-grid">
 
-        <!-- GENIECON 신제품 -->
-        <a class="product-card reveal" href="geniecon.html" style="text-decoration:none;color:inherit;position:relative;">
-          <div style="position:absolute;top:12px;left:12px;z-index:2;background:var(--accent);color:white;font-size:11px;font-weight:800;padding:4px 12px;border-radius:20px;letter-spacing:1px;">✦ 신제품</div>
-          <img class="product-img" src="images/G.png" alt="GENIECON AI 컨트롤러"
-            onerror="this.src='https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&q=80'"/>
-          <div class="product-body">
-            <span class="product-tag" style="background:rgba(232,57,42,0.1);color:var(--accent);">AI Controller</span>
-            <div class="product-name">GENIECON 컨트롤러</div>
-            <div class="product-desc">AI 스마트 컨트롤러로 예측운영으로 보이지 않는 손실까지 잡는 경제적·효율적인 에너지 관리 시스템입니다.</div>
-          </div>
-        </a>
+      <a class="product-card reveal" href="https://product-selection.grundfos.com/kr/categories/pumps/booster-set?tab=categories" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
+        <img class="product-img" src="images/A.png" alt="부스터 펌프"
+          onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80'"/>
+        <div class="product-body">
+          <span class="product-tag">Booster</span>
+          <div class="product-name">부스터 펌프</div>
+          <div class="product-desc">대형 건물의 급수 압력을 안정적으로 유지하는 인버터 내장형 고효율 가압 시스템입니다.</div>
+        </div>
+      </a>
 
-        <a class="product-card reveal reveal-delay-1" href="https://product-selection.grundfos.com/kr/categories/pumps/booster-set?tab=categories" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
-          <img class="product-img" src="images/A.png" alt="부스터 펌프"
-            onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80'"/>
-          <div class="product-body">
-            <span class="product-tag">Booster</span>
-            <div class="product-name">부스터 펌프</div>
-            <div class="product-desc">대형 건물의 급수 압력을 안정적으로 유지하는 인버터 내장형 고효율 가압 시스템입니다.</div>
-          </div>
-        </a>
+      <a class="product-card reveal reveal-delay-1" href="https://product-selection.grundfos.com/kr/categories/pumps/inline-single-stage-pumps?tab=categories" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
+        <img class="product-img" src="images/B.png" alt="인라인 펌프"
+          onerror="this.src='https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=600&q=80'"/>
+        <div class="product-body">
+          <span class="product-tag">Inline</span>
+          <div class="product-name">인라인 펌프</div>
+          <div class="product-desc">배관 중간에 직접 설치하는 구조로 냉온수 순환, 공조 시스템에 최적화된 펌프입니다.</div>
+        </div>
+      </a>
 
-        <a class="product-card reveal reveal-delay-2" href="https://product-selection.grundfos.com/kr/categories/pumps/inline-single-stage-pumps?tab=categories" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
-          <img class="product-img" src="images/B.png" alt="인라인 펌프"
-            onerror="this.src='https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=600&q=80'"/>
-          <div class="product-body">
-            <span class="product-tag">Inline</span>
-            <div class="product-name">인라인 펌프</div>
-            <div class="product-desc">배관 중간에 직접 설치하는 구조로 냉온수 순환, 공조 시스템에 최적화된 펌프입니다.</div>
-          </div>
-        </a>
+      <a class="product-card reveal reveal-delay-2" href="https://product-selection.grundfos.com/kr/categories/pumps/immersible-pumps?tab=categories" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
+        <img class="product-img" src="images/C.png" alt="수중 펌프"
+          onerror="this.src='https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80'"/>
+        <div class="product-body">
+          <span class="product-tag">Submersible</span>
+          <div class="product-name">수중 펌프</div>
+          <div class="product-desc">지하 집수정, 오수 및 우수 처리용으로 사용되는 수중 설치형 고내구성 펌프입니다.</div>
+        </div>
+      </a>
 
-        <a class="product-card reveal" href="https://product-selection.grundfos.com/kr/categories/pumps/immersible-pumps?tab=categories" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
-          <img class="product-img" src="images/C.png" alt="수중 펌프"
-            onerror="this.src='https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80'"/>
-          <div class="product-body">
-            <span class="product-tag">Submersible</span>
-            <div class="product-name">수중 펌프</div>
-            <div class="product-desc">지하 집수정, 오수 및 우수 처리용으로 사용되는 수중 설치형 고내구성 펌프입니다.</div>
-          </div>
-        </a>
+      <a class="product-card reveal" href="https://product-selection.grundfos.com/kr/categories/pumps/inline-multi-stage-pumps?tab=categories" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
+        <img class="product-img" src="images/D.png" alt="입형다단 펌프"
+          onerror="this.src='https://images.unsplash.com/photo-1513828583688-c52646db42da?w=600&q=80'"/>
+        <div class="product-body">
+          <span class="product-tag">Multistage</span>
+          <div class="product-name">입형다단 펌프</div>
+          <div class="product-desc">고층 빌딩 급수·난방용으로 적합한 다단 터빈 구조의 고압 펌프 시스템입니다.</div>
+        </div>
+      </a>
 
-        <a class="product-card reveal reveal-delay-1" href="https://product-selection.grundfos.com/kr/categories/pumps/inline-multi-stage-pumps?tab=categories" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
-          <img class="product-img" src="images/D.png" alt="입형다단 펌프"
-            onerror="this.src='https://images.unsplash.com/photo-1513828583688-c52646db42da?w=600&q=80'"/>
-          <div class="product-body">
-            <span class="product-tag">Multistage</span>
-            <div class="product-name">입형다단 펌프</div>
-            <div class="product-desc">고층 빌딩 급수·난방용으로 적합한 다단 터빈 구조의 고압 펌프 시스템입니다.</div>
-          </div>
-        </a>
+      <a class="product-card reveal reveal-delay-1" href="https://product-selection.grundfos.com/kr/categories/pumps?tab=categories" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
+        <img class="product-img" src="images/E.png" alt="소화 펌프"
+          onerror="this.src='https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80'"/>
+        <div class="product-body">
+          <span class="product-tag">Fire</span>
+          <div class="product-name">소화 펌프</div>
+          <div class="product-desc">소방법 규정에 준한 소화 설비 전용 펌프로 안전과 신뢰를 최우선으로 합니다.</div>
+        </div>
+      </a>
 
-      </div>
+      <a class="product-card reveal reveal-delay-2" href="https://sfa-korea.co.kr/ko/category/free-standing-lifting-stations" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
+        <img class="product-img" src="images/F.png" alt="SFA 펌프"
+          onerror="this.src='https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80'"/>
+        <div class="product-body">
+          <span class="product-tag">SFA</span>
+          <div class="product-name">SFA PUMPS</div>
+          <div class="product-desc">실내 바닥에 설치해 사용하는 펌프로, 주거 및 상업 환경 모두에서 오수 및 하수를 효율적으로 배수하도록 설계된 혁신적인 솔루션입니다.</div>
+        </div>
+      </a>
+
     </div>
-
-    <!-- 기타 취급 제품군 -->
-    <div style="margin-top:60px;">
-      <div style="display:flex;align-items:center;gap:16px;margin-bottom:28px;">
-        <div style="width:4px;height:32px;background:var(--accent);border-radius:2px;"></div>
-        <h3 style="font-size:20px;font-weight:800;color:var(--navy);letter-spacing:-0.5px;">기타 취급 제품군</h3>
-      </div>
-      <div class="products-grid sfa-grid">
-
-        <a class="product-card reveal" href="#" style="text-decoration:none;color:inherit;">
-          <img class="product-img" src="images/E.png" alt="소화 펌프"
-            onerror="this.src='https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80'"/>
-          <div class="product-body">
-            <span class="product-tag">Fire</span>
-            <div class="product-name">소화 펌프</div>
-            <div class="product-desc">소방법 규정에 준한 소화 설비 전용 펌프로 안전과 신뢰를 최우선으로 합니다.</div>
-          </div>
-        </a>
-
-        <a class="product-card reveal reveal-delay-1" href="https://sfa-korea.co.kr/ko/category/free-standing-lifting-stations" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
-          <img class="product-img" src="images/F.png" alt="SFA 펌프"
-            onerror="this.src='https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80'"/>
-          <div class="product-body">
-            <span class="product-tag">SFA</span>
-            <div class="product-name">SFA PUMPS</div>
-            <div class="product-desc">실내 바닥에 설치해 사용하는 펌프로, 주거 및 상업 환경 모두에서 오수 및 하수를 효율적으로 배수하도록 설계된 혁신적인 솔루션입니다.</div>
-          </div>
-        </a>
-
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -1504,13 +1465,12 @@
 
       <div class="grundfos-img-stack reveal">
         <img class="gf-img-main"
-          src="images/grundfos.png"
-          alt="그런포스 펌프 제품"
-          onerror="this.src='https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=700&q=80'"/>
-        <a href="https://www.grundfos.com/kr" target="_blank" rel="noopener" class="gf-img-badge" style="text-decoration:none;">
+          src="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=700&q=80"
+          alt="그런포스 펌프 제품"/>
+        <div class="gf-img-badge">
           공식 대리점<br/>
-          <strong style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;display:block;margin-top:6px;">GRUNDFOS</strong>
-        </a>
+          <strong style="font-size:18px;display:block;margin-top:4px;">GRUNDFOS ✕</strong>
+        </div>
       </div>
     </div>
   </div>
@@ -1619,7 +1579,7 @@
         <div class="desc">한국그런포스펌프(주) 공식 대리점으로서 1995년 설립 이래 국내 최고 건설 현장에 고품질 펌프를 납품하고 있습니다.</div>
         <div style="margin-top:20px;">
           <div class="grundfos-partner-badge">
-            공식 파트너 &nbsp; <img src="images/grundfoslogo.png" alt="GRUNDFOS" style="height:80px;width:auto;object-fit:contain;vertical-align:middle;max-width:220px;"/>
+            공식 파트너 &nbsp; <strong>GRUNDFOS</strong> &nbsp; ✕
           </div>
         </div>
       </div>
