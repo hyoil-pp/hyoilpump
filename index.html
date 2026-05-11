@@ -121,7 +121,8 @@
     /* ── HERO ── */
     #home {
       height: 100vh;
-      min-height: 700px;
+      height: 100dvh;
+      min-height: 600px;
       position: relative;
       overflow: hidden;
     }
@@ -132,12 +133,16 @@
       background: linear-gradient(135deg, #0a1628 0%, #122040 40%, #1a3a6e 100%);
     }
 
-    .hero-bg::before {
-      content: '';
+    /* 배경 이미지 - img 태그로 완전 커버 */
+    .hero-bg-img {
       position: absolute;
       inset: 0;
-      background: url('images/home.png') center/cover no-repeat;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
       opacity: 0.7;
+      display: block;
     }
 
     /* 하단 그라데이션 오버레이 - 글자 가독성 */
@@ -156,13 +161,27 @@
 
     .hero-content {
       position: absolute;
-      bottom: 120px;
+      bottom: 10%;
       left: 0;
       right: 0;
       max-width: 1300px;
       margin: 0 auto;
       padding: 0 30px;
       z-index: 2;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content {
+        bottom: 80px;
+        padding: 0 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-content {
+        bottom: 60px;
+        padding: 0 16px;
+      }
     }
 
     .hero-badge {
@@ -1083,7 +1102,9 @@
 
 <!-- HERO -->
 <section id="home">
-  <div class="hero-bg"></div>
+  <div class="hero-bg">
+    <img class="hero-bg-img" src="images/home.png" alt="" aria-hidden="true"/>
+  </div>
   <div class="hero-content container">
     <div class="hero-badge">
       <span></span>
@@ -1283,19 +1304,8 @@
       </div>
       <div class="products-grid">
 
-        <!-- GENIECON 신제품 -->
-        <a class="product-card reveal" href="geniecon.html" style="text-decoration:none;color:inherit;position:relative;">
-          <div style="position:absolute;top:12px;left:12px;z-index:2;background:var(--accent);color:white;font-size:11px;font-weight:800;padding:4px 12px;border-radius:20px;letter-spacing:1px;">✦ 신제품</div>
-          <img class="product-img" src="images/G.png" alt="GENIECON AI 컨트롤러"
-            onerror="this.src='https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&q=80'"/>
-          <div class="product-body">
-            <span class="product-tag" style="background:rgba(232,57,42,0.1);color:var(--accent);">AI Controller</span>
-            <div class="product-name">GENIECON 컨트롤러</div>
-            <div class="product-desc">AI 스마트 컨트롤러로 예측운영으로 보이지 않는 손실까지 잡는 경제적·효율적인 에너지 관리 시스템입니다.</div>
-          </div>
-        </a>
-
-        <a class="product-card reveal reveal-delay-1" href="https://product-selection.grundfos.com/kr/categories/pumps/booster-set?tab=categories" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
+        <!-- 1. 부스터 펌프 -->
+        <a class="product-card reveal" href="https://product-selection.grundfos.com/kr/categories/pumps/booster-set?tab=categories" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
           <img class="product-img" src="images/A.png" alt="부스터 펌프"
             onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80'"/>
           <div class="product-body">
@@ -1305,6 +1315,19 @@
           </div>
         </a>
 
+        <!-- 2. GENIECON 컨트롤러 & 인버터 패널 -->
+        <a class="product-card reveal reveal-delay-1" href="geniecon.html" style="text-decoration:none;color:inherit;position:relative;">
+          <div style="position:absolute;top:12px;left:12px;z-index:2;background:var(--accent);color:white;font-size:11px;font-weight:800;padding:4px 12px;border-radius:20px;letter-spacing:1px;">✦ 신제품</div>
+          <img class="product-img" src="images/G.png" alt="GENIECON AI 컨트롤러"
+            onerror="this.src='https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&q=80'"/>
+          <div class="product-body">
+            <span class="product-tag" style="background:rgba(232,57,42,0.1);color:var(--accent);">AI Controller</span>
+            <div class="product-name">GENIECON 컨트롤러 & 인버터 패널</div>
+            <div class="product-desc">AI 스마트 컨트롤러로 예측운영으로 보이지 않는 손실까지 잡는 경제적·효율적인 에너지 관리 시스템입니다.</div>
+          </div>
+        </a>
+
+        <!-- 3. 인라인 펌프 -->
         <a class="product-card reveal reveal-delay-2" href="https://product-selection.grundfos.com/kr/categories/pumps/inline-single-stage-pumps?tab=categories" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
           <img class="product-img" src="images/B.png" alt="인라인 펌프"
             onerror="this.src='https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=600&q=80'"/>
@@ -1315,23 +1338,25 @@
           </div>
         </a>
 
-        <a class="product-card reveal" href="https://product-selection.grundfos.com/kr/categories/pumps/immersible-pumps?tab=categories" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
-          <img class="product-img" src="images/C.png" alt="수중 펌프"
-            onerror="this.src='https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80'"/>
-          <div class="product-body">
-            <span class="product-tag">Submersible</span>
-            <div class="product-name">수중 펌프</div>
-            <div class="product-desc">지하 집수정, 오수 및 우수 처리용으로 사용되는 수중 설치형 고내구성 펌프입니다.</div>
-          </div>
-        </a>
-
-        <a class="product-card reveal reveal-delay-1" href="https://product-selection.grundfos.com/kr/categories/pumps/inline-multi-stage-pumps?tab=categories" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
+        <!-- 4. 입형다단 펌프 -->
+        <a class="product-card reveal" href="https://product-selection.grundfos.com/kr/categories/pumps/inline-multi-stage-pumps?tab=categories" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
           <img class="product-img" src="images/D.png" alt="입형다단 펌프"
             onerror="this.src='https://images.unsplash.com/photo-1513828583688-c52646db42da?w=600&q=80'"/>
           <div class="product-body">
             <span class="product-tag">Multistage</span>
             <div class="product-name">입형다단 펌프</div>
             <div class="product-desc">고층 빌딩 급수·난방용으로 적합한 다단 터빈 구조의 고압 펌프 시스템입니다.</div>
+          </div>
+        </a>
+
+        <!-- 5. 수중 펌프 -->
+        <a class="product-card reveal reveal-delay-1" href="https://product-selection.grundfos.com/kr/categories/pumps/immersible-pumps?tab=categories" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
+          <img class="product-img" src="images/C.png" alt="수중 펌프"
+            onerror="this.src='https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80'"/>
+          <div class="product-body">
+            <span class="product-tag">Submersible</span>
+            <div class="product-name">수중 펌프</div>
+            <div class="product-desc">지하 집수정, 오수 및 우수 처리용으로 사용되는 수중 설치형 고내구성 펌프입니다.</div>
           </div>
         </a>
 
@@ -1356,8 +1381,8 @@
           </div>
         </a>
 
-        <a class="product-card reveal reveal-delay-1" href="https://www.danfoss.com/en-us/products/dds/low-voltage-drives/vlt-drives/vlt-hvac-drive-fc-102/#tab-overview" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
-          <img class="product-img" src="images/E.png" alt="댄포스 인버터 패널"
+        <a class="product-card reveal reveal-delay-1" href="https://www.danfoss.com/ko-kr/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
+          <img class="product-img" src="images/danfoss.png" alt="댄포스 인버터 패널"
             onerror="this.src='https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80'"/>
           <div class="product-body">
             <span class="product-tag">Danfoss</span>
@@ -1407,7 +1432,7 @@
         <div class="ach-label">건설사 납품</div>
       </div>
       <div class="ach-item">
-        <div class="ach-num">BB<sup>+</sup></div>
+        <div class="ach-num">BBB</div>
         <div class="ach-label">신용 등급</div>
       </div>
     </div>
