@@ -1,1 +1,483 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>회사소개 | (주)효일종합상사</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Bebas+Neue&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0a1628; --navy-mid: #122040; --blue: #1a3a6e;
+      --blue-light: #2563b0; --accent: #e8392a;
+      --white: #ffffff; --off-white: #f4f6f9;
+      --gray-light: #e8ecf2; --gray-mid: #9aa5b4; --gray-dark: #4a5568; --text: #1a202c;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Noto Sans KR', sans-serif; color: var(--text); background: var(--white); overflow-x: hidden; }
 
+    /* HEADER */
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,22,40,0.97); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .header-top { background: var(--accent); display: flex; align-items: center; justify-content: space-between; padding: 6px 30px; font-size: 12px; font-weight: 500; color: #fff; }
+    .header-top-center { flex: 1; text-align: center; }
+    .header-top-side { font-size: 11px; white-space: nowrap; opacity: 0.9; }
+    .header-main { display: flex; align-items: center; justify-content: space-between; max-width: 1300px; margin: 0 auto; padding: 0 30px; height: 77px; }
+    .logo { display: flex; align-items: center; text-decoration: none; }
+    nav { display: flex; align-items: center; gap: 32px; }
+    nav a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    nav a:hover, nav a.active { color: white; }
+    nav a.nav-cta { background: var(--accent); color: white; padding: 8px 20px; border-radius: 4px; font-weight: 700; }
+
+    /* HERO */
+    .about-hero {
+      min-height: 380px; display: flex; align-items: flex-end;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 50%, var(--blue) 100%);
+      position: relative; overflow: hidden; padding: 120px 0 60px;
+    }
+    .about-hero::before {
+      content: 'ABOUT'; position: absolute;
+      font-family: 'Bebas Neue', sans-serif; font-size: 260px;
+      color: rgba(255,255,255,0.03); top: 50%; left: 50%;
+      transform: translate(-50%, -50%); white-space: nowrap; pointer-events: none;
+    }
+    .hero-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; width: 100%; }
+    .hero-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .hero-title { font-size: clamp(32px, 5vw, 56px); font-weight: 900; color: white; letter-spacing: -2px; line-height: 1.1; margin-bottom: 16px; }
+    .hero-sub { font-size: 15px; color: rgba(255,255,255,0.55); }
+
+    /* CONTAINER */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+
+    /* CEO MESSAGE */
+    .ceo-section { padding: 100px 0; background: var(--white); }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 10px; }
+    .section-title { font-size: clamp(26px, 3.5vw, 40px); font-weight: 800; color: var(--navy); letter-spacing: -1.5px; line-height: 1.2; margin-bottom: 40px; }
+    .ceo-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; align-items: start; }
+    .ceo-profile { position: sticky; top: 120px; }
+    .ceo-photo { width: 100%; aspect-ratio: 3/4; background: linear-gradient(135deg, var(--navy-mid), var(--blue)); border-radius: 16px; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; }
+    .ceo-photo svg { opacity: 0.3; }
+    .ceo-name-box { border-left: 4px solid var(--accent); padding-left: 16px; }
+    .ceo-company { font-size: 12px; color: var(--gray-mid); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+    .ceo-name { font-size: 20px; font-weight: 800; color: var(--navy); margin-bottom: 2px; }
+    .ceo-title { font-size: 13px; color: var(--gray-dark); }
+    .ceo-content { padding-top: 8px; }
+    .ceo-quote { font-family: 'Noto Serif KR', serif; font-size: 18px; font-weight: 600; color: var(--navy); line-height: 1.6; padding: 24px 28px; background: var(--off-white); border-left: 4px solid var(--accent); border-radius: 0 12px 12px 0; margin-bottom: 32px; }
+    .ceo-body { font-size: 14.5px; color: var(--gray-dark); line-height: 1.9; }
+    .ceo-body p { margin-bottom: 18px; }
+    .ceo-projects { margin-top: 28px; background: var(--navy); border-radius: 12px; padding: 24px 28px; }
+    .ceo-projects-title { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 12px; }
+    .ceo-projects-list { font-size: 13.5px; color: rgba(255,255,255,0.8); line-height: 1.8; }
+    .ceo-closing { margin-top: 28px; text-align: right; font-size: 14px; color: var(--gray-dark); }
+    .ceo-closing strong { font-size: 16px; color: var(--navy); display: block; margin-top: 4px; }
+
+    /* BUSINESS */
+    .business-section { padding: 100px 0; background: var(--off-white); }
+    .biz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 50px; }
+    .biz-card { background: var(--white); border-radius: 14px; padding: 32px 28px; border: 1px solid var(--gray-light); transition: all 0.3s; }
+    .biz-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(10,22,40,0.08); border-color: var(--blue-light); }
+    .biz-icon { width: 48px; height: 48px; background: linear-gradient(135deg, var(--navy), var(--blue)); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 22px; }
+    .biz-title { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 12px; letter-spacing: -0.5px; }
+    .biz-list { list-style: none; }
+    .biz-list li { font-size: 13px; color: var(--gray-dark); line-height: 1.7; padding: 4px 0; padding-left: 14px; position: relative; }
+    .biz-list li::before { content: '·'; position: absolute; left: 0; color: var(--accent); font-weight: 900; }
+
+    /* CORE COMPETENCY */
+    .competency-section { padding: 100px 0; background: var(--navy); }
+    .competency-section .section-title { color: white; }
+    .competency-section .section-label { color: #60a5fa; }
+    .comp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 50px; }
+    .comp-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 28px 20px; }
+    .comp-num { font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: var(--accent); line-height: 1; margin-bottom: 12px; }
+    .comp-title { font-size: 14px; font-weight: 700; color: white; margin-bottom: 10px; line-height: 1.4; }
+    .comp-desc { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.7; }
+
+    /* HISTORY */
+    .history-section { padding: 100px 0; background: var(--white); }
+    .history-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 50px; border: 1px solid var(--gray-light); border-radius: 16px; overflow: hidden; }
+    .history-col { padding: 0; }
+    .history-header { padding: 20px 28px; border-bottom: 3px solid var(--accent); }
+    .history-header:nth-child(1) { border-color: var(--accent); }
+    .history-period { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-mid); margin-bottom: 4px; }
+    .history-era { font-size: 22px; font-weight: 900; color: var(--navy); }
+    .history-items { padding: 20px 28px; }
+    .history-item { margin-bottom: 16px; }
+    .history-year { font-size: 12px; font-weight: 800; color: var(--accent); letter-spacing: 1px; margin-bottom: 4px; }
+    .history-desc { font-size: 13px; color: var(--gray-dark); line-height: 1.6; }
+    .history-col:not(:last-child) { border-right: 1px solid var(--gray-light); }
+
+    /* INFO */
+    .info-section { padding: 100px 0; background: var(--off-white); }
+    .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px; align-items: start; }
+    .info-table { background: var(--white); border-radius: 14px; overflow: hidden; border: 1px solid var(--gray-light); }
+    .info-row { display: flex; border-bottom: 1px solid var(--gray-light); }
+    .info-row:last-child { border-bottom: none; }
+    .info-key { width: 120px; flex-shrink: 0; background: var(--off-white); padding: 14px 16px; font-size: 12px; font-weight: 700; color: var(--navy); }
+    .info-val { padding: 14px 16px; font-size: 13px; color: var(--gray-dark); line-height: 1.6; }
+    .map-wrap { border-radius: 14px; overflow: hidden; height: 280px; border: 1px solid var(--gray-light); }
+    .map-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+
+    /* SCROLL TOP */
+    #scrollTopBtn { position: fixed; bottom: 36px; right: 30px; z-index: 999; width: 48px; height: 48px; border-radius: 12px; background: #2563b0; color: white; border: none; font-size: 22px; font-weight: 700; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.25); opacity: 0; pointer-events: none; transition: opacity 0.3s, transform 0.2s; display: flex; align-items: center; justify-content: center; }
+    #scrollTopBtn.visible { opacity: 1; pointer-events: auto; }
+    #scrollTopBtn:hover { transform: translateY(-3px); background: #1a3a6e; }
+
+    /* FOOTER */
+    footer { background: #06101f; padding: 30px 40px; text-align: center; color: rgba(255,255,255,0.35); font-size: 12.5px; }
+    footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+
+    @media (max-width: 900px) {
+      .ceo-grid { grid-template-columns: 1fr; }
+      .ceo-profile { position: static; }
+      .ceo-photo { aspect-ratio: 2/1; }
+      .biz-grid { grid-template-columns: 1fr; }
+      .comp-grid { grid-template-columns: 1fr 1fr; }
+      .history-grid { grid-template-columns: 1fr; }
+      .history-col:not(:last-child) { border-right: none; border-bottom: 1px solid var(--gray-light); }
+      .info-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      nav { display: none; }
+      .comp-grid { grid-template-columns: 1fr; }
+      .header-top { flex-direction: column; gap: 2px; padding: 6px 16px; text-align: center; }
+      .hero-inner { padding: 0 20px; }
+      .container { padding: 0 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-top">
+    <span class="header-top-side">📞 032.347.0815~7</span>
+    <span class="header-top-center">한국그런포스펌프(주) 프리미엄 공식 대리점 &nbsp;|&nbsp; 1995년 설립</span>
+    <span class="header-top-side">✉ hyoilpump@daum.net</span>
+  </div>
+  <div class="header-main">
+    <a href="index.html" class="logo">
+      <img src="images/logo.png" alt="효일종합상사 로고" style="height:72px;width:auto;object-fit:contain;display:block;"/>
+    </a>
+    <nav>
+      <a href="index.html#about" class="active">회사소개</a>
+      <a href="index.html#products">제품소개</a>
+      <a href="projects.html">납품실적</a>
+      <a href="https://blog.naver.com/hyoil-pp" target="_blank" rel="noopener">Blog</a>
+      <a href="index.html#grundfos">그런포스</a>
+      <a href="index.html#contact" class="nav-cta">문의하기</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="about-hero">
+  <div class="hero-inner">
+    <div class="hero-label">Company · 회사소개</div>
+    <h1 class="hero-title">신뢰와 기술 30년,<br/>스마트 펌프 솔루션</h1>
+    <p class="hero-sub">1995년 설립 이후 그런포스와 함께 국내 최고 현장을 지켜온 전문 기업</p>
+  </div>
+</section>
+
+<!-- CEO MESSAGE -->
+<section class="ceo-section">
+  <div class="container">
+    <div class="ceo-grid">
+      <div class="ceo-profile">
+        <div class="ceo-photo">
+          <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="30" r="18" fill="white"/>
+            <ellipse cx="40" cy="68" rx="28" ry="18" fill="white"/>
+          </svg>
+        </div>
+        <div class="ceo-name-box">
+          <div class="ceo-company">(주)효일종합상사</div>
+          <div class="ceo-name">대표이사</div>
+          <div class="ceo-title">CEO Message</div>
+        </div>
+      </div>
+
+      <div class="ceo-content">
+        <div class="section-label">CEO Message</div>
+        <h2 class="section-title">CEO 인사말</h2>
+        <div class="ceo-quote">
+          "혁신적인 펌프 솔루션으로<br/>AI 데이터센터와 그린 빌딩의 미래를 설계합니다."
+        </div>
+        <div class="ceo-body">
+          <p>안녕하십니까. (주)효일종합상사를 아껴 주시고 성원해 주시는 고객 여러분께 진심으로 감사드립니다.</p>
+          <p>당사는 1995년 설립 이후, 글로벌 펌프 산업의 선도 기업인 그런포스(Grundfos)와 파트너십을 맺고 국내 주요 건설 및 산업 현장에 고효율 펌프 시스템을 공급하며 신뢰와 함께 성장해 왔습니다.</p>
+          <p>지난 30여 년간 축적한 기술적 경험과 노하우를 바탕으로, 단순한 제품 공급을 넘어 현장 조건에 최적화된 펌프 선정, 엔지니어링 검토, 시운전 지원 및 철저한 사후관리까지 아우르는 토탈 펌프 솔루션을 제공하고 있습니다.</p>
+          <p>특히 최근 AI, 빅데이터, 클라우드 산업의 급격한 성장에 발맞추어, 데이터센터의 에너지 효율 극대화와 냉각 시스템의 안정성 확보를 최우선 가치로 삼고 있습니다. 당사는 책임감 있는 기술 지원을 통해 고객사의 지속 가능한 성장을 돕는 최적의 비즈니스 파트너로 자리매김하고 있습니다.</p>
+          <p>앞으로도 IE5 울트라 프리미엄 고효율 모터와 지능형 인버터 제어 시스템을 통해 탄소중립 실현에 기여하며, 고객의 신뢰에 보답하는 스마트 워터 솔루션 파트너가 될 것을 약속드립니다.</p>
+        </div>
+
+        <div class="ceo-projects">
+          <div class="ceo-projects-title">주요 프로젝트 수행 실적</div>
+          <div class="ceo-projects-list">
+            둔촌 올림픽파크포레온(12,062세대), 삼성동 아이파크, 해운대 아이파크, 목동 현대하이페리온,
+            강남 파이낸스센터, 강남성모병원, 용인동백세브란스병원, 은평성모병원,
+            연대세브란스 중입자 병원, 현대중공업 분당 R&D 센터,
+            KB국민은행 김포 데이터센터, IBK 하남 데이터센터, LG U+ 안양 데이터센터 등
+          </div>
+        </div>
+
+        <div class="ceo-closing">
+          (주)효일종합상사<br/>
+          <strong>대표이사 배상</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUSINESS FIELD -->
+<section class="business-section">
+  <div class="container">
+    <div class="section-label">Business · 사업 분야</div>
+    <h2 class="section-title">사업 분야 및<br/>핵심 역량</h2>
+    <div class="biz-grid">
+      <div class="biz-card">
+        <div class="biz-icon">💧</div>
+        <div class="biz-title">펌프 시스템 공급</div>
+        <ul class="biz-list">
+          <li>냉수/냉각수 순환펌프, 소방 엔진 펌프(UL/FM) 시스템 공급</li>
+          <li>급수용 부스터 펌프, 소방 설비 전문 공급</li>
+          <li>백화점, 데이터 센터, 호텔, 병원, 반도체 공장 납품</li>
+          <li>주상복합, 초고층 주거시설 납품</li>
+        </ul>
+      </div>
+      <div class="biz-card">
+        <div class="biz-icon">🏭</div>
+        <div class="biz-title">산업 기술 지원</div>
+        <ul class="biz-list">
+          <li>산업 단지, 반도체, FAB 대형 상업시설 대상 기술 지원</li>
+          <li>유지관리 매뉴얼, 현장 기술 지원</li>
+          <li>PLC 제어 시스템 지원</li>
+          <li>설계·시공·커미셔닝·유지관리 전 과정 기술 지원</li>
+        </ul>
+      </div>
+      <div class="biz-card">
+        <div class="biz-icon">🌐</div>
+        <div class="biz-title">글로벌 브랜드 공급</div>
+        <ul class="biz-list">
+          <li>펌프 분야 Global No.1 Maker GRUNDFOS 제품 공급</li>
+          <li>업력 30년 이상 축적된 기술과 경험</li>
+          <li>트러블 슈팅 및 문제 해결 능력 지원</li>
+          <li>NFPA, UL/FM, ISO 등 국제 규격 기반 기술 문서 작성 지원</li>
+        </ul>
+      </div>
+      <div class="biz-card">
+        <div class="biz-icon">🤖</div>
+        <div class="biz-title">AI 스마트 솔루션</div>
+        <ul class="biz-list">
+          <li>GENIECON AI 스마트 컨트롤러 공급</li>
+          <li>데이터센터 에너지 효율 극대화 솔루션</li>
+          <li>IE5 울트라 프리미엄 고효율 모터 공급</li>
+          <li>지능형 인버터 제어 시스템을 통한 탄소중립 기여</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CORE COMPETENCY -->
+<section class="competency-section">
+  <div class="container">
+    <div class="section-label">Competency · 핵심 역량</div>
+    <h2 class="section-title">숫자로 증명하는<br/>효일의 경쟁력</h2>
+    <div class="comp-grid">
+      <div class="comp-card">
+        <div class="comp-num">30<span style="font-size:24px;color:rgba(255,255,255,0.3);">+</span></div>
+        <div class="comp-title">년 업력</div>
+        <div class="comp-desc">1995년 창립 이후 30년 이상 축적한 현장 경험과 기술 노하우</div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-num">100<span style="font-size:24px;color:rgba(255,255,255,0.3);">+</span></div>
+        <div class="comp-title">납품 프로젝트</div>
+        <div class="comp-desc">국내 1군 건설사 현장 100건 이상 납품 실적 보유</div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-num">BBB</div>
+        <div class="comp-title">신용등급</div>
+        <div class="comp-desc">신용평가 BBB 등급 인증, 재무 건전성이 검증된 기업</div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-num">1<span style="font-size:24px;color:rgba(255,255,255,0.3);">군</span></div>
+        <div class="comp-title">건설사 납품</div>
+        <div class="comp-desc">삼성, 현대, 롯데 등 국내 1군 건설사 현장 전문 공급</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORY -->
+<section class="history-section">
+  <div class="container">
+    <div class="section-label">History · 회사 연혁</div>
+    <h2 class="section-title">30년의 신뢰,<br/>함께한 역사</h2>
+    <div class="history-grid">
+      <div class="history-col">
+        <div class="history-header" style="border-color:var(--accent);">
+          <div class="history-period">2020 ~ 현재</div>
+          <div class="history-era" style="color:var(--accent);">~ 현재</div>
+        </div>
+        <div class="history-items">
+          <div class="history-item">
+            <div class="history-year">2025</div>
+            <div class="history-desc">GENIECON AI 스마트 컨트롤러 출시<br/>IBK 하남 데이터센터 납품<br/>LG U+ 안양 데이터센터 납품</div>
+          </div>
+          <div class="history-item">
+            <div class="history-year">2023</div>
+            <div class="history-desc">KB국민은행 김포 데이터센터 납품<br/>둔촌 올림픽파크포레온 납품</div>
+          </div>
+          <div class="history-item">
+            <div class="history-year">2022</div>
+            <div class="history-desc">해운대 아이파크 납품<br/>연대세브란스 중입자 병원 납품</div>
+          </div>
+          <div class="history-item">
+            <div class="history-year">2020</div>
+            <div class="history-desc">은평성모병원 납품<br/>AI 스마트 제어 사업 확장</div>
+          </div>
+        </div>
+      </div>
+      <div class="history-col">
+        <div class="history-header" style="border-color:var(--blue);">
+          <div class="history-period">2010 ~ 2019</div>
+          <div class="history-era" style="color:var(--blue);">~ 2019</div>
+        </div>
+        <div class="history-items">
+          <div class="history-item">
+            <div class="history-year">2018</div>
+            <div class="history-desc">용인동백세브란스병원 납품<br/>현대중공업 분당 R&D 센터 납품</div>
+          </div>
+          <div class="history-item">
+            <div class="history-year">2015</div>
+            <div class="history-desc">삼성동 아이파크 납품<br/>강남 파이낸스센터 납품</div>
+          </div>
+          <div class="history-item">
+            <div class="history-year">2012</div>
+            <div class="history-desc">강남성모병원 납품<br/>목동 현대하이페리온 납품</div>
+          </div>
+          <div class="history-item">
+            <div class="history-year">2010</div>
+            <div class="history-desc">서울아산병원 납품<br/>그런포스 공식 대리점 계약 갱신</div>
+          </div>
+        </div>
+      </div>
+      <div class="history-col">
+        <div class="history-header" style="border-color:var(--gray-mid);">
+          <div class="history-period">1995 ~ 2009</div>
+          <div class="history-era" style="color:var(--gray-dark);">창립기</div>
+        </div>
+        <div class="history-items">
+          <div class="history-item">
+            <div class="history-year">2005</div>
+            <div class="history-desc">역삼동 스타타워 납품<br/>용산 민자역사 납품</div>
+          </div>
+          <div class="history-item">
+            <div class="history-year">2002</div>
+            <div class="history-desc">분당 서울대병원 납품<br/>납품 실적 50건 달성</div>
+          </div>
+          <div class="history-item">
+            <div class="history-year">1998</div>
+            <div class="history-desc">그런포스 공식 대리점 계약 체결<br/>부스터 펌프 전문 공급 시작</div>
+          </div>
+          <div class="history-item">
+            <div class="history-year">1995</div>
+            <div class="history-desc">(주)효일종합상사 창립<br/>경기도 부천시 본사 설립</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY INFO -->
+<section class="info-section">
+  <div class="container">
+    <div class="section-label">Info · 회사 정보</div>
+    <h2 class="section-title">회사 상세 정보</h2>
+    <div class="info-grid">
+      <div>
+        <div class="info-table">
+          <div class="info-row">
+            <div class="info-key">회사명</div>
+            <div class="info-val">(주)효일종합상사</div>
+          </div>
+          <div class="info-row">
+            <div class="info-key">설립일</div>
+            <div class="info-val">1995년</div>
+          </div>
+          <div class="info-row">
+            <div class="info-key">대표이사</div>
+            <div class="info-val">대표이사</div>
+          </div>
+          <div class="info-row">
+            <div class="info-key">신용등급</div>
+            <div class="info-val">BBB (한국기업평가)</div>
+          </div>
+          <div class="info-row">
+            <div class="info-key">사업 분야</div>
+            <div class="info-val">고효율 펌프 시스템 공급 및 기술지원</div>
+          </div>
+          <div class="info-row">
+            <div class="info-key">공식 파트너</div>
+            <div class="info-val">한국그런포스펌프(주) 프리미엄 공식 대리점</div>
+          </div>
+          <div class="info-row">
+            <div class="info-key">주소</div>
+            <div class="info-val">경기도 부천시 조마루로 385번길 122<br/>삼보테크노타워 1607, 1608호</div>
+          </div>
+          <div class="info-row">
+            <div class="info-key">전화</div>
+            <div class="info-val">032.347.0815~7</div>
+          </div>
+          <div class="info-row">
+            <div class="info-key">팩스</div>
+            <div class="info-val">032.347.0818</div>
+          </div>
+          <div class="info-row">
+            <div class="info-key">이메일</div>
+            <div class="info-val">hyoilpump@daum.net</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="map-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.6!2d126.7834!3d37.4934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b5f0e0a0a0a0b%3A0x0!2z6rCV6riwIOyZgOyEseq1rCDsobDrp6jroZzrj5kgMzg17Y-s6riwIDEyMg!5e0!3m2!1sko!2skr!4v1234567890"
+            allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <div style="margin-top:16px;padding:16px 20px;background:var(--white);border-radius:12px;border:1px solid var(--gray-light);">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+            <span style="font-size:18px;">📍</span>
+            <span style="font-size:13px;font-weight:700;color:var(--navy);">경기도 부천시 삼보테크노타워</span>
+          </div>
+          <p style="font-size:12px;color:var(--gray-dark);line-height:1.6;padding-left:26px;">조마루로 385번길 122, 1607~1608호<br/>지하철 7호선 부천종합운동장역 인근</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>(주)효일종합상사 | 경기도 부천시 조마루로 385번길 122, 삼보테크노타워 1607, 1608호</div>
+  <div style="margin-top:6px;">T. 032.347.0815~7 | <a href="mailto:hyoilpump@daum.net">hyoilpump@daum.net</a></div>
+  <div style="margin-top:10px;">© 2025 HYOIL Co., Ltd. All rights reserved.</div>
+</footer>
+
+<!-- 맨 위로 버튼 -->
+<button id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="맨 위로">↑</button>
+
+<script>
+  const btn = document.getElementById('scrollTopBtn');
+  window.addEventListener('scroll', () => {
+    btn.classList.toggle('visible', window.scrollY > 400);
+  });
+</script>
+
+</body>
+</html>
