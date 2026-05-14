@@ -31,9 +31,11 @@
     .section-title{font-size:clamp(26px,3.5vw,40px);font-weight:800;color:var(--navy);letter-spacing:-1.5px;line-height:1.2;margin-bottom:40px}
     /* CEO */
     .ceo-section{padding:100px 0;background:var(--white)}
+    .page-top-label{text-align:center;padding:60px 0 0;background:var(--white)}
+    .page-top-label .label-text{display:inline-block;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);border-bottom:2px solid var(--accent);padding-bottom:4px;margin-bottom:0}
     .ceo-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:start}
     .ceo-profile{position:sticky;top:120px}
-    .ceo-photo{width:100%;aspect-ratio:1/1;max-width:220px;background:linear-gradient(135deg,var(--navy-mid),var(--blue));border-radius:16px;margin-bottom:24px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .ceo-photo{width:100%;aspect-ratio:3/4;max-width:280px;background:linear-gradient(135deg,var(--navy-mid),var(--blue));border-radius:16px;margin-bottom:24px;display:flex;align-items:center;justify-content:center;overflow:hidden}
     .ceo-name-box{border-left:4px solid var(--accent);padding-left:16px}
     .ceo-company{font-size:12px;color:var(--gray-mid);letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
     .ceo-name{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:2px}
@@ -143,6 +145,11 @@
 
 <section class="about-hero" style="display:none;"></section>
 
+<!-- TOP LABEL -->
+<div class="page-top-label">
+  <span class="label-text">회사소개 · Company</span>
+</div>
+
 <!-- CEO MESSAGE -->
 <section class="ceo-section">
   <div class="container">
@@ -179,15 +186,15 @@
 </section>
 
 <!-- BUSINESS FIELD -->
-<section class="business-section">
+<section class="business-section" style="background:var(--navy);">
   <div class="container">
-    <div class="section-label">Business · 사업 분야</div>
-    <h2 class="section-title">사업 분야 및<br/>핵심 역량</h2>
+    <div class="section-label" style="color:#60a5fa;">Business · 사업 분야</div>
+    <h2 class="section-title" style="color:white;">사업 분야 및<br/>핵심 역량</h2>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px;">
-      <div style="border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);">
+      <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.1);">
         <img src="images/area.png" alt="사업 분야" style="width:100%;display:block;object-fit:cover;"/>
       </div>
-      <div style="border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);">
+      <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.1);">
         <img src="images/core.png" alt="핵심 역량" style="width:100%;display:block;object-fit:cover;"/>
       </div>
     </div>
