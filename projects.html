@@ -12,12 +12,11 @@
     html{scroll-behavior:smooth}
     body{font-family:'Noto Sans KR',sans-serif;color:var(--text);background:var(--off-white)}
     header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,22,40,0.97);backdrop-filter:blur(8px)}
-    .header-top{background:var(--accent);text-align:center;padding:6px 20px;font-size:12px;font-weight:500;color:#fff;letter-spacing:.5px}
-    .header-main{display:flex;align-items:center;justify-content:space-between;max-width:1300px;margin:0 auto;padding:0 30px;height:68px}
-    .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-    .logo-icon{width:40px;height:40px;background:var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Bebas Neue',sans-serif;font-size:22px;color:white}
-    .logo-text .name{font-size:16px;font-weight:700;color:white;display:block}
-    .logo-text .sub{font-size:10px;color:var(--gray-mid);letter-spacing:1px;text-transform:uppercase}
+    .header-top{background:var(--accent);display:flex;align-items:center;justify-content:space-between;padding:6px 30px;font-size:12px;font-weight:500;color:#fff}
+    .header-top-center{flex:1;text-align:center}
+    .header-top-side{font-size:11px;white-space:nowrap;opacity:0.9}
+    .header-main{display:flex;align-items:center;justify-content:space-between;max-width:1300px;margin:0 auto;padding:0 30px;height:77px}
+    .logo{display:flex;align-items:center;text-decoration:none}
     nav{display:flex;align-items:center;gap:6px}
     nav a{color:rgba(255,255,255,.82);text-decoration:none;font-size:14px;font-weight:500;padding:8px 14px;border-radius:4px;transition:all .2s}
     nav a:hover,nav a.active{color:white;background:rgba(255,255,255,.1)}
@@ -75,20 +74,29 @@
     .product-tag{background:var(--navy);color:white;font-size:12px;padding:5px 12px;border-radius:20px}
     .modal-blog-link{display:inline-flex;align-items:center;gap:6px;color:var(--blue-light);font-size:13px;font-weight:600;text-decoration:none;padding:8px 16px;border:1px solid var(--blue-light);border-radius:6px;transition:all .2s}
     .modal-blog-link:hover{background:var(--blue-light);color:white}
+    #scrollTopBtn{position:fixed;bottom:36px;right:30px;z-index:999;width:48px;height:48px;border-radius:12px;background:#2563b0;color:white;border:none;font-size:22px;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .3s,transform .2s;display:flex;align-items:center;justify-content:center}
+    #scrollTopBtn.visible{opacity:1;pointer-events:auto}
+    #scrollTopBtn:hover{transform:translateY(-3px);background:#1a3a6e}
+    footer{background:#06101f;padding:30px 40px;text-align:center;color:rgba(255,255,255,.35);font-size:12.5px}
+    footer a{color:rgba(255,255,255,.5);text-decoration:none}
     @media(max-width:1024px){.projects-grid{grid-template-columns:repeat(3,1fr)}}
-    @media(max-width:768px){nav{display:none}.projects-grid{grid-template-columns:repeat(2,1fr)}.modal-info-grid{grid-template-columns:1fr}.stat-item{padding:18px 20px}}
+    @media(max-width:768px){nav{display:none}.projects-grid{grid-template-columns:repeat(2,1fr)}.modal-info-grid{grid-template-columns:1fr}.stat-item{padding:18px 20px}.header-top-side{display:none}}
     @media(max-width:480px){.projects-grid{grid-template-columns:1fr}.stats-bar{flex-wrap:wrap}}
   </style>
 </head>
 <body>
 <header>
-  <div class="header-top">한국그런포스펌프(주) 프리미엄 공식 대리점 &nbsp;|&nbsp; 1995년 설립</div>
+  <div class="header-top">
+    <span class="header-top-side">📞 032.347.0815~7</span>
+    <span class="header-top-center">한국그런포스펌프(주) 프리미엄 공식 대리점 &nbsp;|&nbsp; 1995년 설립</span>
+    <span class="header-top-side">✉ hyoilpump@daum.net</span>
+  </div>
   <div class="header-main">
     <a href="index.html" class="logo">
       <img src="images/logo.png" alt="효일종합상사 로고" style="height:52px;width:auto;object-fit:contain;display:block;"/>
     </a>
     <nav>
-      <a href="index.html#about">회사소개</a>
+      <a href="about.html">회사소개</a>
       <a href="index.html#products">제품소개</a>
       <a href="projects.html" class="active">납품실적</a>
       <a href="https://blog.naver.com/hyoil-pp" target="_blank" rel="noopener">Blog</a>
@@ -101,11 +109,11 @@
 <div class="page-hero">
   <div class="label">납품실적 · Projects</div>
   <h1>국내 주요 건물<br/>납품 실적</h1>
-  <p>1995년 창립 이후 30년간 국내 1군 건설사에 그런포스 펌프를 납품한 실적입니다.<br/>현재 100건 이상의 납품 실적을 보유하고 있으며, 병원·주거·상업·공공·산업 전 분야에 걸쳐 신뢰를 쌓아왔습니다.</p>
+  <p>1995년 창립 이후 30년간 국내 1군 건설사에 그런포스 펌프를 납품한 실적입니다.<br/>현재 1,000건 이상의 납품 실적을 보유하고 있으며, 병원·주거·상업·공공·산업 전 분야에 걸쳐 신뢰를 쌓아왔습니다.</p>
 </div>
 
 <div class="stats-bar">
-  <div class="stat-item"><div class="stat-num">100<sup>+</sup></div><div class="stat-lbl">주요 납품 프로젝트</div></div>
+  <div class="stat-item"><div class="stat-num">1000<sup>+</sup></div><div class="stat-lbl">주요 납품 프로젝트</div></div>
   <div class="stat-item"><div class="stat-num">30<sup>년</sup></div><div class="stat-lbl">업력</div></div>
   <div class="stat-item"><div class="stat-num">1<sup>군</sup></div><div class="stat-lbl">건설사 납품</div></div>
   <div class="stat-item"><div class="stat-num">BBB</div><div class="stat-lbl">신용 등급</div></div>
@@ -146,105 +154,110 @@
   </div>
 </div>
 
+<footer>
+  <div>(주)효일종합상사 | 경기도 부천시 조마루로 385번길 122, 삼보테크노타워 1607, 1608호</div>
+  <div style="margin-top:6px;">T. 032.347.0815~7 | <a href="mailto:hyoilpump@daum.net">hyoilpump@daum.net</a></div>
+  <div style="margin-top:10px;">© 2025 HYOIL Co., Ltd. All rights reserved.</div>
+</footer>
+<button id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
 <script>
-// 각 프로젝트 번호에 맞는 이미지 경로 (images/01.jpg ~ images/83.jpg)
-// 확장자가 다른 항목 처리 (04.png, 13.png, 15.png, 16.gif)
 const IMG_EXT={4:'png',13:'png',15:'png',16:'gif'};
 function getImg(no){
   const ext=IMG_EXT[no]||'jpg';
   return 'images/'+String(no).padStart(2,'0')+'.'+ext;
 }
 
+// 최신순 정렬 (no 내림차순)
 const PROJECTS=[
-  {no:1,name:'한국방송회관',cat:'업무',builder:'한국방송공사',year:'1990년대',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222448775524'},
-  {no:2,name:'한남동 리버티하우스',cat:'주거',builder:'-',year:'1990년대',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222449770603'},
-  {no:3,name:'부산 송도 탑스빌',cat:'주거',builder:'-',year:'1990년대',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222450623369'},
-  {no:4,name:'분당 판테온 I',cat:'업무',builder:'-',year:'2000년대 초',products:'부스터, 인라인, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222453983247'},
-  {no:5,name:'청주 반도체 사업장',cat:'산업',builder:'-',year:'2000년대 초',products:'인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222455252846'},
-  {no:6,name:'서울대병원',cat:'병원',builder:'-',year:'2000년대 초',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222456400304'},
-  {no:7,name:'현대 41타워',cat:'업무',builder:'현대건설',year:'2000년대 초',products:'부스터, 인라인, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222457644473'},
-  {no:8,name:'강남파이낸스센터',cat:'업무',builder:'-',year:'2004',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222459018604'},
-  {no:9,name:'평촌 귀인아파트',cat:'주거',builder:'-',year:'2004',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222462569740'},
-  {no:10,name:'현대백화점 미아점',cat:'상업',builder:'현대건설',year:'2004',products:'부스터, 인라인, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222464290334'},
-  {no:11,name:'일산 밀레니엄',cat:'주거',builder:'-',year:'2004',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222465372495'},
-  {no:12,name:'수서 현대벤쳐빌',cat:'업무',builder:'현대건설',year:'2005',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222466741041'},
-  {no:13,name:'부산아시아선수촌아파트',cat:'주거',builder:'-',year:'2002',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222468096819'},
-  {no:14,name:'서울대 분당병원 II',cat:'병원',builder:'-',year:'2003',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222473143695'},
-  {no:15,name:'목동 하이페리온 I',cat:'주거',builder:'현대건설',year:'2003',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222474585527'},
-  {no:16,name:'서초 현대슈퍼빌',cat:'주거',builder:'현대건설',year:'2004',products:'부스터, 인라인, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222475919078'},
-  {no:17,name:'부천 범박동 힐스테이트',cat:'주거',builder:'현대건설',year:'2005',products:'부스터, 인라인, 수중형, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222477596975'},
-  {no:18,name:'한남동 하이페리온 I',cat:'주거',builder:'현대건설',year:'2004',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222480814241'},
-  {no:19,name:'I-SPACE I',cat:'업무',builder:'현대산업개발',year:'2005',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222482125920'},
-  {no:20,name:'I-SPACE II',cat:'업무',builder:'현대산업개발',year:'2006',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222483210795'},
-  {no:21,name:'용산 민자역사',cat:'공공',builder:'롯데건설',year:'2004',products:'부스터, 인라인, 수중형, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222484256457'},
-  {no:22,name:'등촌동 I-PARK',cat:'주거',builder:'현대산업개발',year:'2006',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222485324304'},
-  {no:23,name:'삼성동 I-PARK',cat:'주거',builder:'현대산업개발',year:'2007',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222488639878'},
-  {no:24,name:'한남동 하이페리온 II',cat:'주거',builder:'현대건설',year:'2008',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222489883298'},
-  {no:25,name:'용인문화행정타운',cat:'공공',builder:'-',year:'2008',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222491234175'},
-  {no:26,name:'현대해상 강서사옥',cat:'업무',builder:'현대건설',year:'2009',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222492282136'},
-  {no:27,name:'인천 구월 힐스테이트',cat:'주거',builder:'현대건설',year:'2009',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222493538006'},
-  {no:28,name:'해운대 힐스테이트 위브',cat:'주거',builder:'현대건설',year:'2009',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222496696432'},
-  {no:29,name:'목동 하이페리온 II',cat:'주거',builder:'현대건설',year:'2010',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222497821582'},
-  {no:30,name:'현대 계동사옥',cat:'업무',builder:'현대건설',year:'2010',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222499062614'},
-  {no:31,name:'서울 아산병원 신관',cat:'병원',builder:'-',year:'2010',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222500173047'},
-  {no:32,name:'가톨릭병원 성의회관',cat:'병원',builder:'-',year:'2011',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222501192863'},
-  {no:33,name:'은평 뉴타운',cat:'주거',builder:'-',year:'2011',products:'부스터, 인라인, 수중형, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222504013161'},
-  {no:34,name:'서울성모병원',cat:'병원',builder:'-',year:'2012',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222505132170'},
-  {no:35,name:'구로 온수 힐스테이트',cat:'주거',builder:'현대건설',year:'2012',products:'부스터, 인라인, 수중형, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222506286427'},
-  {no:36,name:'분당 NHN 벤처타워',cat:'업무',builder:'-',year:'2012',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222507546758'},
-  {no:37,name:'성남시청사',cat:'공공',builder:'-',year:'2012',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222508660021'},
-  {no:38,name:'현대백화점 신촌점',cat:'상업',builder:'현대건설',year:'2013',products:'부스터, 인라인, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222513882386'},
-  {no:39,name:'칠곡 경북대학교병원',cat:'병원',builder:'-',year:'2013',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222515089304'},
-  {no:40,name:'롯데제과 사옥',cat:'업무',builder:'롯데건설',year:'2014',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222518075535'},
-  {no:41,name:'다우기술 사옥',cat:'업무',builder:'-',year:'2014',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222519267138'},
-  {no:42,name:'센텀 사이언스파크',cat:'산업',builder:'-',year:'2014',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222520521503'},
-  {no:43,name:'용산구 종합 행정타운',cat:'공공',builder:'-',year:'2015',products:'부스터, 인라인, 수중형, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222521703839'},
-  {no:44,name:'아산병원 제3연구동',cat:'병원',builder:'-',year:'2015',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222522957067'},
-  {no:45,name:'현대백화점 충청점',cat:'상업',builder:'현대건설',year:'2015',products:'부스터, 인라인, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222527025809'},
-  {no:46,name:'한림대학교 동탄성심병원',cat:'병원',builder:'-',year:'2016',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222528219914'},
-  {no:47,name:'현대해상 부평사옥',cat:'업무',builder:'현대건설',year:'2016',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222529450680'},
-  {no:48,name:'연세대 국제캠퍼스 2차',cat:'공공',builder:'-',year:'2016',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222530733449'},
-  {no:49,name:'서남권 야구장',cat:'공공',builder:'-',year:'2016',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222534320822'},
-  {no:50,name:'부산 국제금융센터',cat:'업무',builder:'-',year:'2014',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222535426604'},
-  {no:51,name:'인천 아시아 주경기장',cat:'공공',builder:'-',year:'2014',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222535692937'},
-  {no:52,name:'MBC 신사옥',cat:'업무',builder:'-',year:'2014',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222537484445'},
-  {no:53,name:'광주 화정 주공아파트',cat:'주거',builder:'-',year:'2015',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222540290593'},
-  {no:54,name:'대구 월배 I-PARK',cat:'주거',builder:'현대산업개발',year:'2016',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222540790978'},
-  {no:55,name:'케피코 연구개발센터',cat:'산업',builder:'-',year:'2016',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222542478582'},
-  {no:56,name:'경포대 현대호텔',cat:'호텔',builder:'현대건설',year:'2016',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222542796631'},
-  {no:57,name:'칩팩코리아',cat:'산업',builder:'-',year:'2017',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222542826910'},
-  {no:58,name:'강릉 아산병원 신관 증축',cat:'병원',builder:'-',year:'2017',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222544583132'},
-  {no:59,name:'NH 농협 통합IT센터',cat:'업무',builder:'-',year:'2017',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222544606039'},
-  {no:60,name:'문정동 현대지식산업센터',cat:'산업',builder:'현대건설',year:'2017',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222544626517'},
-  {no:61,name:'송파 문정지식산업센터 3-1',cat:'산업',builder:'-',year:'2018',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222550894629'},
-  {no:62,name:'송파 문정지식산업센터 1-1',cat:'산업',builder:'-',year:'2018',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222552056104'},
-  {no:63,name:"광교 L'FORT 오피스텔",cat:'업무',builder:'-',year:'2018',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222554893029'},
-  {no:64,name:'가톨릭대학교 은평 성모병원',cat:'병원',builder:'-',year:'2019',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222554893445'},
-  {no:65,name:'하남 미사 일반상업지역 1-3,4BL',cat:'상업',builder:'-',year:'2019',products:'부스터, 인라인, 수중형, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222555407414'},
-  {no:66,name:'힐스테이트 일산',cat:'주거',builder:'현대건설',year:'2019',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222555417101'},
-  {no:67,name:'송파 문정지식산업센터 3-1 (2차)',cat:'산업',builder:'-',year:'2019',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222556312813'},
-  {no:68,name:'힐스테이트 송도 더 테라스',cat:'주거',builder:'현대건설',year:'2019',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222557084804'},
-  {no:69,name:'신촌 숲 I-PARK',cat:'주거',builder:'현대산업개발',year:'2019',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222559162506'},
-  {no:70,name:'하남미사 중심상업지역 12-1BL',cat:'상업',builder:'-',year:'2020',products:'부스터, 인라인, 수중형, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222563115650'},
-  {no:71,name:'고덕 센트럴 I-PARK',cat:'주거',builder:'현대산업개발',year:'2020',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222561653035'},
-  {no:72,name:'신정뉴타운 아이파크위브',cat:'주거',builder:'현대산업개발',year:'2020',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222563843760'},
-  {no:73,name:'운정신도시 I-PARK',cat:'주거',builder:'현대산업개발',year:'2020',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222566119946'},
-  {no:74,name:'별내역 I-PARK 스위트',cat:'주거',builder:'현대산업개발',year:'2020',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222566147826'},
-  {no:75,name:'기흥 서천지구 지식산업센터',cat:'산업',builder:'-',year:'2020',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222568523414'},
-  {no:76,name:'KB국민은행 통합IT센터',cat:'업무',builder:'-',year:'2020',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222568543993'},
-  {no:77,name:'한양대학교 한마음 국제의료원',cat:'병원',builder:'-',year:'2021',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222568562186'},
-  {no:78,name:'KT송파지사 개발사업',cat:'업무',builder:'-',year:'2021',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222571660628'},
-  {no:79,name:'힐스테이트 이진베이시티',cat:'주거',builder:'현대건설',year:'2021',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222571969556'},
-  {no:80,name:'고덕 롯데캐슬 베네루체',cat:'주거',builder:'롯데건설',year:'2019',area:'324,691㎡',units:'1,762세대',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222572836436'},
-  {no:81,name:'상도역세권 롯데캐슬',cat:'주거',builder:'롯데건설',year:'2021',area:'130,030㎡',units:'950세대',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222577188690'},
+  {no:83,name:'하남미사 스카이폴리스',cat:'산업',builder:'롯데건설',year:'2022',area:'315,240㎡',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222578347120'},
   {no:82,name:'화성동탄(2) 복합환승중심 앵커블럭',cat:'상업',builder:'롯데건설',year:'2021',area:'505,255㎡',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222577327792'},
-  {no:83,name:'하남미사 스카이폴리스',cat:'산업',builder:'롯데건설',year:'2022',area:'315,240㎡',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222578347120'}
+  {no:81,name:'상도역세권 롯데캐슬',cat:'주거',builder:'롯데건설',year:'2021',area:'130,030㎡',units:'950세대',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222577188690'},
+  {no:79,name:'힐스테이트 이진베이시티',cat:'주거',builder:'현대건설',year:'2021',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222571969556'},
+  {no:78,name:'KT송파지사 개발사업',cat:'업무',builder:'-',year:'2021',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222571660628'},
+  {no:77,name:'한양대학교 한마음 국제의료원',cat:'병원',builder:'-',year:'2021',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222568562186'},
+  {no:76,name:'KB국민은행 통합IT센터',cat:'업무',builder:'-',year:'2020',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222568543993'},
+  {no:75,name:'기흥 서천지구 지식산업센터',cat:'산업',builder:'-',year:'2020',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222568523414'},
+  {no:74,name:'별내역 I-PARK 스위트',cat:'주거',builder:'현대산업개발',year:'2020',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222566147826'},
+  {no:73,name:'운정신도시 I-PARK',cat:'주거',builder:'현대산업개발',year:'2020',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222566119946'},
+  {no:72,name:'신정뉴타운 아이파크위브',cat:'주거',builder:'현대산업개발',year:'2020',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222563843760'},
+  {no:71,name:'고덕 센트럴 I-PARK',cat:'주거',builder:'현대산업개발',year:'2020',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222561653035'},
+  {no:70,name:'하남미사 중심상업지역 12-1BL',cat:'상업',builder:'-',year:'2020',products:'부스터, 인라인, 수중형, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222563115650'},
+  {no:69,name:'신촌 숲 I-PARK',cat:'주거',builder:'현대산업개발',year:'2019',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222559162506'},
+  {no:68,name:'힐스테이트 송도 더 테라스',cat:'주거',builder:'현대건설',year:'2019',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222557084804'},
+  {no:80,name:'고덕 롯데캐슬 베네루체',cat:'주거',builder:'롯데건설',year:'2019',area:'324,691㎡',units:'1,762세대',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222572836436'},
+  {no:67,name:'송파 문정지식산업센터 3-1 (2차)',cat:'산업',builder:'-',year:'2019',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222556312813'},
+  {no:66,name:'힐스테이트 일산',cat:'주거',builder:'현대건설',year:'2019',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222555417101'},
+  {no:65,name:'하남 미사 일반상업지역 1-3,4BL',cat:'상업',builder:'-',year:'2019',products:'부스터, 인라인, 수중형, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222555407414'},
+  {no:64,name:'가톨릭대학교 은평 성모병원',cat:'병원',builder:'-',year:'2019',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222554893445'},
+  {no:63,name:"광교 L'FORT 오피스텔",cat:'업무',builder:'-',year:'2018',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222554893029'},
+  {no:62,name:'송파 문정지식산업센터 1-1',cat:'산업',builder:'-',year:'2018',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222552056104'},
+  {no:61,name:'송파 문정지식산업센터 3-1',cat:'산업',builder:'-',year:'2018',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222550894629'},
+  {no:60,name:'문정동 현대지식산업센터',cat:'산업',builder:'현대건설',year:'2017',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222544626517'},
+  {no:59,name:'NH 농협 통합IT센터',cat:'업무',builder:'-',year:'2017',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222544606039'},
+  {no:58,name:'강릉 아산병원 신관 증축',cat:'병원',builder:'-',year:'2017',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222544583132'},
+  {no:57,name:'칩팩코리아',cat:'산업',builder:'-',year:'2017',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222542826910'},
+  {no:56,name:'경포대 현대호텔',cat:'호텔',builder:'현대건설',year:'2016',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222542796631'},
+  {no:55,name:'케피코 연구개발센터',cat:'산업',builder:'-',year:'2016',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222542478582'},
+  {no:54,name:'대구 월배 I-PARK',cat:'주거',builder:'현대산업개발',year:'2016',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222540790978'},
+  {no:53,name:'광주 화정 주공아파트',cat:'주거',builder:'-',year:'2015',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222540290593'},
+  {no:49,name:'서남권 야구장',cat:'공공',builder:'-',year:'2016',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222534320822'},
+  {no:48,name:'연세대 국제캠퍼스 2차',cat:'공공',builder:'-',year:'2016',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222530733449'},
+  {no:47,name:'현대해상 부평사옥',cat:'업무',builder:'현대건설',year:'2016',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222529450680'},
+  {no:46,name:'한림대학교 동탄성심병원',cat:'병원',builder:'-',year:'2016',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222528219914'},
+  {no:45,name:'현대백화점 충청점',cat:'상업',builder:'현대건설',year:'2015',products:'부스터, 인라인, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222527025809'},
+  {no:44,name:'아산병원 제3연구동',cat:'병원',builder:'-',year:'2015',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222522957067'},
+  {no:43,name:'용산구 종합 행정타운',cat:'공공',builder:'-',year:'2015',products:'부스터, 인라인, 수중형, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222521703839'},
+  {no:52,name:'MBC 신사옥',cat:'업무',builder:'-',year:'2014',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222537484445'},
+  {no:51,name:'인천 아시아 주경기장',cat:'공공',builder:'-',year:'2014',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222535692937'},
+  {no:50,name:'부산 국제금융센터',cat:'업무',builder:'-',year:'2014',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222535426604'},
+  {no:42,name:'센텀 사이언스파크',cat:'산업',builder:'-',year:'2014',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222520521503'},
+  {no:41,name:'다우기술 사옥',cat:'업무',builder:'-',year:'2014',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222519267138'},
+  {no:40,name:'롯데제과 사옥',cat:'업무',builder:'롯데건설',year:'2014',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222518075535'},
+  {no:39,name:'칠곡 경북대학교병원',cat:'병원',builder:'-',year:'2013',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222515089304'},
+  {no:38,name:'현대백화점 신촌점',cat:'상업',builder:'현대건설',year:'2013',products:'부스터, 인라인, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222513882386'},
+  {no:37,name:'성남시청사',cat:'공공',builder:'-',year:'2012',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222508660021'},
+  {no:36,name:'분당 NHN 벤처타워',cat:'업무',builder:'-',year:'2012',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222507546758'},
+  {no:35,name:'구로 온수 힐스테이트',cat:'주거',builder:'현대건설',year:'2012',products:'부스터, 인라인, 수중형, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222506286427'},
+  {no:34,name:'서울성모병원',cat:'병원',builder:'-',year:'2012',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222505132170'},
+  {no:33,name:'은평 뉴타운',cat:'주거',builder:'-',year:'2011',products:'부스터, 인라인, 수중형, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222504013161'},
+  {no:32,name:'가톨릭병원 성의회관',cat:'병원',builder:'-',year:'2011',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222501192863'},
+  {no:31,name:'서울 아산병원 신관',cat:'병원',builder:'-',year:'2010',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222500173047'},
+  {no:30,name:'현대 계동사옥',cat:'업무',builder:'현대건설',year:'2010',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222499062614'},
+  {no:29,name:'목동 하이페리온 II',cat:'주거',builder:'현대건설',year:'2010',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222497821582'},
+  {no:28,name:'해운대 힐스테이트 위브',cat:'주거',builder:'현대건설',year:'2009',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222496696432'},
+  {no:27,name:'인천 구월 힐스테이트',cat:'주거',builder:'현대건설',year:'2009',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222493538006'},
+  {no:26,name:'현대해상 강서사옥',cat:'업무',builder:'현대건설',year:'2009',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222492282136'},
+  {no:25,name:'용인문화행정타운',cat:'공공',builder:'-',year:'2008',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222491234175'},
+  {no:24,name:'한남동 하이페리온 II',cat:'주거',builder:'현대건설',year:'2008',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222489883298'},
+  {no:23,name:'삼성동 I-PARK',cat:'주거',builder:'현대산업개발',year:'2007',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222488639878'},
+  {no:22,name:'등촌동 I-PARK',cat:'주거',builder:'현대산업개발',year:'2006',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222485324304'},
+  {no:20,name:'I-SPACE II',cat:'업무',builder:'현대산업개발',year:'2006',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222483210795'},
+  {no:19,name:'I-SPACE I',cat:'업무',builder:'현대산업개발',year:'2005',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222482125920'},
+  {no:17,name:'부천 범박동 힐스테이트',cat:'주거',builder:'현대건설',year:'2005',products:'부스터, 인라인, 수중형, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222477596975'},
+  {no:12,name:'수서 현대벤쳐빌',cat:'업무',builder:'현대건설',year:'2005',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222466741041'},
+  {no:16,name:'서초 현대슈퍼빌',cat:'주거',builder:'현대건설',year:'2004',products:'부스터, 인라인, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222475919078'},
+  {no:18,name:'한남동 하이페리온 I',cat:'주거',builder:'현대건설',year:'2004',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222480814241'},
+  {no:21,name:'용산 민자역사',cat:'공공',builder:'롯데건설',year:'2004',products:'부스터, 인라인, 수중형, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222484256457'},
+  {no:10,name:'현대백화점 미아점',cat:'상업',builder:'현대건설',year:'2004',products:'부스터, 인라인, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222464290334'},
+  {no:9,name:'평촌 귀인아파트',cat:'주거',builder:'-',year:'2004',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222462569740'},
+  {no:4,name:'분당 판테온 I',cat:'업무',builder:'-',year:'2000년대 초',products:'부스터, 인라인, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222453983247'},
+  {no:8,name:'강남파이낸스센터',cat:'업무',builder:'-',year:'2004',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222459018604'},
+  {no:15,name:'목동 하이페리온 I',cat:'주거',builder:'현대건설',year:'2003',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222474585527'},
+  {no:14,name:'서울대 분당병원 II',cat:'병원',builder:'-',year:'2003',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222473143695'},
+  {no:13,name:'부산아시아선수촌아파트',cat:'주거',builder:'-',year:'2002',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222468096819'},
+  {no:11,name:'일산 밀레니엄',cat:'주거',builder:'-',year:'2004',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222465372495'},
+  {no:7,name:'현대 41타워',cat:'업무',builder:'현대건설',year:'2000년대 초',products:'부스터, 인라인, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222457644473'},
+  {no:6,name:'서울대병원',cat:'병원',builder:'-',year:'2000년대 초',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222456400304'},
+  {no:5,name:'청주 반도체 사업장',cat:'산업',builder:'-',year:'2000년대 초',products:'인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/222455252846'},
+  {no:3,name:'부산 송도 탑스빌',cat:'주거',builder:'-',year:'1990년대',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222450623369'},
+  {no:2,name:'한남동 리버티하우스',cat:'주거',builder:'-',year:'1990년대',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/222449770603'},
+  {no:1,name:'한국방송회관',cat:'업무',builder:'한국방송공사',year:'1990년대',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/222448775524'}
 ];
 
 let currentFilter='전체';
 
 function renderCards(){
-  imgIdx={};
   const grid=document.getElementById('projectsGrid');
   const s=document.getElementById('searchInput').value.toLowerCase();
   const filtered=PROJECTS.filter(p=>{
@@ -295,6 +308,10 @@ function openModal(p){
 function closeModal(e){if(e.target===document.getElementById('modalOverlay'))closeModalDirect()}
 function closeModalDirect(){document.getElementById('modalOverlay').classList.remove('open');document.body.style.overflow=''}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModalDirect()});
+
+const scrollBtn=document.getElementById('scrollTopBtn');
+window.addEventListener('scroll',()=>scrollBtn.classList.toggle('visible',scrollY>400));
+
 renderCards();
 </script>
 </body>
