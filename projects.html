@@ -121,30 +121,26 @@
 
 <!-- 납품 전체 리스트 (접힘) -->
 <div style="max-width:1300px;margin:0 auto;padding:40px 30px 0;">
-  <!-- 헤더 한 줄 -->
-  <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 28px;background:white;border-radius:12px;border:1px solid var(--gray-light);cursor:pointer;gap:16px;" onclick="toggleList()">
-    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
-      <div>
-        <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue-light);margin-bottom:4px;">납품 실적 · Full List</div>
-        <h2 style="font-size:18px;font-weight:800;color:var(--navy);letter-spacing:-0.5px;white-space:nowrap;">제품 납품 전체 리스트</h2>
-      </div>
-      <div style="font-size:13px;color:var(--gray-mid);display:flex;align-items:center;gap:6px;">
-        <span>683건 전체 목록 · 고객사/현장명 검색 가능</span>
-        <button id="listToggleBtn" onclick="event.stopPropagation();toggleList()" style="background:var(--navy);color:white;border:none;padding:7px 18px;border-radius:20px;font-size:12px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;white-space:nowrap;margin-left:8px;">펼쳐보기 ▼</button>
-      </div>
+  <div style="background:white;border-radius:12px;border:1px solid var(--gray-light);overflow:hidden;">
+    <!-- 타이틀 -->
+    <div style="padding:20px 28px 12px;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue-light);margin-bottom:6px;">납품 실적 · Full List</div>
+      <h2 style="font-size:20px;font-weight:800;color:var(--navy);letter-spacing:-0.5px;">제품 납품 전체 리스트</h2>
     </div>
-  </div>
-
-  <!-- 전체 목록 (접힘) -->
-  <div id="fullList" style="display:none;margin-top:12px;">
-    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin:16px 0;padding:16px 20px;background:white;border-radius:12px;border:1px solid var(--gray-light);">
-      <div style="display:flex;align-items:center;gap:8px;background:var(--off-white);border:1px solid var(--gray-light);border-radius:8px;padding:8px 14px;flex:1;max-width:300px;">
+    <!-- 검색+필터+버튼 한 줄 (항상 보임) -->
+    <div style="display:flex;align-items:center;gap:10px;padding:0 28px 20px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:8px;background:var(--off-white);border:1px solid var(--gray-light);border-radius:8px;padding:8px 14px;flex:1;max-width:320px;">
         <span style="color:var(--gray-mid);">🔍</span>
         <input type="text" id="listSearch" placeholder="고객사 또는 현장명 검색..." oninput="filterList()" style="border:none;outline:none;background:transparent;font-size:14px;font-family:'Noto Sans KR',sans-serif;width:100%;"/>
       </div>
       <div style="display:flex;gap:6px;flex-wrap:wrap;" id="decadeFilters"></div>
+      <button id="listToggleBtn" onclick="toggleList()" style="background:var(--navy);color:white;border:none;padding:9px 20px;border-radius:20px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;white-space:nowrap;margin-left:auto;">목록 펼쳐보기 ▼</button>
     </div>
-    <div style="font-size:13px;color:var(--gray-mid);margin-bottom:10px;" id="listCount"></div>
+  </div>
+
+  <!-- 전체 목록 (접힘) -->
+  <div id="fullList" style="display:none;margin-top:0;border-top:1px solid var(--gray-light);">
+    <div style="font-size:13px;color:var(--gray-mid);padding:12px 28px 8px;" id="listCount"></div>
     <div style="background:white;border-radius:12px;overflow:hidden;border:1px solid var(--gray-light);">
       <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
         <table style="width:100%;border-collapse:collapse;min-width:520px;">
@@ -173,8 +169,7 @@ const LIST_PER = 6;
 function toggleList(){
   listOpen = !listOpen;
   document.getElementById('fullList').style.display = listOpen ? 'block' : 'none';
-  document.getElementById('listToggleBtn').textContent = listOpen ? '접기 ▲' : '펼쳐보기 ▼';
-  if(listOpen && !document.getElementById('decadeFilters').children.length) initListFilters();
+  document.getElementById('listToggleBtn').textContent = listOpen ? '목록 접기 ▲' : '목록 펼쳐보기 ▼';
   if(listOpen) setTimeout(()=>document.getElementById('fullList').scrollIntoView({behavior:'smooth',block:'start'}),100);
 }
 
@@ -238,6 +233,9 @@ function renderListPag(total){
   for(let i=s;i<=e;i++) add(i,i);
   if(listPage<pages) add('▶',listPage+1);
 }
+
+// 페이지 로드 시 필터 초기화 (검색창+필터 항상 표시)
+initListFilters();
 </script>
 
 
