@@ -317,11 +317,13 @@
         <div class="slide"><img src="images/CA07.png" alt="GENIECON 07"/></div>
         <div class="slide"><img src="images/CA08.png" alt="GENIECON 08"/></div>
         <div class="slide"><img src="images/CA09.png" alt="GENIECON 09"/></div>
+        <div class="slide"><img src="images/CA10.png" alt="GENIECON 10"/></div>
+        <div class="slide"><img src="images/CA11.png" alt="GENIECON 11"/></div>
       </div>
 
       <button class="slide-btn prev" onclick="moveSlide(-1)">&#8592;</button>
       <button class="slide-btn next" onclick="moveSlide(1)">&#8594;</button>
-      <div class="slide-counter" id="slideCounter">1 / 9</div>
+      <div class="slide-counter" id="slideCounter">1 / 11</div>
     </div>
 
     <!-- 썸네일 -->
@@ -335,6 +337,8 @@
       <div class="thumb" onclick="goToSlide(6)"><img src="images/CA07.png"/></div>
       <div class="thumb" onclick="goToSlide(7)"><img src="images/CA08.png"/></div>
       <div class="thumb" onclick="goToSlide(8)"><img src="images/CA09.png"/></div>
+      <div class="thumb" onclick="goToSlide(9)"><img src="images/CA10.png"/></div>
+      <div class="thumb" onclick="goToSlide(10)"><img src="images/CA11.png"/></div>
     </div>
 
     <!-- 인디케이터 점 -->
@@ -344,7 +348,7 @@
 
 <script>
   let current = 0;
-  const total = 9;
+  const total = 11;
   const track = document.getElementById('slidesTrack');
   const counter = document.getElementById('slideCounter');
   const thumbs = document.getElementById('thumbStrip').querySelectorAll('.thumb');
