@@ -122,24 +122,23 @@
 <!-- 납품 전체 리스트 (접힘) -->
 <div class="main" style="padding-bottom:0;padding-top:40px;">
   <!-- 타이틀 (박스 밖, 정렬 맞춤) -->
-  <div style="margin-bottom:16px;padding:0 4px;">
+  <div style="margin-bottom:12px;padding:0 4px;">
     <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue-light);margin-bottom:8px;">납품 실적 · Full List</div>
     <h2 style="font-size:26px;font-weight:900;color:var(--navy);letter-spacing:-1px;">제품 납품 전체 리스트</h2>
   </div>
-  <div style="background:white;border-radius:12px;border:1px solid var(--gray-light);overflow:hidden;">
-    <!-- 검색+필터+버튼 한 줄 -->
-    <div style="display:flex;align-items:center;gap:10px;padding:16px 24px;flex-wrap:wrap;border-bottom:1px solid var(--gray-light);">
-      <div style="display:flex;align-items:center;gap:8px;background:var(--off-white);border:1px solid var(--gray-light);border-radius:8px;padding:8px 14px;flex:1;max-width:320px;">
-        <span style="color:var(--gray-mid);">🔍</span>
-        <input type="text" id="listSearch" placeholder="고객사 또는 현장명 검색..." oninput="filterList()" style="border:none;outline:none;background:transparent;font-size:14px;font-family:'Noto Sans KR',sans-serif;width:100%;"/>
-      </div>
-      <div style="display:flex;gap:6px;flex-wrap:wrap;" id="decadeFilters"></div>
-      <button id="listToggleBtn" onclick="toggleList()" style="background:var(--navy);color:white;border:none;padding:9px 20px;border-radius:20px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;white-space:nowrap;margin-left:auto;">목록 접기 ▲</button>
+  <!-- 검색+필터+버튼 한 줄 (박스 없음, 배경 없음) -->
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:0;flex-wrap:wrap;">
+    <div style="display:flex;align-items:center;gap:8px;background:white;border:1px solid var(--gray-light);border-radius:8px;padding:8px 14px;flex:1;max-width:320px;">
+      <span style="color:var(--gray-mid);">🔍</span>
+      <input type="text" id="listSearch" placeholder="고객사 또는 현장명 검색..." oninput="filterList()" style="border:none;outline:none;background:transparent;font-size:14px;font-family:'Noto Sans KR',sans-serif;width:100%;"/>
     </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;" id="decadeFilters"></div>
+    <button id="listToggleBtn" onclick="toggleList()" style="background:var(--navy);color:white;border:none;padding:9px 20px;border-radius:20px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;white-space:nowrap;margin-left:auto;">목록 접기 ▲</button>
+  </div>
 
   <!-- 전체 목록 (기본 펼침) -->
-  <div id="fullList" style="display:block;margin-top:0;border-top:1px solid var(--gray-light);">
-    <div style="font-size:13px;color:var(--gray-mid);padding:12px 28px 8px;" id="listCount"></div>
+  <div id="fullList" style="display:block;margin-top:12px;">
+    <div style="font-size:13px;color:var(--gray-mid);margin-bottom:8px;" id="listCount"></div>
     <div style="background:white;border-radius:12px;overflow:hidden;border:1px solid var(--gray-light);">
       <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
         <table style="width:100%;border-collapse:collapse;min-width:520px;">
@@ -160,7 +159,7 @@
   </div>
 
   <!-- 주요 납품 실적 타이틀 -->
-  <div style="margin-bottom:24px;padding:0 4px;">
+  <div style="margin-top:48px;margin-bottom:24px;padding:0 4px;">
     <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue-light);margin-bottom:8px;">Projects · 납품실적</div>
     <h2 style="font-size:26px;font-weight:900;color:var(--navy);letter-spacing:-1px;">주요 납품 실적</h2>
   </div>
