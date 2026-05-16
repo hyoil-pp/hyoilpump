@@ -27,7 +27,7 @@
     .page-hero .label{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#60a5fa;margin-bottom:14px}
     .page-hero h1{font-size:clamp(32px,5vw,56px);font-weight:900;color:white;letter-spacing:-2px;margin-bottom:16px}
     .page-hero p{font-size:16px;color:rgba(255,255,255,.65);max-width:560px;margin:0 auto}
-    .stats-bar{background:var(--navy);display:flex;justify-content:center}
+    .stats-bar{display:none}
     .stat-item{padding:24px 48px;text-align:center;border-right:1px solid rgba(255,255,255,.08)}
     .stat-item:last-child{border-right:none}
     .stat-num{font-family:'Bebas Neue',sans-serif;font-size:40px;color:white;line-height:1}
@@ -121,6 +121,25 @@
 
 <!-- 납품 전체 리스트 (접힘) -->
 <div class="main" style="padding-bottom:0;padding-top:40px;">
+  <!-- stats (콘텐츠 폭 안) -->
+  <div style="display:flex;background:var(--navy);border-radius:12px;margin-bottom:32px;overflow:hidden;">
+    <div style="flex:1;padding:20px 24px;text-align:center;border-right:1px solid rgba(255,255,255,.08);">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:34px;color:white;line-height:1;">1000<sup style="font-size:16px;color:var(--accent);">+</sup></div>
+      <div style="font-size:11px;color:rgba(255,255,255,.45);margin-top:3px;">주요 납품 프로젝트</div>
+    </div>
+    <div style="flex:1;padding:20px 24px;text-align:center;border-right:1px solid rgba(255,255,255,.08);">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:34px;color:white;line-height:1;">30<sup style="font-size:16px;color:var(--accent);">년</sup></div>
+      <div style="font-size:11px;color:rgba(255,255,255,.45);margin-top:3px;">업력</div>
+    </div>
+    <div style="flex:1;padding:20px 24px;text-align:center;border-right:1px solid rgba(255,255,255,.08);">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:34px;color:white;line-height:1;">1<sup style="font-size:16px;color:var(--accent);">군</sup></div>
+      <div style="font-size:11px;color:rgba(255,255,255,.45);margin-top:3px;">건설사 납품</div>
+    </div>
+    <div style="flex:1;padding:20px 24px;text-align:center;">
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:34px;color:white;line-height:1;">BBB</div>
+      <div style="font-size:11px;color:rgba(255,255,255,.45);margin-top:3px;">신용 등급</div>
+    </div>
+  </div>
   <!-- 타이틀 (박스 밖, 정렬 맞춤) -->
   <div style="margin-bottom:16px;padding:0 4px;">
     <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue-light);margin-bottom:8px;">납품 실적 · Full List</div>
