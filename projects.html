@@ -162,7 +162,7 @@
 <button id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
 <script>
-const IMG_EXT={4:'png',13:'png',15:'png',16:'gif'};
+const IMG_EXT={4:'png',13:'png',15:'png',16:'gif',42:'png',49:'gif',63:'jpeg',86:'png',87:'png',91:'png',93:'png',103:'png',110:'png',113:'png',115:'png',117:'png'};
 function getImg(no){
   const ext=IMG_EXT[no]||'jpg';
   return 'images/'+String(no).padStart(2,'0')+'.'+ext;
@@ -170,6 +170,40 @@ function getImg(no){
 
 // 최신순 정렬 (no 내림차순)
 const PROJECTS=[
+  {no:117,name:'광주 중앙공원 롯데캐슬시그니처 1지구',cat:'주거',builder:'롯데건설',year:'2026',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/224283893294'},
+  {no:116,name:'LG U+ 평촌 Next IDC증설(3단계)',cat:'업무',builder:'LG U+',year:'2026',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/224283876125'},
+  {no:115,name:'이천 안흥동 주상복합',cat:'주거',builder:'-',year:'2026',products:'부스터, 인라인, 수중형, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/224283872059'},
+  {no:114,name:'LG U+ 평촌 Next IDC증설(2단계)',cat:'업무',builder:'LG U+',year:'2026',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/224283866009'},
+  {no:113,name:'서부산 SK V1',cat:'업무',builder:'SK에코플랜트',year:'2026',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/224283858230'},
+  {no:112,name:'송내역 푸르지오 센트비엔',cat:'주거',builder:'대우건설',year:'2026',products:'부스터, 인라인, 수중형, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/224283850635'},
+  {no:111,name:'춘천 만천리 아테라 1차',cat:'주거',builder:'-',year:'2026',products:'부스터, 인라인, 수중형, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/224283845899'},
+  {no:110,name:'대웅제약 마곡연구소',cat:'산업',builder:'-',year:'2026',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/224283817451'},
+  {no:109,name:'과천 지식정보타운',cat:'업무',builder:'-',year:'2026',products:'부스터, 인라인, 수중형, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/224283810489'},
+  {no:108,name:'서울숲 IPARK 리버포레',cat:'주거',builder:'현대산업개발',year:'2026',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/224283794243'},
+  {no:107,name:'남산 D&O 교육연구시설(LG리더십센터)',cat:'업무',builder:'LG',year:'2026',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/224283216362'},
+  {no:106,name:'마곡 MICE CP3-1',cat:'업무',builder:'-',year:'2026',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/224283212083'},
+  {no:105,name:'평택 삼성전자 사무3동',cat:'산업',builder:'삼성물산',year:'2026',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/224283205409'},
+  {no:104,name:'ASML 화성 뉴캠퍼스(P1,P2)',cat:'산업',builder:'-',year:'2026',products:'부스터, 인라인, 수중형, 입형다단',blog:'https://blog.naver.com/hyoil-pp/224283200838'},
+  {no:103,name:'서초동 백암빌딩(OPUS 459)',cat:'업무',builder:'-',year:'2026',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/224283196196'},
+  {no:102,name:'평택 싸이머코리아 증축공사',cat:'산업',builder:'-',year:'2026',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/224283182961'},
+  {no:101,name:'용평리조트 루송채',cat:'호텔',builder:'-',year:'2026',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/224283151865'},
+  {no:100,name:'원주세브란스병원별관',cat:'병원',builder:'-',year:'2026',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/224283055158'},
+  {no:99,name:'시티오씨엘 3단지',cat:'주거',builder:'-',year:'2026',products:'부스터, 인라인, 수중형, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/224283048880'},
+  {no:98,name:'김해 율하 더스카이시티',cat:'주거',builder:'-',year:'2026',products:'부스터, 인라인, 수중형, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/224282922704'},
+  {no:97,name:'청라 SK V1',cat:'업무',builder:'SK에코플랜트',year:'2026',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/224282898917'},
+  {no:96,name:'HK판교이노엔 연구소',cat:'산업',builder:'-',year:'2026',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/224282894275'},
+  {no:95,name:'송도 Luxe Ocean SK VIEW',cat:'주거',builder:'SK에코플랜트',year:'2026',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/224282882439'},
+  {no:94,name:'올림픽파크포레온',cat:'주거',builder:'-',year:'2026',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/224282875239'},
+  {no:93,name:'KT 구의 역세권 개발사업',cat:'업무',builder:'KT',year:'2026',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/224282867769'},
+  {no:92,name:'센텀 Astrum SK VIEW',cat:'주거',builder:'SK에코플랜트',year:'2026',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/224282781926'},
+  {no:91,name:'IBK 하남 데이터센터',cat:'업무',builder:'IBK',year:'2026',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/224282771230'},
+  {no:90,name:'LG U+ 평촌 Next IDC 1단계',cat:'업무',builder:'LG U+',year:'2026',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/224282736274'},
+  {no:89,name:'신세종 복합발전소',cat:'산업',builder:'-',year:'2026',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/224282726243'},
+  {no:88,name:'삼성전기 필리핀법인 신복지동',cat:'산업',builder:'삼성전기',year:'2026',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/224282715802'},
+  {no:87,name:'판교 다우기술사옥',cat:'업무',builder:'-',year:'2026',products:'부스터, 인라인',blog:'https://blog.naver.com/hyoil-pp/224282709948'},
+  {no:86,name:'LG U+ 평촌메가센터 7,8단계',cat:'업무',builder:'LG U+',year:'2026',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/224282639928'},
+  {no:85,name:'국가정보자원관리원대구센터',cat:'공공',builder:'-',year:'2026',products:'부스터, 인라인, 수중형',blog:'https://blog.naver.com/hyoil-pp/224282619731'},
+  {no:84,name:'용인 동천 주상복합',cat:'주거',builder:'-',year:'2026',products:'부스터, 인라인, 수중형, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/224281556894'},
   {no:83,name:'하남미사 스카이폴리스',cat:'산업',builder:'롯데건설',year:'2022',area:'315,240㎡',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222578347120'},
   {no:82,name:'화성동탄(2) 복합환승중심 앵커블럭',cat:'상업',builder:'롯데건설',year:'2021',area:'505,255㎡',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222577327792'},
   {no:81,name:'상도역세권 롯데캐슬',cat:'주거',builder:'롯데건설',year:'2021',area:'130,030㎡',units:'950세대',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222577188690'},
