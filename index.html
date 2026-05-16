@@ -398,7 +398,7 @@
       font-size: 16px;
       color: var(--gray-dark);
       line-height: 1.75;
-      max-width: 580px;
+      max-width: 100%;
     }
 
     /* ── ABOUT ── */
@@ -698,7 +698,7 @@
       border-radius: 16px;
       padding: 40px 60px;
       display: grid;
-      grid-template-columns: repeat(4,1fr);
+      grid-template-columns: repeat(3,1fr);
       gap: 0;
       margin-bottom: 60px;
     }
@@ -707,6 +707,10 @@
       text-align: center;
       padding: 10px 20px;
       border-right: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     .ach-item:last-child { border-right: none; }
@@ -1064,7 +1068,7 @@
       .products-grid { grid-template-columns: 1fr 1fr; }
       .sfa-grid { grid-template-columns: 1fr 1fr; }
       .projects-masonry { columns: 1; }
-      .achievement-strip { grid-template-columns: 1fr 1fr; padding: 30px; }
+      .achievement-strip { grid-template-columns: 1fr 1fr 1fr; padding: 20px; }
       .footer-top { grid-template-columns: 1fr; }
       .timeline { grid-template-columns: 1fr 1fr; }
       .form-row { grid-template-columns: 1fr; }
@@ -1077,7 +1081,7 @@
     @media (max-width: 480px) {
       .products-grid { grid-template-columns: 1fr; }
       .sfa-grid { grid-template-columns: 1fr; }
-      .achievement-strip { grid-template-columns: 1fr 1fr; }
+      .achievement-strip { grid-template-columns: 1fr; }
     }
   </style>
 </head>
