@@ -117,8 +117,8 @@
     #scrollTopBtn:hover{transform:translateY(-3px);background:#1a3a6e}
     footer{background:#06101f;padding:30px 40px;text-align:center;color:rgba(255,255,255,.35);font-size:12.5px}
     footer a{color:rgba(255,255,255,.5);text-decoration:none}
-    @media(max-width:900px){.ceo-grid{grid-template-columns:1fr}.ceo-profile{position:static}.ceo-photo{aspect-ratio:2/1}.biz-grid{grid-template-columns:1fr}.comp-grid{grid-template-columns:1fr 1fr}.history-grid{grid-template-columns:1fr}.history-col:not(:last-child){border-right:none;border-bottom:1px solid var(--gray-light)}.info-grid{grid-template-columns:1fr}}
-    @media(max-width:600px){nav{display:none}.comp-grid{grid-template-columns:1fr}.header-top{flex-direction:column;gap:2px;padding:6px 16px;text-align:center}.header-top-side{display:none}.hero-inner,.container{padding:0 20px}}
+    @media(max-width:900px){.ceo-grid{grid-template-columns:1fr}.ceo-profile{position:static;display:flex;flex-direction:column;align-items:center}.ceo-photo{aspect-ratio:3/4;max-width:200px}.biz-grid{grid-template-columns:1fr}.comp-grid{grid-template-columns:1fr 1fr}.history-grid{grid-template-columns:1fr}.history-col:not(:last-child){border-right:none;border-bottom:1px solid var(--gray-light)}.info-grid{grid-template-columns:1fr}}
+    @media(max-width:600px){nav{display:none}.comp-grid{grid-template-columns:1fr}.header-top{flex-direction:column;gap:2px;padding:6px 16px;text-align:center}.header-top-side{display:none}.hero-inner,.container{padding:0 20px}.rec-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}.rec-table{min-width:520px}.rec-table td,.rec-table th{white-space:nowrap;padding:10px 12px;font-size:12px}}
   </style>
 </head>
 <body>
@@ -252,10 +252,12 @@
       <div class="filter-group" id="yearFilters"></div>
     </div>
     <div class="result-info" id="resultInfo"></div>
-    <table class="rec-table">
-      <thead><tr><th>No.</th><th>납품일</th><th>고객사</th><th>현장명</th><th>납품 제품</th></tr></thead>
-      <tbody id="tableBody"></tbody>
-    </table>
+    <div class="rec-table-wrap">
+      <table class="rec-table">
+        <thead><tr><th>No.</th><th>납품일</th><th>고객사</th><th>현장명</th><th>납품 제품</th></tr></thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
     <div class="pagination" id="pagination"></div>
   </div>
 </section>
