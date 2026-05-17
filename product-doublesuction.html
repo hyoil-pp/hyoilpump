@@ -19,14 +19,14 @@
     nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
     nav a:hover{color:white}
     nav a.nav-cta{background:var(--accent);color:white!important;padding:8px 18px;border-radius:4px;font-weight:700}
-    .page-hero{background:linear-gradient(135deg,var(--navy),var(--blue));padding:140px 40px 70px;position:relative;overflow:hidden}
-    .page-hero::before{content:'DOUBLE SUCTION';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:200px;color:rgba(255,255,255,.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
+    .page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);padding:140px 40px 70px;position:relative;overflow:hidden}
+    .page-hero::before{content:'DOUBLE SUCTION';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:180px;color:rgba(255,255,255,.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
     .container{max-width:1200px;margin:0 auto;padding:0 40px}
-    .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;margin-bottom:80px}
+    .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:60px 0 80px}
     footer{background:#06101f;padding:30px 40px;text-align:center;color:rgba(255,255,255,.35);font-size:12.5px}
     footer a{color:rgba(255,255,255,.5);text-decoration:none}
-    @media(max-width:900px){.cards-grid{grid-template-columns:1fr 1fr}nav{display:none}.header-top-side{display:none}}
-    @media(max-width:600px){.cards-grid{grid-template-columns:1fr}}
+    @media(max-width:1024px){.cards-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:768px){nav{display:none}.cards-grid{grid-template-columns:1fr}.header-top-side{display:none}.container{padding:0 20px}}
   </style>
 </head>
 <body>
@@ -37,7 +37,7 @@
     <span class="header-top-side">✉ hyoilpump@daum.net</span>
   </div>
   <div class="header-main">
-    <a href="index.html"><img src="images/logo.png" alt="효일종합상사" style="height:52px;width:auto;object-fit:contain;display:block;"/></a>
+    <a href="index.html"><img src="images/logo.png" alt="효일종합상사" style="height:72px;width:auto;object-fit:contain;display:block;"/></a>
     <nav>
       <a href="about.html">회사소개</a>
       <a href="index.html#products">제품소개</a>
@@ -48,130 +48,40 @@
     </nav>
   </div>
 </header>
-
 <div class="page-hero">
   <div class="container">
     <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#60a5fa;margin-bottom:12px;">제품 소개 · Products</div>
     <h1 style="font-size:clamp(28px,5vw,52px);font-weight:900;color:white;letter-spacing:-2px;margin-bottom:16px;">양흡입 펌프</h1>
-    <p style="font-size:15px;color:rgba(255,255,255,.65);max-width:600px;line-height:1.8;">임펠러 양쪽에서 동시에 흡입하는 구조로 대유량 처리에 탁월합니다. 진동과 소음이 적고 고신뢰성이 요구되는 대형 건물·플랜트에 적합합니다.</p>
-    <div style="margin-top:24px;">
-      <a href="index.html#products" style="color:rgba(255,255,255,.6);font-size:13px;text-decoration:none;">← 전체 제품으로 돌아가기</a>
-    </div>
+    <p style="font-size:15px;color:rgba(255,255,255,.65);max-width:680px;line-height:1.8;">횡형 스플릿케이스 구조의 양흡입 더블볼류트 펌프. 고유량·낮은 NPSH·고효율로 지역 급수, 냉방, HVAC 시스템에 최적화된 펌프입니다.</p>
+    <div style="margin-top:24px;"><a href="index.html#products" style="color:rgba(255,255,255,.6);font-size:13px;text-decoration:none;">← 전체 제품으로 돌아가기</a></div>
   </div>
 </div>
-
-<div class="container">
-  <div class="cards-grid">
-    
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-          <div style="background:linear-gradient(135deg,var(--navy),var(--blue));height:180px;display:flex;align-items:center;justify-content:center;padding:24px;">
-            <div style="text-align:center;">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;">LS</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">Double Suction Split Case</div>
-            </div>
-          </div>
-          <div style="padding:20px;">
+<div class="container"><div class="cards-grid">
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/LS.jpg" alt="LS" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
             <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(8,145,178,.12);color:#0891b2;margin-bottom:10px;">Double Suction</div>
-            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">LS 양흡입 분할케이싱 펌프</div>
-            <div style="font-size:13px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;">수평 분할 케이싱 구조로 유지보수 용이. 소방·냉각수 대유량 펌핑.</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--gray-dark);background:var(--off-white);border-radius:8px;padding:12px;margin-bottom:14px;">
-              <span style="color:var(--gray-mid);">최대 압력</span><span style="font-weight:700;color:var(--navy);text-align:right;">16 bar</span><span style="color:var(--gray-mid);">액 온도</span><span style="font-weight:700;color:var(--navy);text-align:right;">0~120°C</span><span style="color:var(--gray-mid);">최대 양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">100 m</span><span style="color:var(--gray-mid);">최대 유량</span><span style="font-weight:700;color:var(--navy);text-align:right;">5000 m³/h</span>
-            </div>
-            <a href="https://product-selection.grundfos.com/kr/categories/pumps/split-case-pumps?tab=categories" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">LS</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">횡형 스플릿케이스 양흡입 더블볼류트 펌프. 고유량·낮은 NPSH·고효율. 지역 급수·냉방·HVAC 시스템에 최적.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">p 최대</span><span style="font-weight:700;color:var(--navy);font-size:12px;">25 bar</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~120°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">149 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">3186 m³/h</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/ls/ls-small?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
           </div>
+          
         </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-          <div style="background:linear-gradient(135deg,var(--navy),var(--blue));height:180px;display:flex;align-items:center;justify-content:center;padding:24px;">
-            <div style="text-align:center;">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;">LD</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">Double Suction Inline</div>
-            </div>
-          </div>
-          <div style="padding:20px;">
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/LS, LSV.jpg" alt="LS, LSV" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
             <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(8,145,178,.12);color:#0891b2;margin-bottom:10px;">Double Suction</div>
-            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">LD 양흡입 인라인 펌프</div>
-            <div style="font-size:13px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;">인라인 설치 가능한 양흡입 구조. 냉난방 대순환 시스템에 적합.</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--gray-dark);background:var(--off-white);border-radius:8px;padding:12px;margin-bottom:14px;">
-              <span style="color:var(--gray-mid);">최대 압력</span><span style="font-weight:700;color:var(--navy);text-align:right;">16 bar</span><span style="color:var(--gray-mid);">액 온도</span><span style="font-weight:700;color:var(--navy);text-align:right;">0~120°C</span><span style="color:var(--gray-mid);">최대 양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">70 m</span><span style="color:var(--gray-mid);">최대 유량</span><span style="font-weight:700;color:var(--navy);text-align:right;">1800 m³/h</span>
-            </div>
-            <a href="https://product-selection.grundfos.com/kr/categories/pumps/split-case-pumps?tab=categories" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">LS, LSV</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">횡형 분할 케이스 양흡입 인라인 펌프. 고효율·저소음·간편 운전. 지역 급수·냉방·HVAC 시스템 등 다양한 분야에 적용.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">p 최대</span><span style="font-weight:700;color:var(--navy);font-size:12px;">25 bar</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~120°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">149 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">3186 m³/h</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/ls?tab=products" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
           </div>
-        </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-          <div style="background:linear-gradient(135deg,var(--navy),var(--blue));height:180px;display:flex;align-items:center;justify-content:center;padding:24px;">
-            <div style="text-align:center;">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;">LM</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">Double Suction Medium</div>
-            </div>
-          </div>
-          <div style="padding:20px;">
-            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(8,145,178,.12);color:#0891b2;margin-bottom:10px;">Double Suction</div>
-            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">LM 중형 양흡입 펌프</div>
-            <div style="font-size:13px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;">중형 건물 냉각·순환 시스템에 최적. 균형 잡힌 축 하중으로 내구성 향상.</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--gray-dark);background:var(--off-white);border-radius:8px;padding:12px;margin-bottom:14px;">
-              <span style="color:var(--gray-mid);">최대 압력</span><span style="font-weight:700;color:var(--navy);text-align:right;">10 bar</span><span style="color:var(--gray-mid);">액 온도</span><span style="font-weight:700;color:var(--navy);text-align:right;">0~110°C</span><span style="color:var(--gray-mid);">최대 양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">60 m</span><span style="color:var(--gray-mid);">최대 유량</span><span style="font-weight:700;color:var(--navy);text-align:right;">1200 m³/h</span>
-            </div>
-            <a href="https://product-selection.grundfos.com/kr/categories/pumps/split-case-pumps?tab=categories" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
-          </div>
-        </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-          <div style="background:linear-gradient(135deg,var(--navy),var(--blue));height:180px;display:flex;align-items:center;justify-content:center;padding:24px;">
-            <div style="text-align:center;">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;">LPC</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">Double Suction Axially Split</div>
-            </div>
-          </div>
-          <div style="padding:20px;">
-            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(8,145,178,.12);color:#0891b2;margin-bottom:10px;">Double Suction</div>
-            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">LPC 축류 분할 양흡입</div>
-            <div style="font-size:13px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;">대형 플랜트·발전소용 초대유량 처리에 적합한 축류 분할형 펌프.</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--gray-dark);background:var(--off-white);border-radius:8px;padding:12px;margin-bottom:14px;">
-              <span style="color:var(--gray-mid);">최대 압력</span><span style="font-weight:700;color:var(--navy);text-align:right;">16 bar</span><span style="color:var(--gray-mid);">액 온도</span><span style="font-weight:700;color:var(--navy);text-align:right;">0~120°C</span><span style="color:var(--gray-mid);">최대 양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">90 m</span><span style="color:var(--gray-mid);">최대 유량</span><span style="font-weight:700;color:var(--navy);text-align:right;">8000 m³/h</span>
-            </div>
-            <a href="https://product-selection.grundfos.com/kr/categories/pumps/split-case-pumps?tab=categories" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
-          </div>
-        </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-          <div style="background:linear-gradient(135deg,var(--navy),var(--blue));height:180px;display:flex;align-items:center;justify-content:center;padding:24px;">
-            <div style="text-align:center;">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;">LPG</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">Double Suction Large</div>
-            </div>
-          </div>
-          <div style="padding:20px;">
-            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(8,145,178,.12);color:#0891b2;margin-bottom:10px;">Double Suction</div>
-            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">LPG 대형 양흡입 펌프</div>
-            <div style="font-size:13px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;">대형 HVAC 시스템 및 지역냉방 플랜트에 적합한 대용량 양흡입 펌프.</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--gray-dark);background:var(--off-white);border-radius:8px;padding:12px;margin-bottom:14px;">
-              <span style="color:var(--gray-mid);">최대 압력</span><span style="font-weight:700;color:var(--navy);text-align:right;">16 bar</span><span style="color:var(--gray-mid);">액 온도</span><span style="font-weight:700;color:var(--navy);text-align:right;">0~120°C</span><span style="color:var(--gray-mid);">최대 양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">80 m</span><span style="color:var(--gray-mid);">최대 유량</span><span style="font-weight:700;color:var(--navy);text-align:right;">6000 m³/h</span>
-            </div>
-            <a href="https://product-selection.grundfos.com/kr/categories/pumps/split-case-pumps?tab=categories" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
-          </div>
-        </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-          <div style="background:linear-gradient(135deg,var(--navy),var(--blue));height:180px;display:flex;align-items:center;justify-content:center;padding:24px;">
-            <div style="text-align:center;">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;">LE</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">End Suction Double Suction</div>
-            </div>
-          </div>
-          <div style="padding:20px;">
-            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(8,145,178,.12);color:#0891b2;margin-bottom:10px;">Double Suction</div>
-            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">LE 엔드석션 양흡입</div>
-            <div style="font-size:13px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;">소형~중형 냉각탑·AHU 순환에 최적. 설치 면적 최소화 설계.</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--gray-dark);background:var(--off-white);border-radius:8px;padding:12px;margin-bottom:14px;">
-              <span style="color:var(--gray-mid);">최대 압력</span><span style="font-weight:700;color:var(--navy);text-align:right;">10 bar</span><span style="color:var(--gray-mid);">액 온도</span><span style="font-weight:700;color:var(--navy);text-align:right;">0~100°C</span><span style="color:var(--gray-mid);">최대 양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">50 m</span><span style="color:var(--gray-mid);">최대 유량</span><span style="font-weight:700;color:var(--navy);text-align:right;">600 m³/h</span>
-            </div>
-            <a href="https://product-selection.grundfos.com/kr/categories/pumps/split-case-pumps?tab=categories" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
-          </div>
-        </div>
-  </div>
-</div>
-
+          
+        </div></div></div>
 <footer>
   <div>(주)효일종합상사 | 경기도 부천시 조마루로 385번길 122, 삼보테크노타워 1607, 1608호</div>
   <div style="margin-top:6px;">T. 032.347.0815~7 | <a href="mailto:hyoilpump@daum.net">hyoilpump@daum.net</a></div>
   <div style="margin-top:10px;">© 2025 HYOIL Co., Ltd. All rights reserved.</div>
 </footer>
-</body>
-</html>
+</body></html>
