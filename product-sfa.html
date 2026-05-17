@@ -99,7 +99,7 @@ footer{background:#06101f;padding:30px 40px;text-align:center;color:rgba(255,255
 footer a{color:rgba(255,255,255,.5);text-decoration:none}
 footer a:hover{color:white}
 
-@media(max-width:1024px){.cards-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:1024px){.cards-grid{grid-template-columns:1fr 1fr}.brand-grid{grid-template-columns:1fr!important;gap:40px!important}}
 @media(max-width:900px){nav{display:none}.header-top-side{display:none}}
 @media(max-width:600px){.cards-grid{grid-template-columns:1fr}.container{padding:0 20px}}
 </style>
@@ -340,6 +340,38 @@ footer a:hover{color:white}
   </div><!-- /cards-grid -->
 
 </div><!-- /container -->
+
+
+<!-- SFA 기업 소개 -->
+<section style="background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);padding:80px 0;position:relative;overflow:hidden;">
+  <div style="position:absolute;font-family:'Bebas Neue',sans-serif;font-size:200px;color:rgba(255,255,255,0.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;">SFA</div>
+  <div style="max-width:1200px;margin:0 auto;padding:0 40px;">
+    <div class="brand-grid" style="display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:center;">
+
+      <!-- 텍스트 -->
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#60a5fa;margin-bottom:14px;">파트너십 · Partnership</div>
+        <h2 style="font-size:clamp(26px,3.5vw,40px);font-weight:800;color:white;letter-spacing:-1.5px;line-height:1.2;margin-bottom:20px;">생활 오수·배수 처리<br/>글로벌 전문 기업 SFA</h2>
+        <p style="font-size:15px;color:rgba(255,255,255,0.65);line-height:1.8;margin-bottom:32px;">
+          SFA는 생활 오수·배수 처리 솔루션과 리프팅 스테이션 분야를 전문으로 하는 글로벌 펌프 제조 기업입니다.
+        </p>
+        <a href="https://sfa-korea.co.kr/" target="_blank" rel="noopener"
+          style="display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:white;padding:13px 28px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none;transition:background .2s;"
+          onmouseover="this.style.background='#c92d1f'" onmouseout="this.style.background='var(--accent)'">
+          SFA 공식 사이트 바로가기 →
+        </a>
+      </div>
+
+      <!-- 이미지 -->
+      <div style="position:relative;">
+        <img src="images/SFAlhome.png" alt="SFA PUMPS"
+          style="width:100%;border-radius:14px;display:block;box-shadow:0 30px 80px rgba(0,0,0,0.4);"
+          onerror="this.style.display='none'"/>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <footer>
   <div>(주)효일종합상사 | 경기도 부천시 조마루로 385번길 122, 삼보테크노타워 1607, 1608호</div>
