@@ -1,234 +1,272 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GENIECON AI 스마트 컨트롤러 | (주)효일종합상사</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Bebas+Neue&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --navy: #0a1628;
-      --blue: #1a3a6e;
-      --blue-light: #2563b0;
-      --accent: #e8392a;
-      --accent2: #f5a623;
-      --white: #ffffff;
-      --off-white: #f4f6f9;
-      --gray-light: #e8ecf2;
-      --gray-dark: #4a5568;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Noto Sans KR', sans-serif; color: var(--navy); background: var(--white); overflow-x: hidden; }
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>GENIECON AI 스마트 컨트롤러 | (주)효일종합상사</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #0a1628;
+  --blue: #1a3a6e;
+  --blue-light: #2563b0;
+  --accent: #e8392a;
+  --accent2: #f5a623;
+  --white: #ffffff;
+  --off-white: #f4f6f9;
+  --gray-light: #e8ecf2;
+  --gray-dark: #4a5568;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Noto Sans KR', sans-serif; color: var(--navy); background: var(--white); overflow-x: hidden; }
 
-    /* HEADER */
-    header {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(10,22,40,0.97); backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .header-main {
-      display: flex; align-items: center; justify-content: space-between;
-      max-width: 1200px; margin: 0 auto; padding: 0 30px; height: 72px;
-    }
-    .logo-link { text-decoration: none; display: flex; align-items: center; gap: 10px; }
-    .logo-link span { color: white; font-size: 16px; font-weight: 700; }
-    .back-btn {
-      color: rgba(255,255,255,0.7); text-decoration: none; font-size: 13px;
-      font-weight: 500; padding: 8px 16px; border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 4px; transition: all 0.2s;
-    }
-    .back-btn:hover { color: white; border-color: white; background: rgba(255,255,255,0.08); }
+/* HEADER */
+header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(10,22,40,0.97); backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
 
-    /* HERO */
-    .hero {
-      min-height: 100vh; display: flex; align-items: center;
-      background: linear-gradient(135deg, #0a1628 0%, #122040 50%, #1a3a6e 100%);
-      position: relative; overflow: hidden; padding: 100px 30px 60px;
-    }
-    .hero::before {
-      content: 'GENIECON';
-      position: absolute; font-family: 'Bebas Neue', sans-serif;
-      font-size: 220px; color: rgba(255,255,255,0.03);
-      top: 50%; left: 50%; transform: translate(-50%,-50%);
-      white-space: nowrap; pointer-events: none;
-    }
-    .hero-inner {
-      max-width: 1200px; margin: 0 auto; width: 100%;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(232,57,42,0.15); border: 1px solid rgba(232,57,42,0.4);
-      color: #ff6b5b; padding: 6px 16px; border-radius: 20px;
-      font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-    .hero-badge .dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
-    .hero-title {
-      font-size: clamp(36px,5vw,64px); font-weight: 900; color: white;
-      line-height: 1.1; letter-spacing: -2px; margin-bottom: 10px;
-    }
-    .hero-title .brand { color: var(--accent2); font-family: 'Bebas Neue',sans-serif; font-size: clamp(50px,7vw,90px); letter-spacing: 2px; display: block; }
-    .hero-subtitle { font-size: 18px; font-weight: 500; color: #60a5fa; margin-bottom: 24px; letter-spacing: -0.5px; }
-    .hero-desc { font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 36px; }
-    .hero-cta {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--accent); color: white; padding: 14px 30px;
-      border-radius: 4px; font-size: 15px; font-weight: 700; text-decoration: none;
-      transition: all 0.2s;
-    }
-    .hero-cta:hover { background: #c92d1f; transform: translateY(-2px); }
-    .hero-img-wrap {
-      position: relative; border-radius: 16px; overflow: hidden;
-      box-shadow: 0 40px 100px rgba(0,0,0,0.5);
-    }
-    .hero-img-wrap img { width: 100%; display: block; border-radius: 16px; }
-    .new-badge {
-      position: absolute; top: 20px; left: 20px;
-      background: var(--accent); color: white;
-      padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 800;
-      letter-spacing: 1px; box-shadow: 0 4px 15px rgba(232,57,42,0.5);
-    }
+/* 상단 빨간 띠 */
+.header-top {
+  background: var(--accent);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 6px 30px; font-size: 12px; font-weight: 500; color: #fff;
+}
+.header-top-side { font-size: 11px; white-space: nowrap; opacity: 0.9; }
+.header-top-center { flex: 1; text-align: center; }
 
-    /* FEATURES */
-    .features { background: var(--off-white); padding: 100px 30px; }
-    .section-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 10px; }
-    .section-title { font-size: clamp(26px,3.5vw,42px); font-weight: 800; color: var(--navy); line-height: 1.2; letter-spacing: -1.5px; margin-bottom: 14px; }
-    .section-desc { font-size: 15px; color: var(--gray-dark); line-height: 1.75; max-width: 560px; margin-bottom: 60px; }
-    .container { max-width: 1200px; margin: 0 auto; }
-    .features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
-    .feature-card {
-      background: white; border: 1px solid var(--gray-light); border-radius: 14px;
-      padding: 32px 28px; transition: all 0.3s;
-    }
-    .feature-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(10,22,40,0.1); border-color: var(--blue-light); }
-    .feature-icon { width: 52px; height: 52px; background: linear-gradient(135deg,var(--navy),var(--blue)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 18px; }
-    .feature-title { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 10px; letter-spacing: -0.5px; }
-    .feature-desc { font-size: 13.5px; color: var(--gray-dark); line-height: 1.7; }
+/* 메인 헤더 */
+.header-main {
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 1300px; margin: 0 auto; padding: 0 30px; height: 77px;
+}
 
-    /* GALLERY - SLIDESHOW */
-    .gallery { background: var(--navy); padding: 100px 30px; }
-    .gallery .section-label { color: #60a5fa; }
-    .gallery .section-title { color: white; }
+/* 네비게이션 */
+nav { display: flex; align-items: center; gap: 28px; }
+nav a {
+  color: rgba(255,255,255,.8); text-decoration: none;
+  font-size: 14px; font-weight: 500; transition: color .2s;
+}
+nav a:hover { color: white; }
+nav a.nav-cta {
+  background: var(--accent); color: white !important;
+  padding: 8px 18px; border-radius: 4px; font-weight: 700;
+}
+nav a.nav-cta:hover { background: #c92d1f; }
 
-    .slideshow-wrap {
-      position: relative; margin-top: 50px; border-radius: 16px; overflow: hidden;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
-      background: #000;
-    }
-    .slides-track {
-      display: flex; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
-    }
-    .slide {
-      min-width: 100%; position: relative;
-    }
-    .slide img {
-      width: 100%; display: block;
-      object-fit: contain; max-height: 70vh;
-      background: #0a0f1e;
-    }
+/* 모바일 햄버거 */
+.nav-toggle {
+  display: none; background: none; border: none;
+  cursor: pointer; padding: 4px;
+}
+.nav-toggle span {
+  display: block; width: 22px; height: 2px;
+  background: white; margin: 5px 0; transition: all 0.3s;
+}
 
-    /* 좌우 화살표 버튼 */
-    .slide-btn {
-      position: absolute; top: 50%; transform: translateY(-50%);
-      background: rgba(10,22,40,0.75); border: 1px solid rgba(255,255,255,0.15);
-      color: white; width: 52px; height: 52px; border-radius: 50%;
-      font-size: 20px; cursor: pointer; z-index: 10;
-      display: flex; align-items: center; justify-content: center;
-      transition: all 0.2s; backdrop-filter: blur(6px);
-    }
-    .slide-btn:hover { background: rgba(232,57,42,0.85); border-color: transparent; transform: translateY(-50%) scale(1.08); }
-    .slide-btn.prev { left: 20px; }
-    .slide-btn.next { right: 20px; }
+/* HERO */
+.hero {
+  min-height: 100vh; display: flex; align-items: center;
+  background: linear-gradient(135deg, #0a1628 0%, #122040 50%, #1a3a6e 100%);
+  position: relative; overflow: hidden; padding: 130px 30px 60px;
+}
+.hero::before {
+  content: 'GENIECON';
+  position: absolute; font-family: 'Bebas Neue', sans-serif;
+  font-size: 220px; color: rgba(255,255,255,0.03);
+  top: 50%; left: 50%; transform: translate(-50%,-50%);
+  white-space: nowrap; pointer-events: none;
+}
+.hero-inner {
+  max-width: 1200px; margin: 0 auto; width: 100%;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(232,57,42,0.15); border: 1px solid rgba(232,57,42,0.4);
+  color: #ff6b5b; padding: 6px 16px; border-radius: 20px;
+  font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.hero-badge .dot { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+.hero-title {
+  font-size: clamp(36px,5vw,64px); font-weight: 900; color: white;
+  line-height: 1.1; letter-spacing: -2px; margin-bottom: 10px;
+}
+.hero-title .brand { color: var(--accent2); font-family: 'Bebas Neue',sans-serif; font-size: clamp(50px,7vw,90px); letter-spacing: 2px; display: block; }
+.hero-subtitle { font-size: 18px; font-weight: 500; color: #60a5fa; margin-bottom: 24px; letter-spacing: -0.5px; }
+.hero-desc { font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 36px; }
+.hero-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent); color: white; padding: 14px 30px;
+  border-radius: 4px; font-size: 15px; font-weight: 700; text-decoration: none;
+  transition: all 0.2s;
+}
+.hero-cta:hover { background: #c92d1f; transform: translateY(-2px); }
+.hero-img-wrap {
+  position: relative; border-radius: 16px; overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+}
+.hero-img-wrap img { width: 100%; display: block; border-radius: 16px; }
+.new-badge {
+  position: absolute; top: 20px; left: 20px;
+  background: var(--accent); color: white;
+  padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 800;
+  letter-spacing: 1px; box-shadow: 0 4px 15px rgba(232,57,42,0.5);
+}
 
-    /* 하단 인디케이터 */
-    .slide-dots {
-      display: flex; justify-content: center; gap: 8px; margin-top: 24px;
-    }
-    .slide-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: rgba(255,255,255,0.25); cursor: pointer; transition: all 0.3s;
-      border: none; padding: 0;
-    }
-    .slide-dot.active { background: var(--accent); width: 24px; border-radius: 4px; }
+/* FEATURES */
+.features { background: var(--off-white); padding: 100px 30px; }
+.section-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 10px; }
+.section-title { font-size: clamp(26px,3.5vw,42px); font-weight: 800; color: var(--navy); line-height: 1.2; letter-spacing: -1.5px; margin-bottom: 14px; }
+.section-desc { font-size: 15px; color: var(--gray-dark); line-height: 1.75; max-width: 560px; margin-bottom: 60px; }
+.container { max-width: 1200px; margin: 0 auto; }
+.features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.feature-card {
+  background: white; border: 1px solid var(--gray-light); border-radius: 14px;
+  padding: 32px 28px; transition: all 0.3s;
+}
+.feature-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(10,22,40,0.1); border-color: var(--blue-light); }
+.feature-icon { width: 52px; height: 52px; background: linear-gradient(135deg,var(--navy),var(--blue)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 18px; }
+.feature-title { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 10px; letter-spacing: -0.5px; }
+.feature-desc { font-size: 13.5px; color: var(--gray-dark); line-height: 1.7; }
 
-    /* 카운터 */
-    .slide-counter {
-      position: absolute; bottom: 16px; right: 20px;
-      background: rgba(0,0,0,0.55); color: rgba(255,255,255,0.8);
-      font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 20px;
-      backdrop-filter: blur(4px); pointer-events: none;
-    }
+/* GALLERY - SLIDESHOW */
+.gallery { background: var(--navy); padding: 100px 30px; }
+.gallery .section-label { color: #60a5fa; }
+.gallery .section-title { color: white; }
+.slideshow-wrap {
+  position: relative; margin-top: 50px; border-radius: 16px; overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+  background: #000;
+}
+.slides-track {
+  display: flex; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+.slide {
+  min-width: 100%; position: relative;
+}
+.slide img {
+  width: 100%; display: block;
+  object-fit: contain; max-height: 70vh;
+  background: #0a0f1e;
+}
+.slide-btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(10,22,40,0.75); border: 1px solid rgba(255,255,255,0.15);
+  color: white; width: 52px; height: 52px; border-radius: 50%;
+  font-size: 20px; cursor: pointer; z-index: 10;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s; backdrop-filter: blur(6px);
+}
+.slide-btn:hover { background: rgba(232,57,42,0.85); border-color: transparent; transform: translateY(-50%) scale(1.08); }
+.slide-btn.prev { left: 20px; }
+.slide-btn.next { right: 20px; }
+.slide-dots {
+  display: flex; justify-content: center; gap: 8px; margin-top: 24px;
+}
+.slide-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255,255,255,0.25); cursor: pointer; transition: all 0.3s;
+  border: none; padding: 0;
+}
+.slide-dot.active { background: var(--accent); width: 24px; border-radius: 4px; }
+.slide-counter {
+  position: absolute; bottom: 16px; right: 20px;
+  background: rgba(0,0,0,0.55); color: rgba(255,255,255,0.8);
+  font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 20px;
+  backdrop-filter: blur(4px); pointer-events: none;
+}
+.thumb-strip {
+  display: flex; gap: 8px; margin-top: 16px; overflow-x: auto;
+  padding-bottom: 4px; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.2) transparent;
+}
+.thumb {
+  min-width: 90px; height: 60px; border-radius: 6px; overflow: hidden;
+  cursor: pointer; border: 2px solid transparent; transition: all 0.2s; flex-shrink: 0;
+}
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.thumb.active { border-color: var(--accent); }
+.thumb:hover { border-color: rgba(255,255,255,0.4); }
 
-    /* 썸네일 스트립 */
-    .thumb-strip {
-      display: flex; gap: 8px; margin-top: 16px; overflow-x: auto;
-      padding-bottom: 4px; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.2) transparent;
-    }
-    .thumb {
-      min-width: 90px; height: 60px; border-radius: 6px; overflow: hidden;
-      cursor: pointer; border: 2px solid transparent; transition: all 0.2s; flex-shrink: 0;
-    }
-    .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .thumb.active { border-color: var(--accent); }
-    .thumb:hover { border-color: rgba(255,255,255,0.4); }
+/* SPECS */
+.specs { background: var(--navy); padding: 100px 30px; }
+.specs .section-title { color: white; }
+.specs .section-label { color: #60a5fa; }
+.specs .section-desc { color: rgba(255,255,255,0.6); }
+.specs-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; margin-top: 50px; }
+.spec-card {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px; padding: 28px 20px; text-align: center;
+}
+.spec-num { font-family: 'Bebas Neue',sans-serif; font-size: 48px; color: var(--accent2); line-height: 1; margin-bottom: 8px; }
+.spec-label { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.5; }
 
-    /* SPECS */
-    .specs { background: var(--navy); padding: 100px 30px; }
-    .specs .section-title { color: white; }
-    .specs .section-label { color: #60a5fa; }
-    .specs .section-desc { color: rgba(255,255,255,0.6); }
-    .specs-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; margin-top: 50px; }
-    .spec-card {
-      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 12px; padding: 28px 20px; text-align: center;
-    }
-    .spec-num { font-family: 'Bebas Neue',sans-serif; font-size: 48px; color: var(--accent2); line-height: 1; margin-bottom: 8px; }
-    .spec-label { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+/* CTA SECTION */
+.cta-section { background: var(--off-white); padding: 80px 30px; text-align: center; }
+.cta-section h2 { font-size: clamp(24px,3vw,36px); font-weight: 800; color: var(--navy); letter-spacing: -1px; margin-bottom: 14px; }
+.cta-section p { font-size: 15px; color: var(--gray-dark); margin-bottom: 36px; }
+.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn-primary { background: var(--accent); color: white; padding: 14px 32px; border-radius: 4px; font-size: 15px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; }
+.btn-primary:hover { background: #c92d1f; }
+.btn-outline { background: transparent; color: var(--navy); padding: 14px 32px; border-radius: 4px; font-size: 15px; font-weight: 500; text-decoration: none; border: 1.5px solid var(--gray-light); display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; }
+.btn-outline:hover { border-color: var(--navy); }
 
-    /* CTA SECTION */
-    .cta-section { background: var(--off-white); padding: 80px 30px; text-align: center; }
-    .cta-section h2 { font-size: clamp(24px,3vw,36px); font-weight: 800; color: var(--navy); letter-spacing: -1px; margin-bottom: 14px; }
-    .cta-section p { font-size: 15px; color: var(--gray-dark); margin-bottom: 36px; }
-    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    .btn-primary { background: var(--accent); color: white; padding: 14px 32px; border-radius: 4px; font-size: 15px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; }
-    .btn-primary:hover { background: #c92d1f; }
-    .btn-outline { background: transparent; color: var(--navy); padding: 14px 32px; border-radius: 4px; font-size: 15px; font-weight: 500; text-decoration: none; border: 1.5px solid var(--gray-light); display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; }
-    .btn-outline:hover { border-color: var(--navy); }
+/* FOOTER */
+footer { background: #06101f; padding: 30px; text-align: center; color: rgba(255,255,255,0.35); font-size: 12.5px; }
+footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
+footer a:hover { color: white; }
 
-    /* FOOTER */
-    footer { background: #06101f; padding: 30px; text-align: center; color: rgba(255,255,255,0.35); font-size: 12.5px; }
-    footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
-    footer a:hover { color: white; }
-
-    @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-      .features-grid { grid-template-columns: 1fr 1fr; }
-      .specs-grid { grid-template-columns: 1fr 1fr; }
-      .slide-btn { width: 40px; height: 40px; font-size: 16px; }
-      .thumb-strip { display: none; }
-    }
-    @media (max-width: 600px) {
-      .features-grid, .specs-grid { grid-template-columns: 1fr; }
-      .slide-btn { width: 36px; height: 36px; font-size: 14px; }
-      .slide-btn.prev { left: 10px; }
-      .slide-btn.next { right: 10px; }
-      .thumb-strip { display: none; }
-    }
-  </style>
+@media (max-width: 900px) {
+  nav { display: none; }
+  .nav-toggle { display: block; }
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .features-grid { grid-template-columns: 1fr 1fr; }
+  .specs-grid { grid-template-columns: 1fr 1fr; }
+  .slide-btn { width: 40px; height: 40px; font-size: 16px; }
+  .thumb-strip { display: none; }
+  .header-top-side { display: none; }
+}
+@media (max-width: 600px) {
+  .features-grid, .specs-grid { grid-template-columns: 1fr; }
+  .slide-btn { width: 36px; height: 36px; font-size: 14px; }
+  .slide-btn.prev { left: 10px; }
+  .slide-btn.next { right: 10px; }
+  .thumb-strip { display: none; }
+}
+</style>
 </head>
 <body>
 
 <header>
+  <!-- 상단 빨간 띠 -->
+  <div class="header-top">
+    <span class="header-top-side">📞 032.347.0815~7</span>
+    <span class="header-top-center">한국그런포스펌프(주) 프리미엄 공식 대리점 &nbsp;|&nbsp; 1995년 설립</span>
+    <span class="header-top-side">✉ hyoilpump@daum.net</span>
+  </div>
+  <!-- 메인 헤더 -->
   <div class="header-main">
-    <a href="index.html" class="logo-link">
-      <img src="images/logo.png" alt="효일종합상사" style="height:48px;width:auto;object-fit:contain;"
+    <a href="index.html">
+      <img src="images/logo.png" alt="효일종합상사"
+        style="height:72px;width:auto;object-fit:contain;display:block;"
         onerror="this.outerHTML='<span style=&quot;color:white;font-size:16px;font-weight:700;&quot;>(주)효일종합상사</span>'"/>
     </a>
-    <a href="index.html#products" class="back-btn">← 제품 목록으로</a>
+    <nav>
+      <a href="about.html">회사소개</a>
+      <a href="index.html#products">제품소개</a>
+      <a href="projects.html">납품실적</a>
+      <a href="https://blog.naver.com/hyoil-pp" target="_blank">Blog</a>
+      <a href="index.html#grundfos">그런포스</a>
+      <a href="index.html#contact" class="nav-cta">문의하기</a>
+    </nav>
+    <button class="nav-toggle" aria-label="메뉴 열기">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
@@ -305,7 +343,6 @@
   <div class="container">
     <div class="section-label">제품 이미지 · Gallery</div>
     <h2 class="section-title">GENIECON<br/>상세 이미지</h2>
-
     <div class="slideshow-wrap">
       <div class="slides-track" id="slidesTrack">
         <div class="slide"><img src="images/CA01.png" alt="GENIECON 01"/></div>
@@ -320,12 +357,10 @@
         <div class="slide"><img src="images/CA10.png" alt="GENIECON 10"/></div>
         <div class="slide"><img src="images/CA11.png" alt="GENIECON 11"/></div>
       </div>
-
       <button class="slide-btn prev" onclick="moveSlide(-1)">&#8592;</button>
       <button class="slide-btn next" onclick="moveSlide(1)">&#8594;</button>
       <div class="slide-counter" id="slideCounter">1 / 11</div>
     </div>
-
     <!-- 썸네일 -->
     <div class="thumb-strip" id="thumbStrip">
       <div class="thumb active" onclick="goToSlide(0)"><img src="images/CA01.png"/></div>
@@ -340,60 +375,55 @@
       <div class="thumb" onclick="goToSlide(9)"><img src="images/CA10.png"/></div>
       <div class="thumb" onclick="goToSlide(10)"><img src="images/CA11.png"/></div>
     </div>
-
     <!-- 인디케이터 점 -->
     <div class="slide-dots" id="slideDots"></div>
   </div>
 </section>
 
 <script>
-  let current = 0;
-  const total = 11;
-  const track = document.getElementById('slidesTrack');
-  const counter = document.getElementById('slideCounter');
-  const thumbs = document.getElementById('thumbStrip').querySelectorAll('.thumb');
-  const dotsWrap = document.getElementById('slideDots');
+let current = 0;
+const total = 11;
+const track = document.getElementById('slidesTrack');
+const counter = document.getElementById('slideCounter');
+const thumbs = document.getElementById('thumbStrip').querySelectorAll('.thumb');
+const dotsWrap = document.getElementById('slideDots');
 
-  // 점 생성
-  for (let i = 0; i < total; i++) {
-    const d = document.createElement('button');
-    d.className = 'slide-dot' + (i === 0 ? ' active' : '');
-    d.onclick = () => goToSlide(i);
-    dotsWrap.appendChild(d);
-  }
+for (let i = 0; i < total; i++) {
+  const d = document.createElement('button');
+  d.className = 'slide-dot' + (i === 0 ? ' active' : '');
+  d.onclick = () => goToSlide(i);
+  dotsWrap.appendChild(d);
+}
 
-  function updateUI() {
-    track.style.transform = `translateX(-${current * 100}%)`;
-    counter.textContent = `${current + 1} / ${total}`;
-    document.querySelectorAll('.slide-dot').forEach((d, i) => d.classList.toggle('active', i === current));
-    thumbs.forEach((t, i) => t.classList.toggle('active', i === current));
-    // 썸네일 스크롤
-    thumbs[current].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-  }
+function updateUI() {
+  track.style.transform = `translateX(-${current * 100}%)`;
+  counter.textContent = `${current + 1} / ${total}`;
+  document.querySelectorAll('.slide-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+  thumbs.forEach((t, i) => t.classList.toggle('active', i === current));
+  thumbs[current].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+}
 
-  function moveSlide(dir) {
-    current = (current + dir + total) % total;
-    updateUI();
-  }
+function moveSlide(dir) {
+  current = (current + dir + total) % total;
+  updateUI();
+}
 
-  function goToSlide(idx) {
-    current = idx;
-    updateUI();
-  }
+function goToSlide(idx) {
+  current = idx;
+  updateUI();
+}
 
-  // 키보드 지원
-  document.addEventListener('keydown', e => {
-    if (e.key === 'ArrowLeft') moveSlide(-1);
-    if (e.key === 'ArrowRight') moveSlide(1);
-  });
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowLeft') moveSlide(-1);
+  if (e.key === 'ArrowRight') moveSlide(1);
+});
 
-  // 터치 스와이프 지원
-  let startX = 0;
-  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
-  track.addEventListener('touchend', e => {
-    const diff = startX - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) moveSlide(diff > 0 ? 1 : -1);
-  });
+let startX = 0;
+track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+track.addEventListener('touchend', e => {
+  const diff = startX - e.changedTouches[0].clientX;
+  if (Math.abs(diff) > 40) moveSlide(diff > 0 ? 1 : -1);
+});
 </script>
 
 <!-- SPECS -->
