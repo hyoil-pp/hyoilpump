@@ -343,25 +343,31 @@ footer a:hover{color:white}
 
 
 <!-- SFA 기업 소개 -->
-<section style="position:relative;overflow:hidden;min-height:420px;display:flex;align-items:center;">
-  <!-- 배경 이미지 -->
-  <img src="images/SFAlhome.png" alt="SFA PUMPS"
-    style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;"/>
-  <!-- 어두운 오버레이 (왼쪽 진하게 → 오른쪽 투명) -->
-  <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(10,22,40,0.92) 0%,rgba(10,22,40,0.7) 50%,rgba(10,22,40,0.2) 100%);"></div>
-  <!-- 텍스트 콘텐츠 -->
-  <div style="position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:80px 40px;">
-    <div style="max-width:560px;">
-      <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#60a5fa;margin-bottom:14px;">파트너십 · Partnership</div>
-      <h2 style="font-size:clamp(26px,3.5vw,40px);font-weight:800;color:white;letter-spacing:-1.5px;line-height:1.2;margin-bottom:20px;">생활 오수·배수 처리<br/>글로벌 전문 기업 SFA</h2>
-      <p style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:32px;">
-        SFA는 생활 오수·배수 처리 솔루션과 리프팅 스테이션 분야를 전문으로 하는 글로벌 펌프 제조 기업입니다.
-      </p>
-      <a href="https://sfa-korea.co.kr/" target="_blank" rel="noopener"
-        style="display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:white;padding:13px 28px;border-radius:6px;font-size:14px;font-weight:700;text-decoration:none;transition:background .2s;"
-        onmouseover="this.style.background='#c92d1f'" onmouseout="this.style.background='var(--accent)'">
-        SFA 공식 사이트 바로가기 →
-      </a>
+<section style="background:var(--navy);padding:80px 0;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 40px;">
+    <div class="brand-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+
+      <!-- 왼쪽: 텍스트 -->
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#60a5fa;margin-bottom:16px;">파트너십 · Partnership</div>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,64px);color:var(--accent);letter-spacing:2px;margin-bottom:24px;line-height:1;">SFA</h2>
+        <p style="font-size:15px;color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:36px;">
+          SFA는 생활 오수·배수 처리 솔루션과 리프팅 스테이션 분야를 전문으로 하는 글로벌 펌프 제조 기업입니다.
+        </p>
+        <a href="https://sfa-korea.co.kr/" target="_blank" rel="noopener"
+          style="display:inline-flex;align-items:center;gap:10px;background:transparent;color:white;padding:13px 28px;border-radius:6px;border:1.5px solid rgba(255,255,255,0.3);font-size:14px;font-weight:700;text-decoration:none;transition:all .2s;"
+          onmouseover="this.style.borderColor='white';this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.3)';this.style.background='transparent'">
+          SFA 공식 사이트 바로가기 &nbsp;→
+        </a>
+      </div>
+
+      <!-- 오른쪽: 이미지 -->
+      <div>
+        <img src="images/SFAlhome.png" alt="SFA PUMPS"
+          style="width:100%;border-radius:16px;display:block;object-fit:cover;max-height:320px;"
+          onerror="this.style.display='none'"/>
+      </div>
+
     </div>
   </div>
 </section>
