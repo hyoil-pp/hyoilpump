@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>GENIECON AI 스마트 컨트롤러 | (주)효일종합상사</title>
+<title>GENIECON | (주)효일종합상사</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Bebas+Neue&display=swap" rel="stylesheet"/>
@@ -68,11 +68,70 @@ nav a.nav-cta:hover { background: #c92d1f; }
   background: white; margin: 5px 0; transition: all 0.3s;
 }
 
-/* HERO */
+/* PAGE HERO (파란 타이틀 배너) */
+.page-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+  padding: 130px 40px 70px; position: relative; overflow: hidden;
+}
+.page-hero::before {
+  content: 'GENIECON';
+  position: absolute; font-family: 'Bebas Neue', sans-serif;
+  font-size: 180px; color: rgba(255,255,255,0.03);
+  top: 50%; left: 50%; transform: translate(-50%,-50%);
+  white-space: nowrap; pointer-events: none;
+}
+.page-hero-inner { max-width: 1200px; margin: 0 auto; }
+
+/* 제품 카드 섹션 */
+.product-cards-section { background: var(--off-white); padding: 60px 30px 80px; }
+.cards-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 24px; max-width: 900px; margin: 0 auto; }
+.prod-card {
+  background: white; border-radius: 14px; overflow: hidden;
+  border: 1px solid var(--gray-light); box-shadow: 0 2px 8px rgba(0,0,0,.05);
+  display: flex; flex-direction: column; transition: all 0.3s;
+}
+.prod-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(10,22,40,0.1); }
+.prod-card-img {
+  width: 100%; height: 220px; object-fit: contain;
+  object-position: center; background: white; display: block; padding: 20px;
+}
+.prod-card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+.prod-card-badge {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  padding: 3px 10px; border-radius: 12px;
+  background: rgba(37,99,176,.12); color: #1d4ed8; margin-bottom: 10px;
+}
+.prod-card-title { font-size: 16px; font-weight: 800; color: var(--navy); margin-bottom: 10px; letter-spacing: -.3px; }
+.prod-card-desc { font-size: 13px; color: var(--gray-dark); line-height: 1.75; flex: 1; margin-bottom: 16px; }
+.prod-card-desc ul { padding-left: 16px; margin-top: 8px; }
+.prod-card-desc li { margin-bottom: 4px; }
+.prod-card-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--navy); color: white; font-size: 13px; font-weight: 600;
+  padding: 9px 18px; border-radius: 6px; text-decoration: none; transition: all 0.2s;
+  align-self: flex-start;
+}
+.prod-card-link:hover { background: var(--blue-light); }
+
+/* 구분선 */
+.section-divider {
+  background: var(--navy); padding: 36px 30px;
+}
+.section-divider-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; gap: 20px;
+}
+.section-divider-line { flex: 1; height: 1px; background: rgba(255,255,255,0.12); }
+.section-divider-text {
+  color: rgba(255,255,255,0.4); font-size: 11px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase; white-space: nowrap;
+}
+
+/* HERO (AI 스마트 컨트롤러 섹션) */
 .hero {
-  min-height: 100vh; display: flex; align-items: center;
+  display: flex; align-items: center;
   background: linear-gradient(135deg, #0a1628 0%, #122040 50%, #1a3a6e 100%);
-  position: relative; overflow: hidden; padding: 130px 30px 60px;
+  position: relative; overflow: hidden; padding: 80px 30px 80px;
 }
 .hero::before {
   content: 'GENIECON';
@@ -227,6 +286,7 @@ footer a:hover { color: white; }
   .hero-inner { grid-template-columns: 1fr; gap: 40px; }
   .features-grid { grid-template-columns: 1fr 1fr; }
   .specs-grid { grid-template-columns: 1fr 1fr; }
+  .cards-grid { grid-template-columns: 1fr; }
   .slide-btn { width: 40px; height: 40px; font-size: 16px; }
   .thumb-strip { display: none; }
   .header-top-side { display: none; }
@@ -270,6 +330,68 @@ footer a:hover { color: white; }
   </div>
 </header>
 
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#60a5fa;margin-bottom:12px;">제품 소개 · Products</div>
+    <h1 style="font-size:clamp(28px,5vw,52px);font-weight:900;color:white;letter-spacing:-2px;margin-bottom:16px;">GENIECON</h1>
+    <p style="font-size:15px;color:rgba(255,255,255,.65);max-width:680px;line-height:1.8;">그런포스의 AI 스마트 컨트롤러 GENIECON 시리즈입니다. 에너지 절감과 스마트 모니터링을 위한 최첨단 제어 솔루션을 제공합니다.</p>
+    <div style="margin-top:24px;">
+      <a href="index.html#products" style="color:rgba(255,255,255,.6);font-size:13px;text-decoration:none;">← 전체 제품으로 돌아가기</a>
+    </div>
+  </div>
+</div>
+
+<!-- 제품 카드 -->
+<section class="product-cards-section">
+  <div class="cards-grid">
+
+    <!-- GENIECON PANEL-EC -->
+    <div class="prod-card">
+      <img class="prod-card-img" src="images/genie2.png" alt="GENIECON PANEL-EC"
+        onerror="this.style.background='#f4f6f9';"/>
+      <div class="prod-card-body">
+        <span class="prod-card-badge">GENIECON</span>
+        <div class="prod-card-title">GENIECON PANEL-EC</div>
+        <div class="prod-card-desc">
+          고급형 10인치 터치스크린 컨트롤러가 적용된 제어반으로, 외부 CUE 인버터가 연결된 펌프의 제어 및 모니터링을 위해 설계되었습니다.
+          <ul>
+            <li>최적의 펌프 시퀀싱 제어를 통한 에너지 효율 향상</li>
+            <li>다중 센서 기반 제어(Zone Control) 및 펌프 커브 데이터를 활용한 유량 추정 기능 제공</li>
+            <li>BMS 및 SCADA 등 외부 통합 제어 시스템과의 통신 지원</li>
+          </ul>
+        </div>
+        <a href="https://product-selection.grundfos.com/products/geniecon-panel?tab=products" target="_blank" rel="noopener" class="prod-card-link">제품 상세 확인 →</a>
+      </div>
+    </div>
+
+    <!-- CUE -->
+    <div class="prod-card">
+      <img class="prod-card-img" src="images/CUE.jpg" alt="CUE"
+        onerror="this.style.background='#f4f6f9';"/>
+      <div class="prod-card-body">
+        <span class="prod-card-badge">GENIECON</span>
+        <div class="prod-card-title">CUE</div>
+        <div class="prod-card-desc">
+          통합 드라이브 없이도 그런포스 펌프의 효과적인 속도 제어를 위해 설계된 가변 주파수 드라이브입니다. GENIECON PANEL-EC와 연동하여 최적의 펌프 제어 시스템을 구성합니다.
+        </div>
+        <a href="https://product-selection.grundfos.com/kr/products/cue-1/cue?tab=models" target="_blank" rel="noopener" class="prod-card-link">제품 상세 확인 →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 구분선 -->
+<div class="section-divider">
+  <div class="section-divider-inner">
+    <div class="section-divider-line"></div>
+    <div class="section-divider-text">AI Smart Controller · 상세 소개</div>
+    <div class="section-divider-line"></div>
+  </div>
+</div>
+
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
@@ -288,7 +410,7 @@ footer a:hover { color: white; }
       <a href="index.html#contact" class="hero-cta">제품 문의하기 →</a>
     </div>
     <div class="hero-img-wrap">
-      <img src="images/G.png" alt="GENIECON AI 스마트 컨트롤러"
+      <img src="images/genie.png" alt="GENIECON AI 스마트 컨트롤러"
         onerror="this.src='https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=700&q=80'"/>
       <div class="new-badge">✦ NEW</div>
     </div>
