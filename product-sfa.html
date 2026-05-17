@@ -1,35 +1,102 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SFA PUMPS | (주)효일종합상사</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Bebas+Neue&display=swap" rel="stylesheet"/>
-  <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--navy:#0a1628;--blue:#1a3a6e;--blue-light:#2563b0;--accent:#e8392a;--off-white:#f4f6f9;--gray-light:#e8ecf2;--gray-mid:#9aa5b4;--gray-dark:#4a5568;--text:#1a202c}
-    body{font-family:'Noto Sans KR',sans-serif;color:var(--text);background:var(--off-white)}
-    header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,22,40,0.97);backdrop-filter:blur(8px)}
-    .header-top{background:var(--accent);display:flex;align-items:center;justify-content:space-between;padding:6px 30px;font-size:12px;font-weight:500;color:#fff}
-    .header-top-side{font-size:11px;white-space:nowrap;opacity:0.9}
-    .header-top-center{flex:1;text-align:center}
-    .header-main{display:flex;align-items:center;justify-content:space-between;max-width:1300px;margin:0 auto;padding:0 30px;height:77px}
-    nav{display:flex;align-items:center;gap:28px}
-    nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
-    nav a:hover{color:white}
-    nav a.nav-cta{background:var(--accent);color:white!important;padding:8px 18px;border-radius:4px;font-weight:700}
-    .page-hero{background:linear-gradient(135deg,var(--navy),var(--blue));padding:140px 40px 70px;position:relative;overflow:hidden}
-    .page-hero::before{content:'SFA';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:200px;color:rgba(255,255,255,.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
-    .container{max-width:1200px;margin:0 auto;padding:0 40px}
-    .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;margin-bottom:80px}
-    footer{background:#06101f;padding:30px 40px;text-align:center;color:rgba(255,255,255,.35);font-size:12.5px}
-    footer a{color:rgba(255,255,255,.5);text-decoration:none}
-    @media(max-width:900px){.cards-grid{grid-template-columns:1fr 1fr}nav{display:none}.header-top-side{display:none}}
-    @media(max-width:600px){.cards-grid{grid-template-columns:1fr}}
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SFA PUMPS | (주)효일종합상사</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0a1628;--blue:#1a3a6e;--blue-light:#2563b0;--accent:#e8392a;--off-white:#f4f6f9;--gray-light:#e8ecf2;--gray-mid:#9aa5b4;--gray-dark:#4a5568;--text:#1a202c}
+body{font-family:'Noto Sans KR',sans-serif;color:var(--text);background:var(--off-white)}
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,22,40,0.97);backdrop-filter:blur(8px)}
+.header-top{background:var(--accent);display:flex;align-items:center;justify-content:space-between;padding:6px 30px;font-size:12px;font-weight:500;color:#fff}
+.header-top-side{font-size:11px;white-space:nowrap;opacity:0.9}
+.header-top-center{flex:1;text-align:center}
+.header-main{display:flex;align-items:center;justify-content:space-between;max-width:1300px;margin:0 auto;padding:0 30px;height:77px}
+nav{display:flex;align-items:center;gap:28px}
+nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
+nav a:hover{color:white}
+nav a.nav-cta{background:var(--accent);color:white!important;padding:8px 18px;border-radius:4px;font-weight:700}
+
+/* PAGE HERO */
+.page-hero{background:linear-gradient(135deg,var(--navy),var(--blue));padding:140px 40px 70px;position:relative;overflow:hidden}
+.page-hero::before{content:'SFA';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:200px;color:rgba(255,255,255,.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
+
+.container{max-width:1200px;margin:0 auto;padding:0 40px}
+
+/* 카테고리 섹션 헤더 */
+.category-header {
+  display: flex; align-items: center; gap: 14px;
+  margin: 56px 0 24px;
+}
+.category-bar { width: 4px; height: 28px; background: var(--blue-light); border-radius: 2px; flex-shrink: 0; }
+.category-title { font-size: 18px; font-weight: 800; color: var(--navy); letter-spacing: -0.5px; }
+
+/* 카드 그리드 */
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px}
+
+/* 제품 카드 */
+.prod-card {
+  background: white; border-radius: 14px; overflow: hidden;
+  border: 1px solid var(--gray-light); box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  display: flex; flex-direction: column;
+  transition: all .3s; cursor: pointer;
+}
+.prod-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(10,22,40,.12); border-color: var(--blue-light); }
+
+.prod-img {
+  width: 100%; height: 200px; object-fit: contain;
+  background: white; display: block; padding: 16px;
+}
+.prod-img-fallback {
+  height: 200px; background: linear-gradient(135deg, var(--navy), var(--blue));
+  display: flex; align-items: center; justify-content: center; padding: 24px;
+}
+.prod-img-fallback-text {
+  font-family: 'Bebas Neue', sans-serif; font-size: 26px;
+  color: white; letter-spacing: 2px; text-align: center; line-height: 1.3;
+}
+
+.prod-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+.prod-badge {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  padding: 3px 10px; border-radius: 12px;
+  background: rgba(16,185,129,.12); color: #059669; margin-bottom: 10px;
+}
+.prod-name { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 8px; letter-spacing: -.3px; }
+.prod-desc { font-size: 12.5px; color: var(--gray-dark); line-height: 1.7; flex: 1; margin-bottom: 14px; }
+.prod-features {
+  list-style: none; background: var(--off-white); border-radius: 8px;
+  padding: 12px 14px; margin-bottom: 14px; display: flex; flex-direction: column; gap: 5px;
+}
+.prod-features li {
+  font-size: 12px; color: var(--gray-dark); display: flex; align-items: flex-start; gap: 6px; line-height: 1.5;
+}
+.prod-features li::before { content: '·'; color: var(--blue-light); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.prod-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--navy); color: white; font-size: 13px; font-weight: 600;
+  padding: 9px 18px; border-radius: 6px; text-decoration: none;
+  transition: background .2s; align-self: flex-start;
+}
+.prod-link:hover { background: var(--blue-light); }
+
+/* 페이지 하단 여백 */
+.page-bottom { padding-bottom: 80px; }
+
+footer{background:#06101f;padding:30px 40px;text-align:center;color:rgba(255,255,255,.35);font-size:12.5px}
+footer a{color:rgba(255,255,255,.5);text-decoration:none}
+footer a:hover{color:white}
+
+@media(max-width:1024px){.cards-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){nav{display:none}.header-top-side{display:none}}
+@media(max-width:600px){.cards-grid{grid-template-columns:1fr}.container{padding:0 20px}}
+</style>
 </head>
 <body>
+
 <header>
   <div class="header-top">
     <span class="header-top-side">📞 032.347.0815~7</span>
@@ -37,7 +104,7 @@
     <span class="header-top-side">✉ hyoilpump@daum.net</span>
   </div>
   <div class="header-main">
-    <a href="index.html"><img src="images/logo.png" alt="효일종합상사" style="height:52px;width:auto;object-fit:contain;display:block;"/></a>
+    <a href="index.html"><img src="images/logo.png" alt="효일종합상사" style="height:72px;width:auto;object-fit:contain;display:block;" onerror="this.outerHTML='<span style=&quot;color:white;font-size:16px;font-weight:700;&quot;>(주)효일종합상사</span>'"/></a>
     <nav>
       <a href="about.html">회사소개</a>
       <a href="index.html#products">제품소개</a>
@@ -49,129 +116,211 @@
   </div>
 </header>
 
+<!-- PAGE HERO -->
 <div class="page-hero">
   <div class="container">
     <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#60a5fa;margin-bottom:12px;">제품 소개 · Products</div>
     <h1 style="font-size:clamp(28px,5vw,52px);font-weight:900;color:white;letter-spacing:-2px;margin-bottom:16px;">SFA PUMPS</h1>
-    <p style="font-size:15px;color:rgba(255,255,255,.65);max-width:600px;line-height:1.8;">프랑스 SFA 그룹의 혁신적인 오배수 리프팅 솔루션. 기존 배관 없이도 실내 어디서나 욕실·주방·세탁실 설치가 가능한 스마트 오수 처리 시스템입니다.</p>
+    <p style="font-size:15px;color:rgba(255,255,255,.65);max-width:680px;line-height:1.8;">
+      자립형 리프팅 스테이션은 실내 바닥에 설치되어 생활하수와 오수를 효율적으로 배수하는 솔루션입니다.
+      주거시설부터 상업시설까지 다양한 환경에 적용 가능하며, 설치 환경과 용도에 맞는 다양한 모델을 제공합니다.
+    </p>
     <div style="margin-top:24px;">
       <a href="index.html#products" style="color:rgba(255,255,255,.6);font-size:13px;text-decoration:none;">← 전체 제품으로 돌아가기</a>
     </div>
   </div>
 </div>
 
-<div class="container">
-  <div class="cards-grid">
-    
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-          <div style="background:linear-gradient(135deg,var(--navy),var(--blue));height:180px;display:flex;align-items:center;justify-content:center;padding:24px;">
-            <div style="text-align:center;">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;">SANIBEST PRO</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">Heavy Duty Macerator</div>
-            </div>
-          </div>
-          <div style="padding:20px;">
-            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(16,185,129,.12);color:#059669;margin-bottom:10px;">SFA</div>
-            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">SANIBEST PRO</div>
-            <div style="font-size:13px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;">병원·상업 시설용 강력 분쇄 펌프. 대용량 오수 처리, 최대 100m 압송.</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--gray-dark);background:var(--off-white);border-radius:8px;padding:12px;margin-bottom:14px;">
-              <span style="color:var(--gray-mid);">양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">최대 100 m</span><span style="color:var(--gray-mid);">압송</span><span style="font-weight:700;color:var(--navy);text-align:right;">최대 150 m</span><span style="color:var(--gray-mid);">소음</span><span style="font-weight:700;color:var(--navy);text-align:right;">45 dB 이하</span><span style="color:var(--gray-mid);">전압</span><span style="font-weight:700;color:var(--navy);text-align:right;">220 V</span>
-            </div>
-            <a href="https://sfa-korea.co.kr" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
-          </div>
-        </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-          <div style="background:linear-gradient(135deg,var(--navy),var(--blue));height:180px;display:flex;align-items:center;justify-content:center;padding:24px;">
-            <div style="text-align:center;">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;">SANIPLUS</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">Macerator Pump</div>
-            </div>
-          </div>
-          <div style="padding:20px;">
-            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(16,185,129,.12);color:#059669;margin-bottom:10px;">SFA</div>
-            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">SANIPLUS UP</div>
-            <div style="font-size:13px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;">욕실 전용 분쇄 리프팅 펌프. 변기·세면대·샤워기·욕조 4구 연결.</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--gray-dark);background:var(--off-white);border-radius:8px;padding:12px;margin-bottom:14px;">
-              <span style="color:var(--gray-mid);">양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">최대 5 m</span><span style="color:var(--gray-mid);">압송</span><span style="font-weight:700;color:var(--navy);text-align:right;">최대 100 m</span><span style="color:var(--gray-mid);">소음</span><span style="font-weight:700;color:var(--navy);text-align:right;">40 dB 이하</span><span style="color:var(--gray-mid);">전압</span><span style="font-weight:700;color:var(--navy);text-align:right;">220 V</span>
-            </div>
-            <a href="https://sfa-korea.co.kr" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
-          </div>
-        </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-          <div style="background:linear-gradient(135deg,var(--navy),var(--blue));height:180px;display:flex;align-items:center;justify-content:center;padding:24px;">
-            <div style="text-align:center;">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;">SANICUBIC</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">Lifting Station</div>
-            </div>
-          </div>
-          <div style="padding:20px;">
-            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(16,185,129,.12);color:#059669;margin-bottom:10px;">SFA</div>
-            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">SANICUBIC PRO</div>
-            <div style="font-size:13px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;">지하 집수정용 대형 오배수 리프팅 스테이션. 2중 펌프 교대 운전.</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--gray-dark);background:var(--off-white);border-radius:8px;padding:12px;margin-bottom:14px;">
-              <span style="color:var(--gray-mid);">양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">최대 11 m</span><span style="color:var(--gray-mid);">압송</span><span style="font-weight:700;color:var(--navy);text-align:right;">최대 70 m</span><span style="color:var(--gray-mid);">탱크</span><span style="font-weight:700;color:var(--navy);text-align:right;">250 L</span><span style="color:var(--gray-mid);">전압</span><span style="font-weight:700;color:var(--navy);text-align:right;">220/380 V</span>
-            </div>
-            <a href="https://sfa-korea.co.kr" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
-          </div>
-        </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-          <div style="background:linear-gradient(135deg,var(--navy),var(--blue));height:180px;display:flex;align-items:center;justify-content:center;padding:24px;">
-            <div style="text-align:center;">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;">SANIACCESS</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">Access Macerator</div>
-            </div>
-          </div>
-          <div style="padding:20px;">
-            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(16,185,129,.12);color:#059669;margin-bottom:10px;">SFA</div>
-            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">SANIACCESS 3</div>
-            <div style="font-size:13px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;">변기 뒤 벽 내장형 초슬림 분쇄 펌프. 리모델링·증축 욕실에 최적.</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--gray-dark);background:var(--off-white);border-radius:8px;padding:12px;margin-bottom:14px;">
-              <span style="color:var(--gray-mid);">양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">최대 4 m</span><span style="color:var(--gray-mid);">압송</span><span style="font-weight:700;color:var(--navy);text-align:right;">최대 50 m</span><span style="color:var(--gray-mid);">두께</span><span style="font-weight:700;color:var(--navy);text-align:right;">12 cm</span><span style="color:var(--gray-mid);">전압</span><span style="font-weight:700;color:var(--navy);text-align:right;">220 V</span>
-            </div>
-            <a href="https://sfa-korea.co.kr" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
-          </div>
-        </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-          <div style="background:linear-gradient(135deg,var(--navy),var(--blue));height:180px;display:flex;align-items:center;justify-content:center;padding:24px;">
-            <div style="text-align:center;">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;">SANICUBIC XL</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">XL Lifting Station</div>
-            </div>
-          </div>
-          <div style="padding:20px;">
-            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(16,185,129,.12);color:#059669;margin-bottom:10px;">SFA</div>
-            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">SANICUBIC XL</div>
-            <div style="font-size:13px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;">대형 건물 지하층 오배수 전용 대용량 리프팅 스테이션.</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--gray-dark);background:var(--off-white);border-radius:8px;padding:12px;margin-bottom:14px;">
-              <span style="color:var(--gray-mid);">양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">최대 15 m</span><span style="color:var(--gray-mid);">압송</span><span style="font-weight:700;color:var(--navy);text-align:right;">최대 100 m</span><span style="color:var(--gray-mid);">탱크</span><span style="font-weight:700;color:var(--navy);text-align:right;">500 L</span><span style="color:var(--gray-mid);">전압</span><span style="font-weight:700;color:var(--navy);text-align:right;">380 V</span>
-            </div>
-            <a href="https://sfa-korea.co.kr" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
-          </div>
-        </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-          <div style="background:linear-gradient(135deg,var(--navy),var(--blue));height:180px;display:flex;align-items:center;justify-content:center;padding:24px;">
-            <div style="text-align:center;">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;">SANISHOWER</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">Shower Drain Pump</div>
-            </div>
-          </div>
-          <div style="padding:20px;">
-            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(16,185,129,.12);color:#059669;margin-bottom:10px;">SFA</div>
-            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">SANISHOWER</div>
-            <div style="font-size:13px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;">샤워 전용 초박형 배수 펌프. 기존 배관 없이 드레인 설치 가능.</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--gray-dark);background:var(--off-white);border-radius:8px;padding:12px;margin-bottom:14px;">
-              <span style="color:var(--gray-mid);">양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">최대 3 m</span><span style="color:var(--gray-mid);">압송</span><span style="font-weight:700;color:var(--navy);text-align:right;">최대 30 m</span><span style="color:var(--gray-mid);">두께</span><span style="font-weight:700;color:var(--navy);text-align:right;">5 cm</span><span style="color:var(--gray-mid);">전압</span><span style="font-weight:700;color:var(--navy);text-align:right;">220 V</span>
-            </div>
-            <a href="https://sfa-korea.co.kr" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
-          </div>
-        </div>
+<!-- 제품 목록 -->
+<div class="container page-bottom">
+
+  <div class="category-header">
+    <div class="category-bar"></div>
+    <div class="category-title">자립형 리프팅 스테이션 (Lifting Station)</div>
   </div>
-</div>
+
+  <div class="cards-grid">
+
+    <!-- 사니큐빅 1 WP -->
+    <div class="prod-card" onclick="location.href='https://sfa-korea.co.kr/ko/products/sanicubic-1-wp'" style="cursor:pointer;">
+      <img class="prod-img" src="images/sanicubic-1-wp.png" alt="사니큐빅 1 WP"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="prod-img-fallback" style="display:none;">
+        <div class="prod-img-fallback-text">SANICUBIC<br/>1 WP</div>
+      </div>
+      <div class="prod-body">
+        <span class="prod-badge">SFA</span>
+        <div class="prod-name">사니큐빅 1 WP</div>
+        <div class="prod-desc">주택 및 상업용으로 쉽게 설치 가능한 생활하수 및 오수 펌프 스테이션</div>
+        <ul class="prod-features">
+          <li>쉽고 간단한 설치</li>
+          <li>총 4개의 유입구 중 2개의 하단 유입구</li>
+          <li>ProX K2 그라인딩 기술로 50 mm 소형 파이프 배출</li>
+          <li>IP68 등급의 강화된 방수 및 원거리 조작</li>
+          <li>탈부착형 모터와 수위 센서</li>
+        </ul>
+        <a href="https://sfa-korea.co.kr/ko/products/sanicubic-1-wp" target="_blank" rel="noopener" class="prod-link" onclick="event.stopPropagation()">제품 상세 확인 →</a>
+      </div>
+    </div>
+
+    <!-- 사니큐빅 2 클래식 -->
+    <div class="prod-card" onclick="location.href='https://sfa-korea.co.kr/ko/products/sanicubic-2-classic'" style="cursor:pointer;">
+      <img class="prod-img" src="images/sanicubic-2-classic.png" alt="사니큐빅 2 클래식"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="prod-img-fallback" style="display:none;">
+        <div class="prod-img-fallback-text">SANICUBIC<br/>2 CLASSIC</div>
+      </div>
+      <div class="prod-body">
+        <span class="prod-badge">SFA</span>
+        <div class="prod-name">사니큐빅 2 클래식</div>
+        <div class="prod-desc">강력한 생활 하수 및 오수용 리프팅 스테이션</div>
+        <ul class="prod-features">
+          <li>2개의 펌프가 교대로 작동</li>
+          <li>총 5개의 유입구 중 2개는 저수위에 위치</li>
+          <li>저수위에서도 작동 가능</li>
+          <li>Pro X K2 그라인딩 기술로 막힘 발생이 적음</li>
+          <li>50 mm 직경의 소형 파이프로 배출</li>
+        </ul>
+        <a href="https://sfa-korea.co.kr/ko/products/sanicubic-2-classic" target="_blank" rel="noopener" class="prod-link" onclick="event.stopPropagation()">제품 상세 확인 →</a>
+      </div>
+    </div>
+
+    <!-- 사니큐빅 2 GR HP S -->
+    <div class="prod-card" onclick="location.href='https://sfa-korea.co.kr/ko/products/sanicubic-2-gr-hp-s'" style="cursor:pointer;">
+      <img class="prod-img" src="images/sanicubic-2-gr-hp-s.png" alt="사니큐빅 2 GR HP S"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="prod-img-fallback" style="display:none;">
+        <div class="prod-img-fallback-text">SANICUBIC<br/>2 GR HP S</div>
+      </div>
+      <div class="prod-body">
+        <span class="prod-badge">SFA</span>
+        <div class="prod-name">사니큐빅 2 GR HP S</div>
+        <div class="prod-desc">대형 주택과 소형 상업 시설에 이상적인 리프팅 스테이션</div>
+        <ul class="prod-features">
+          <li>최대 온도 90°C의 오수 처리 가능</li>
+          <li>3개의 유입구 (하단 2개)</li>
+          <li>강력한 그라인더가 장착된 2개의 모터</li>
+          <li>컨트롤박스 사용 가능 (별도 구매)</li>
+        </ul>
+        <a href="https://sfa-korea.co.kr/ko/products/sanicubic-2-gr-hp-s" target="_blank" rel="noopener" class="prod-link" onclick="event.stopPropagation()">제품 상세 확인 →</a>
+      </div>
+    </div>
+
+    <!-- 사니큐빅 2 VX -->
+    <div class="prod-card" onclick="location.href='https://sfa-korea.co.kr/ko/products/sanicubic-2-vx'" style="cursor:pointer;">
+      <img class="prod-img" src="images/sanicubic-2-vx.png" alt="사니큐빅 2 VX"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="prod-img-fallback" style="display:none;">
+        <div class="prod-img-fallback-text">SANICUBIC<br/>2 VX</div>
+      </div>
+      <div class="prod-body">
+        <span class="prod-badge">SFA</span>
+        <div class="prod-name">사니큐빅 2 VX</div>
+        <div class="prod-desc">상업 및 산업 시설 배수에 이상적인 리프팅 스테이션</div>
+        <ul class="prod-features">
+          <li>굴착 없이 설치 가능</li>
+          <li>정비 시 쉬운 접근성</li>
+          <li>하부 유입구 2개를 포함한 5개 유입구</li>
+          <li>볼텍스 임펠러 2개 장착</li>
+        </ul>
+        <a href="https://sfa-korea.co.kr/ko/products/sanicubic-2-vx" target="_blank" rel="noopener" class="prod-link" onclick="event.stopPropagation()">제품 상세 확인 →</a>
+      </div>
+    </div>
+
+    <!-- 사니콤 1 -->
+    <div class="prod-card" onclick="location.href='https://sfa-korea.co.kr/ko/products/sanicom-1'" style="cursor:pointer;">
+      <img class="prod-img" src="images/sanicom-1.png" alt="사니콤 1"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="prod-img-fallback" style="display:none;">
+        <div class="prod-img-fallback-text">SANICOM 1</div>
+      </div>
+      <div class="prod-body">
+        <span class="prod-badge">SFA</span>
+        <div class="prod-name">사니콤 1</div>
+        <div class="prod-desc">상업용 시설에 추천하는 하수용 리프팅 스테이션</div>
+        <ul class="prod-features">
+          <li>최대 90°C의 생활하수(변기 제외) 처리 가능</li>
+          <li>굴착 공사 없이 쉽고 간단하게 설치</li>
+          <li>40 mm 직경의 유입구가 양측면에 위치</li>
+          <li>탈부착형 모터와 수위 센서</li>
+        </ul>
+        <a href="https://sfa-korea.co.kr/ko/products/sanicom-1" target="_blank" rel="noopener" class="prod-link" onclick="event.stopPropagation()">제품 상세 확인 →</a>
+      </div>
+    </div>
+
+    <!-- 사니콤 2 -->
+    <div class="prod-card" onclick="location.href='https://sfa-korea.co.kr/ko/products/sanicom-2'" style="cursor:pointer;">
+      <img class="prod-img" src="images/sanicom-2.png" alt="사니콤 2"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="prod-img-fallback" style="display:none;">
+        <div class="prod-img-fallback-text">SANICOM 2</div>
+      </div>
+      <div class="prod-body">
+        <span class="prod-badge">SFA</span>
+        <div class="prod-name">사니콤 2</div>
+        <div class="prod-desc">생활하수 처리를 위한 강력한 2모터 솔루션</div>
+        <ul class="prod-features">
+          <li>최대 온도 90°C의 생활하수 처리 가능</li>
+          <li>굴착 없이 쉬운 설치</li>
+          <li>2개의 80 mm 직경 하단 측면 유입구</li>
+          <li>원거리 조작 및 두 개의 펌프로 강력한 작동</li>
+        </ul>
+        <a href="https://sfa-korea.co.kr/ko/products/sanicom-2" target="_blank" rel="noopener" class="prod-link" onclick="event.stopPropagation()">제품 상세 확인 →</a>
+      </div>
+    </div>
+
+    <!-- 사니큐빅 2 GR -->
+    <div class="prod-card" onclick="location.href='https://sfa-korea.co.kr/ko/products/sanicubic-2-gr'" style="cursor:pointer;">
+      <img class="prod-img" src="images/sanicubic-2-gr.png" alt="사니큐빅 2 GR"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="prod-img-fallback" style="display:none;">
+        <div class="prod-img-fallback-text">SANICUBIC<br/>2 GR</div>
+      </div>
+      <div class="prod-body">
+        <span class="prod-badge">SFA</span>
+        <div class="prod-name">사니큐빅 2 GR</div>
+        <div class="prod-desc">상업 시설과 대형 주거시설에 알맞은 생활하수 및 오수 펌프 스테이션</div>
+        <ul class="prod-features">
+          <li>강력한 분쇄 칼날이 장착된 2개의 모터</li>
+          <li>3상 사용 가능</li>
+          <li>양정에 따른 2가지 모델</li>
+          <li>컨트롤박스 포함 (별도 구매 가능)</li>
+        </ul>
+        <a href="https://sfa-korea.co.kr/ko/products/sanicubic-2-gr" target="_blank" rel="noopener" class="prod-link" onclick="event.stopPropagation()">제품 상세 확인 →</a>
+      </div>
+    </div>
+
+    <!-- 사니큐빅 2 SC -->
+    <div class="prod-card" onclick="location.href='https://sfa-korea.co.kr/ko/products/sanicubic-2-sc'" style="cursor:pointer;">
+      <img class="prod-img" src="images/sanicubic-2-sc.png" alt="사니큐빅 2 SC"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+      <div class="prod-img-fallback" style="display:none;">
+        <div class="prod-img-fallback-text">SANICUBIC<br/>2 SC</div>
+      </div>
+      <div class="prod-body">
+        <span class="prod-badge">SFA</span>
+        <div class="prod-name">사니큐빅 2 SC</div>
+        <div class="prod-desc">두 대의 모터가 장착된 상업용 및 건물용 리프팅 스테이션</div>
+        <ul class="prod-features">
+          <li>두 대의 3상 펌프 / DN 150 유입구 1</li>
+          <li>4가지 버전 이용 가능 / 1000리터 탱크</li>
+          <li>통과 직경 80 mm 또는 100 mm</li>
+          <li>제어 박스 포함 (ZPS 또는 PS2)</li>
+          <li>탱크 용량 최대 20,000 L 커스터마이징 가능</li>
+        </ul>
+        <a href="https://sfa-korea.co.kr/ko/products/sanicubic-2-sc" target="_blank" rel="noopener" class="prod-link" onclick="event.stopPropagation()">제품 상세 확인 →</a>
+      </div>
+    </div>
+
+  </div><!-- /cards-grid -->
+
+</div><!-- /container -->
 
 <footer>
   <div>(주)효일종합상사 | 경기도 부천시 조마루로 385번길 122, 삼보테크노타워 1607, 1608호</div>
   <div style="margin-top:6px;">T. 032.347.0815~7 | <a href="mailto:hyoilpump@daum.net">hyoilpump@daum.net</a></div>
   <div style="margin-top:10px;">© 2025 HYOIL Co., Ltd. All rights reserved.</div>
 </footer>
+
 </body>
 </html>
