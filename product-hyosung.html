@@ -150,50 +150,46 @@
 <section style="background:var(--navy);padding:80px 0;">
   <div style="max-width:1200px;margin:0 auto;padding:0 40px;">
 
-    <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#60a5fa;margin-bottom:14px;">파트너십 · Partnership</div>
-    <h2 style="font-size:clamp(22px,3.5vw,40px);font-weight:900;color:white;letter-spacing:-1.5px;line-height:1.2;margin-bottom:10px;">
-      <span style="font-size:clamp(13px,1.6vw,18px);font-weight:500;color:rgba(255,255,255,.55);display:block;letter-spacing:0;margin-bottom:6px;">대한민국 대표 펌프 생산 전문회사</span>
-      <span style="color:var(--blue-light);font-family:'Bebas Neue',sans-serif;letter-spacing:2px;">HYOSUNG GOODSPRINGS</span>
-    </h2>
-    <p style="font-size:14.5px;color:rgba(255,255,255,.65);line-height:1.85;max-width:680px;margin-bottom:24px;">효성굿스프링스는 대한민국을 대표하는 펌프 생산 전문회사로서, 끊임없는 연구개발을 통하여 국내외 산업발전에 기여해 오고 있습니다.</p>
-    <a href="https://www.hsgoodsprings.com/kr/applications/buildings.do" target="_blank" rel="noopener"
-       style="display:inline-flex;align-items:center;gap:12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:12px 20px;text-decoration:none;margin-bottom:48px;transition:background .2s;"
-       onmouseover="this.style.background='rgba(255,255,255,.12)'" onmouseout="this.style.background='rgba(255,255,255,.07)'">
-      <span style="font-size:14px;font-weight:600;color:white;">효성굿스프링스 공식 웹사이트 바로가기</span>
-      <span style="color:rgba(255,255,255,.5);">→</span>
-    </a>
+    <!-- 2열: 왼쪽 텍스트+링크 / 오른쪽 이미지 -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
 
-    <!-- 이미지 + 3개 카드 -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:stretch;">
+      <!-- 왼쪽 -->
+      <div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#60a5fa;margin-bottom:14px;">파트너십 · Partnership</div>
+        <h2 style="font-size:clamp(28px,4vw,46px);font-weight:900;color:white;letter-spacing:-2px;line-height:1.15;margin-bottom:20px;">
+          <span style="color:var(--blue-light);font-family:'Bebas Neue',sans-serif;letter-spacing:2px;">HYOSUNG GOODSPRINGS</span>
+        </h2>
+        <p style="font-size:14.5px;color:rgba(255,255,255,.65);line-height:1.9;margin-bottom:28px;">효성굿스프링스는 대한민국을 대표하는 펌프 생산 전문회사로서, 끊임없는 연구개발을 통하여 국내외 산업발전에 기여해 오고 있습니다.</p>
 
-      <!-- 이미지 (stretch로 카드 높이에 맞춤) -->
-      <div style="border-radius:14px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.4);">
-        <img src="images/goodsprings.png" alt="효성굿스프링스" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a3a6e,#0a1628)'"/>
+        <!-- 3개 아이콘 한 줄 -->
+        <div style="display:flex;gap:24px;margin-bottom:28px;">
+          <div style="text-align:center;">
+            <div style="font-size:28px;margin-bottom:6px;">🏆</div>
+            <div style="font-size:12px;font-weight:700;color:white;">국내 소방<br/>기준 인증</div>
+          </div>
+          <div style="width:1px;background:rgba(255,255,255,.1);"></div>
+          <div style="text-align:center;">
+            <div style="font-size:28px;margin-bottom:6px;">🔩</div>
+            <div style="font-size:12px;font-weight:700;color:white;">스테인리스<br/>내식성</div>
+          </div>
+          <div style="width:1px;background:rgba(255,255,255,.1);"></div>
+          <div style="text-align:center;">
+            <div style="font-size:28px;margin-bottom:6px;">⚡</div>
+            <div style="font-size:12px;font-weight:700;color:white;">신속한<br/>국내 A/S</div>
+          </div>
+        </div>
+
+        <a href="https://www.hsgoodsprings.com/kr/applications/buildings.do" target="_blank" rel="noopener"
+           style="display:inline-flex;align-items:center;gap:12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:12px 20px;text-decoration:none;transition:background .2s;"
+           onmouseover="this.style.background='rgba(255,255,255,.12)'" onmouseout="this.style.background='rgba(255,255,255,.07)'">
+          <span style="font-size:14px;font-weight:600;color:white;">효성굿스프링스 공식 웹사이트 바로가기</span>
+          <span style="color:rgba(255,255,255,.5);">→</span>
+        </a>
       </div>
 
-      <!-- 3개 카드 -->
-      <div style="display:flex;flex-direction:column;gap:16px;justify-content:space-between;">
-        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px 22px;display:flex;gap:14px;align-items:center;flex:1;">
-          <div style="font-size:26px;flex-shrink:0;">🏆</div>
-          <div>
-            <div style="font-size:14px;font-weight:800;color:white;margin-bottom:5px;">국내 소방 기준 인증</div>
-            <div style="font-size:12.5px;color:rgba(255,255,255,.6);line-height:1.75;">NFPC/NFTC 102·103·502 기준을 완벽히 충족하는 국내 인증 소방 펌프 시스템을 공급합니다.</div>
-          </div>
-        </div>
-        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px 22px;display:flex;gap:14px;align-items:center;flex:1;">
-          <div style="font-size:26px;flex-shrink:0;">🔩</div>
-          <div>
-            <div style="font-size:14px;font-weight:800;color:white;margin-bottom:5px;">스테인리스 내식성</div>
-            <div style="font-size:12.5px;color:rgba(255,255,255,.6);line-height:1.75;">임펠러, 가이드 케이싱, 샤프트 등 주요 부품에 스테인리스 소재를 적용하여 우수한 내식성을 확보합니다.</div>
-          </div>
-        </div>
-        <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:20px 22px;display:flex;gap:14px;align-items:center;flex:1;">
-          <div style="font-size:26px;flex-shrink:0;">⚡</div>
-          <div>
-            <div style="font-size:14px;font-weight:800;color:white;margin-bottom:5px;">신속한 국내 A/S</div>
-            <div style="font-size:12.5px;color:rgba(255,255,255,.6);line-height:1.75;">국내 제조 브랜드로 빠른 부품 공급과 A/S 지원. Top Pull-Out 구조로 배관 해체 없이 유지보수가 가능합니다.</div>
-          </div>
-        </div>
+      <!-- 오른쪽: 이미지 (작게) -->
+      <div style="border-radius:14px;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,.4);max-height:300px;">
+        <img src="images/goodsprings.png" alt="효성굿스프링스" style="width:100%;height:300px;object-fit:cover;display:block;" onerror="this.parentElement.style.background='linear-gradient(135deg,#1a3a6e,#0a1628)'"/>
       </div>
 
     </div>
