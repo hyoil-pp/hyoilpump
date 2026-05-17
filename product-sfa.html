@@ -46,9 +46,14 @@ nav a.nav-cta{background:var(--accent);color:white!important;padding:8px 18px;bo
 }
 .prod-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(10,22,40,.12); border-color: var(--blue-light); }
 
+.prod-img-wrap {
+  margin: 16px 16px 0; border-radius: 10px; overflow: hidden;
+  height: 200px; background: #f8f9fb;
+  flex-shrink: 0;
+}
 .prod-img {
   width: 100%; height: 200px; object-fit: contain;
-  background: white; display: block; padding: 16px;
+  background: #f8f9fb; display: block; padding: 12px;
 }
 .prod-img-fallback {
   height: 200px; background: linear-gradient(135deg, var(--navy), var(--blue));
@@ -143,10 +148,12 @@ footer a:hover{color:white}
 
     <!-- 사니큐빅 1 WP -->
     <div class="prod-card" onclick="location.href='https://sfa-korea.co.kr/ko/products/sanicubic-1-wp'" style="cursor:pointer;">
+      <div class="prod-img-wrap">
       <img class="prod-img" src="images/sanicubic-1-wp.png" alt="사니큐빅 1 WP"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
       <div class="prod-img-fallback" style="display:none;">
         <div class="prod-img-fallback-text">SANICUBIC<br/>1 WP</div>
+      </div>
       </div>
       <div class="prod-body">
         <span class="prod-badge">SFA</span>
@@ -165,10 +172,12 @@ footer a:hover{color:white}
 
     <!-- 사니큐빅 2 클래식 -->
     <div class="prod-card" onclick="location.href='https://sfa-korea.co.kr/ko/products/sanicubic-2-classic'" style="cursor:pointer;">
+      <div class="prod-img-wrap">
       <img class="prod-img" src="images/sanicubic-2-classic.png" alt="사니큐빅 2 클래식"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
       <div class="prod-img-fallback" style="display:none;">
         <div class="prod-img-fallback-text">SANICUBIC<br/>2 CLASSIC</div>
+      </div>
       </div>
       <div class="prod-body">
         <span class="prod-badge">SFA</span>
@@ -187,10 +196,12 @@ footer a:hover{color:white}
 
     <!-- 사니큐빅 2 GR HP S -->
     <div class="prod-card" onclick="location.href='https://sfa-korea.co.kr/ko/products/sanicubic-2-gr-hp-s'" style="cursor:pointer;">
+      <div class="prod-img-wrap">
       <img class="prod-img" src="images/sanicubic-2-gr-hp-s.png" alt="사니큐빅 2 GR HP S"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
       <div class="prod-img-fallback" style="display:none;">
         <div class="prod-img-fallback-text">SANICUBIC<br/>2 GR HP S</div>
+      </div>
       </div>
       <div class="prod-body">
         <span class="prod-badge">SFA</span>
@@ -208,10 +219,12 @@ footer a:hover{color:white}
 
     <!-- 사니큐빅 2 VX -->
     <div class="prod-card" onclick="location.href='https://sfa-korea.co.kr/ko/products/sanicubic-2-vx'" style="cursor:pointer;">
+      <div class="prod-img-wrap">
       <img class="prod-img" src="images/sanicubic-2-vx.png" alt="사니큐빅 2 VX"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
       <div class="prod-img-fallback" style="display:none;">
         <div class="prod-img-fallback-text">SANICUBIC<br/>2 VX</div>
+      </div>
       </div>
       <div class="prod-body">
         <span class="prod-badge">SFA</span>
@@ -229,10 +242,12 @@ footer a:hover{color:white}
 
     <!-- 사니콤 1 -->
     <div class="prod-card" onclick="location.href='https://sfa-korea.co.kr/ko/products/sanicom-1'" style="cursor:pointer;">
+      <div class="prod-img-wrap">
       <img class="prod-img" src="images/sanicom-1.png" alt="사니콤 1"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
       <div class="prod-img-fallback" style="display:none;">
         <div class="prod-img-fallback-text">SANICOM 1</div>
+      </div>
       </div>
       <div class="prod-body">
         <span class="prod-badge">SFA</span>
@@ -250,10 +265,12 @@ footer a:hover{color:white}
 
     <!-- 사니콤 2 -->
     <div class="prod-card" onclick="location.href='https://sfa-korea.co.kr/ko/products/sanicom-2'" style="cursor:pointer;">
+      <div class="prod-img-wrap">
       <img class="prod-img" src="images/sanicom-2.png" alt="사니콤 2"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
       <div class="prod-img-fallback" style="display:none;">
         <div class="prod-img-fallback-text">SANICOM 2</div>
+      </div>
       </div>
       <div class="prod-body">
         <span class="prod-badge">SFA</span>
@@ -271,10 +288,12 @@ footer a:hover{color:white}
 
     <!-- 사니큐빅 2 GR -->
     <div class="prod-card" onclick="location.href='https://sfa-korea.co.kr/ko/products/sanicubic-2-gr'" style="cursor:pointer;">
+      <div class="prod-img-wrap">
       <img class="prod-img" src="images/sanicubic-2-gr.png" alt="사니큐빅 2 GR"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
       <div class="prod-img-fallback" style="display:none;">
         <div class="prod-img-fallback-text">SANICUBIC<br/>2 GR</div>
+      </div>
       </div>
       <div class="prod-body">
         <span class="prod-badge">SFA</span>
@@ -292,10 +311,12 @@ footer a:hover{color:white}
 
     <!-- 사니큐빅 2 SC -->
     <div class="prod-card" onclick="location.href='https://sfa-korea.co.kr/ko/products/sanicubic-2-sc'" style="cursor:pointer;">
+      <div class="prod-img-wrap">
       <img class="prod-img" src="images/sanicubic-2-sc.png" alt="사니큐빅 2 SC"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
       <div class="prod-img-fallback" style="display:none;">
         <div class="prod-img-fallback-text">SANICUBIC<br/>2 SC</div>
+      </div>
       </div>
       <div class="prod-body">
         <span class="prod-badge">SFA</span>
