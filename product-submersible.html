@@ -19,14 +19,14 @@
     nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
     nav a:hover{color:white}
     nav a.nav-cta{background:var(--accent);color:white!important;padding:8px 18px;border-radius:4px;font-weight:700}
-    .page-hero{background:linear-gradient(135deg,var(--navy),var(--blue));padding:140px 40px 70px;position:relative;overflow:hidden}
-    .page-hero::before{content:'SUBMERSIBLE';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:200px;color:rgba(255,255,255,.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
+    .page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);padding:140px 40px 70px;position:relative;overflow:hidden}
+    .page-hero::before{content:'SUBMERSIBLE';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:180px;color:rgba(255,255,255,.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
     .container{max-width:1200px;margin:0 auto;padding:0 40px}
-    .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;margin-bottom:80px}
+    .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:60px 0 80px}
     footer{background:#06101f;padding:30px 40px;text-align:center;color:rgba(255,255,255,.35);font-size:12.5px}
     footer a{color:rgba(255,255,255,.5);text-decoration:none}
-    @media(max-width:900px){.cards-grid{grid-template-columns:1fr 1fr}nav{display:none}.header-top-side{display:none}}
-    @media(max-width:600px){.cards-grid{grid-template-columns:1fr}}
+    @media(max-width:1024px){.cards-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:768px){nav{display:none}.cards-grid{grid-template-columns:1fr}.header-top-side{display:none}.container{padding:0 20px}}
   </style>
 </head>
 <body>
@@ -37,7 +37,7 @@
     <span class="header-top-side">✉ hyoilpump@daum.net</span>
   </div>
   <div class="header-main">
-    <a href="index.html"><img src="images/logo.png" alt="효일종합상사" style="height:52px;width:auto;object-fit:contain;display:block;"/></a>
+    <a href="index.html"><img src="images/logo.png" alt="효일종합상사" style="height:72px;width:auto;object-fit:contain;display:block;"/></a>
     <nav>
       <a href="about.html">회사소개</a>
       <a href="index.html#products">제품소개</a>
@@ -48,130 +48,337 @@
     </nav>
   </div>
 </header>
-
 <div class="page-hero">
   <div class="container">
     <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#60a5fa;margin-bottom:12px;">제품 소개 · Products</div>
     <h1 style="font-size:clamp(28px,5vw,52px);font-weight:900;color:white;letter-spacing:-2px;margin-bottom:16px;">수중 펌프</h1>
-    <p style="font-size:15px;color:rgba(255,255,255,.65);max-width:600px;line-height:1.8;">지하 집수정, 오수 및 우수 처리용으로 설계된 수중 설치형 고내구성 펌프. 모터와 펌프가 일체형으로 수중에서 직접 운전합니다.</p>
-    <div style="margin-top:24px;">
-      <a href="index.html#products" style="color:rgba(255,255,255,.6);font-size:13px;text-decoration:none;">← 전체 제품으로 돌아가기</a>
-    </div>
+    <p style="font-size:15px;color:rgba(255,255,255,.65);max-width:680px;line-height:1.8;">펌프와 모터가 결합되어 폐수 속에서 작동하는 밀봉형 수중 펌프. 하수·폐수·배수 등 다양한 환경에 최적화된 제품군입니다.</p>
+    <div style="margin-top:24px;"><a href="index.html#products" style="color:rgba(255,255,255,.6);font-size:13px;text-decoration:none;">← 전체 제품으로 돌아가기</a></div>
   </div>
 </div>
-
-<div class="container">
-  <div class="cards-grid">
-    
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-          <div style="background:linear-gradient(135deg,var(--navy),var(--blue));height:180px;display:flex;align-items:center;justify-content:center;padding:24px;">
-            <div style="text-align:center;">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;">SEG</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">Submersible Sewage</div>
-            </div>
-          </div>
-          <div style="padding:20px;">
+<div class="container"><div class="cards-grid">
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/DP.jpg" alt="DP" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
             <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
-            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">SEG 수중 오수 펌프</div>
-            <div style="font-size:13px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;">오수·하수 처리 전용. 내마모성 재질과 반개방형 임펠러로 막힘 방지.</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--gray-dark);background:var(--off-white);border-radius:8px;padding:12px;margin-bottom:14px;">
-              <span style="color:var(--gray-mid);">최대 압력</span><span style="font-weight:700;color:var(--navy);text-align:right;">6 bar</span><span style="color:var(--gray-mid);">액 온도</span><span style="font-weight:700;color:var(--navy);text-align:right;">0~40°C</span><span style="color:var(--gray-mid);">최대 양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">30 m</span><span style="color:var(--gray-mid);">최대 유량</span><span style="font-weight:700;color:var(--navy);text-align:right;">130 m³/h</span>
-            </div>
-            <a href="https://product-selection.grundfos.com/kr/categories/pumps/immersible-pumps?tab=categories" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">DP</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">세미오픈·멀티베인 임펠러 적용 배수 펌프. 최대 10mm 고형물 이송 가능.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~40°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">18 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">13 l/s</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/dp?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
           </div>
+          
         </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-          <div style="background:linear-gradient(135deg,var(--navy),var(--blue));height:180px;display:flex;align-items:center;justify-content:center;padding:24px;">
-            <div style="text-align:center;">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;">SL</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">Submersible Slurry</div>
-            </div>
-          </div>
-          <div style="padding:20px;">
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/DPK.jpg" alt="DPK" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
             <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
-            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">SL 슬러리 수중 펌프</div>
-            <div style="font-size:13px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;">고형물이 많은 슬러리 이송에 적합. 내마모 주철 구조.</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--gray-dark);background:var(--off-white);border-radius:8px;padding:12px;margin-bottom:14px;">
-              <span style="color:var(--gray-mid);">최대 압력</span><span style="font-weight:700;color:var(--navy);text-align:right;">6 bar</span><span style="color:var(--gray-mid);">액 온도</span><span style="font-weight:700;color:var(--navy);text-align:right;">0~40°C</span><span style="color:var(--gray-mid);">최대 양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">20 m</span><span style="color:var(--gray-mid);">최대 유량</span><span style="font-weight:700;color:var(--navy);text-align:right;">200 m³/h</span>
-            </div>
-            <a href="https://product-selection.grundfos.com/kr/categories/pumps/immersible-pumps?tab=categories" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">DPK</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">밀폐형·세미오픈형·SuperVortex·자유유동형 임펠러 적용 수중 오폐수 펌프.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~40°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">59 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">65 l/s</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/dpk?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
           </div>
+          
         </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-          <div style="background:linear-gradient(135deg,var(--navy),var(--blue));height:180px;display:flex;align-items:center;justify-content:center;padding:24px;">
-            <div style="text-align:center;">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;">SE</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">Submersible Effluent</div>
-            </div>
-          </div>
-          <div style="padding:20px;">
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/DWK.jpg" alt="DWK" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
             <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
-            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">SE 수중 배수 펌프</div>
-            <div style="font-size:13px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;">지하 집수정·우수 배수용. 자동 레벨 제어 가능.</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--gray-dark);background:var(--off-white);border-radius:8px;padding:12px;margin-bottom:14px;">
-              <span style="color:var(--gray-mid);">최대 압력</span><span style="font-weight:700;color:var(--navy);text-align:right;">6 bar</span><span style="color:var(--gray-mid);">액 온도</span><span style="font-weight:700;color:var(--navy);text-align:right;">0~40°C</span><span style="color:var(--gray-mid);">최대 양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">25 m</span><span style="color:var(--gray-mid);">최대 유량</span><span style="font-weight:700;color:var(--navy);text-align:right;">60 m³/h</span>
-            </div>
-            <a href="https://product-selection.grundfos.com/kr/categories/pumps/immersible-pumps?tab=categories" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">DWK</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">건설·산업용 수중 배수 펌프. 다양한 임펠러 구조 적용.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~40°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">168 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">95 l/s</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/dwk?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
           </div>
+          
         </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-          <div style="background:linear-gradient(135deg,var(--navy),var(--blue));height:180px;display:flex;align-items:center;justify-content:center;padding:24px;">
-            <div style="text-align:center;">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;">KP</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">Submersible Drainage</div>
-            </div>
-          </div>
-          <div style="padding:20px;">
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/EF.jpg" alt="EF" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
             <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
-            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">KP 이동식 수중 펌프</div>
-            <div style="font-size:13px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;">공사 현장·임시 배수용 이동식 수중 펌프. 견고한 스테인리스 구조.</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--gray-dark);background:var(--off-white);border-radius:8px;padding:12px;margin-bottom:14px;">
-              <span style="color:var(--gray-mid);">최대 압력</span><span style="font-weight:700;color:var(--navy);text-align:right;">4 bar</span><span style="color:var(--gray-mid);">액 온도</span><span style="font-weight:700;color:var(--navy);text-align:right;">0~40°C</span><span style="color:var(--gray-mid);">최대 양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">20 m</span><span style="color:var(--gray-mid);">최대 유량</span><span style="font-weight:700;color:var(--navy);text-align:right;">35 m³/h</span>
-            </div>
-            <a href="https://product-selection.grundfos.com/kr/categories/pumps/immersible-pumps?tab=categories" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">EF</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">단일 베인·세미오픈 임펠러 적용. 섬유 및 불순물 포함 배수용.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~40°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">24 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">13 l/s</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/ef" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
           </div>
+          
         </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-          <div style="background:linear-gradient(135deg,var(--navy),var(--blue));height:180px;display:flex;align-items:center;justify-content:center;padding:24px;">
-            <div style="text-align:center;">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;">DWK</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">Submersible Well Pump</div>
-            </div>
-          </div>
-          <div style="padding:20px;">
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/KPL.jpg" alt="KPL" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
             <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
-            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">DWK 심정 수중 펌프</div>
-            <div style="font-size:13px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;">깊은 우물·지하수 취수용 다단 수중 펌프. 세장형 설계로 협소 구경 대응.</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--gray-dark);background:var(--off-white);border-radius:8px;padding:12px;margin-bottom:14px;">
-              <span style="color:var(--gray-mid);">최대 압력</span><span style="font-weight:700;color:var(--navy);text-align:right;">25 bar</span><span style="color:var(--gray-mid);">액 온도</span><span style="font-weight:700;color:var(--navy);text-align:right;">0~30°C</span><span style="color:var(--gray-mid);">최대 양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">300 m</span><span style="color:var(--gray-mid);">최대 유량</span><span style="font-weight:700;color:var(--navy);text-align:right;">40 m³/h</span>
-            </div>
-            <a href="https://product-selection.grundfos.com/kr/categories/pumps/immersible-pumps?tab=categories" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">KPL</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">고유량·저양정용 축류 프로펠러 펌프.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">1782 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">5940 l/s</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/kpl" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
           </div>
+          
         </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-          <div style="background:linear-gradient(135deg,var(--navy),var(--blue));height:180px;display:flex;align-items:center;justify-content:center;padding:24px;">
-            <div style="text-align:center;">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;">SP</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">Submersible Deep Well</div>
-            </div>
-          </div>
-          <div style="padding:20px;">
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/SE SL 9-30 kW.jpg" alt="SE SL 9-30 kW" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
             <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
-            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">SP 심정 다단 수중 펌프</div>
-            <div style="font-size:13px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;">지하수 취수, 농업용수, 건물 급수에 적합한 다단 수중 펌프.</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--gray-dark);background:var(--off-white);border-radius:8px;padding:12px;margin-bottom:14px;">
-              <span style="color:var(--gray-mid);">최대 압력</span><span style="font-weight:700;color:var(--navy);text-align:right;">30 bar</span><span style="color:var(--gray-mid);">액 온도</span><span style="font-weight:700;color:var(--navy);text-align:right;">0~35°C</span><span style="color:var(--gray-mid);">최대 양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">400 m</span><span style="color:var(--gray-mid);">최대 유량</span><span style="font-weight:700;color:var(--navy);text-align:right;">60 m³/h</span>
-            </div>
-            <a href="https://product-selection.grundfos.com/kr/categories/pumps/immersible-pumps?tab=categories" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">SE SL 9-30 kW</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">S-tube® 또는 SuperVortex 임펠러 적용 수중 펌프.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~40°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">78 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">279 l/s</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/sesl-9-30-kw" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
           </div>
+          
         </div>
-  </div>
-</div>
-
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/SE SL Range 48 (1.1-11 kW).jpg" alt="SE SL Range 48 (1.1-11 kW)" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">SE SL Range 48 (1.1-11 kW)</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">폐수·공정수·원수용 중부하 수중/건식 설치 펌프.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~40°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">46 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">62 l/s</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/sesl-range-48" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+          </div>
+          
+        </div>
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/SE SL Range 56 (18-63 kW).jpg" alt="SE SL Range 56 (18-63 kW)" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">SE SL Range 56 (18-63 kW)</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">수도시설·상업·산업용 맞춤형 폐수 이송 펌프.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~40°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">56 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">330 l/s</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/sesl-frame-size-56" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+          </div>
+          
+        </div>
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/SE1.50.jpg" alt="SE1.50" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">SE1.50</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">S-tube® 또는 SuperVortex 임펠러 적용 수중 펌프.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~40°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">31 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">60 l/s</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/sesl-range-48/se1" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+          </div>
+          
+        </div>
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/SEG.jpg" alt="SEG" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">SEG</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">특허 그라인더 시스템 적용 슬러지용 오폐수 펌프.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~40°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">48 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">10 l/s</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/seg" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+          </div>
+          
+        </div>
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/SEV.jpg" alt="SEV" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">SEV</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">SuperVortex 임펠러 적용 수중 펌프.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~40°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">44 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">20 l/s</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/sesl-range-48/sev" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+          </div>
+          
+        </div>
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/SFG.jpg" alt="SFG" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">SFG</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">유체 흐름 생성용 수평형 유성 기어 구동 플로우메이커.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">5~60°C</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/agitators/sfg" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+          </div>
+          
+        </div>
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/SL Range 40 (0.9-1.5 kW).jpg" alt="SL Range 40 (0.9-1.5 kW)" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">SL Range 40 (0.9-1.5 kW)</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">채널 임펠러 또는 SuperVortex 적용 소형 하수 펌프.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~40°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">16 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">17 l/s</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/sl-range-40" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+          </div>
+          
+        </div>
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/SL1.jpg" alt="SL1" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">SL1</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">S-tube 적용 수중 하수 펌프.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~40°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">32 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">62 l/s</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/sesl-range-48/sl1" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+          </div>
+          
+        </div>
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/SLV.jpg" alt="SLV" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">SLV</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">SuperVortex 임펠러 적용 수중 하수 펌프.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~40°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">46 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">31 l/s</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/sesl-range-48/slv" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+          </div>
+          
+        </div>
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/SMG.jpg" alt="SMG" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">SMG</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">유체 균질화·현탁용 수평형 유성 기어 혼화기.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">5~60°C</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/agitators/smg" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+          </div>
+          
+        </div>
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/SRG.jpg" alt="SRG" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">SRG</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">슬러지 재순환용 고유량·저양정 펌프.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">5~40°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">3 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">1470 l/s</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/agitators/srg" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+          </div>
+          
+        </div>
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/Unilift AP.jpg" alt="Unilift AP" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">Unilift AP</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">독립 설치용 수중 폐수 펌프.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~70°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">26 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">10 l/s</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/unilift-ap" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+          </div>
+          
+        </div>
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/Unilift AP12.jpg" alt="Unilift AP12" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">Unilift AP12</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">최대 12mm 입자 처리 가능한 스테인리스 수중 펌프.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~55°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">18 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">10 l/s</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/unilift-ap/unilift-ap12" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+          </div>
+          
+        </div>
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/Unilift AP35.jpg" alt="Unilift AP35" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">Unilift AP35</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">최대 35mm 입자 처리 가능한 스테인리스 수중 펌프.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~55°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">13 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">6 l/s</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/unilift-ap/unilift-ap35" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+          </div>
+          
+        </div>
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/Unilift AP35B.jpg" alt="Unilift AP35B" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">Unilift AP35B</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">자동 커플링 설치 가능한 스테인리스 수중 펌프.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~40°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">13 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">5 l/s</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/unilift-ap/unilift-ap35b" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+          </div>
+          
+        </div>
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/Unilift AP50.jpg" alt="Unilift AP50" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">Unilift AP50</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">최대 50mm 입자 처리 가능한 스테인리스 수중 펌프.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~55°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">13 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">10 l/s</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/unilift-ap/unilift-ap50" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+          </div>
+          
+        </div>
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/Unilift AP50B.jpg" alt="Unilift AP50B" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">Unilift AP50B</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">자동 커플링 설치 가능한 오폐수용 스테인리스 펌프.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~40°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">15 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">8 l/s</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/unilift-ap/unilift-ap50b" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+          </div>
+          
+        </div>
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/Unilift CC.jpg" alt="Unilift CC" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">Unilift CC</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">3mm 수위까지 배수 가능한 단속 수중 펌프.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~40°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">9 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">4 l/s</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/unilift-cc" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+          </div>
+          
+        </div>
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/Unilift KP.jpg" alt="Unilift KP" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">Unilift KP</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">비부식성 물·중수용 컴팩트 수중 펌프.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~40°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">10 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">4 l/s</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/unilift-kp" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+          </div>
+          
+        </div>
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/S 펌프.jpg" alt="S 펌프" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#2563b0;margin-bottom:10px;">Submersible</div>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">S 펌프</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">고형물 제한 없는 채널 임펠러 하수·폐수 펌프. 다양한 도시 및 산업 응용 분야의 하수 및 폐수 펌핑을 위해 특별 설계된 펌프.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~40°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">82 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">1090 l/s</span></div></div>
+            <button onclick="document.getElementById('modal_S').style.display='flex'" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;border:none;cursor:pointer;font-family:'Noto Sans KR',sans-serif;margin-top:14px;">제품 상세 확인 →</button>
+          </div>
+          
+            <div id="modal_S" style="display:none;position:fixed;inset:0;background:rgba(10,22,40,.85);z-index:300;align-items:center;justify-content:center;padding:20px;" onclick="if(event.target.id==='modal_S')this.style.display='none'">
+              <div style="background:white;border-radius:16px;max-width:680px;width:100%;max-height:85vh;overflow-y:auto;position:relative;">
+                <div style="position:sticky;top:0;background:var(--navy);padding:20px 28px;border-radius:16px 16px 0 0;display:flex;justify-content:space-between;align-items:center;">
+                  <div style="color:white;font-size:16px;font-weight:800;">S 펌프 — 제품 목록</div>
+                  <button onclick="document.getElementById('modal_S').style.display='none'" style="background:rgba(255,255,255,.15);border:none;color:white;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:18px;">✕</button>
+                </div>
+                <div style="padding:16px 28px 28px;"><div style="border-bottom:1px solid var(--gray-light);padding:14px 0;">
+              <div style="font-weight:700;color:var(--navy);font-size:14px;margin-bottom:4px;">S 범위 62 (≤50 kW)</div>
+              <div style="font-size:12px;color:var(--gray-mid);margin-bottom:8px;">액 온도: 0~40°C | 최대 양정: 73 m | 최대 유량: 345 l/s</div>
+              <a href="https://product-selection.grundfos.com/kr/products/s/range-62-50-kw?tab=models" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:var(--blue-light);text-decoration:none;">제품 상세 확인 →</a>
+            </div><div style="border-bottom:1px solid var(--gray-light);padding:14px 0;">
+              <div style="font-weight:700;color:var(--navy);font-size:14px;margin-bottom:4px;">S 범위 66 (≤68 kW)</div>
+              <div style="font-size:12px;color:var(--gray-mid);margin-bottom:8px;">액 온도: 0~40°C | 최대 양정: 74 m | 최대 유량: 573 l/s</div>
+              <a href="https://product-selection.grundfos.com/kr/products/s/range-66-68-kw" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:var(--blue-light);text-decoration:none;">제품 상세 확인 →</a>
+            </div><div style="border-bottom:1px solid var(--gray-light);padding:14px 0;">
+              <div style="font-weight:700;color:var(--navy);font-size:14px;margin-bottom:4px;">S 범위 70 (≤155 kW)</div>
+              <div style="font-size:12px;color:var(--gray-mid);margin-bottom:8px;">액 온도: 0~40°C | 최대 양정: 78 m | 최대 유량: 620 l/s</div>
+              <a href="https://product-selection.grundfos.com/kr/products/s/range-70-155-kw" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:var(--blue-light);text-decoration:none;">제품 상세 확인 →</a>
+            </div><div style="border-bottom:1px solid var(--gray-light);padding:14px 0;">
+              <div style="font-weight:700;color:var(--navy);font-size:14px;margin-bottom:4px;">S 범위 72 (≤225 kW)</div>
+              <div style="font-size:12px;color:var(--gray-mid);margin-bottom:8px;">액 온도: 0~40°C | 최대 양정: 82 m | 최대 유량: 427 l/s</div>
+              <a href="https://product-selection.grundfos.com/kr/products/s/range-72-225-kw" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:var(--blue-light);text-decoration:none;">제품 상세 확인 →</a>
+            </div><div style="border-bottom:1px solid var(--gray-light);padding:14px 0;">
+              <div style="font-weight:700;color:var(--navy);font-size:14px;margin-bottom:4px;">S 범위 74 (≤315 kW)</div>
+              <div style="font-size:12px;color:var(--gray-mid);margin-bottom:8px;">액 온도: 0~40°C | 최대 양정: 75 m | 최대 유량: 1040 l/s</div>
+              <a href="https://product-selection.grundfos.com/kr/products/s/range-74-315-kw" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:var(--blue-light);text-decoration:none;">제품 상세 확인 →</a>
+            </div><div style="border-bottom:1px solid var(--gray-light);padding:14px 0;">
+              <div style="font-weight:700;color:var(--navy);font-size:14px;margin-bottom:4px;">S 범위 78 (≤520 kW)</div>
+              <div style="font-size:12px;color:var(--gray-mid);margin-bottom:8px;">액 온도: 0~40°C | 최대 양정: 75 m | 최대 유량: 1090 l/s</div>
+              <a href="https://product-selection.grundfos.com/kr/products/s/range-78-520-kw" target="_blank" rel="noopener" style="font-size:12px;font-weight:600;color:var(--blue-light);text-decoration:none;">제품 상세 확인 →</a>
+            </div></div>
+              </div>
+            </div>
+        </div></div></div>
 <footer>
   <div>(주)효일종합상사 | 경기도 부천시 조마루로 385번길 122, 삼보테크노타워 1607, 1608호</div>
   <div style="margin-top:6px;">T. 032.347.0815~7 | <a href="mailto:hyoilpump@daum.net">hyoilpump@daum.net</a></div>
   <div style="margin-top:10px;">© 2025 HYOIL Co., Ltd. All rights reserved.</div>
 </footer>
-</body>
-</html>
+</body></html>
