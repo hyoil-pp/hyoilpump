@@ -19,14 +19,14 @@
     nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s}
     nav a:hover{color:white}
     nav a.nav-cta{background:var(--accent);color:white!important;padding:8px 18px;border-radius:4px;font-weight:700}
-    .page-hero{background:linear-gradient(135deg,var(--navy),var(--blue));padding:140px 40px 70px;position:relative;overflow:hidden}
-    .page-hero::before{content:'MULTISTAGE';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:200px;color:rgba(255,255,255,.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
+    .page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);padding:140px 40px 70px;position:relative;overflow:hidden}
+    .page-hero::before{content:'MULTISTAGE';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:180px;color:rgba(255,255,255,.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
     .container{max-width:1200px;margin:0 auto;padding:0 40px}
-    .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;margin-bottom:80px}
+    .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:60px 0 80px}
     footer{background:#06101f;padding:30px 40px;text-align:center;color:rgba(255,255,255,.35);font-size:12.5px}
     footer a{color:rgba(255,255,255,.5);text-decoration:none}
-    @media(max-width:900px){.cards-grid{grid-template-columns:1fr 1fr}nav{display:none}.header-top-side{display:none}}
-    @media(max-width:600px){.cards-grid{grid-template-columns:1fr}}
+    @media(max-width:1024px){.cards-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:768px){nav{display:none}.cards-grid{grid-template-columns:1fr}.header-top-side{display:none}.container{padding:0 20px}}
   </style>
 </head>
 <body>
@@ -53,7 +53,7 @@
   <div class="container">
     <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#60a5fa;margin-bottom:12px;">제품 소개 · Products</div>
     <h1 style="font-size:clamp(28px,5vw,52px);font-weight:900;color:white;letter-spacing:-2px;margin-bottom:16px;">입형 다단 펌프</h1>
-    <p style="font-size:15px;color:rgba(255,255,255,.65);max-width:600px;line-height:1.8;">고층 빌딩 급수·난방용으로 적합한 다단 터빈 구조의 고압 펌프. 수직 설치로 공간을 절약하며 높은 압력이 요구되는 현장에 최적입니다.</p>
+    <p style="font-size:15px;color:rgba(255,255,255,.65);max-width:680px;line-height:1.8;">높은 양정이 요구되는 시설에 사용되는 입형 다단 펌프입니다. 다수의 임펠러 단계가 연결되어 있으며 급수, 수처리, 산업 솔루션에 주로 사용됩니다.</p>
     <div style="margin-top:24px;">
       <a href="index.html#products" style="color:rgba(255,255,255,.6);font-size:13px;text-decoration:none;">← 전체 제품으로 돌아가기</a>
     </div>
@@ -63,106 +63,74 @@
 <div class="container">
   <div class="cards-grid">
     
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-          <div style="background:linear-gradient(135deg,var(--navy),var(--blue));height:180px;display:flex;align-items:center;justify-content:center;padding:24px;">
-            <div style="text-align:center;">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;">CRE</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">Vertical Multistage</div>
-            </div>
-          </div>
-          <div style="padding:20px;">
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/CR.jpg" alt="CR" style="width:100%;height:200px;object-fit:contain;object-position:center;background:#f8fafc;display:block;padding:16px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
             <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(124,58,237,.12);color:#7c3aed;margin-bottom:10px;">Multistage</div>
-            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">CRE 입형 다단 펌프</div>
-            <div style="font-size:13px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;">IE5 초고효율 모터와 내장 인버터. 에너지 절감과 정압 제어 최적화.</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--gray-dark);background:var(--off-white);border-radius:8px;padding:12px;margin-bottom:14px;">
-              <span style="color:var(--gray-mid);">최대 압력</span><span style="font-weight:700;color:var(--navy);text-align:right;">25 bar</span><span style="color:var(--gray-mid);">액 온도</span><span style="font-weight:700;color:var(--navy);text-align:right;">-20~120°C</span><span style="color:var(--gray-mid);">최대 양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">250 m</span><span style="color:var(--gray-mid);">최대 유량</span><span style="font-weight:700;color:var(--navy);text-align:right;">90 m³/h</span>
-            </div>
-            <a href="https://product-selection.grundfos.com/kr/categories/pumps/inline-multi-stage-pumps?tab=categories" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">CR</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">수직 다단계 원심 펌프. 흡입 및 배출 포트가 동일 위치. 펌프 헤드와 베이스는 주철, 습식 부품은 스테인리스강(EN 1.4301).</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">p 최대</span><span style="font-weight:700;color:var(--navy);font-size:12px;">40 bar</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">-30~120°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">357 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">402 m³/h</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/cr-cre-cri-crie-crn-crne-crt-crte/cr?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">그런포스 공식 사이트에서 보기 →</a>
           </div>
         </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-          <div style="background:linear-gradient(135deg,var(--navy),var(--blue));height:180px;display:flex;align-items:center;justify-content:center;padding:24px;">
-            <div style="text-align:center;">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;">CR</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">Vertical Multistage</div>
-            </div>
-          </div>
-          <div style="padding:20px;">
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/CRE.jpg" alt="CRE" style="width:100%;height:200px;object-fit:contain;object-position:center;background:#f8fafc;display:block;padding:16px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
             <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(124,58,237,.12);color:#7c3aed;margin-bottom:10px;">Multistage</div>
-            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">CR 입형 다단 펌프</div>
-            <div style="font-size:13px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;">산업 표준 수직형 다단 원심 펌프. 내구성·신뢰성 우수.</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--gray-dark);background:var(--off-white);border-radius:8px;padding:12px;margin-bottom:14px;">
-              <span style="color:var(--gray-mid);">최대 압력</span><span style="font-weight:700;color:var(--navy);text-align:right;">25 bar</span><span style="color:var(--gray-mid);">액 온도</span><span style="font-weight:700;color:var(--navy);text-align:right;">-20~150°C</span><span style="color:var(--gray-mid);">최대 양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">250 m</span><span style="color:var(--gray-mid);">최대 유량</span><span style="font-weight:700;color:var(--navy);text-align:right;">90 m³/h</span>
-            </div>
-            <a href="https://product-selection.grundfos.com/kr/categories/pumps/inline-multi-stage-pumps?tab=categories" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">CRE</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">주파수 변환기가 통합된 인라인 입형 다단 원심 펌프. 펌프 헤드와 베이스는 주철, 접액부는 스테인리스강(EN 1.4301).</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">p 최대</span><span style="font-weight:700;color:var(--navy);font-size:12px;">30 bar</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">-30~120°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">262 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">244 m³/h</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/cr-cre-cri-crie-crn-crne-crt-crte/cre?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">그런포스 공식 사이트에서 보기 →</a>
           </div>
         </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-          <div style="background:linear-gradient(135deg,var(--navy),var(--blue));height:180px;display:flex;align-items:center;justify-content:center;padding:24px;">
-            <div style="text-align:center;">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;">CRI</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">In-Line Multistage</div>
-            </div>
-          </div>
-          <div style="padding:20px;">
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/CRI.jpg" alt="CRI" style="width:100%;height:200px;object-fit:contain;object-position:center;background:#f8fafc;display:block;padding:16px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
             <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(124,58,237,.12);color:#7c3aed;margin-bottom:10px;">Multistage</div>
-            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">CRI/CRIE 인라인 다단</div>
-            <div style="font-size:13px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;">인라인 설치 가능한 다단 펌프. 급수 가압, 역삼투압 시스템에 적합.</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--gray-dark);background:var(--off-white);border-radius:8px;padding:12px;margin-bottom:14px;">
-              <span style="color:var(--gray-mid);">최대 압력</span><span style="font-weight:700;color:var(--navy);text-align:right;">16 bar</span><span style="color:var(--gray-mid);">액 온도</span><span style="font-weight:700;color:var(--navy);text-align:right;">0~90°C</span><span style="color:var(--gray-mid);">최대 양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">100 m</span><span style="color:var(--gray-mid);">최대 유량</span><span style="font-weight:700;color:var(--navy);text-align:right;">16 m³/h</span>
-            </div>
-            <a href="https://product-selection.grundfos.com/kr/categories/pumps/inline-multi-stage-pumps?tab=categories" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">CRI</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">주파수 변환기가 통합된 입형 다단 원심 펌프. 액체와 접하는 부분은 스테인리스강(EN 1.4301).</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">p 최대</span><span style="font-weight:700;color:var(--navy);font-size:12px;">25 bar</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">-20~120°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">252 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">36 m³/h</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/cr-cre-cri-crie-crn-crne-crt-crte/cri?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">그런포스 공식 사이트에서 보기 →</a>
           </div>
         </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-          <div style="background:linear-gradient(135deg,var(--navy),var(--blue));height:180px;display:flex;align-items:center;justify-content:center;padding:24px;">
-            <div style="text-align:center;">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;">CRNE</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">Stainless Multistage</div>
-            </div>
-          </div>
-          <div style="padding:20px;">
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/CRIE.jpg" alt="CRIE" style="width:100%;height:200px;object-fit:contain;object-position:center;background:#f8fafc;display:block;padding:16px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
             <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(124,58,237,.12);color:#7c3aed;margin-bottom:10px;">Multistage</div>
-            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">CRNE 스테인리스 다단</div>
-            <div style="font-size:13px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;">스테인리스 전 습부 재질. 식품, 음료, 제약 등 위생 환경에 적합.</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--gray-dark);background:var(--off-white);border-radius:8px;padding:12px;margin-bottom:14px;">
-              <span style="color:var(--gray-mid);">최대 압력</span><span style="font-weight:700;color:var(--navy);text-align:right;">16 bar</span><span style="color:var(--gray-mid);">액 온도</span><span style="font-weight:700;color:var(--navy);text-align:right;">-20~90°C</span><span style="color:var(--gray-mid);">최대 양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">120 m</span><span style="color:var(--gray-mid);">최대 유량</span><span style="font-weight:700;color:var(--navy);text-align:right;">30 m³/h</span>
-            </div>
-            <a href="https://product-selection.grundfos.com/kr/categories/pumps/inline-multi-stage-pumps?tab=categories" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">CRIE</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">주파수 변환기가 통합된 입형 다단 원심 펌프. 액체와 접하는 부분은 스테인리스강(EN 1.4301).</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">p 최대</span><span style="font-weight:700;color:var(--navy);font-size:12px;">25 bar</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">-20~120°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">256 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">39 m³/h</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/cr-cre-cri-crie-crn-crne-crt-crte/crie?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">그런포스 공식 사이트에서 보기 →</a>
           </div>
         </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-          <div style="background:linear-gradient(135deg,var(--navy),var(--blue));height:180px;display:flex;align-items:center;justify-content:center;padding:24px;">
-            <div style="text-align:center;">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;">CRT</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">High Temp Multistage</div>
-            </div>
-          </div>
-          <div style="padding:20px;">
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/CRN.jpg" alt="CRN" style="width:100%;height:200px;object-fit:contain;object-position:center;background:#f8fafc;display:block;padding:16px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
             <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(124,58,237,.12);color:#7c3aed;margin-bottom:10px;">Multistage</div>
-            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">CRT 고온용 다단 펌프</div>
-            <div style="font-size:13px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;">최대 180°C 고온 조건에서 사용 가능한 특수 설계 다단 펌프.</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--gray-dark);background:var(--off-white);border-radius:8px;padding:12px;margin-bottom:14px;">
-              <span style="color:var(--gray-mid);">최대 압력</span><span style="font-weight:700;color:var(--navy);text-align:right;">16 bar</span><span style="color:var(--gray-mid);">액 온도</span><span style="font-weight:700;color:var(--navy);text-align:right;">0~180°C</span><span style="color:var(--gray-mid);">최대 양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">120 m</span><span style="color:var(--gray-mid);">최대 유량</span><span style="font-weight:700;color:var(--navy);text-align:right;">12 m³/h</span>
-            </div>
-            <a href="https://product-selection.grundfos.com/kr/categories/pumps/inline-multi-stage-pumps?tab=categories" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">CRN</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">흡입구와 토출구가 같은 높이의 인라인 입형 다단 원심 펌프. 접액부는 고품질 스테인리스강(EN 1.4401).</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">p 최대</span><span style="font-weight:700;color:var(--navy);font-size:12px;">40 bar</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">-40~120°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">402 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">402 m³/h</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/cr-cre-cri-crie-crn-crne-crt-crte/crn?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">그런포스 공식 사이트에서 보기 →</a>
           </div>
         </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);transition:all .3s;box-shadow:0 2px 8px rgba(0,0,0,.06);">
-          <div style="background:linear-gradient(135deg,var(--navy),var(--blue));height:180px;display:flex;align-items:center;justify-content:center;padding:24px;">
-            <div style="text-align:center;">
-              <div style="font-family:'Bebas Neue',sans-serif;font-size:28px;color:white;letter-spacing:2px;">CRK</div>
-              <div style="font-size:12px;color:rgba(255,255,255,.6);margin-top:4px;">Compact Multistage</div>
-            </div>
-          </div>
-          <div style="padding:20px;">
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/CRNE.jpg" alt="CRNE" style="width:100%;height:200px;object-fit:contain;object-position:center;background:#f8fafc;display:block;padding:16px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
             <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(124,58,237,.12);color:#7c3aed;margin-bottom:10px;">Multistage</div>
-            <div style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px;">CRK 콤팩트 다단 펌프</div>
-            <div style="font-size:13px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;">소형 경량 설계. 가정용 급수 및 소규모 상업 시설에 적합.</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--gray-dark);background:var(--off-white);border-radius:8px;padding:12px;margin-bottom:14px;">
-              <span style="color:var(--gray-mid);">최대 압력</span><span style="font-weight:700;color:var(--navy);text-align:right;">10 bar</span><span style="color:var(--gray-mid);">액 온도</span><span style="font-weight:700;color:var(--navy);text-align:right;">0~60°C</span><span style="color:var(--gray-mid);">최대 양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">60 m</span><span style="color:var(--gray-mid);">최대 유량</span><span style="font-weight:700;color:var(--navy);text-align:right;">3 m³/h</span>
-            </div>
-            <a href="https://product-selection.grundfos.com/kr/categories/pumps/inline-multi-stage-pumps?tab=categories" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:8px 16px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">CRNE</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">주파수 변환기가 통합된 입형 다단 원심 펌프. 접액부는 고품질 스테인리스강(EN 1.4401).</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">p 최대</span><span style="font-weight:700;color:var(--navy);font-size:12px;">30 bar</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">-40~120°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">262 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">244 m³/h</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/cr-cre-cri-crie-crn-crne-crt-crte/crne?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">그런포스 공식 사이트에서 보기 →</a>
+          </div>
+        </div>
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+          <img src="images/CRNE-HS, CRN-SF.jpg" alt="CRNE-HS / CRN-SF" style="width:100%;height:200px;object-fit:contain;object-position:center;background:#f8fafc;display:block;padding:16px;" onerror="this.style.display='none'"/>
+          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(124,58,237,.12);color:#7c3aed;margin-bottom:10px;">Multistage</div>
+            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">CRNE-HS / CRN-SF</div>
+            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">흡입구와 토출구가 같은 높이의 인라인 입형 다단 원심 펌프. 접액부는 고품질 스테인리스강(EN 1.4401). 고압·고양정 특수 설계.</div>
+            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">-20~120°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">499 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">104 m³/h</span></div></div>
+            <a href="https://product-selection.grundfos.com/kr/products/cr-cre-cri-crie-crn-crne-crt-crte/crne-hs-crn-sf?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">그런포스 공식 사이트에서 보기 →</a>
           </div>
         </div>
   </div>
