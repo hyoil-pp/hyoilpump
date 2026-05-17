@@ -169,7 +169,7 @@
       z-index: 2;
     }
 
-    @media (max-width: 768px) { .hero-content { bottom: 80px; padding: 0 20px; } .hero-stats-mobile { display: none !important; } .slide1-content { padding-top: 90px !important; padding-bottom: 24px !important; justify-content: center !important; overflow: visible !important; } }
+    @media (max-width: 768px) { .hero-content { bottom: 80px; padding: 0 20px; } .hero-stats-mobile { display: none !important; } .slide1-content { padding: 90px 16px 24px !important; justify-content: center !important; align-items: center !important; text-align: center !important; overflow: visible !important; } }
     @media (max-width: 480px) { .hero-content { bottom: 60px; padding: 0 16px; } }
 
     .hero-badge {
@@ -437,15 +437,20 @@
       .hero-stats-mobile { display: none !important; }
       .hero-gf-btn { display: none !important; }
 
-      /* 슬라이드1: 콘텐츠 중앙+버튼 보이게 */
+      /* 슬라이드1: 완전 상하좌우 중앙 */
       .slide1-content {
         padding: 90px 16px 20px !important;
         justify-content: center !important;
         align-items: center !important;
         text-align: center !important;
         overflow: visible !important;
-        gap: 0 !important;
       }
+      .slide1-content .hero-badge { align-self: center !important; }
+      .slide1-content .hero-title { text-align: center !important; max-width: 100% !important; }
+      .slide1-content .hero-desc { text-align: center !important; max-width: 100% !important; }
+      .slide1-content .hero-actions { align-self: center !important; width: 85% !important; }
+      .slide1-actions { justify-content: center !important; align-items: center !important; }
+      .slide1-actions a { max-width: 280px !important; }
       .hero-badge { margin-bottom: 8px !important; font-size: 10px !important; }
       .hero-title { font-size: clamp(16px, 5.5vw, 22px) !important; margin-bottom: 6px !important; line-height: 1.2 !important; max-width: 100% !important; }
       .hero-desc { font-size: 11.5px !important; margin-bottom: 10px !important; max-width: 100% !important; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
@@ -503,7 +508,7 @@
     <a href="about.html" style="flex:0 0 100%;min-width:100%;height:100%;display:block;position:relative;text-decoration:none;cursor:pointer;overflow:hidden;">
       <img src="images/home_01.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;"/>
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,0.92) 0%,rgba(10,22,40,0.55) 50%,rgba(10,22,40,0.15) 100%);"></div>
-      <div class="hero-content container slide1-content" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding-top:100px;padding-bottom:40px;">
+      <div class="hero-content container slide1-content" style="position:absolute;inset:0;display:flex;flex-direction:column;padding-top:100px;padding-bottom:40px;">
         <div class="hero-badge">
           <span style="width:6px;height:6px;background:var(--accent);border-radius:50%;display:inline-block;"></span>
           GRUNDFOS 프리미엄 공식 대리점
@@ -517,7 +522,7 @@
           1995년 설립 이후, 세계 최대 펌프 기업 Grundfos와 함께해 온 국내 유일 프리미엄 공식 대리점.
           국내 1군 건설사 현장에 최고 품질의 펌프 솔루션을 공급하며 신뢰와 기술력을 쌓아온 전문 기업입니다.
         </p>
-        <div class="hero-actions" onclick="event.stopPropagation()">
+        <div class="hero-actions slide1-actions" onclick="event.stopPropagation()">
           <a href="projects.html" class="btn-primary">납품 실적 보기 &rarr;</a>
           <a href="https://product-selection.grundfos.com/kr" target="_blank" rel="noopener" class="btn-outline hero-gf-btn" style="display:flex;flex-direction:column;align-items:flex-start;padding:10px 20px;line-height:1.3;border-color:rgba(96,165,250,0.6);">
             <span style="font-size:14px;font-weight:700;color:#60a5fa;">그런포스 제품 선정 프로그램</span>
