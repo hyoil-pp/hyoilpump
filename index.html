@@ -172,7 +172,12 @@
     @media (max-width: 768px) { .hero-content { bottom: 80px; padding: 0 20px; } .hero-stats-mobile { display: none !important; } .slide1-bg { object-position: right top !important; }
       .slide1-content { padding: 0 20px !important; justify-content: center !important; align-items: center !important; text-align: center !important; overflow: visible !important; height: 100% !important; }
       #slide1Btns { display: none !important; }
-      .slide1-content .hero-desc { max-width: 100% !important; } }
+      .slide1-content .hero-desc { max-width: 100% !important; }
+      /* 오버레이 밝게 */
+      .slide1-overlay { background: linear-gradient(to top, rgba(10,22,40,0.75) 0%, rgba(10,22,40,0.35) 50%, rgba(10,22,40,0.1) 100%) !important; }
+      /* 글자 크기 - 슬라이드2 h2와 동일하게 */
+      .slide1-content .hero-title { font-size: clamp(28px,7vw,42px) !important; line-height: 1.2 !important; }
+      .slide1-content .hero-desc { font-size: 13px !important; } }
     @media (max-width: 480px) { .hero-content { bottom: 60px; padding: 0 16px; } }
 
     .hero-badge {
@@ -508,7 +513,7 @@
 
     <a href="about.html" style="flex:0 0 100%;min-width:100%;height:100%;display:block;position:relative;text-decoration:none;cursor:pointer;overflow:hidden;">
       <img src="images/home_01.png" alt="" class="slide1-bg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;"/>
-      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,0.92) 0%,rgba(10,22,40,0.55) 50%,rgba(10,22,40,0.15) 100%);"></div>
+      <div class="slide1-overlay" style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,0.92) 0%,rgba(10,22,40,0.55) 50%,rgba(10,22,40,0.15) 100%);"></div>
       <div class="hero-content container slide1-content" style="position:absolute;inset:0;display:flex;flex-direction:column;padding-top:100px;padding-bottom:40px;">
         <div class="hero-badge">
           <span style="width:6px;height:6px;background:var(--accent);border-radius:50%;display:inline-block;"></span>
