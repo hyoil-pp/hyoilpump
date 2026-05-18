@@ -176,8 +176,8 @@
       /* 오버레이 밝게 */
       .slide1-overlay { background: linear-gradient(to top, rgba(10,22,40,0.75) 0%, rgba(10,22,40,0.35) 50%, rgba(10,22,40,0.1) 100%) !important; }
       /* 글자 크기 - 슬라이드2 h2와 동일하게 */
-      .slide1-content .hero-title { font-size: clamp(28px,7vw,42px) !important; line-height: 1.2 !important; }
-      .slide1-content .hero-desc { font-size: 13px !important; } }
+      .slide1-content .hero-title { font-size: clamp(22px,5.5vw,32px) !important; line-height: 1.25 !important; letter-spacing: -0.5px !important; }
+      .slide1-content .hero-desc { font-size: 13px !important; line-height: 1.7 !important; } }
     @media (max-width: 480px) { .hero-content { bottom: 60px; padding: 0 16px; } }
 
     .hero-badge {
@@ -471,8 +471,8 @@
         text-align: center !important;
         justify-content: center !important;
       }
-      .slide2-content h2 { font-size: clamp(22px,7vw,32px) !important; text-align: center !important; }
-      .slide2-content p { text-align: center !important; max-width: 100% !important; }
+      .slide2-title { font-size: clamp(22px,5.5vw,32px) !important; text-align: center !important; letter-spacing: -0.5px !important; }
+      .slide2-desc { font-size: 13px !important; text-align: center !important; max-width: 100% !important; line-height: 1.7 !important; }
       .slide2-content > div:first-child { align-self: center !important; }
 
       /* 슬라이드3~4: 텍스트 중앙 정렬 */
@@ -558,8 +558,8 @@
       <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(10,22,40,0.95) 0%,rgba(10,22,40,0.85) 50%,rgba(10,22,40,0.4) 100%);"></div>
       <div class="slide2-content" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:100px 24px 40px;max-width:100%;">
         <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,rgba(37,99,176,0.6) 0%,rgba(37,99,176,0.1) 100%);border:1px solid rgba(96,165,250,0.5);color:white;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;width:fit-content;margin-bottom:16px;"><span style="width:6px;height:6px;background:#60a5fa;border-radius:50%;display:inline-block;flex-shrink:0;"></span>Products · 제품소개</div>
-        <h2 style="font-size:clamp(32px,5vw,58px);font-weight:900;color:white;letter-spacing:-2px;line-height:1.15;margin-bottom:24px;">신뢰로 검증된<br/>펌프 솔루션 파트너</h2>
-        <p style="font-size:15px;color:rgba(255,255,255,0.8);line-height:1.8;max-width:480px;">
+        <h2 class="slide2-title" style="font-size:clamp(32px,5vw,58px);font-weight:900;color:white;letter-spacing:-2px;line-height:1.15;margin-bottom:24px;">신뢰로 검증된<br/>펌프 솔루션 파트너</h2>
+        <p class="slide2-desc" style="font-size:15px;color:rgba(255,255,255,0.8);line-height:1.8;max-width:480px;">
           국내 1군 건설사 현장에 최고 품질의 펌프 솔루션을 공급하며 신뢰와 기술력을 쌓아온 전문 기업입니다.<br/>
           제품 공급을 넘어 펌프 선정 · 엔지니어링 검토 · 시운전 · 유지관리까지 통합 기술 서비스를 제공합니다.
         </p>
