@@ -169,7 +169,8 @@
       z-index: 2;
     }
 
-    @media (max-width: 768px) { .hero-content { bottom: 80px; padding: 0 20px; } .hero-stats-mobile { display: none !important; } .slide1-content { padding: 0 20px !important; justify-content: center !important; align-items: center !important; text-align: center !important; overflow: visible !important; height: 100% !important; }
+    @media (max-width: 768px) { .hero-content { bottom: 80px; padding: 0 20px; } .hero-stats-mobile { display: none !important; } .slide1-bg { object-position: right top !important; }
+      .slide1-content { padding: 0 20px !important; justify-content: center !important; align-items: center !important; text-align: center !important; overflow: visible !important; height: 100% !important; }
       #slide1Btns { display: none !important; }
       .slide1-content .hero-desc { max-width: 100% !important; } }
     @media (max-width: 480px) { .hero-content { bottom: 60px; padding: 0 16px; } }
@@ -506,7 +507,7 @@
   <div id="heroTrack" style="display:flex;width:100%;height:100%;transition:transform 0.7s cubic-bezier(0.4,0,0.2,1);will-change:transform;">
 
     <a href="about.html" style="flex:0 0 100%;min-width:100%;height:100%;display:block;position:relative;text-decoration:none;cursor:pointer;overflow:hidden;">
-      <img src="images/home_01.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;"/>
+      <img src="images/home_01.png" alt="" class="slide1-bg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;"/>
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,0.92) 0%,rgba(10,22,40,0.55) 50%,rgba(10,22,40,0.15) 100%);"></div>
       <div class="hero-content container slide1-content" style="position:absolute;inset:0;display:flex;flex-direction:column;padding-top:100px;padding-bottom:40px;">
         <div class="hero-badge">
