@@ -273,8 +273,17 @@
   const track=document.getElementById('heroTrack');
   const dots=document.querySelectorAll('.hdot');
   let timer=setInterval(()=>heroMove(1),9000);
-  function update(){track.style.transform=`translateX(-${cur*100}%)`;dots.forEach((d,i)=>d.classList.toggle('active',i===cur));}
-  window.heroMove=function(dir){clearInterval(timer);cur=(cur+dir+total)%total;update();timer=setInterval(()=>heroMove(1),9000);};
+  function update(){
+    track.style.transform=`translateX(-${cur*100}%)`;
+    dots.forEach((d,i)=>d.classList.toggle('active',i===cur));
+    document.getElementById('heroPrev').style.visibility=cur===0?'hidden':'visible';
+    document.getElementById('heroNext').style.visibility=cur===total-1?'hidden':'visible';
+  }
+  window.heroMove=function(dir){
+    if(dir===-1&&cur===0) return;
+    if(dir===1&&cur===total-1) return;
+    clearInterval(timer);cur=(cur+dir+total)%total;update();timer=setInterval(()=>heroMove(1),9000);
+  };
   window.heroGo=function(idx){clearInterval(timer);cur=idx;update();timer=setInterval(()=>heroMove(1),9000);};
   let sx=0;
   track.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});
