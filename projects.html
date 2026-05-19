@@ -470,5 +470,35 @@ window.addEventListener('scroll',()=>scrollBtn.classList.toggle('visible',scroll
 
 renderCards();
 </script>
+<!-- 아래 코드를 projects.html의 </body> 바로 위에 붙여넣으세요 -->
+
+<!-- 모바일 하단 고정 네비게이션 -->
+<div id="mobileNav">
+  <a href="about.html" class="mnav-btn">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    <span>회사소개</span>
+  </a>
+  <a href="index.html#products" class="mnav-btn">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="7" height="7"/><rect x="15" y="3" width="7" height="7"/><rect x="2" y="14" width="7" height="7"/><rect x="15" y="14" width="7" height="7"/></svg>
+    <span>제품소개</span>
+  </a>
+  <a href="projects.html" class="mnav-btn">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></svg>
+    <span>납품실적</span>
+  </a>
+  <a href="tel:03234708157" class="mnav-btn">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.58 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span>연락하기</span>
+  </a>
+</div>
+<style>
+#mobileNav{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:999;background:rgba(10,22,40,0.92);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.12);border-radius:40px;padding:10px 16px;display:flex;gap:6px;box-shadow:0 8px 32px rgba(0,0,0,0.4)}
+.mnav-btn{display:flex;flex-direction:column;align-items:center;gap:4px;color:rgba(255,255,255,0.75);text-decoration:none;padding:8px 12px;border-radius:30px;transition:all 0.2s;min-width:56px}
+.mnav-btn:hover,.mnav-btn:active{background:rgba(255,255,255,0.12);color:white}
+.mnav-btn span{font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:600;letter-spacing:0.3px;white-space:nowrap}
+.mnav-btn svg{flex-shrink:0}
+@media(min-width:769px){#mobileNav{display:none!important}}
+@media(max-width:768px){#mobileNav{display:flex!important}footer{padding-bottom:90px}}
+</style>  
 </body>
 </html>
