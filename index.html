@@ -30,7 +30,7 @@
     #home{height:100vh;height:100dvh;min-height:600px;position:relative;overflow:hidden}
     .hero-content{position:absolute;bottom:10%;left:0;right:0;max-width:1300px;margin:0 auto;padding:0 30px;z-index:2}
     @media(max-width:768px){.hero-content{bottom:80px;padding:0 20px}}
-    @media(max-width:480px){.hero-content{bottom:60px;padding:0 16px}}
+    @media(max-width:480px){.hero-actions{display:none!important}.hero-content{bottom:60px;padding:0 16px}}
     .hero-badge{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,rgba(232,57,42,0.55) 0%,rgba(232,57,42,0.08) 100%);border:1px solid rgba(232,57,42,0.5);color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:28px;animation:fadeInUp 0.6s ease forwards}
     .hero-badge span{width:6px;height:6px;background:var(--accent);border-radius:50%}
     .hero-title{font-size:clamp(22px,3vw,40px);font-weight:900;color:white;line-height:1.2;letter-spacing:-1px;margin-bottom:16px;animation:fadeInUp 0.6s ease 0.1s both;max-width:700px}
@@ -201,7 +201,7 @@
     <a href="about.html" style="flex:0 0 100%;min-width:100%;height:100%;display:block;position:relative;text-decoration:none;cursor:pointer;overflow:hidden;">
       <img src="images/home_01.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;"/>
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,0.92) 0%,rgba(10,22,40,0.55) 50%,rgba(10,22,40,0.15) 100%);"></div>
-      <div class="hero-content container" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding-top:100px;padding-bottom:20px;">
+      <div class="hero-content container" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding-top:100px;padding-bottom:160px;">
         <div class="hero-badge"><span style="width:6px;height:6px;background:var(--accent);border-radius:50%;display:inline-block;"></span>GRUNDFOS 프리미엄 공식 대리점</div>
         <h1 class="hero-title">에너지 절감의 확실한 선택!<br/><span style="color:#60a5fa;">세계 최고 프리미엄 브랜드의</span><br/>고품질 고효율 그런포스 펌프!</h1>
         <p class="hero-desc">1995년 설립 이후, 세계 최대 펌프 기업 Grundfos와 함께해 온 국내 유일 프리미엄 공식 대리점. 국내 1군 건설사 현장에 최고 품질의 펌프 솔루션을 공급하며 신뢰와 기술력을 쌓아온 전문 기업입니다.</p>
