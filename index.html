@@ -195,10 +195,10 @@
 </header>
 
 <section id="home" style="position:relative;height:100vh;height:100dvh;min-height:600px;overflow:hidden;background:var(--navy);">
-  <div id="heroTrack" style="display:flex;width:100%;height:100%;transition:transform 0.7s cubic-bezier(0.4,0,0.2,1);will-change:transform;">
+  <div id="heroTrack" style="position:relative;width:100%;height:100%;">
 
     <!-- SLIDE 1 ── padding-bottom 160→80px (버튼 위로 올림) -->
-    <a href="about.html" style="flex:0 0 100%;min-width:100%;height:100%;display:block;position:relative;text-decoration:none;cursor:pointer;overflow:hidden;">
+    <a href="about.html" style="position:absolute;inset:0;display:block;text-decoration:none;cursor:pointer;overflow:hidden;opacity:1;transition:opacity 0.7s ease;pointer-events:auto;" class="slide-item active">
       <img src="images/home_01.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;"/>
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,0.92) 0%,rgba(10,22,40,0.55) 50%,rgba(10,22,40,0.15) 100%);"></div>
       <div class="hero-content container" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding-top:100px;padding-bottom:160px;">
@@ -221,7 +221,7 @@
     </a>
 
     <!-- SLIDE 2 -->
-    <a href="index.html#products" style="flex:0 0 100%;min-width:100%;height:100%;display:block;position:relative;text-decoration:none;cursor:pointer;overflow:hidden;">
+    <a href="index.html#products" style="position:absolute;inset:0;display:block;text-decoration:none;cursor:pointer;overflow:hidden;opacity:0;transition:opacity 0.7s ease;pointer-events:none;" class="slide-item">
       <img src="images/home_02.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center;"/>
       <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(10,22,40,0.95) 0%,rgba(10,22,40,0.85) 50%,rgba(10,22,40,0.4) 100%);"></div>
       <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:100px 24px 40px;max-width:100%;">
@@ -232,7 +232,7 @@
     </a>
 
     <!-- SLIDE 3 -->
-    <a href="projects.html" style="flex:0 0 100%;min-width:100%;height:100%;display:block;position:relative;text-decoration:none;cursor:pointer;overflow:hidden;">
+    <a href="projects.html" style="position:absolute;inset:0;display:block;text-decoration:none;cursor:pointer;overflow:hidden;opacity:0;transition:opacity 0.7s ease;pointer-events:none;" class="slide-item">
       <img src="images/home_03.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;"/>
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,0.9) 0%,rgba(10,22,40,0.4) 50%,rgba(10,22,40,0.1) 100%);"></div>
       <div style="position:absolute;bottom:60px;left:0;right:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 40px;">
@@ -243,7 +243,7 @@
     </a>
 
     <!-- SLIDE 4 -->
-    <a href="https://product-selection.grundfos.com/kr" target="_blank" rel="noopener" style="flex:0 0 100%;min-width:100%;height:100%;display:block;position:relative;text-decoration:none;cursor:pointer;overflow:hidden;">
+    <a href="https://product-selection.grundfos.com/kr" target="_blank" rel="noopener" style="position:absolute;inset:0;display:block;text-decoration:none;cursor:pointer;overflow:hidden;opacity:0;transition:opacity 0.7s ease;pointer-events:none;" class="slide-item">
       <img src="images/home_04.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;"/>
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,0.85) 0%,rgba(10,22,40,0.2) 55%,transparent 100%);"></div>
       <div style="position:absolute;bottom:40px;left:0;right:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 20px;">
@@ -274,7 +274,15 @@
   const dots=document.querySelectorAll('.hdot');
   let timer=setInterval(()=>heroMove(1),9000);
   function update(){
-    track.style.transform=`translateX(-${cur*100}%)`;
+    document.querySelectorAll('.slide-item').forEach((s,i)=>{
+      if(i===cur){
+        s.style.opacity='1';
+        s.style.pointerEvents='auto';
+      } else {
+        s.style.opacity='0';
+        s.style.pointerEvents='none';
+      }
+    });
     dots.forEach((d,i)=>d.classList.toggle('active',i===cur));
     document.getElementById('heroPrev').style.visibility=cur===0?'hidden':'visible';
     document.getElementById('heroNext').style.visibility=cur===total-1?'hidden':'visible';
