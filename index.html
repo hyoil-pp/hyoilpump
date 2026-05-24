@@ -12,7 +12,7 @@
     :root{--navy:#0a1628;--navy-mid:#122040;--blue:#1a3a6e;--blue-mid:#1e4d8c;--blue-light:#2563b0;--accent:#e8392a;--accent2:#f5a623;--white:#ffffff;--off-white:#f4f6f9;--gray-light:#e8ecf2;--gray-mid:#9aa5b4;--gray-dark:#4a5568;--text:#1a202c}
     html{scroll-behavior:smooth}
     body{font-family:'Noto Sans KR',sans-serif;color:var(--text);background:var(--navy);overflow-x:hidden}
-    header{position:fixed;top:0;left:0;right:0;z-index:100;background:#07457e;backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.12)}
+    header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,22,40,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.08)}
     .header-top{background:var(--accent);display:flex;align-items:center;justify-content:space-between;padding:6px 30px;font-size:12px;font-weight:500;color:#fff;letter-spacing:0.5px}
     .header-top-center{flex:1;text-align:center}
     .header-top-side{font-size:11px;white-space:nowrap;opacity:0.9}
@@ -139,7 +139,7 @@
     .form-full{grid-column:1/-1}
     .form-submit{width:100%;background:var(--navy);color:white;border:none;padding:14px;border-radius:6px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;margin-top:6px;transition:background 0.2s;letter-spacing:-0.3px}
     .form-submit:hover{background:var(--blue)}
-    footer{background:#092844;padding:60px 30px 30px;color:rgba(255,255,255,0.45)}
+    footer{background:#06101f;padding:60px 30px 30px;color:rgba(255,255,255,0.45)}
     .footer-inner{max-width:1300px;margin:0 auto}
     .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:30px}
     .footer-brand .name{font-size:18px;font-weight:700;color:white;margin-bottom:8px}
@@ -195,10 +195,9 @@
 </header>
 
 <section id="home" style="position:relative;height:100vh;height:100dvh;min-height:600px;overflow:hidden;background:var(--navy);">
-  <!-- overflow:hidden 추가로 슬라이드 전환 시 옆 슬라이드 안 보이게 -->
-  <div id="heroTrack" style="display:flex;width:100%;height:100%;transition:transform 0.7s cubic-bezier(0.4,0,0.2,1);will-change:transform;overflow:hidden;">
+  <div id="heroTrack" style="display:flex;width:100%;height:100%;transition:transform 0.7s cubic-bezier(0.4,0,0.2,1);will-change:transform;">
 
-    <!-- SLIDE 1 -->
+    <!-- SLIDE 1 ── padding-bottom 160→80px (버튼 위로 올림) -->
     <a href="about.html" style="flex:0 0 100%;min-width:100%;height:100%;display:block;position:relative;text-decoration:none;cursor:pointer;overflow:hidden;">
       <img src="images/home_01.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;"/>
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,0.92) 0%,rgba(10,22,40,0.55) 50%,rgba(10,22,40,0.15) 100%);"></div>
