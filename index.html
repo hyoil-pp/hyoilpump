@@ -8,167 +8,181 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Bebas+Neue&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet"/>
   <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--navy:#0a1628;--navy-mid:#122040;--blue:#1a3a6e;--blue-mid:#1e4d8c;--blue-light:#2563b0;--accent:#e8392a;--accent2:#f5a623;--white:#ffffff;--off-white:#f4f6f9;--gray-light:#e8ecf2;--gray-mid:#9aa5b4;--gray-dark:#4a5568;--text:#1a202c}
-    html{scroll-behavior:smooth}
-    body{font-family:'Noto Sans KR',sans-serif;color:var(--text);background:var(--navy);overflow-x:hidden}
-    header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,22,40,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.08)}
-    .header-top{background:var(--accent);display:flex;align-items:center;justify-content:space-between;padding:6px 30px;font-size:12px;font-weight:500;color:#fff;letter-spacing:0.5px}
-    .header-top-center{flex:1;text-align:center}
-    .header-top-side{font-size:11px;white-space:nowrap;opacity:0.9}
-    @media(max-width:768px){.header-top-side{display:none}}
-    .header-main{display:flex;align-items:center;justify-content:space-between;max-width:1300px;margin:0 auto;padding:0 30px;height:77px}
-    .logo{display:flex;align-items:center;gap:4px;text-decoration:none}
-    .logo-text{color:white}
-    .logo-text .name{font-size:17px;font-weight:700;letter-spacing:-0.5px;display:block}
-    .logo-text .sub{font-size:10px;color:var(--gray-mid);letter-spacing:1px;text-transform:uppercase}
-    nav{display:flex;align-items:center;gap:6px}
-    nav a{color:rgba(255,255,255,0.82);text-decoration:none;font-size:14px;font-weight:500;padding:8px 14px;border-radius:4px;transition:all 0.2s;letter-spacing:-0.2px}
-    nav a:hover{color:white;background:rgba(255,255,255,0.1)}
-    .nav-cta{background:var(--accent)!important;color:white!important;padding:8px 18px!important;border-radius:4px;font-weight:700!important}
-    .nav-cta:hover{background:#c92d1f!important}
-    #home{height:100vh;height:100dvh;min-height:600px;position:relative;overflow:hidden}
-    .hero-content{position:absolute;bottom:10%;left:0;right:0;max-width:1300px;margin:0 auto;padding:0 30px;z-index:2}
-    @media(max-width:768px){.hero-content{bottom:80px;padding:0 20px}}
-    @media(max-width:480px){.hero-actions{display:none!important}.hero-content{bottom:60px;padding:0 16px}.hero-title{font-size:26px!important;word-break:keep-all!important}.hero-title br{display:none!important}}
-    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,rgba(232,57,42,0.55) 0%,rgba(232,57,42,0.08) 100%);border:1px solid rgba(232,57,42,0.5);color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:28px;animation:fadeInUp 0.6s ease forwards}
-    .hero-badge span{width:6px;height:6px;background:var(--accent);border-radius:50%}
-    .hero-title{font-size:clamp(22px,3vw,40px);font-weight:900;color:white;line-height:1.2;letter-spacing:-1px;margin-bottom:16px;animation:fadeInUp 0.6s ease 0.1s both;max-width:700px}
-    .hero-title .blue{color:#60a5fa}
-    .hero-desc{font-size:14px;color:rgba(255,255,255,0.7);line-height:1.7;max-width:560px;margin-bottom:40px;font-weight:300;animation:fadeInUp 0.6s ease 0.2s both}
-    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;animation:fadeInUp 0.6s ease 0.3s both}
-    .btn-primary{background:var(--accent);color:white;padding:14px 32px;border-radius:4px;font-size:15px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.2s;letter-spacing:-0.3px}
-    .btn-primary:hover{background:#c92d1f;transform:translateY(-1px)}
-    .btn-outline{background:transparent;color:white;padding:14px 32px;border-radius:4px;font-size:15px;font-weight:500;text-decoration:none;border:1px solid rgba(255,255,255,0.3);display:inline-flex;align-items:center;gap:8px;transition:all 0.2s}
-    .btn-outline:hover{background:rgba(255,255,255,0.1);border-color:white}
-    .hero-stats{position:absolute;right:30px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:12px;z-index:10}
-    .stat-card{background:rgba(10,22,40,0.55);border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:16px 22px;text-align:center;backdrop-filter:blur(8px);min-width:130px}
-    .stat-num{font-family:'Bebas Neue',sans-serif;font-size:36px;color:white;line-height:1;letter-spacing:1px}
-    .stat-num span{font-size:18px;color:var(--accent)}
-    .stat-label{font-size:11px;color:rgba(255,255,255,0.6);margin-top:4px;letter-spacing:0.5px}
-    .scroll-hint{display:none;height:0;overflow:hidden}
-    .partner-bar{background:var(--navy);padding:28px 30px;display:flex;align-items:center;justify-content:center;gap:40px;border-bottom:1px solid rgba(255,255,255,0.08)}
-    .partner-bar-text{color:rgba(255,255,255,0.5);font-size:12px;letter-spacing:2px;text-transform:uppercase}
-    .gf-logo-img{display:inline}
-    .gf-logo-text{display:none;font-family:'Bebas Neue',sans-serif;font-size:18px;color:white;letter-spacing:2px}
-    .grundfos-logo{display:flex;align-items:center;gap:10px;color:white;font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:3px}
-    section{padding:100px 30px}
-    .container{max-width:1300px;margin:0 auto}
-    .section-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue-light);margin-bottom:12px}
-    .section-title{font-size:clamp(28px,4vw,46px);font-weight:800;color:var(--navy);line-height:1.15;letter-spacing:-1.5px;margin-bottom:16px}
-    .section-desc{font-size:16px;color:var(--gray-dark);line-height:1.75;max-width:100%}
-    #about{background:var(--off-white)}
-    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-    .about-visual{position:relative}
-    .about-img-main{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:12px;display:block}
-    .about-img-accent{position:absolute;width:55%;aspect-ratio:1;object-fit:cover;border-radius:10px;bottom:-30px;right:-30px;border:4px solid white;box-shadow:0 20px 60px rgba(0,0,0,0.2)}
-    .about-badge-float{position:absolute;top:20px;left:-20px;background:var(--navy);color:white;padding:14px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 10px 30px rgba(10,22,40,0.3);line-height:1.5}
-    .about-badge-float strong{display:block;font-size:22px;font-family:'Bebas Neue',sans-serif;letter-spacing:1px;color:var(--accent2)}
-    .company-info-table{margin-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--gray-light);border-radius:8px;overflow:hidden}
-    .info-row{display:contents}
-    .info-label,.info-value{padding:12px 16px;font-size:13.5px;border-bottom:1px solid var(--gray-light)}
-    .info-label{background:var(--navy);color:rgba(255,255,255,0.7);font-weight:600;font-size:12px;letter-spacing:0.5px}
-    .info-value{background:white;color:var(--text);font-weight:500}
-    #history{background:var(--navy);overflow:hidden}
-    #history .section-title{color:white}
-    #history .section-label{color:#60a5fa}
-    #history .section-desc{color:rgba(255,255,255,0.6)}
-    .timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;margin-top:60px;position:relative}
-    .timeline::before{content:'';position:absolute;top:36px;left:0;right:0;height:2px;background:rgba(255,255,255,0.1)}
-    .timeline-item{padding:30px 24px 24px;position:relative}
-    .timeline-item::before{content:'';width:14px;height:14px;background:var(--accent);border-radius:50%;position:absolute;top:29px;left:24px;box-shadow:0 0 0 4px rgba(232,57,42,0.2)}
-    .timeline-year{font-family:'Bebas Neue',sans-serif;font-size:38px;color:rgba(255,255,255,0.15);line-height:1;margin-top:20px;margin-bottom:6px}
-    .timeline-event{font-size:13.5px;color:rgba(255,255,255,0.75);line-height:1.6;font-weight:400}
-    #products{background:white}
-    .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
-    .product-card{border:1px solid var(--gray-light);border-radius:12px;overflow:hidden;transition:all 0.3s;cursor:pointer;background:white}
-    .product-card:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(10,22,40,0.12);border-color:var(--blue-light)}
-    .product-img{width:100%;height:200px;object-fit:cover;display:block;background:var(--gray-light)}
-    .product-body{padding:24px}
-    .product-tag{display:inline-block;background:rgba(37,99,176,0.1);color:var(--blue-light);font-size:11px;font-weight:700;letter-spacing:1px;padding:4px 10px;border-radius:20px;margin-bottom:10px;text-transform:uppercase}
-    .product-name{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:8px;letter-spacing:-0.5px}
-    .product-desc{font-size:13.5px;color:var(--gray-dark);line-height:1.65}
-    #projects{background:var(--off-white)}
-    .projects-masonry{columns:3;column-gap:20px}
-    .project-card{break-inside:avoid;margin-bottom:20px;position:relative;border-radius:10px;overflow:hidden;cursor:pointer;display:block;background:var(--gray-light)}
-    .project-card img{width:100%;display:block;transition:transform 0.5s ease}
-    .project-card:hover img{transform:scale(1.06)}
-    .project-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,0.92) 0%,rgba(10,22,40,0.2) 60%,transparent 100%);opacity:0;transition:opacity 0.3s;display:flex;flex-direction:column;justify-content:flex-end;padding:20px}
-    .project-card:hover .project-overlay{opacity:1}
-    .project-name{color:white;font-size:15px;font-weight:700;margin-bottom:4px;letter-spacing:-0.3px}
-    .project-meta{color:rgba(255,255,255,0.65);font-size:12px;display:flex;gap:10px;flex-wrap:wrap}
-    .project-meta span{background:rgba(255,255,255,0.1);padding:2px 8px;border-radius:3px}
-    .achievement-strip{background:var(--navy);border-radius:16px;padding:24px 60px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:28px;margin-bottom:60px}
-    .ach-item{text-align:center;padding:6px 20px;border-right:1px solid rgba(255,255,255,0.1);display:flex;flex-direction:column;align-items:center;justify-content:center}
-    .ach-item:last-child{border-right:none}
-    .ach-num{font-family:'Bebas Neue',sans-serif;font-size:42px;color:white;line-height:1;letter-spacing:2px}
-    .ach-num sup{font-size:20px;color:var(--accent)}
-    .ach-label{font-size:13px;color:rgba(255,255,255,0.5);margin-top:4px}
-    #grundfos{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);position:relative;overflow:hidden}
-    #grundfos::before{content:'GRUNDFOS';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:200px;color:rgba(255,255,255,0.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
-    #grundfos .section-title{color:white}
-    #products .section-title{font-size:clamp(22px,3vw,38px);white-space:nowrap}
-    #grundfos .section-label{color:#60a5fa}
-    #grundfos .section-desc{color:rgba(255,255,255,0.65)}
-    .grundfos-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:center;margin-top:56px}
-    .grundfos-features{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px}
-    .gf-feature{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:20px;transition:all 0.2s}
-    .gf-feature:hover{background:rgba(255,255,255,0.12)}
-    .gf-icon{font-size:28px;margin-bottom:10px}
-    .gf-title{font-size:14px;font-weight:700;color:white;margin-bottom:6px}
-    .gf-desc{font-size:12.5px;color:rgba(255,255,255,0.55);line-height:1.6}
-    .grundfos-img-stack{position:relative}
-    .gf-img-main{width:100%;border-radius:12px;display:block}
-    .gf-img-badge{position:absolute;bottom:-20px;left:-20px;background:var(--accent);color:white;padding:16px 22px;border-radius:10px;font-size:12px;font-weight:700;line-height:1.5;box-shadow:0 10px 30px rgba(232,57,42,0.4)}
-    #contact{background:white}
-    .contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;margin-top:56px}
-    .contact-info-cards{display:flex;flex-direction:column;gap:16px}
-    .contact-card{background:var(--off-white);border-radius:10px;padding:20px 24px;display:flex;align-items:flex-start;gap:16px;border-left:3px solid var(--blue-light)}
-    .contact-icon{font-size:22px;flex-shrink:0;margin-top:2px}
-    .contact-card-label{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--blue-light);margin-bottom:4px}
-    .contact-card-value{font-size:15px;font-weight:600;color:var(--navy);line-height:1.5}
-    .contact-card-sub{font-size:12.5px;color:var(--gray-mid);margin-top:2px}
-    .inquiry-form{background:var(--off-white);border-radius:16px;padding:40px}
-    .inquiry-form h3{font-size:20px;font-weight:700;color:var(--navy);margin-bottom:24px;letter-spacing:-0.5px}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-    .form-group{display:flex;flex-direction:column;gap:6px}
-    .form-group label{font-size:12px;font-weight:600;color:var(--gray-dark);letter-spacing:0.3px}
-    .form-group input,.form-group select,.form-group textarea{border:1px solid var(--gray-light);border-radius:6px;padding:11px 14px;font-size:14px;color:var(--text);font-family:'Noto Sans KR',sans-serif;background:white;transition:border-color 0.2s;outline:none}
-    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--blue-light)}
-    .form-group textarea{resize:vertical;min-height:100px}
-    .form-full{grid-column:1/-1}
-    .form-submit{width:100%;background:var(--navy);color:white;border:none;padding:14px;border-radius:6px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;margin-top:6px;transition:background 0.2s;letter-spacing:-0.3px}
-    .form-submit:hover{background:var(--blue)}
-    footer{background:#06101f;padding:60px 30px 30px;color:rgba(255,255,255,0.45)}
-    .footer-inner{max-width:1300px;margin:0 auto}
-    .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:50px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:30px}
-    .footer-brand .name{font-size:18px;font-weight:700;color:white;margin-bottom:8px}
-    .footer-brand .desc{font-size:13px;line-height:1.7;max-width:240px}
-    .footer-col h4{font-size:13px;font-weight:700;color:rgba(255,255,255,0.7);margin-bottom:16px;letter-spacing:0.5px}
-    .footer-col a{display:block;font-size:13px;color:rgba(255,255,255,0.4);text-decoration:none;margin-bottom:10px;transition:color 0.2s}
-    .footer-col a:hover{color:white}
-    .footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:12.5px}
-    .grundfos-partner-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:8px 16px;border-radius:6px;font-size:12px;color:rgba(255,255,255,0.6);width:fit-content}
-    .grundfos-partner-badge strong{color:white;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:2px}
-    @keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-    @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-8px)}}
-    .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
-    .reveal.visible{opacity:1;transform:none}
-    .reveal-delay-1{transition-delay:0.1s}
-    .reveal-delay-2{transition-delay:0.2s}
-    .reveal-delay-3{transition-delay:0.3s}
-    .sfa-grid{grid-template-columns:repeat(3,1fr)}
-    @media(max-width:1024px){.about-grid,.grundfos-grid,.contact-grid{grid-template-columns:1fr;gap:40px}.hero-stats{display:none}.projects-masonry{columns:2}.footer-top{grid-template-columns:1fr 1fr}}
-    @media(max-width:768px){.hero-actions{display:none!important}.video-key-cards{grid-template-columns:repeat(2,1fr)!important}nav{display:none}.products-grid{grid-template-columns:1fr 1fr}.sfa-grid{grid-template-columns:1fr 1fr}.projects-masonry{columns:1}.achievement-strip{grid-template-columns:1fr 1fr 1fr;padding:20px}.footer-top{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}.form-row{grid-template-columns:1fr}.partner-bar{gap:12px;padding:14px 16px}.partner-bar-text{font-size:10px;letter-spacing:1px;white-space:nowrap}.gf-logo-img{display:none}.gf-logo-text{display:inline}}
-    @media(max-width:480px){.products-grid{grid-template-columns:1fr}.sfa-grid{grid-template-columns:1fr}.achievement-strip{grid-template-columns:1fr}.hero-stats-mobile{display:none!important}.hero-title{font-size:clamp(22px,7vw,36px)!important}.hero-desc{font-size:13px!important}.hero-actions{flex-direction:column;gap:10px!important}.hero-actions a{width:100%;text-align:center;justify-content:center}.hero-content{padding-right:20px!important;padding-top:80px!important}#heroTrack>a:nth-child(3) h2{font-size:clamp(20px,6vw,32px)!important}#heroTrack>a:nth-child(4) h2{font-size:clamp(20px,6vw,32px)!important}#heroTrack>a:nth-child(4)>div:last-of-type{bottom:16px!important;padding:0 16px!important}}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0a1628; --navy-mid: #122040; --blue: #1a3a6e; --blue-mid: #1e4d8c;
+      --blue-light: #2563b0; --accent: #e8392a; --accent2: #f5a623;
+      --white: #ffffff; --off-white: #f4f6f9; --gray-light: #e8ecf2;
+      --gray-mid: #9aa5b4; --gray-dark: #4a5568; --text: #1a202c;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Noto Sans KR', sans-serif; color: var(--text); background: var(--navy); overflow-x: hidden; }
+
+    /* ── HEADER ── */
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: #07457e; backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.12); }
+    .header-top { background: var(--accent); display: flex; align-items: center; justify-content: space-between; padding: 6px 30px; font-size: 12px; font-weight: 500; color: #fff; letter-spacing: 0.5px; }
+    .header-top-center { flex: 1; text-align: center; }
+    .header-top-side { font-size: 11px; white-space: nowrap; opacity: 0.9; }
+    @media (max-width: 768px) { .header-top-side { display: none; } }
+    .header-main { display: flex; align-items: center; justify-content: space-between; max-width: 1300px; margin: 0 auto; padding: 0 30px; height: 77px; }
+    .logo { display: flex; align-items: center; gap: 4px; text-decoration: none; }
+    .logo-text { color: white; }
+    .logo-text .name { font-size: 17px; font-weight: 700; letter-spacing: -0.5px; display: block; }
+    .logo-text .sub { font-size: 10px; color: var(--gray-mid); letter-spacing: 1px; text-transform: uppercase; }
+    nav { display: flex; align-items: center; gap: 6px; }
+    nav a { color: rgba(255,255,255,0.82); text-decoration: none; font-size: 14px; font-weight: 500; padding: 8px 14px; border-radius: 4px; transition: all 0.2s; letter-spacing: -0.2px; }
+    nav a:hover { color: white; background: rgba(255,255,255,0.1); }
+    .nav-cta { background: var(--accent) !important; color: white !important; padding: 8px 18px !important; border-radius: 4px; font-weight: 700 !important; }
+    .nav-cta:hover { background: #c92d1f !important; }
+
+    /* ── HERO ── */
+    #home { height: 100vh; height: 100dvh; min-height: 600px; position: relative; overflow: hidden; }
+    .hero-content { position: absolute; bottom: 10%; left: 0; right: 0; max-width: 1300px; margin: 0 auto; padding: 0 30px; z-index: 2; }
+    @media (max-width: 768px) { .hero-content { bottom: 80px; padding: 0 20px; } }
+    @media (max-width: 480px) { .hero-content { bottom: 60px; padding: 0 16px; } }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(90deg, rgba(232,57,42,0.55) 0%, rgba(232,57,42,0.08) 100%); border: 1px solid rgba(232,57,42,0.5); color: #ffffff; padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 28px; animation: fadeInUp 0.6s ease forwards; }
+    .hero-badge span { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+    .hero-title { font-size: clamp(22px, 3vw, 40px); font-weight: 900; color: white; line-height: 1.2; letter-spacing: -1px; margin-bottom: 16px; animation: fadeInUp 0.6s ease 0.1s both; max-width: 700px; }
+    .hero-title .blue { color: #60a5fa; }
+    .hero-desc { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.7; max-width: 560px; margin-bottom: 40px; font-weight: 300; animation: fadeInUp 0.6s ease 0.2s both; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; animation: fadeInUp 0.6s ease 0.3s both; }
+    .btn-primary { background: var(--accent); color: white; padding: 14px 32px; border-radius: 4px; font-size: 15px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; letter-spacing: -0.3px; }
+    .btn-primary:hover { background: #c92d1f; transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: white; padding: 14px 32px; border-radius: 4px; font-size: 15px; font-weight: 500; text-decoration: none; border: 1px solid rgba(255,255,255,0.3); display: inline-flex; align-items: center; gap: 8px; transition: all 0.2s; }
+    .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
+    .hero-stats { position: absolute; right: 30px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 12px; z-index: 10; }
+    .stat-card { background: rgba(10,22,40,0.55); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; padding: 16px 22px; text-align: center; backdrop-filter: blur(8px); min-width: 130px; }
+    .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: white; line-height: 1; letter-spacing: 1px; }
+    .stat-num span { font-size: 18px; color: var(--accent); }
+    .stat-label { font-size: 11px; color: rgba(255,255,255,0.6); margin-top: 4px; letter-spacing: 0.5px; }
+    .scroll-hint { display: none; height: 0; overflow: hidden; }
+    .partner-bar { background: var(--navy); padding: 28px 30px; display: flex; align-items: center; justify-content: center; gap: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .partner-bar-text { color: rgba(255,255,255,0.5); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
+    .gf-logo-img { display: inline; }
+    .gf-logo-text { display: none; font-family: 'Bebas Neue', sans-serif; font-size: 18px; color: white; letter-spacing: 2px; }
+    .grundfos-logo { display: flex; align-items: center; gap: 10px; color: white; font-family: 'Bebas Neue', sans-serif; font-size: 26px; letter-spacing: 3px; }
+    section { padding: 100px 30px; }
+    .container { max-width: 1300px; margin: 0 auto; }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 12px; }
+    .section-title { font-size: clamp(28px, 4vw, 46px); font-weight: 800; color: var(--navy); line-height: 1.15; letter-spacing: -1.5px; margin-bottom: 16px; }
+    .section-desc { font-size: 16px; color: var(--gray-dark); line-height: 1.75; max-width: 100%; }
+    #about { background: var(--off-white); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .about-visual { position: relative; }
+    .about-img-main { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 12px; display: block; }
+    .about-img-accent { position: absolute; width: 55%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; bottom: -30px; right: -30px; border: 4px solid white; box-shadow: 0 20px 60px rgba(0,0,0,0.2); }
+    .about-badge-float { position: absolute; top: 20px; left: -20px; background: var(--navy); color: white; padding: 14px 20px; border-radius: 10px; font-size: 13px; font-weight: 600; box-shadow: 0 10px 30px rgba(10,22,40,0.3); line-height: 1.5; }
+    .about-badge-float strong { display: block; font-size: 22px; font-family: 'Bebas Neue', sans-serif; letter-spacing: 1px; color: var(--accent2); }
+    .company-info-table { margin-top: 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--gray-light); border-radius: 8px; overflow: hidden; }
+    .info-row { display: contents; }
+    .info-label, .info-value { padding: 12px 16px; font-size: 13.5px; border-bottom: 1px solid var(--gray-light); }
+    .info-label { background: var(--navy); color: rgba(255,255,255,0.7); font-weight: 600; font-size: 12px; letter-spacing: 0.5px; }
+    .info-value { background: white; color: var(--text); font-weight: 500; }
+    #history { background: var(--navy); overflow: hidden; }
+    #history .section-title { color: white; }
+    #history .section-label { color: #60a5fa; }
+    #history .section-desc { color: rgba(255,255,255,0.6); }
+    .timeline { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; margin-top: 60px; position: relative; }
+    .timeline::before { content: ''; position: absolute; top: 36px; left: 0; right: 0; height: 2px; background: rgba(255,255,255,0.1); }
+    .timeline-item { padding: 30px 24px 24px; position: relative; }
+    .timeline-item::before { content: ''; width: 14px; height: 14px; background: var(--accent); border-radius: 50%; position: absolute; top: 29px; left: 24px; box-shadow: 0 0 0 4px rgba(232,57,42,0.2); }
+    .timeline-year { font-family: 'Bebas Neue', sans-serif; font-size: 38px; color: rgba(255,255,255,0.15); line-height: 1; margin-top: 20px; margin-bottom: 6px; }
+    .timeline-event { font-size: 13.5px; color: rgba(255,255,255,0.75); line-height: 1.6; font-weight: 400; }
+    #products { background: white; }
+    .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
+    .product-card { border: 1px solid var(--gray-light); border-radius: 12px; overflow: hidden; transition: all 0.3s; cursor: pointer; background: white; }
+    .product-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(10,22,40,0.12); border-color: var(--blue-light); }
+    .product-img { width: 100%; height: 200px; object-fit: cover; display: block; background: var(--gray-light); }
+    .product-body { padding: 24px; }
+    .product-tag { display: inline-block; background: rgba(37,99,176,0.1); color: var(--blue-light); font-size: 11px; font-weight: 700; letter-spacing: 1px; padding: 4px 10px; border-radius: 20px; margin-bottom: 10px; text-transform: uppercase; }
+    .product-name { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 8px; letter-spacing: -0.5px; }
+    .product-desc { font-size: 13.5px; color: var(--gray-dark); line-height: 1.65; }
+    #projects { background: var(--off-white); }
+    .projects-masonry { columns: 3; column-gap: 20px; }
+    .project-card { break-inside: avoid; margin-bottom: 20px; position: relative; border-radius: 10px; overflow: hidden; cursor: pointer; display: block; background: var(--gray-light); }
+    .project-card img { width: 100%; display: block; transition: transform 0.5s ease; }
+    .project-card:hover img { transform: scale(1.06); }
+    .project-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,22,40,0.92) 0%, rgba(10,22,40,0.2) 60%, transparent 100%); opacity: 0; transition: opacity 0.3s; display: flex; flex-direction: column; justify-content: flex-end; padding: 20px; }
+    .project-card:hover .project-overlay { opacity: 1; }
+    .project-name { color: white; font-size: 15px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.3px; }
+    .project-meta { color: rgba(255,255,255,0.65); font-size: 12px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .project-meta span { background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 3px; }
+    .achievement-strip { background: var(--navy); border-radius: 16px; padding: 24px 60px; display: grid; grid-template-columns: repeat(3,1fr); gap: 0; margin-top: 28px; margin-bottom: 60px; }
+    .ach-item { text-align: center; padding: 6px 20px; border-right: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .ach-item:last-child { border-right: none; }
+    .ach-num { font-family: 'Bebas Neue', sans-serif; font-size: 42px; color: white; line-height: 1; letter-spacing: 2px; }
+    .ach-num sup { font-size: 20px; color: var(--accent); }
+    .ach-label { font-size: 13px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+    #grundfos { background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%); position: relative; overflow: hidden; }
+    #grundfos::before { content: 'GRUNDFOS'; position: absolute; font-family: 'Bebas Neue', sans-serif; font-size: 200px; color: rgba(255,255,255,0.03); top: 50%; left: 50%; transform: translate(-50%,-50%); white-space: nowrap; pointer-events: none; }
+    #grundfos .section-title { color: white; }
+    #products .section-title { font-size: clamp(22px, 3vw, 38px); white-space: nowrap; }
+    #grundfos .section-label { color: #60a5fa; }
+    #grundfos .section-desc { color: rgba(255,255,255,0.65); }
+    .grundfos-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center; margin-top: 56px; }
+    .grundfos-features { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 40px; }
+    .gf-feature { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 20px; transition: all 0.2s; }
+    .gf-feature:hover { background: rgba(255,255,255,0.12); }
+    .gf-icon { font-size: 28px; margin-bottom: 10px; }
+    .gf-title { font-size: 14px; font-weight: 700; color: white; margin-bottom: 6px; }
+    .gf-desc { font-size: 12.5px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+    .grundfos-img-stack { position: relative; }
+    .gf-img-main { width: 100%; border-radius: 12px; display: block; }
+    .gf-img-badge { position: absolute; bottom: -20px; left: -20px; background: var(--accent); color: white; padding: 16px 22px; border-radius: 10px; font-size: 12px; font-weight: 700; line-height: 1.5; box-shadow: 0 10px 30px rgba(232,57,42,0.4); }
+    #contact { background: white; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; margin-top: 56px; }
+    .contact-info-cards { display: flex; flex-direction: column; gap: 16px; }
+    .contact-card { background: var(--off-white); border-radius: 10px; padding: 20px 24px; display: flex; align-items: flex-start; gap: 16px; border-left: 3px solid var(--blue-light); }
+    .contact-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+    .contact-card-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 4px; }
+    .contact-card-value { font-size: 15px; font-weight: 600; color: var(--navy); line-height: 1.5; }
+    .contact-card-sub { font-size: 12.5px; color: var(--gray-mid); margin-top: 2px; }
+    .inquiry-form { background: var(--off-white); border-radius: 16px; padding: 40px; }
+    .inquiry-form h3 { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 24px; letter-spacing: -0.5px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-size: 12px; font-weight: 600; color: var(--gray-dark); letter-spacing: 0.3px; }
+    .form-group input, .form-group select, .form-group textarea { border: 1px solid var(--gray-light); border-radius: 6px; padding: 11px 14px; font-size: 14px; color: var(--text); font-family: 'Noto Sans KR', sans-serif; background: white; transition: border-color 0.2s; outline: none; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--blue-light); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-full { grid-column: 1 / -1; }
+    .form-submit { width: 100%; background: var(--navy); color: white; border: none; padding: 14px; border-radius: 6px; font-size: 15px; font-weight: 700; cursor: pointer; font-family: 'Noto Sans KR', sans-serif; margin-top: 6px; transition: background 0.2s; letter-spacing: -0.3px; }
+    .form-submit:hover { background: var(--blue); }
+
+    /* ── FOOTER ── */
+    footer { background: #092844; padding: 60px 30px 30px; color: rgba(255,255,255,0.45); }
+    .footer-inner { max-width: 1300px; margin: 0 auto; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 30px; }
+    .footer-brand .name { font-size: 18px; font-weight: 700; color: white; margin-bottom: 8px; }
+    .footer-brand .desc { font-size: 13px; line-height: 1.7; max-width: 240px; }
+    .footer-col h4 { font-size: 13px; font-weight: 700; color: rgba(255,255,255,0.7); margin-bottom: 16px; letter-spacing: 0.5px; }
+    .footer-col a { display: block; font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
+    .footer-col a:hover { color: white; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 12.5px; }
+    .grundfos-partner-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 6px; font-size: 12px; color: rgba(255,255,255,0.6); width: fit-content; }
+    .grundfos-partner-badge strong { color: white; font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 2px; }
+
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-8px); } }
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .sfa-grid { grid-template-columns: repeat(3, 1fr); }
+
+    @media (max-width: 1024px) { .about-grid, .grundfos-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; } .hero-stats { display: none; } .projects-masonry { columns: 2; } .footer-top { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 768px) { .video-key-cards { grid-template-columns: repeat(2,1fr) !important; } nav { display: none; } .products-grid { grid-template-columns: 1fr 1fr; } .sfa-grid { grid-template-columns: 1fr 1fr; } .projects-masonry { columns: 1; } .achievement-strip { grid-template-columns: 1fr 1fr 1fr; padding: 20px; } .footer-top { grid-template-columns: 1fr; } .timeline { grid-template-columns: 1fr 1fr; } .form-row { grid-template-columns: 1fr; } .partner-bar { gap: 12px; padding: 14px 16px; } .partner-bar-text { font-size: 10px; letter-spacing: 1px; white-space: nowrap; } .gf-logo-img { display: none; } .gf-logo-text { display: inline; } }
+    @media (max-width: 480px) { .products-grid { grid-template-columns: 1fr; } .sfa-grid { grid-template-columns: 1fr; } .achievement-strip { grid-template-columns: 1fr; } .hero-stats-mobile { display: none !important; } .hero-title { font-size: clamp(22px, 7vw, 36px) !important; } .hero-desc { font-size: 13px !important; } .hero-actions { flex-direction: column; gap: 10px !important; } .hero-actions a { width: 100%; text-align: center; justify-content: center; } .hero-content { padding-right: 20px !important; padding-top: 80px !important; } #heroTrack > a:nth-child(3) h2 { font-size: clamp(20px,6vw,32px) !important; } }
+
     /* 모바일 하단 네비 */
-    #mobileNav{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:999;background:rgba(10,22,40,0.92);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.12);border-radius:40px;padding:10px 16px;display:flex;gap:6px;box-shadow:0 8px 32px rgba(0,0,0,0.4)}
-    .mnav-btn{display:flex;flex-direction:column;align-items:center;gap:4px;color:rgba(255,255,255,0.75);text-decoration:none;padding:8px 12px;border-radius:30px;transition:all 0.2s;min-width:56px}
-    .mnav-btn:hover,.mnav-btn:active{background:rgba(255,255,255,0.12);color:white}
-    .mnav-btn span{font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:600;letter-spacing:0.3px;white-space:nowrap}
-    .mnav-btn svg{flex-shrink:0}
-    @media(min-width:769px){#mobileNav{display:none!important}}
-    @media(max-width:768px){#mobileNav{display:flex!important}footer{padding-bottom:90px}}
+    #mobileNav { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 999; background: rgba(10,22,40,0.92); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.12); border-radius: 40px; padding: 10px 16px; display: flex; gap: 6px; box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
+    .mnav-btn { display: flex; flex-direction: column; align-items: center; gap: 4px; color: rgba(255,255,255,0.75); text-decoration: none; padding: 8px 12px; border-radius: 30px; transition: all 0.2s; min-width: 56px; }
+    .mnav-btn:hover, .mnav-btn:active { background: rgba(255,255,255,0.12); color: white; }
+    .mnav-btn span { font-family: 'Noto Sans KR', sans-serif; font-size: 9px; font-weight: 600; letter-spacing: 0.3px; white-space: nowrap; }
+    .mnav-btn svg { flex-shrink: 0; }
+    @media (min-width: 769px) { #mobileNav { display: none !important; } }
+    @media (max-width: 768px) { #mobileNav { display: flex !important; } footer { padding-bottom: 90px; } }
   </style>
 </head>
 <body>
@@ -194,82 +208,110 @@
   </div>
 </header>
 
+<!-- HERO SLIDESHOW -->
 <section id="home" style="position:relative;height:100vh;height:100dvh;min-height:600px;overflow:hidden;background:var(--navy);">
-  <div id="heroTrack" style="display:flex;width:100%;height:100%;transition:transform 0.7s cubic-bezier(0.4,0,0.2,1);will-change:transform;">
+  <div id="heroTrack" style="display:flex;width:100%;height:100%;transition:transform 0.7s cubic-bezier(0.4,0,0.2,1);will-change:transform;overflow:hidden;">
 
-    <!-- SLIDE 1 ── padding-bottom 160→80px (버튼 위로 올림) -->
+    <!-- SLIDE 1 -->
     <a href="about.html" style="flex:0 0 100%;min-width:100%;height:100%;display:block;position:relative;text-decoration:none;cursor:pointer;overflow:hidden;">
       <img src="images/home_01.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;"/>
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,0.92) 0%,rgba(10,22,40,0.55) 50%,rgba(10,22,40,0.15) 100%);"></div>
       <div class="hero-content container" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding-top:100px;padding-bottom:160px;">
-        <div class="hero-badge"><span style="width:6px;height:6px;background:var(--accent);border-radius:50%;display:inline-block;"></span>GRUNDFOS 프리미엄 공식 대리점</div>
-        <h1 class="hero-title">에너지 절감의 확실한 선택!<br/><span style="color:#60a5fa;">세계 최고 프리미엄 브랜드의</span><br/>고품질 고효율 그런포스 펌프!</h1>
-        <p class="hero-desc">1995년 설립 이후, 세계 최대 펌프 기업 Grundfos와 함께해 온 국내 유일 프리미엄 공식 대리점. 국내 1군 건설사 현장에 최고 품질의 펌프 솔루션을 공급하며 신뢰와 기술력을 쌓아온 전문 기업입니다.</p>
+        <div class="hero-badge">
+          <span style="width:6px;height:6px;background:var(--accent);border-radius:50%;display:inline-block;"></span>
+          GRUNDFOS 프리미엄 공식 대리점
+        </div>
+        <h1 class="hero-title">
+          에너지 절감의 확실한 선택!<br/>
+          <span style="color:#60a5fa;">세계 최고 프리미엄 브랜드의</span><br/>
+          고품질 고효율 그런포스 펌프!
+        </h1>
+        <p class="hero-desc">
+          1995년 설립 이후, 세계 최대 펌프 기업 Grundfos와 함께해 온 국내 유일 프리미엄 공식 대리점.
+          국내 1군 건설사 현장에 최고 품질의 펌프 솔루션을 공급하며 신뢰와 기술력을 쌓아온 전문 기업입니다.
+        </p>
         <div class="hero-actions" onclick="event.stopPropagation()">
-          <a href="projects.html" class="btn-primary">납품 실적 보기 &rarr;</a>
-          <a href="https://product-selection.grundfos.com/kr" target="_blank" rel="noopener" class="btn-outline" style="display:flex;flex-direction:column;align-items:flex-start;padding:10px 20px;line-height:1.3;border-color:rgba(96,165,250,0.6);">
+          <!-- 수정: 납품실적→제품소개 바로가기 -->
+          <a href="#products" class="btn-primary" onclick="event.stopPropagation()">제품소개 바로가기 &rarr;</a>
+          <!-- 그런포스 선정 프로그램 -->
+          <a href="https://product-selection.grundfos.com/kr" target="_blank" rel="noopener" class="btn-outline" style="display:flex;flex-direction:column;align-items:flex-start;padding:10px 20px;line-height:1.3;border-color:rgba(96,165,250,0.6);" onclick="event.stopPropagation()">
             <span style="font-size:14px;font-weight:700;color:#60a5fa;">그런포스 제품 선정 프로그램</span>
             <span style="font-size:10px;color:rgba(255,255,255,0.55);margin-top:3px;">제품선정 · 도면 · 카달로그 · 사용안내서 다운로드</span>
           </a>
-          <a href="#contact" class="btn-outline">제품 문의하기</a>
+          <!-- 기타 제품선정 프로그램 (새 페이지) -->
+          <a href="product-selection.html" class="btn-outline" style="display:flex;flex-direction:column;align-items:flex-start;padding:10px 20px;line-height:1.3;border-color:rgba(245,166,35,0.6);" onclick="event.stopPropagation()">
+            <span style="font-size:14px;font-weight:700;color:#f5a623;">기타 제품선정 프로그램</span>
+            <span style="font-size:10px;color:rgba(255,255,255,0.55);margin-top:3px;">효성굿스프링스 · 윌로펌프 다운로드</span>
+          </a>
+          <a href="#contact" class="btn-outline" onclick="event.stopPropagation()">제품 문의하기</a>
         </div>
       </div>
       <div class="hero-stats-mobile" style="position:absolute;top:110px;right:24px;display:flex;flex-direction:column;gap:10px;z-index:10;">
-        <div style="background:rgba(10,22,40,0.65);border:1px solid rgba(255,255,255,0.2);border-radius:12px;padding:14px 22px;text-align:center;backdrop-filter:blur(10px);min-width:120px;"><div style="font-family:'Bebas Neue',sans-serif;font-size:34px;color:white;line-height:1;">30<span style="font-size:18px;color:var(--accent);">년</span></div><div style="font-size:11px;color:rgba(255,255,255,0.7);margin-top:3px;">업력</div></div>
-        <div style="background:rgba(10,22,40,0.65);border:1px solid rgba(255,255,255,0.2);border-radius:12px;padding:14px 22px;text-align:center;backdrop-filter:blur(10px);min-width:120px;"><div style="font-family:'Bebas Neue',sans-serif;font-size:34px;color:white;line-height:1;">BBB</div><div style="font-size:11px;color:rgba(255,255,255,0.7);margin-top:3px;">신용 등급</div></div>
+        <div style="background:rgba(10,22,40,0.65);border:1px solid rgba(255,255,255,0.2);border-radius:12px;padding:14px 22px;text-align:center;backdrop-filter:blur(10px);min-width:120px;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:34px;color:white;line-height:1;">30<span style="font-size:18px;color:var(--accent);">년</span></div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.7);margin-top:3px;">업력</div>
+        </div>
+        <div style="background:rgba(10,22,40,0.65);border:1px solid rgba(255,255,255,0.2);border-radius:12px;padding:14px 22px;text-align:center;backdrop-filter:blur(10px);min-width:120px;">
+          <div style="font-family:'Bebas Neue',sans-serif;font-size:34px;color:white;line-height:1;">BBB</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.7);margin-top:3px;">신용 등급</div>
+        </div>
       </div>
     </a>
 
-    <!-- SLIDE 2 -->
+    <!-- SLIDE 2: 밝기 조정 (오버레이 투명도 낮춤) -->
     <a href="index.html#products" style="flex:0 0 100%;min-width:100%;height:100%;display:block;position:relative;text-decoration:none;cursor:pointer;overflow:hidden;">
       <img src="images/home_02.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center;"/>
-      <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(10,22,40,0.95) 0%,rgba(10,22,40,0.85) 50%,rgba(10,22,40,0.4) 100%);"></div>
+      <!-- 수정: 오버레이 투명도 낮춰서 더 밝게 -->
+      <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(10,22,40,0.75) 0%,rgba(10,22,40,0.55) 50%,rgba(10,22,40,0.15) 100%);"></div>
       <div style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:100px 24px 40px;max-width:100%;">
         <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,rgba(37,99,176,0.6) 0%,rgba(37,99,176,0.1) 100%);border:1px solid rgba(96,165,250,0.5);color:white;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;width:fit-content;margin-bottom:16px;"><span style="width:6px;height:6px;background:#60a5fa;border-radius:50%;display:inline-block;flex-shrink:0;"></span>Products · 제품소개</div>
         <h2 style="font-size:clamp(26px,4vw,50px);font-weight:900;color:white;letter-spacing:-2px;line-height:1.2;margin-bottom:16px;text-shadow:0 2px 20px rgba(0,0,0,0.7);">1군 건설사가 선택한 펌프<br/><span style="color:#60a5fa;">신뢰로 검증된 파트너</span><br/>(주)효일종합상사</h2>
-        <p style="font-size:15px;color:rgba(255,255,255,0.8);line-height:1.8;max-width:480px;">국내 1군 건설사 현장에 최고 품질의 펌프 솔루션을 공급하며 신뢰와 기술력을 쌓아온 전문 기업입니다.<br/>제품 공급을 넘어 펌프 선정 · 엔지니어링 검토 · 시운전 · 유지관리까지 통합 기술 서비스를 제공합니다.</p>
+        <p style="font-size:15px;color:rgba(255,255,255,0.8);line-height:1.8;max-width:480px;">
+          국내 1군 건설사 현장에 최고 품질의 펌프 솔루션을 공급하며 신뢰와 기술력을 쌓아온 전문 기업입니다.<br/>
+          제품 공급을 넘어 펌프 선정 · 엔지니어링 검토 · 시운전 · 유지관리까지 통합 기술 서비스를 제공합니다.
+        </p>
       </div>
     </a>
 
-    <!-- SLIDE 3 -->
+    <!-- SLIDE 3: 납품실적 -->
     <a href="projects.html" style="flex:0 0 100%;min-width:100%;height:100%;display:block;position:relative;text-decoration:none;cursor:pointer;overflow:hidden;">
       <img src="images/home_03.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;"/>
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,0.9) 0%,rgba(10,22,40,0.4) 50%,rgba(10,22,40,0.1) 100%);"></div>
       <div style="position:absolute;bottom:60px;left:0;right:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 40px;">
         <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,rgba(37,99,176,0.6) 0%,rgba(37,99,176,0.1) 100%);border:1px solid rgba(96,165,250,0.5);color:white;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;width:fit-content;margin-bottom:14px;"><span style="width:6px;height:6px;background:#60a5fa;border-radius:50%;display:inline-block;flex-shrink:0;"></span>Projects · 납품실적</div>
         <h2 style="font-size:clamp(26px,4vw,50px);font-weight:900;color:white;letter-spacing:-2px;line-height:1.2;margin-bottom:16px;text-shadow:0 2px 20px rgba(0,0,0,0.7);">30년 기술력으로 현장에 최적의<br/>솔루션을 제공합니다</h2>
-        <p style="font-size:14px;color:rgba(255,255,255,0.85);line-height:1.7;max-width:600px;text-shadow:0 1px 8px rgba(0,0,0,0.6);">㈜효일종합상사는 글로벌 펌프 기업 GRUNDFOS와의 파트너십을 기반으로 국내 주요 건설 및 산업 현장에 고효율 펌프 시스템과 스마트 제어 솔루션을 공급해 왔습니다.</p>
-      </div>
-    </a>
-
-    <!-- SLIDE 4 -->
-    <a href="https://product-selection.grundfos.com/kr" target="_blank" rel="noopener" style="flex:0 0 100%;min-width:100%;height:100%;display:block;position:relative;text-decoration:none;cursor:pointer;overflow:hidden;">
-      <img src="images/home_04.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;"/>
-      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,0.85) 0%,rgba(10,22,40,0.2) 55%,transparent 100%);"></div>
-      <div style="position:absolute;bottom:40px;left:0;right:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 20px;">
-        <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,rgba(37,99,176,0.6) 0%,rgba(37,99,176,0.1) 100%);border:1px solid rgba(96,165,250,0.5);color:white;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;width:fit-content;margin-bottom:14px;"><span style="width:6px;height:6px;background:#60a5fa;border-radius:50%;display:inline-block;flex-shrink:0;"></span>Grundfos · 제품 선정 프로그램</div>
-        <h2 style="font-size:clamp(28px,4vw,52px);font-weight:900;color:white;letter-spacing:-1.5px;line-height:1.2;margin-bottom:16px;text-shadow:0 2px 20px rgba(0,0,0,0.7);">그런포스 제품 선정 프로그램</h2>
-        <div style="background:rgba(37,99,176,0.35);border:1px solid rgba(96,165,250,0.5);backdrop-filter:blur(8px);border-radius:12px;padding:14px 36px;display:inline-block;"><span style="font-size:15px;color:white;letter-spacing:0.5px;font-weight:500;">제품선정 · 도면 · 카달로그 · 사용안내서 다운로드</span></div>
+        <p style="font-size:14px;color:rgba(255,255,255,0.85);line-height:1.7;max-width:600px;text-shadow:0 1px 8px rgba(0,0,0,0.6);">
+          ㈜효일종합상사는 글로벌 펌프 기업 GRUNDFOS와의 파트너십을 기반으로
+          국내 주요 건설 및 산업 현장에 고효율 펌프 시스템과 스마트 제어 솔루션을 공급해 왔습니다.
+        </p>
       </div>
     </a>
 
   </div>
+
+  <!-- 좌우 화살표 -->
   <button id="heroPrev" onclick="heroMove(-1)" style="position:absolute;top:50%;left:20px;transform:translateY(-50%);z-index:20;background:rgba(10,22,40,0.5);border:1px solid rgba(255,255,255,0.2);color:white;width:48px;height:48px;border-radius:50%;font-size:20px;cursor:pointer;backdrop-filter:blur(4px);transition:all .2s;display:flex;align-items:center;justify-content:center;">‹</button>
   <button id="heroNext" onclick="heroMove(1)" style="position:absolute;top:50%;right:20px;transform:translateY(-50%);z-index:20;background:rgba(10,22,40,0.5);border:1px solid rgba(255,255,255,0.2);color:white;width:48px;height:48px;border-radius:50%;font-size:20px;cursor:pointer;backdrop-filter:blur(4px);transition:all .2s;display:flex;align-items:center;justify-content:center;">›</button>
+
+  <!-- 인디케이터 점 (3개로 변경) -->
   <div id="heroDots" style="position:absolute;bottom:28px;left:40px;z-index:20;display:flex;gap:8px;align-items:center;">
-    <div class="hdot active" onclick="heroGo(0)"></div><div class="hdot" onclick="heroGo(1)"></div><div class="hdot" onclick="heroGo(2)"></div><div class="hdot" onclick="heroGo(3)"></div>
+    <div class="hdot active" onclick="heroGo(0)"></div>
+    <div class="hdot" onclick="heroGo(1)"></div>
+    <div class="hdot" onclick="heroGo(2)"></div>
   </div>
+
   <div class="scroll-hint">scroll</div>
 </section>
 
 <style>
-  .hdot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.35);cursor:pointer;transition:all .3s}
-  .hdot.active{background:white;width:24px;border-radius:4px}
-  #heroPrev:hover,#heroNext:hover{background:rgba(232,57,42,0.7);border-color:transparent}
+  .hdot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.35);cursor:pointer;transition:all .3s;}
+  .hdot.active{background:white;width:24px;border-radius:4px;}
+  #heroPrev:hover,#heroNext:hover{background:rgba(232,57,42,0.7);border-color:transparent;}
 </style>
 <script>
 (function(){
-  let cur=0;const total=4;
+  let cur=0;
+  const total=3; /* 슬라이드4 삭제로 3개 */
   const track=document.getElementById('heroTrack');
   const dots=document.querySelectorAll('.hdot');
   let timer=setInterval(()=>heroMove(1),9000);
@@ -282,15 +324,27 @@
   window.heroMove=function(dir){
     if(dir===-1&&cur===0) return;
     if(dir===1&&cur===total-1) return;
-    clearInterval(timer);cur=(cur+dir+total)%total;update();timer=setInterval(()=>heroMove(1),9000);
+    clearInterval(timer);
+    cur=(cur+dir+total)%total;
+    update();
+    timer=setInterval(()=>heroMove(1),9000);
   };
-  window.heroGo=function(idx){clearInterval(timer);cur=idx;update();timer=setInterval(()=>heroMove(1),9000);};
+  window.heroGo=function(idx){
+    clearInterval(timer);
+    cur=idx; update();
+    timer=setInterval(()=>heroMove(1),9000);
+  };
   let sx=0;
   track.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});
-  track.addEventListener('touchend',e=>{const dx=sx-e.changedTouches[0].clientX;if(Math.abs(dx)>40)heroMove(dx>0?1:-1);});
+  track.addEventListener('touchend',e=>{
+    const dx=sx-e.changedTouches[0].clientX;
+    if(Math.abs(dx)>40) heroMove(dx>0?1:-1);
+  });
+  update();
 })();
 </script>
 
+<!-- PARTNER BAR -->
 <div class="partner-bar">
   <span class="partner-bar-text">Official Partner of</span>
   <div class="grundfos-logo">
@@ -300,6 +354,7 @@
   <span class="partner-bar-text">한국그런포스펌프(주) 프리미엄 공식 대리점</span>
 </div>
 
+<!-- VIDEO SECTION -->
 <section style="background:#000;padding:0;margin:0;line-height:0;">
   <div style="max-width:1300px;margin:0 auto;padding:60px 30px;">
     <div style="text-align:center;margin-bottom:28px;line-height:1.4;">
@@ -350,6 +405,7 @@
   </div>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
   <div class="container">
     <div class="about-grid">
@@ -395,6 +451,7 @@
   </div>
 </section>
 
+<!-- PRODUCTS -->
 <section id="products">
   <div class="container">
     <div class="section-label reveal">제품 소개 · Products</div>
@@ -407,8 +464,8 @@
         <a class="product-card reveal reveal-delay-1" href="geniecon.html" style="text-decoration:none;color:inherit;position:relative;"><div style="position:absolute;top:12px;left:12px;z-index:2;background:var(--accent);color:white;font-size:11px;font-weight:800;padding:4px 12px;border-radius:20px;letter-spacing:1px;">✦ 신제품</div><img class="product-img" src="images/G.png" alt="GENIECON AI 컨트롤러" onerror="this.src='https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&q=80'"/><div class="product-body"><span class="product-tag" style="background:rgba(232,57,42,0.1);color:var(--accent);">AI Controller</span><div class="product-name">GENIECON 컨트롤러 & 인버터 패널</div><div class="product-desc">AI 스마트 컨트롤러로 예측운영으로 보이지 않는 손실까지 잡는 경제적·효율적인 에너지 관리 시스템입니다.</div></div></a>
         <a class="product-card reveal reveal-delay-2" href="product-inline.html" style="text-decoration:none;color:inherit;"><img class="product-img" src="images/B.png" alt="인라인 펌프" onerror="this.src='https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=600&q=80'"/><div class="product-body"><span class="product-tag">Inline</span><div class="product-name">인라인 펌프</div><div class="product-desc">배관 중간에 직접 설치하는 구조로 냉온수 순환, 공조 시스템에 최적화된 펌프입니다.</div></div></a>
         <a class="product-card reveal" href="product-multistage.html" style="text-decoration:none;color:inherit;"><img class="product-img" src="images/D.png" alt="입형다단 펌프" onerror="this.src='https://images.unsplash.com/photo-1513828583688-c52646db42da?w=600&q=80'"/><div class="product-body"><span class="product-tag">Multistage</span><div class="product-name">입형 다단 펌프</div><div class="product-desc">고층 빌딩 급수·난방용으로 적합한 다단 터빈 구조의 고압 펌프 시스템입니다.</div></div></a>
-        <a class="product-card reveal reveal-delay-1" href="product-nkf.html" style="text-decoration:none;color:inherit;"><img class="product-img" src="images/NKG01.png" alt="NKF 단단 볼류트 펌프" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80'"/><div class="product-body"><span class="product-tag">Volute</span><div class="product-name">NKF 단단 볼류트 펌프</div><div class="product-desc">대유량·저압 조건에 적합한 단단 볼류트 구조의 산업용 펌프로 냉각수·공조·일반 순환에 활용됩니다.</div></div></a>
-        <a class="product-card reveal reveal-delay-2" href="product-doublesuction.html" style="text-decoration:none;color:inherit;"><img class="product-img" src="images/dublesuctionhome.png" alt="양흡입 펌프" onerror="this.src='https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80'"/><div class="product-body"><span class="product-tag">Double Suction</span><div class="product-name">양흡입 펌프</div><div class="product-desc">임펠러 양쪽에서 흡입하는 구조로 대유량 처리에 탁월하며 진동·소음이 적은 고신뢰성 펌프입니다.</div></div></a>
+        <a class="product-card reveal reveal-delay-1" href="product-nkf.html" style="text-decoration:none;color:inherit;"><img class="product-img" src="images/pump.png" alt="NKF 단단 볼류트 펌프" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80'"/><div class="product-body"><span class="product-tag">Volute</span><div class="product-name">NKF 단단 볼류트 펌프</div><div class="product-desc">대유량·저압 조건에 적합한 단단 볼류트 구조의 산업용 펌프로 냉각수·공조·일반 순환에 활용됩니다.</div></div></a>
+        <a class="product-card reveal reveal-delay-2" href="product-doublesuction.html" style="text-decoration:none;color:inherit;"><img class="product-img" src="images/pump.png" alt="양흡입 펌프" onerror="this.src='https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80'"/><div class="product-body"><span class="product-tag">Double Suction</span><div class="product-name">양흡입 펌프</div><div class="product-desc">임펠러 양쪽에서 흡입하는 구조로 대유량 처리에 탁월하며 진동·소음이 적은 고신뢰성 펌프입니다.</div></div></a>
         <a class="product-card reveal" href="product-submersible.html" style="text-decoration:none;color:inherit;"><img class="product-img" src="images/C.png" alt="수중 펌프" onerror="this.src='https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80'"/><div class="product-body"><span class="product-tag">Submersible</span><div class="product-name">수중 펌프</div><div class="product-desc">지하 집수정, 오수 및 우수 처리용으로 사용되는 수중 설치형 고내구성 펌프입니다.</div></div></a>
         <a class="product-card reveal reveal-delay-1" href="product-firepump.html" style="text-decoration:none;color:inherit;"><img class="product-img" src="images/E.png" alt="소방용 입형 다단 펌프" onerror="this.src='https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80'"/><div class="product-body"><span class="product-tag">Fire Pump</span><div class="product-name">소방용 입형 다단 펌프</div><div class="product-desc">UL/FM 인증 취득 소방 전용 펌프로 소방법 규정을 준수하며 안전과 신뢰를 최우선으로 합니다.</div></div></a>
         <a class="product-card reveal reveal-delay-2" href="product-drainage.html" style="text-decoration:none;color:inherit;"><img class="product-img" src="images/pump.png" alt="건식 오·배수 패키지 펌프" onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80'"/><div class="product-body"><span class="product-tag">Drainage</span><div class="product-name">건식 오·배수 패키지 펌프</div><div class="product-desc">지하 주차장·기계실의 오배수를 자동으로 처리하는 건식 설치형 패키지 시스템입니다.</div></div></a>
@@ -418,14 +475,15 @@
       <div style="display:flex;align-items:center;gap:16px;margin-bottom:28px;"><div style="width:4px;height:32px;background:var(--accent);border-radius:2px;"></div><h3 style="font-size:20px;font-weight:800;color:var(--navy);letter-spacing:-0.5px;">협력사 및 기타 취급 제품군</h3></div>
       <div class="products-grid sfa-grid">
         <a class="product-card reveal" href="product-danfoss.html" style="text-decoration:none;color:inherit;"><img class="product-img" src="images/inverter.png" alt="댄포스 인버터 패널" onerror="this.src='https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80'"/><div class="product-body"><span class="product-tag">Danfoss</span><div class="product-name">댄포스 인버터 패널</div><div class="product-desc">세계적인 인버터 브랜드 댄포스의 VLT HVAC Drive로 펌프·팬 등 공조설비의 에너지를 최적 제어합니다.</div></div></a>
-        <a class="product-card reveal reveal-delay-1" href="product-hyosung.html" style="text-decoration:none;color:inherit;"><img class="product-img" src="images/hyosunghome.png" alt="효성 소방 펌프" onerror="this.src='https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80'"/><div class="product-body"><span class="product-tag">Hyosung</span><div class="product-name">소방용 입형 다단 펌프</div><div class="product-desc">국내 소방 전문 브랜드 효성의 UL/FM 인증 소방 펌프로 높은 신뢰성과 국내 A/S 지원이 강점입니다.</div></div></a>
+        <a class="product-card reveal reveal-delay-1" href="product-hyosung.html" style="text-decoration:none;color:inherit;"><img class="product-img" src="images/E.png" alt="효성 소방 펌프" onerror="this.src='https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80'"/><div class="product-body"><span class="product-tag">Hyosung</span><div class="product-name">소방용 입형 다단 펌프 (효성 펌프)</div><div class="product-desc">국내 소방 전문 브랜드 효성의 UL/FM 인증 소방 펌프로 높은 신뢰성과 국내 A/S 지원이 강점입니다.</div></div></a>
         <a class="product-card reveal reveal-delay-2" href="product-sfa.html" style="text-decoration:none;color:inherit;"><img class="product-img" src="images/F.png" alt="SFA 펌프" onerror="this.src='https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80'"/><div class="product-body"><span class="product-tag">SFA</span><div class="product-name">SFA PUMPS</div><div class="product-desc">실내 바닥에 설치해 사용하는 펌프로 주거·상업 환경 모두에서 오수 및 하수를 효율적으로 배수하는 혁신 솔루션입니다.</div></div></a>
-        <a class="product-card reveal" href="product-kone.html" style="text-decoration:none;color:inherit;"><img class="product-img" src="images/kone.png" alt="K-ONE 펌프" onerror="this.src='https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80'"/><div class="product-body"><span class="product-tag">K-ONE</span><div class="product-name">케이원펌프(주)</div><div class="product-desc">산업용 및 건축 설비용 펌프 시스템 전문 기업으로, 효성굿스프링스의 대리점입니다. 제품 공급부터 기술 지원 및 유지관리까지 전문 서비스를 제공합니다.</div></div></a>
+        <a class="product-card reveal" href="product-kone.html" style="text-decoration:none;color:inherit;"><img class="product-img" src="images/pump.png" alt="K-ONE 펌프" onerror="this.src='https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80'"/><div class="product-body"><span class="product-tag">K-ONE</span><div class="product-name">K-ONE 펌프</div><div class="product-desc">국내 제조 K-ONE 오·배수 패키지 펌프로 지하 집수정 자동배수, 소규모 현장에 최적화된 경제적 솔루션입니다.</div></div></a>
       </div>
     </div>
   </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
   <div class="container">
     <div class="section-label reveal">납품 실적 · Projects</div>
@@ -450,6 +508,7 @@
   </div>
 </section>
 
+<!-- GRUNDFOS -->
 <section id="grundfos">
   <div class="container">
     <div class="grundfos-grid">
@@ -466,12 +525,13 @@
       </div>
       <div class="grundfos-img-stack reveal">
         <img class="gf-img-main" src="images/grundfos.png" alt="그런포스 펌프 제품" onerror="this.src='https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?w=700&q=80'"/>
-        <a href="https://www.grundfos.com/kr" target="_blank" rel="noopener" class="gf-img-badge" style="text-decoration:none;">프리미엄<br/>공식 대리점<br/><strong style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;display:block;margin-top:6px;">GRUNDFOS</strong></a>
+        <a href="https://www.grundfos.com/kr" target="_blank" rel="noopener" class="gf-img-badge" style="text-decoration:none;">공식 대리점<br/><strong style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;display:block;margin-top:6px;">GRUNDFOS</strong></a>
       </div>
     </div>
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
   <div class="container">
     <div class="section-label reveal">연락처 · Contact</div>
@@ -500,6 +560,7 @@
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
@@ -527,9 +588,9 @@
 
 <button id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="맨 위로">↑</button>
 <style>
-  #scrollTopBtn{position:fixed;bottom:36px;right:30px;z-index:999;width:48px;height:48px;border-radius:12px;background:#2563b0;color:white;border:none;font-size:22px;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.25);opacity:0;pointer-events:none;transition:opacity 0.3s,transform 0.2s;display:flex;align-items:center;justify-content:center}
-  #scrollTopBtn.visible{opacity:1;pointer-events:auto}
-  #scrollTopBtn:hover{transform:translateY(-3px);background:#1a3a6e}
+  #scrollTopBtn{position:fixed;bottom:36px;right:30px;z-index:999;width:48px;height:48px;border-radius:12px;background:#2563b0;color:white;border:none;font-size:22px;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.25);opacity:0;pointer-events:none;transition:opacity 0.3s,transform 0.2s;display:flex;align-items:center;justify-content:center;}
+  #scrollTopBtn.visible{opacity:1;pointer-events:auto;}
+  #scrollTopBtn:hover{transform:translateY(-3px);background:#1a3a6e;}
 </style>
 <script>
   const scrollBtn=document.getElementById('scrollTopBtn');
