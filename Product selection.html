@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>기타 제품선정 프로그램 | (주)효일종합상사</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--navy:#0a1628;--blue:#1a3a6e;--blue-light:#2563b0;--accent:#e8392a;--off-white:#f4f6f9;--gray-light:#e8ecf2;--gray-dark:#4a5568;--text:#1a202c}
+    body{font-family:'Noto Sans KR',sans-serif;color:var(--text);background:var(--off-white);min-height:100vh;}
+
+    /* 헤더 */
+    header{background:#07457e;border-bottom:1px solid rgba(255,255,255,0.12);}
+    .header-top{background:var(--accent);display:flex;align-items:center;justify-content:space-between;padding:6px 30px;font-size:12px;font-weight:500;color:#fff;}
+    .header-top-center{flex:1;text-align:center;}
+    .header-top-side{font-size:11px;white-space:nowrap;opacity:0.9;}
+    .header-main{display:flex;align-items:center;justify-content:space-between;max-width:1300px;margin:0 auto;padding:0 30px;height:77px;}
+    nav{display:flex;align-items:center;gap:6px;}
+    nav a{color:rgba(255,255,255,0.82);text-decoration:none;font-size:14px;font-weight:500;padding:8px 14px;border-radius:4px;transition:all 0.2s;}
+    nav a:hover{color:white;background:rgba(255,255,255,0.1);}
+    .nav-cta{background:var(--accent)!important;color:white!important;padding:8px 18px!important;border-radius:4px;font-weight:700!important;}
+    @media(max-width:768px){nav{display:none}.header-top-side{display:none}}
+
+    /* 페이지 히어로 */
+    .page-hero{background:linear-gradient(135deg,#07457e 0%,var(--blue) 100%);padding:80px 30px 60px;text-align:center;margin-top:0;}
+    .page-hero .label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:12px;}
+    .page-hero h1{font-size:clamp(28px,4vw,48px);font-weight:900;color:white;letter-spacing:-1.5px;margin-bottom:16px;}
+    .page-hero p{font-size:16px;color:rgba(255,255,255,0.7);max-width:600px;margin:0 auto;line-height:1.7;}
+
+    /* 콘텐츠 */
+    .content{max-width:900px;margin:0 auto;padding:60px 30px 80px;}
+
+    /* 안내 박스 */
+    .notice-box{background:#fff3cd;border:1px solid #ffc107;border-radius:12px;padding:20px 24px;margin-bottom:40px;display:flex;align-items:flex-start;gap:12px;}
+    .notice-box .icon{font-size:22px;flex-shrink:0;}
+    .notice-box p{font-size:14px;color:#856404;line-height:1.6;}
+
+    /* 카드 그룹 */
+    .card-group{margin-bottom:48px;}
+    .card-group-title{display:flex;align-items:center;gap:12px;margin-bottom:24px;}
+    .card-group-title .bar{width:4px;height:28px;border-radius:2px;}
+    .card-group-title h2{font-size:22px;font-weight:800;color:var(--navy);letter-spacing:-0.5px;}
+
+    /* 프로그램 카드 */
+    .program-card{background:white;border:1px solid var(--gray-light);border-radius:16px;padding:32px;display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:16px;transition:all 0.2s;}
+    .program-card:hover{box-shadow:0 8px 32px rgba(10,22,40,0.1);border-color:var(--blue-light);transform:translateY(-2px);}
+    .program-info{flex:1;}
+    .program-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-bottom:10px;}
+    .program-name{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:8px;letter-spacing:-0.5px;}
+    .program-desc{font-size:13.5px;color:var(--gray-dark);line-height:1.65;}
+    .program-features{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+    .feature-tag{background:var(--off-white);border:1px solid var(--gray-light);border-radius:6px;padding:4px 10px;font-size:12px;color:var(--gray-dark);}
+
+    /* 다운로드 버튼 */
+    .btn-download{display:inline-flex;flex-direction:column;align-items:center;gap:4px;background:var(--blue-light);color:white;padding:16px 28px;border-radius:10px;text-decoration:none;font-weight:700;font-size:14px;transition:all 0.2s;min-width:140px;text-align:center;flex-shrink:0;}
+    .btn-download:hover{background:#1a3a6e;transform:translateY(-2px);}
+    .btn-download .sub{font-size:11px;opacity:0.8;font-weight:400;}
+    .btn-download-pending{display:inline-flex;flex-direction:column;align-items:center;gap:4px;background:#9aa5b4;color:white;padding:16px 28px;border-radius:10px;font-weight:700;font-size:14px;min-width:140px;text-align:center;flex-shrink:0;cursor:not-allowed;}
+    .btn-download-pending .sub{font-size:11px;opacity:0.8;font-weight:400;}
+
+    /* 추가 안내 */
+    .contact-cta{background:linear-gradient(135deg,#07457e 0%,var(--blue) 100%);border-radius:16px;padding:40px;text-align:center;color:white;margin-top:48px;}
+    .contact-cta h3{font-size:22px;font-weight:800;margin-bottom:10px;}
+    .contact-cta p{font-size:14px;opacity:0.8;margin-bottom:24px;}
+    .contact-cta a{display:inline-flex;align-items:center;gap:8px;background:white;color:var(--navy);padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:700;font-size:15px;transition:all 0.2s;}
+    .contact-cta a:hover{transform:translateY(-2px);}
+
+    /* 푸터 */
+    footer{background:#092844;padding:30px;text-align:center;color:rgba(255,255,255,0.4);font-size:13px;}
+
+    @media(max-width:600px){.program-card{flex-direction:column;align-items:flex-start;}.btn-download,.btn-download-pending{width:100%;}.content{padding:40px 20px 60px;}}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <span class="header-top-side">📞 032.347.0815~7</span>
+    <span class="header-top-center">한국그런포스펌프(주) 프리미엄 공식 대리점 &nbsp;|&nbsp; 1995년 설립</span>
+    <span class="header-top-side">✉ hyoilpump@daum.net</span>
+  </div>
+  <div class="header-main">
+    <a href="index.html" style="display:flex;align-items:center;text-decoration:none;">
+      <img src="images/logo.png" alt="효일종합상사 로고" style="height:72px;width:auto;object-fit:contain;display:block;"/>
+    </a>
+    <nav>
+      <a href="about.html">회사소개</a>
+      <a href="index.html#products">제품소개</a>
+      <a href="projects.html">납품실적</a>
+      <a href="https://blog.naver.com/hyoil-pp" target="_blank" rel="noopener">Blog</a>
+      <a href="index.html#grundfos">그런포스</a>
+      <a href="index.html#contact" class="nav-cta">문의하기</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="label">Product Selection Program</div>
+  <h1>기타 제품선정 프로그램</h1>
+  <p>효성굿스프링스, 윌로펌프 등 협력사 제품의 선정 프로그램 및 자료를 다운로드하실 수 있습니다.</p>
+</div>
+
+<div class="content">
+
+  <div class="notice-box">
+    <div class="icon">📌</div>
+    <p>파일 업로드 후 다운로드 링크가 활성화됩니다. 그 전에는 <strong>준비 중</strong>으로 표시됩니다.<br/>문의사항은 <strong>032.347.0815~7</strong> 또는 <strong>hyoilpump@daum.net</strong>으로 연락해 주세요.</p>
+  </div>
+
+  <!-- 효성굿스프링스 -->
+  <div class="card-group">
+    <div class="card-group-title">
+      <div class="bar" style="background:#2563b0;"></div>
+      <h2>효성굿스프링스 (Hyosung Goodsprings)</h2>
+    </div>
+
+    <div class="program-card">
+      <div class="program-info">
+        <span class="program-badge" style="background:rgba(37,99,176,0.1);color:#2563b0;">Hyosung Goodsprings</span>
+        <div class="program-name">효성굿스프링스 제품선정 프로그램</div>
+        <div class="program-desc">소방용 입형 다단 펌프 등 효성굿스프링스 제품의 선정 및 사양 검토 프로그램입니다.</div>
+        <div class="program-features">
+          <span class="feature-tag">소방용 펌프</span>
+          <span class="feature-tag">입형 다단 펌프</span>
+          <span class="feature-tag">제품 선정</span>
+          <span class="feature-tag">사양서 출력</span>
+        </div>
+      </div>
+      <!-- 파일 업로드 후 href를 실제 파일 경로로 변경하세요 -->
+      <div class="btn-download-pending">
+        <span>🔒 준비 중</span>
+        <span class="sub">파일 업로드 예정</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 윌로펌프 -->
+  <div class="card-group">
+    <div class="card-group-title">
+      <div class="bar" style="background:#f5a623;"></div>
+      <h2>윌로펌프 (Wilo Pump)</h2>
+    </div>
+
+    <div class="program-card">
+      <div class="program-info">
+        <span class="program-badge" style="background:rgba(245,166,35,0.1);color:#d4891a;">Wilo Pump</span>
+        <div class="program-name">윌로펌프 제품선정 프로그램</div>
+        <div class="program-desc">윌로펌프 각 제품군의 선정 프로그램으로 사양 검토 및 도면 출력이 가능합니다.</div>
+        <div class="program-features">
+          <span class="feature-tag">부스터 펌프</span>
+          <span class="feature-tag">인라인 펌프</span>
+          <span class="feature-tag">제품 선정</span>
+          <span class="feature-tag">도면 출력</span>
+        </div>
+      </div>
+      <!-- 파일 업로드 후 href를 실제 파일 경로로 변경하세요 -->
+      <div class="btn-download-pending">
+        <span>🔒 준비 중</span>
+        <span class="sub">파일 업로드 예정</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 그런포스 안내 -->
+  <div style="background:white;border:1px solid #e8ecf2;border-radius:16px;padding:28px 32px;display:flex;align-items:center;gap:24px;margin-bottom:20px;">
+    <img src="images/grundfoslogo.png" alt="GRUNDFOS" style="height:60px;width:auto;object-fit:contain;flex-shrink:0;" onerror="this.style.display='none'"/>
+    <div>
+      <div style="font-size:13px;font-weight:700;color:#2563b0;letter-spacing:1px;margin-bottom:6px;">GRUNDFOS 공식 제품선정 프로그램</div>
+      <div style="font-size:15px;font-weight:700;color:#0a1628;margin-bottom:6px;">그런포스 제품선정 프로그램은 공식 웹사이트에서 이용하실 수 있습니다.</div>
+      <div style="font-size:13px;color:#4a5568;">제품선정 · 도면 · 카달로그 · 사용안내서 다운로드 지원</div>
+    </div>
+    <a href="https://product-selection.grundfos.com/kr" target="_blank" rel="noopener" class="btn-download" style="flex-shrink:0;">
+      <span>바로가기 →</span>
+      <span class="sub">외부 사이트</span>
+    </a>
+  </div>
+
+  <div class="contact-cta">
+    <h3>제품 선정 도움이 필요하신가요?</h3>
+    <p>전문 엔지니어가 직접 제품 선정을 도와드립니다. 현장 조건과 요구사항을 알려주시면 최적의 솔루션을 제안해드립니다.</p>
+    <a href="index.html#contact">📞 전문가 상담 문의하기</a>
+  </div>
+
+</div>
+
+<footer>
+  <div>(주)효일종합상사 | 경기도 부천시 조마루로 385번길 122, 삼보테크노타워 1607, 1608호</div>
+  <div style="margin-top:6px;">T. 032.347.0815~7 | hyoilpump@daum.net | © 2025 HYOIL Co., Ltd.</div>
+</footer>
+
+</body>
+</html>
