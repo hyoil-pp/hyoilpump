@@ -247,6 +247,7 @@ initListFilters();
       <button class="filter-btn active" onclick="setFilter('전체',this)">전체</button>
       <button class="filter-btn" onclick="setFilter('주거',this)">주거/아파트</button>
       <button class="filter-btn" onclick="setFilter('병원',this)">병원/의료</button>
+      <button class="filter-btn" onclick="setFilter('데이터센터',this)">데이터센터</button>
       <button class="filter-btn" onclick="setFilter('상업',this)">상업/백화점</button>
       <button class="filter-btn" onclick="setFilter('업무',this)">업무/오피스</button>
       <button class="filter-btn" onclick="setFilter('공공',this)">공공/교통</button>
@@ -293,9 +294,9 @@ function getImg(no){
 // 최신순 정렬 (no 내림차순)
 const PROJECTS=[
   {no:117,name:'광주 중앙공원 롯데캐슬시그니처 1지구',cat:'주거',builder:'롯데건설',year:'2027',products:'부스터, 인라인 펌프',blog:'https://blog.naver.com/hyoil-pp/224283893294'},
-  {no:116,name:'LG U+ 평촌 Next IDC증설(3단계)',cat:'업무',builder:'자이C&A',year:'2027',products:'인라인 펌프',blog:'https://blog.naver.com/hyoil-pp/224283876125'},
+  {no:116,name:'LG U+ 평촌 Next IDC증설(3단계)',cat:'데이터센터',builder:'자이C&A',year:'2027',products:'인라인 펌프',blog:'https://blog.naver.com/hyoil-pp/224283876125'},
   {no:115,name:'이천 안흥동 주상복합',cat:'주거',builder:'롯데건설',year:'2027',products:'부스터 펌프',blog:'https://blog.naver.com/hyoil-pp/224283872059'},
-  {no:114,name:'LG U+ 평촌 Next IDC증설(2단계)',cat:'업무',builder:'자이C&A',year:'2026',products:'인라인 펌프',blog:'https://blog.naver.com/hyoil-pp/224283866009'},
+  {no:114,name:'LG U+ 평촌 Next IDC증설(2단계)',cat:'데이터센터',builder:'자이C&A',year:'2026',products:'인라인 펌프',blog:'https://blog.naver.com/hyoil-pp/224283866009'},
   {no:113,name:'서부산 SK V1',cat:'업무',builder:'SK에코플랜트',year:'2026',products:'부스터, 인라인, 수중, 오배수패키지 펌프',blog:'https://blog.naver.com/hyoil-pp/224283858230'},
   {no:112,name:'송내역 푸르지오 센트비엔',cat:'주거',builder:'대우건설',year:'2026',products:'부스터, 수중, 오배수패키지, 소방 펌프',blog:'https://blog.naver.com/hyoil-pp/224283850635'},
   {no:111,name:'춘천 만천리 아테라 1차',cat:'주거',builder:'금호건설',year:'2026',products:'부스터, 수중, 오배수패키지 펌프',blog:'https://blog.naver.com/hyoil-pp/224283845899'},
@@ -318,8 +319,8 @@ const PROJECTS=[
   {no:94,name:'올림픽파크포레온',cat:'주거',builder:'현대건설·HDC현대산업개발·롯데건설·대우건설',year:'2024',products:'부스터, 인라인 펌프',blog:'https://blog.naver.com/hyoil-pp/224282875239'},
   {no:93,name:'KT 구의 역세권 개발사업',cat:'업무',builder:'롯데건설',year:'2025',products:'부스터, 인라인 펌프',blog:'https://blog.naver.com/hyoil-pp/224282867769'},
   {no:92,name:'센텀 Astrum SK VIEW',cat:'주거',builder:'SK에코플랜트',year:'2024',products:'부스터, 인라인, 수중, 패키지, 소방펌프',blog:'https://blog.naver.com/hyoil-pp/224282781926'},
-  {no:91,name:'IBK 하남 데이터센터',cat:'업무',builder:'에이스건설',year:'2024',products:'부스터, 인라인, 수중, 오배수패키지, 기어펌프',blog:'https://blog.naver.com/hyoil-pp/224282771230'},
-  {no:90,name:'LG U+ 평촌 Next IDC 1단계',cat:'업무',builder:'자이C&A',year:'2023',products:'부스터, 인라인, 수중형, 오배수패키지, 기어펌프',blog:'https://blog.naver.com/hyoil-pp/224282736274'},
+  {no:91,name:'IBK 하남 데이터센터',cat:'데이터센터',builder:'에이스건설',year:'2024',products:'부스터, 인라인, 수중, 오배수패키지, 기어펌프',blog:'https://blog.naver.com/hyoil-pp/224282771230'},
+  {no:90,name:'LG U+ 평촌 Next IDC 1단계',cat:'데이터센터',builder:'자이C&A',year:'2023',products:'부스터, 인라인, 수중형, 오배수패키지, 기어펌프',blog:'https://blog.naver.com/hyoil-pp/224282736274'},
   {no:89,name:'신세종 복합발전소',cat:'산업',builder:'HJ중공업',year:'2024',products:'부스터, 인라인, 수중형, 오그덴 펌프',blog:'https://blog.naver.com/hyoil-pp/224282726243'},
   {no:88,name:'삼성전기 필리핀법인 신복지동',cat:'산업',builder:'HJ중공업',year:'2023',products:'인라인, 양흡입 인라인, 수중펌프',blog:'https://blog.naver.com/hyoil-pp/224282715802'},
   {no:87,name:'판교 다우기술사옥',cat:'업무',builder:'한화 건설부문',year:'2023',products:'부스터, 인라인, 수중, 패키지, 소방펌프',blog:'https://blog.naver.com/hyoil-pp/224282709948'},
@@ -332,7 +333,7 @@ const PROJECTS=[
   {no:79,name:'힐스테이트 이진베이시티',cat:'주거',builder:'현대건설(주)',year:'2022',products:'부스터, 인라인, 수중형, 입형다단, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222571969556'},
   {no:78,name:'KT송파지사 개발사업',cat:'업무',builder:'현대건설(주)',year:'2021',products:'부스터, 인라인 펌프',blog:'https://blog.naver.com/hyoil-pp/222571660628'},
   {no:77,name:'한양대학교 한마음 국제의료원',cat:'병원',builder:'현대건설(주)',year:'2021',products:'부스터, 인라인 펌프',blog:'https://blog.naver.com/hyoil-pp/222568562186'},
-  {no:76,name:'KB국민은행 통합IT센터',cat:'업무',builder:'현대건설(주)',year:'2019',products:'부스터, 인라인, 수중형, 소화, 기어 펌프',blog:'https://blog.naver.com/hyoil-pp/222568543993'},
+  {no:76,name:'KB국민은행 통합IT센터',cat:'데이터센터',builder:'현대건설(주)',year:'2019',products:'부스터, 인라인, 수중형, 소화, 기어 펌프',blog:'https://blog.naver.com/hyoil-pp/222568543993'},
   {no:75,name:'기흥 서천지구 지식산업센터',cat:'산업',builder:'현대엔지니어링(주)',year:'2020',products:'부스터, 인라인 펌프',blog:'https://blog.naver.com/hyoil-pp/222568523414'},
   {no:74,name:'별내역 I-PARK 스위트',cat:'주거',builder:'현대산업개발(주)',year:'2020',products:'부스터, 인라인, 수중형, 입형다단, 패키지, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222566147826'},
   {no:73,name:'운정신도시 I-PARK',cat:'주거',builder:'현대산업개발(주)',year:'2020',products:'부스터, 인라인, 수중형, 입형다단, 패키지, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222566119946'},
@@ -350,7 +351,7 @@ const PROJECTS=[
   {no:62,name:'송파 문정지식산업센터 1-1',cat:'산업',builder:'현대엔지니어링(주)',year:'2017',products:'부스터, 인라인 펌프',blog:'https://blog.naver.com/hyoil-pp/222552056104'},
   {no:61,name:'송파 문정지식산업센터 3-1',cat:'산업',builder:'현대엔지니어링(주)',year:'2016',products:'부스터, 인라인 펌프',blog:'https://blog.naver.com/hyoil-pp/222550894629'},
   {no:60,name:'문정동 현대지식산업센터',cat:'산업',builder:'현대건설(주)',year:'2016',products:'부스터, 인라인 펌프',blog:'https://blog.naver.com/hyoil-pp/222544626517'},
-  {no:59,name:'NH 농협 통합IT센터',cat:'업무',builder:'현대건설(주)',year:'2016',products:'부스터, 인라인 펌프',blog:'https://blog.naver.com/hyoil-pp/222544606039'},
+  {no:59,name:'NH 농협 통합IT센터',cat:'데이터센터',builder:'현대건설(주)',year:'2016',products:'부스터, 인라인 펌프',blog:'https://blog.naver.com/hyoil-pp/222544606039'},
   {no:58,name:'강릉 아산병원 신관 증축',cat:'병원',builder:'현대산업개발(주)',year:'2015',products:'부스터, 인라인, 수중형, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222544583132'},
   {no:57,name:'칩팩코리아',cat:'산업',builder:'현대건설(주)',year:'2014',products:'부스터, 인라인, 수중형, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222542826910'},
   {no:56,name:'경포대 현대호텔',cat:'호텔',builder:'현대건설(주)',year:'2015',products:'부스터, 인라인, 수중형, 소화 펌프',blog:'https://blog.naver.com/hyoil-pp/222542796631'},
