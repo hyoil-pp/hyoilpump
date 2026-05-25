@@ -159,7 +159,7 @@
     .reveal-delay-3{transition-delay:0.3s}
     .sfa-grid{grid-template-columns:repeat(3,1fr)}
     @media(max-width:1024px){.about-grid,.grundfos-grid,.contact-grid{grid-template-columns:1fr;gap:40px}.hero-stats{display:none}.projects-masonry{columns:2}.footer-top{grid-template-columns:1fr 1fr}}
-    @media(max-width:768px){.hero-actions{display:none!important}.video-key-cards{grid-template-columns:repeat(2,1fr)!important}nav{display:none}.products-grid{grid-template-columns:1fr 1fr}.sfa-grid{grid-template-columns:1fr 1fr}.projects-masonry{columns:1}.achievement-strip{grid-template-columns:1fr 1fr 1fr;padding:20px}.footer-top{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}.form-row{grid-template-columns:1fr}.partner-bar{gap:12px;padding:14px 16px}.partner-bar-text{font-size:10px;letter-spacing:1px;white-space:nowrap}.gf-logo-img{display:none}.gf-logo-text{display:inline}}
+    @media(max-width:768px){.hero-actions{display:none!important}.video-key-cards{grid-template-columns:repeat(2,1fr)!important}nav{display:none}.products-grid{grid-template-columns:1fr 1fr}.sfa-grid{grid-template-columns:1fr 1fr}.projects-masonry{columns:1}.achievement-strip{grid-template-columns:1fr 1fr 1fr;padding:20px}.footer-top{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}.form-row{grid-template-columns:1fr}.partner-bar{gap:12px;padding:14px 16px}.partner-bar-text{font-size:10px;letter-spacing:1px;white-space:nowrap}.gf-logo-img{display:none}.gf-logo-text{display:inline}.about-bottom-grid{grid-template-columns:1fr!important}.sfa-layout{grid-template-columns:1fr!important}}
     @media(max-width:480px){.products-grid{grid-template-columns:1fr}.sfa-grid{grid-template-columns:1fr}.achievement-strip{grid-template-columns:1fr}.hero-stats-mobile{display:none!important}.hero-title{font-size:clamp(22px,7vw,36px)!important}.hero-desc{font-size:13px!important}.hero-actions{flex-direction:column;gap:10px!important}.hero-actions a{width:100%;text-align:center;justify-content:center}.hero-content{padding-right:20px!important;padding-top:80px!important}#heroTrack>a:nth-child(3) h2{font-size:clamp(20px,6vw,32px)!important}}
     /* 모바일 하단 네비 */
     #mobileNav{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);z-index:999;background:rgba(10,22,40,0.92);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.12);border-radius:40px;padding:10px 16px;display:flex;gap:6px;box-shadow:0 8px 32px rgba(0,0,0,0.4)}
@@ -201,7 +201,7 @@
     <div style="flex:0 0 100%;min-width:100%;height:100%;display:block;position:relative;overflow:hidden;">
       <img src="images/home_01.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;"/>
       <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,0.92) 0%,rgba(10,22,40,0.55) 50%,rgba(10,22,40,0.15) 100%);"></div>
-      <div class="hero-content container" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding-top:100px;padding-bottom:120px;">
+      <div class="hero-content container" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding-top:100px;padding-bottom:80px;">
         <div class="hero-badge" style="width:fit-content;"><span style="width:6px;height:6px;background:var(--accent);border-radius:50%;display:inline-block;"></span>GRUNDFOS 프리미엄 공식 대리점</div>
         <h1 class="hero-title">에너지 절감의 확실한 선택!<br/><span style="color:#60a5fa;">세계 최고 프리미엄 브랜드의</span><br/>고품질 고효율 그런포스 펌프!</h1>
         <p class="hero-desc">1995년 설립 이후, 세계 최대 펌프 기업 Grundfos와 함께해 온 국내 유일 프리미엄 공식 대리점. 국내 1군 건설사 현장에 최고 품질의 펌프 솔루션을 공급하며 신뢰와 기술력을 쌓아온 전문 기업입니다.</p>
@@ -371,7 +371,7 @@
     </div>
 
     <!-- 하단: 이미지 + 테이블 나란히 -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;">
+    <div class="about-bottom-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;">
 
       <!-- 이미지 -->
       <div class="reveal" style="position:relative;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(10,22,40,0.15);">
@@ -455,7 +455,7 @@
         <h3 style="font-size:20px;font-weight:800;color:var(--navy);letter-spacing:-0.5px;">SFA 펌프 납품군</h3>
       </div>
       <!-- SFA: 카드 + 동영상 나란히 -->
-      <div style="display:grid;grid-template-columns:1fr 2fr;gap:24px;align-items:stretch;">
+      <div class="sfa-layout" style="display:grid;grid-template-columns:1fr 2fr;gap:24px;align-items:stretch;">
 
         <!-- 제품 카드 -->
         <a class="product-card reveal" href="product-sfa.html" style="text-decoration:none;color:inherit;display:flex;flex-direction:column;">
@@ -468,7 +468,7 @@
         </a>
 
         <!-- 동영상 패널 -->
-        <div class="reveal reveal-delay-1" style="position:relative;border:1px solid var(--gray-light);border-radius:12px;overflow:hidden;background:#0a0e1a;min-height:320px;display:flex;flex-direction:column;">
+        <div class="reveal reveal-delay-1" style="position:relative;border:1px solid var(--gray-light);border-radius:12px;overflow:hidden;background:#0a0e1a;min-height:320px;display:flex;flex-direction:column;aspect-ratio:16/9;">
           <!-- 상단 배지 바 -->
           <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.08);flex-shrink:0;">
             <div style="display:flex;align-items:center;gap:10px;">
