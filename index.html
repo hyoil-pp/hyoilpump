@@ -521,15 +521,56 @@
     <div class="section-label reveal">납품 실적 · Projects</div>
     <h2 class="section-title reveal">국내 주요 건물<br/>납품 실적</h2>
     <p class="section-desc reveal">해운대 아이파크, 국민은행 데이터 센터, 올림픽 파크포레온, 역삼동 스타타워, 분당 서울대병원, 용산 민자역사, 서울아산병원, 목동 현대 하이페리온, 롯데캐슬 등 국내 대표 건물에 납품했습니다.</p>
-    <div class="projects-masonry reveal" style="margin-top:32px;">
-      <div class="project-card" onclick="location.href='projects.html'"><img src="images/83.jpg" alt="하남미사 스카이폴리스" onerror="this.src='https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80'"/><div class="project-overlay"><div class="project-name">하남미사 스카이폴리스</div><div class="project-meta"><span>상업</span><span>롯데건설</span><span>315,240㎡</span></div></div></div>
-      <div class="project-card" onclick="location.href='projects.html'"><img src="images/82.jpg" alt="화성동탄 복합환승중심" onerror="this.src='https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&q=80'"/><div class="project-overlay"><div class="project-name">화성동탄(2) 복합환승중심</div><div class="project-meta"><span>상업</span><span>롯데건설</span><span>505,255㎡</span></div></div></div>
-      <div class="project-card" onclick="location.href='projects.html'"><img src="images/81.jpg" alt="상도역세권 롯데캐슬" onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80'"/><div class="project-overlay"><div class="project-name">상도역세권 롯데캐슬</div><div class="project-meta"><span>주거</span><span>롯데건설</span><span>950세대</span></div></div></div>
-      <div class="project-card" onclick="location.href='projects.html'"><img src="images/77.jpg" alt="한양대학교 한마음 국제의료원" onerror="this.src='https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?w=600&q=80'"/><div class="project-overlay"><div class="project-name">한양대 한마음 국제의료원</div><div class="project-meta"><span>병원</span></div></div></div>
-      <div class="project-card" onclick="location.href='projects.html'"><img src="images/31.jpg" alt="서울 아산병원 신관" onerror="this.src='https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80'"/><div class="project-overlay"><div class="project-name">서울 아산병원 신관</div><div class="project-meta"><span>병원</span></div></div></div>
-      <div class="project-card" onclick="location.href='projects.html'"><img src="images/21.jpg" alt="용산 민자역사" onerror="this.src='https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=600&q=80'"/><div class="project-overlay"><div class="project-name">용산 민자역사</div><div class="project-meta"><span>공공</span><span>롯데건설</span></div></div></div>
-      <div class="project-card" onclick="location.href='projects.html'"><img src="images/15.png" alt="목동 하이페리온 I" onerror="this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80'"/><div class="project-overlay"><div class="project-name">목동 하이페리온 I</div><div class="project-meta"><span>주거</span><span>현대건설</span></div></div></div>
-      <div class="project-card" onclick="location.href='projects.html'"><img src="images/14.jpg" alt="서울대 분당병원 II" onerror="this.src='https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600&q=80'"/><div class="project-overlay"><div class="project-name">서울대 분당병원 II</div><div class="project-meta"><span>병원</span></div></div></div>
+    <!-- 주요 납품실적 카드 (4열 그리드, 8개) -->
+    <style>
+      .pj-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:32px;}
+      .pj-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:all .3s;cursor:pointer;border:1px solid var(--gray-light);}
+      .pj-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(10,22,40,.14);border-color:var(--blue-light);}
+      .pj-img-wrap{position:relative;overflow:hidden;background:var(--gray-light);aspect-ratio:4/3;}
+      .pj-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;}
+      .pj-card:hover .pj-img-wrap img{transform:scale(1.07);}
+      .pj-num{position:absolute;top:10px;right:10px;background:rgba(10,22,40,.75);color:white;font-family:'Bebas Neue',sans-serif;font-size:15px;padding:3px 9px;border-radius:4px;letter-spacing:1px;}
+      .pj-cat{position:absolute;top:10px;left:10px;background:var(--navy);color:white;font-size:10px;font-weight:700;letter-spacing:1px;padding:4px 10px;border-radius:20px;}
+      .pj-body{padding:14px 16px;}
+      .pj-title{font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:6px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+      .pj-meta{font-size:11.5px;color:var(--gray-mid);display:flex;flex-direction:column;gap:2px;}
+      @media(max-width:1024px){.pj-grid{grid-template-columns:repeat(3,1fr);}}
+      @media(max-width:768px){.pj-grid{grid-template-columns:repeat(2,1fr);}}
+      @media(max-width:480px){.pj-grid{grid-template-columns:1fr;}}
+    </style>
+    <div class="pj-grid reveal">
+      <div class="pj-card" onclick="location.href='projects.html'">
+        <div class="pj-img-wrap"><img src="images/83.jpg" alt="하남미사 스카이폴리스" onerror="this.src='https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80'"/><span class="pj-num">NO.83</span><span class="pj-cat">상업</span></div>
+        <div class="pj-body"><div class="pj-title">하남미사 스카이폴리스</div><div class="pj-meta"><span>🏢 롯데건설</span><span>📅 2025</span></div></div>
+      </div>
+      <div class="pj-card" onclick="location.href='projects.html'">
+        <div class="pj-img-wrap"><img src="images/82.jpg" alt="화성동탄 복합환승중심" onerror="this.src='https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&q=80'"/><span class="pj-num">NO.82</span><span class="pj-cat">상업</span></div>
+        <div class="pj-body"><div class="pj-title">화성동탄(2) 복합환승중심</div><div class="pj-meta"><span>🏢 롯데건설</span><span>📅 2025</span></div></div>
+      </div>
+      <div class="pj-card" onclick="location.href='projects.html'">
+        <div class="pj-img-wrap"><img src="images/81.jpg" alt="상도역세권 롯데캐슬" onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80'"/><span class="pj-num">NO.81</span><span class="pj-cat">주거</span></div>
+        <div class="pj-body"><div class="pj-title">상도역세권 롯데캐슬</div><div class="pj-meta"><span>🏢 롯데건설</span><span>📅 2025</span></div></div>
+      </div>
+      <div class="pj-card" onclick="location.href='projects.html'">
+        <div class="pj-img-wrap"><img src="images/77.jpg" alt="한양대 한마음 국제의료원" onerror="this.src='https://images.unsplash.com/photo-1632833239869-a37e3a5806d2?w=600&q=80'"/><span class="pj-num">NO.77</span><span class="pj-cat">병원</span></div>
+        <div class="pj-body"><div class="pj-title">한양대 한마음 국제의료원</div><div class="pj-meta"><span>🏢 현대건설</span><span>📅 2024</span></div></div>
+      </div>
+      <div class="pj-card" onclick="location.href='projects.html'">
+        <div class="pj-img-wrap"><img src="images/31.jpg" alt="서울 아산병원 신관" onerror="this.src='https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80'"/><span class="pj-num">NO.31</span><span class="pj-cat">병원</span></div>
+        <div class="pj-body"><div class="pj-title">서울 아산병원 신관</div><div class="pj-meta"><span>🏢 아산사회복지재단</span><span>📅 2023</span></div></div>
+      </div>
+      <div class="pj-card" onclick="location.href='projects.html'">
+        <div class="pj-img-wrap"><img src="images/21.jpg" alt="용산 민자역사" onerror="this.src='https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=600&q=80'"/><span class="pj-num">NO.21</span><span class="pj-cat">공공</span></div>
+        <div class="pj-body"><div class="pj-title">용산 민자역사</div><div class="pj-meta"><span>🏢 롯데건설</span><span>📅 2022</span></div></div>
+      </div>
+      <div class="pj-card" onclick="location.href='projects.html'">
+        <div class="pj-img-wrap"><img src="images/15.png" alt="목동 하이페리온 I" onerror="this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80'"/><span class="pj-num">NO.15</span><span class="pj-cat">주거</span></div>
+        <div class="pj-body"><div class="pj-title">목동 하이페리온 I</div><div class="pj-meta"><span>🏢 현대건설</span><span>📅 2021</span></div></div>
+      </div>
+      <div class="pj-card" onclick="location.href='projects.html'">
+        <div class="pj-img-wrap"><img src="images/14.jpg" alt="서울대 분당병원 II" onerror="this.src='https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600&q=80'"/><span class="pj-num">NO.14</span><span class="pj-cat">병원</span></div>
+        <div class="pj-body"><div class="pj-title">서울대 분당병원 II</div><div class="pj-meta"><span>🏢 두산건설</span><span>📅 2021</span></div></div>
+      </div>
     </div>
 
     <!-- 납품 전체 리스트 미니 버전 -->
