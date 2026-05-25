@@ -11,7 +11,7 @@
     :root{--navy:#0a1628;--navy-mid:#122040;--blue:#1a3a6e;--blue-light:#2563b0;--accent:#e8392a;--white:#ffffff;--off-white:#f4f6f9;--gray-light:#e8ecf2;--gray-mid:#9aa5b4;--gray-dark:#4a5568;--text:#1a202c}
     html{scroll-behavior:smooth}
     body{font-family:'Noto Sans KR',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
-    header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,22,40,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.08)}
+    header{position:fixed;top:0;left:0;right:0;z-index:100;background:#07457e;backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.12)}
     .header-top{background:var(--accent);display:flex;align-items:center;justify-content:space-between;padding:6px 30px;font-size:12px;font-weight:500;color:#fff}
     .header-top-center{flex:1;text-align:center}
     .header-top-side{font-size:11px;white-space:nowrap;opacity:0.9}
@@ -107,7 +107,7 @@
     #scrollTopBtn{position:fixed;bottom:36px;right:30px;z-index:999;width:48px;height:48px;border-radius:12px;background:#2563b0;color:white;border:none;font-size:22px;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.25);opacity:0;pointer-events:none;transition:opacity .3s,transform .2s;display:flex;align-items:center;justify-content:center}
     #scrollTopBtn.visible{opacity:1;pointer-events:auto}
     #scrollTopBtn:hover{transform:translateY(-3px);background:#1a3a6e}
-    footer{background:#06101f;padding:30px 40px;text-align:center;color:rgba(255,255,255,.35);font-size:12.5px}
+    footer{background:#092844;padding:30px 40px;text-align:center;color:rgba(255,255,255,.35);font-size:12.5px}
     footer a{color:rgba(255,255,255,.5);text-decoration:none}
     @media(max-width:900px){.ceo-grid{grid-template-columns:1fr}.ceo-profile{position:static;display:flex;flex-direction:column;align-items:center}.ceo-photo{aspect-ratio:3/4;max-width:200px}.biz-grid{grid-template-columns:1fr}.comp-grid{grid-template-columns:1fr 1fr}.history-grid{grid-template-columns:1fr}.history-col:not(:last-child){border-right:none;border-bottom:1px solid var(--gray-light)}.info-grid{grid-template-columns:1fr}}
     @media(max-width:600px){nav{display:none}.comp-grid{grid-template-columns:1fr}.header-top{flex-direction:column;gap:2px;padding:6px 16px;text-align:center}.header-top-side{display:none}.hero-inner,.container{padding:0 20px}.rec-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}.rec-table{min-width:520px}.rec-table td,.rec-table th{white-space:nowrap;padding:10px 12px;font-size:12px}}
@@ -157,19 +157,20 @@
       <div class="ceo-content">
         <div class="section-label">CEO Message</div>
         <h2 class="section-title">CEO 인사말</h2>
-        <div class="ceo-quote">"혁신적인 펌프 솔루션으로<br/>AI 데이터센터와 그린 빌딩의 미래를 설계합니다."</div>
+        <div class="ceo-quote">"혁신적인 펌프 솔루션으로<br/><strong style="color:#2563b0;">AI 데이터센터</strong>와 <strong style="color:#2563b0;">그린 빌딩의 미래</strong>를 설계합니다."</div>
         <div class="ceo-body">
-          <p>안녕하십니까. (주)효일종합상사를 아껴 주시고 성원해 주시는 고객 여러분께 진심으로 감사드립니다.</p>
-          <p>당사는 1995년 설립 이후, 글로벌 펌프 산업의 선도 기업인 그런포스(Grundfos)와 파트너십을 맺고 국내 주요 건설 및 산업 현장에 고효율 펌프 시스템을 공급하며 신뢰와 함께 성장해 왔습니다.</p>
-          <p>지난 30여 년간 축적한 기술적 경험과 노하우를 바탕으로, 단순한 제품 공급을 넘어 현장 조건에 최적화된 펌프 선정, 엔지니어링 검토, 시운전 지원 및 철저한 사후관리까지 아우르는 토탈 펌프 솔루션을 제공하고 있습니다.</p>
-          <p>특히 최근 AI, 빅데이터, 클라우드 산업의 급격한 성장에 발맞추어, 데이터센터의 에너지 효율 극대화와 냉각 시스템의 안정성 확보를 최우선 가치로 삼고 있습니다. 당사는 책임감 있는 기술 지원을 통해 고객사의 지속 가능한 성장을 돕는 최적의 비즈니스 파트너로 자리매김하고 있습니다.</p>
-          <p>앞으로도 IE5 울트라 프리미엄 고효율 모터와 지능형 인버터 제어 시스템을 통해 탄소중립 실현에 기여하며, 고객의 신뢰에 보답하는 스마트 워터 솔루션 파트너가 될 것을 약속드립니다.</p>
+          <p>안녕하십니까. <strong style="color:#2563b0;">(주)효일종합상사</strong>를 아껴 주시고 성원해 주시는 고객 여러분께 진심으로 감사드립니다. 1995년 설립 이후, 글로벌 펌프 산업의 선도 기업인 <strong style="color:#2563b0;">그런포스(Grundfos)</strong>와 협력하여 국내 주요 건설 및 산업 현장에 고효율 펌프 시스템을 공급하며 신뢰와 함께 성장해 왔습니다.</p>
+          <p>지난 30여 년간 축적한 기술적 경험과 노하우를 바탕으로, 단순한 제품 공급을 넘어 현장 조건에 최적화된 펌프 선정, 엔지니어링 검토, 시운전 지원 및 사후관리까지 아우르는 종합적인 <strong style="color:#2563b0;">펌프 솔루션</strong>을 제공하고 있습니다.</p>
+          <p>또한 기업신용평가 기관으로부터 <strong style="color:#2563b0;">BBB 등급</strong>의 안정적인 경영 기반을 인정받았으며, 책임감 있는 기술 지원을 통해 고객사로부터 신뢰받는 파트너로 자리매김하고 있습니다. 최근 AI, 빅데이터, 클라우드 산업의 급격한 성장으로 인해 데이터센터의 에너지 효율과 냉각 시스템의 안정성은 그 어느 때보다 중요한 가치가 되겠습니다.</p>
+          <p>앞으로도 당사는 <strong style="color:#2563b0;">IE5 울트라 프리미엄 고효율 모터</strong>, <strong style="color:#2563b0;">지능형 인버터 제어 시스템</strong>, <strong style="color:#2563b0;">고효율 정밀 솔루션</strong>을 통해 고객의 에너지 비용 절감과 탄소중립 실현에 기여하도록 최선의 노력을 다하겠습니다.</p>
+          <p>펌프 시스템의 가치는 정확한 제품 선정, 안정적인 운전, 그리고 신속한 유지관리에서 완성됩니다. ㈜효일종합상사는 전문적인 엔지니어링 역량과 성실한 기술 지원으로 고객의 신뢰에 보답하는 <strong style="color:#2563b0;">스마트 워터 솔루션 파트너</strong>가 되겠습니다.</p>
+          <p style="margin-top:8px;">감사합니다.</p>
         </div>
         <div class="ceo-projects">
           <div class="ceo-projects-title">주요 프로젝트 수행 실적</div>
-          <div class="ceo-projects-list">둔촌 올림픽파크포레온(12,062세대), 삼성동 아이파크, 해운대 아이파크, 목동 현대하이페리온, 강남 파이낸스센터, 강남성모병원, 용인동백세브란스병원, 은평성모병원, 연대세브란스 중입자 병원, 현대중공업 분당 R&D 센터, KB국민은행 김포 데이터센터, IBK 하남 데이터센터, LG U+ 안양 데이터센터 등</div>
+          <div class="ceo-projects-list">삼성동 아이파크, 해운대 아이파크, 목동 현대하이페리온 I·II 현장, 강남 파이낸스센터, 강남성모병원, 용인동백세브란스병원, KB국민은행 김포 데이터센터, IBK 하남 데이터센터, LG U+ 안양 데이터센터 등 주요 프로젝트 수행 경험을 바탕으로 정밀 냉각 및 관리 분야의 경쟁력을 지속적으로 강화하고 있습니다.</div>
         </div>
-        <div class="ceo-closing">(주)효일종합상사<br/><strong>대표이사 배상</strong></div>
+        <div class="ceo-closing">㈜효일종합상사<br/><strong>대표이사 배상</strong></div>
       </div>
     </div>
   </div>
