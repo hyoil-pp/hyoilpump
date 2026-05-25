@@ -364,9 +364,20 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-visual reveal">
-        <img class="about-img-main" src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&q=80" alt="펌프 설비 납품 현장"/>
-        <img class="about-img-accent" src="images/pump.png" alt="그런포스 펌프"/>
-        <div class="about-badge-float"><strong>1995</strong>설립 이래 30년<br/>신뢰와 기술력</div>
+        <div style="position:relative;width:100%;border-radius:16px;overflow:hidden;box-shadow:0 24px 60px rgba(10,22,40,0.18);">
+          <img src="images/Grundfos_Service_image.png" alt="그런포스 서비스 현장" style="width:100%;aspect-ratio:3/4;object-fit:cover;display:block;"/>
+          <!-- 하단 그라데이션 오버레이 -->
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,0.45) 0%,transparent 50%);pointer-events:none;"></div>
+          <!-- 왼쪽 상단 뱃지 -->
+          <div style="position:absolute;top:20px;left:20px;background:rgba(10,22,40,0.82);backdrop-filter:blur(8px);color:white;padding:14px 20px;border-radius:12px;font-size:13px;font-weight:600;box-shadow:0 8px 24px rgba(10,22,40,0.3);line-height:1.5;border:1px solid rgba(255,255,255,0.1);">
+            <strong style="display:block;font-size:22px;font-family:'Bebas Neue',sans-serif;letter-spacing:1px;color:var(--accent2);">1995</strong>설립 이래 30년<br/>신뢰와 기술력
+          </div>
+          <!-- 오른쪽 하단 GRUNDFOS 파트너 배지 -->
+          <div style="position:absolute;bottom:20px;right:20px;background:rgba(10,22,40,0.82);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:10px 16px;display:flex;align-items:center;gap:8px;">
+            <div style="width:8px;height:8px;background:var(--accent);border-radius:50%;flex-shrink:0;"></div>
+            <span style="font-family:'Bebas Neue',sans-serif;font-size:15px;color:white;letter-spacing:2px;">GRUNDFOS PREMIUM PARTNER</span>
+          </div>
+        </div>
       </div>
       <div class="reveal reveal-delay-1">
         <div class="section-label">회사소개 · About Us</div>
