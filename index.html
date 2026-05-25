@@ -187,7 +187,7 @@
     <nav>
       <a href="about.html">회사소개</a>
       <a href="#products">제품소개</a>
-      <a href="projects.html">납품실적</a>
+      <a href="#projects">납품실적</a>
       <a href="https://blog.naver.com/hyoil-pp" target="_blank" rel="noopener">Blog</a>
       <a href="#grundfos">그런포스</a>
       <a href="#contact" class="nav-cta">문의하기</a>
@@ -521,11 +521,6 @@
     <div class="section-label reveal">납품 실적 · Projects</div>
     <h2 class="section-title reveal">국내 주요 건물<br/>납품 실적</h2>
     <p class="section-desc reveal">해운대 아이파크, 국민은행 데이터 센터, 올림픽 파크포레온, 역삼동 스타타워, 분당 서울대병원, 용산 민자역사, 서울아산병원, 목동 현대 하이페리온, 롯데캐슬 등 국내 대표 건물에 납품했습니다.</p>
-    <div class="achievement-strip reveal">
-      <div class="ach-item"><div class="ach-num">30<sup>년</sup></div><div class="ach-label">업력</div></div>
-      <div class="ach-item"><div class="ach-num">1<sup>군</sup></div><div class="ach-label">건설사 납품</div></div>
-      <div class="ach-item"><div class="ach-num">BBB</div><div class="ach-label">신용 등급</div></div>
-    </div>
     <div class="projects-masonry reveal" style="margin-top:32px;">
       <div class="project-card" onclick="location.href='projects.html'"><img src="images/83.jpg" alt="하남미사 스카이폴리스" onerror="this.src='https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=80'"/><div class="project-overlay"><div class="project-name">하남미사 스카이폴리스</div><div class="project-meta"><span>상업</span><span>롯데건설</span><span>315,240㎡</span></div></div></div>
       <div class="project-card" onclick="location.href='projects.html'"><img src="images/82.jpg" alt="화성동탄 복합환승중심" onerror="this.src='https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&q=80'"/><div class="project-overlay"><div class="project-name">화성동탄(2) 복합환승중심</div><div class="project-meta"><span>상업</span><span>롯데건설</span><span>505,255㎡</span></div></div></div>
@@ -536,7 +531,66 @@
       <div class="project-card" onclick="location.href='projects.html'"><img src="images/15.png" alt="목동 하이페리온 I" onerror="this.src='https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80'"/><div class="project-overlay"><div class="project-name">목동 하이페리온 I</div><div class="project-meta"><span>주거</span><span>현대건설</span></div></div></div>
       <div class="project-card" onclick="location.href='projects.html'"><img src="images/14.jpg" alt="서울대 분당병원 II" onerror="this.src='https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=600&q=80'"/><div class="project-overlay"><div class="project-name">서울대 분당병원 II</div><div class="project-meta"><span>병원</span></div></div></div>
     </div>
-    <div style="text-align:center;margin-top:40px;" class="reveal"><a href="projects.html" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px;">전체 납품실적 보기 &rarr;</a></div>
+
+    <!-- 납품 전체 리스트 미니 버전 -->
+    <div class="reveal" style="margin-top:48px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
+        <div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue-light);margin-bottom:6px;">납품 실적 · Full List</div>
+          <h3 style="font-size:22px;font-weight:800;color:var(--navy);letter-spacing:-0.5px;">제품 납품 전체 리스트</h3>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+          <div style="display:flex;align-items:center;gap:8px;background:white;border:1px solid var(--gray-light);border-radius:8px;padding:8px 14px;">
+            <span style="color:var(--gray-mid);">🔍</span>
+            <input type="text" id="miniSearch" placeholder="고객사 또는 현장명 검색..." oninput="miniFilter()" style="border:none;outline:none;background:transparent;font-size:13px;font-family:'Noto Sans KR',sans-serif;width:200px;"/>
+          </div>
+        </div>
+      </div>
+      <div style="font-size:13px;color:var(--gray-mid);margin-bottom:10px;" id="miniCount"></div>
+      <div style="background:white;border-radius:12px;overflow:hidden;border:1px solid var(--gray-light);">
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;min-width:480px;">
+            <thead>
+              <tr style="background:var(--navy);">
+                <th style="padding:11px 16px;text-align:left;font-size:12px;font-weight:600;color:rgba(255,255,255,.8);white-space:nowrap;">No.</th>
+                <th style="padding:11px 16px;text-align:left;font-size:12px;font-weight:600;color:rgba(255,255,255,.8);white-space:nowrap;">납품일</th>
+                <th style="padding:11px 16px;text-align:left;font-size:12px;font-weight:600;color:rgba(255,255,255,.8);white-space:nowrap;">고객사</th>
+                <th style="padding:11px 16px;text-align:left;font-size:12px;font-weight:600;color:rgba(255,255,255,.8);white-space:nowrap;">현장명</th>
+                <th style="padding:11px 16px;text-align:left;font-size:12px;font-weight:600;color:rgba(255,255,255,.8);white-space:nowrap;">납품 제품</th>
+              </tr>
+            </thead>
+            <tbody id="miniBody"></tbody>
+          </table>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:center;gap:6px;margin-top:16px;flex-wrap:wrap;" id="miniPagination"></div>
+    </div>
+
+    <script>
+    (function(){
+      const DATA=[{"no":683,"client":"현대건설(주)","site":"한양대학교 한마음 국제의료원","product":"부스터, 인라인","year":"2019","month":"12"},{"no":678,"client":"현대엔지니어링(주)","site":"기흥 서천지구 지식산업센터","product":"부스터, 인라인","year":"2019","month":"11"},{"no":679,"client":"현대산업개발(주)","site":"고척 I-PARK","product":"부스터","year":"2019","month":"11"},{"no":680,"client":"S&I","site":"생활건강 태극제약 부여공장","product":"부스터, 입형다단","year":"2019","month":"11"},{"no":681,"client":"현대비에스앤씨(주)","site":"삼송역 현대 헤리엇 신축공사","product":"부스터, 인라인, 수중형, 횡형다단, 패키지","year":"2019","month":"11"},{"no":682,"client":"현대건설(주)","site":"KB국민은행 통합 IT센터","product":"부스터, 인라인, 수중형, 횡형다단, 기어펌프","year":"2019","month":"11"},{"no":676,"client":"두산건설(주)","site":"용인 동백 세브란스병원","product":"부스터, 인라인","year":"2019","month":"10"},{"no":677,"client":"현대건설(주)","site":"동탄2 C1BL 주상복합","product":"부스터, 인라인","year":"2019","month":"10"},{"no":673,"client":"S&I","site":"LG사이언스파크 동측부지 DP3","product":"인라인, 입형다단","year":"2019","month":"09"},{"no":674,"client":"아산사회복지재단","site":"서울 아산병원","product":"인라인","year":"2019","month":"09"},{"no":675,"client":"현대산업개발(주)","site":"별내역 I-PARK 스위트","product":"부스터, 인라인, 수중형, 횡형다단, 패키지","year":"2019","month":"09"},{"no":669,"client":"현대산업개발(주)","site":"운정신도시 I-PARK","product":"부스터, 인라인, 수중형, 횡형다단, 입형다단, 패키지","year":"2019","month":"08"},{"no":670,"client":"롯데건설(주)","site":"회원1구역 주택재개발 아파트","product":"부스터, 인라인, 수중형, 횡형다단, 입형다단","year":"2019","month":"08"},{"no":671,"client":"장한기술(주)","site":"풀무원 오송연구소","product":"인라인","year":"2019","month":"08"},{"no":672,"client":"현대엔지니어링(주)","site":"하남미사 중심상업지역 11-1BL","product":"부스터, 인라인","year":"2019","month":"08"},{"no":665,"client":"(주)신성엔지니어링","site":"현대해상 안산사옥","product":"인라인","year":"2019","month":"07"},{"no":666,"client":"롯데건설(주)","site":"김포 신곡1구역 재개발","product":"부스터, 인라인, 수중형, 횡형다단, 입형다단","year":"2019","month":"07"},{"no":667,"client":"롯데건설(주)","site":"오산세교2 A3BL 아파트","product":"부스터, 인라인, 수중형, 횡형다단, 입형다단","year":"2019","month":"07"},{"no":668,"client":"현대산업개발(주)","site":"용인 역북지구 I-PARK","product":"부스터, 인라인, 수중형, 횡형다단, 입형다단, 패키지","year":"2019","month":"07"},{"no":660,"client":"현대산업개발(주)","site":"검단 아라 I-PARK","product":"부스터, 인라인, 수중형, 횡형다단, 입형다단, 패키지","year":"2019","month":"06"}];
+      const PER=10;
+      let filtered=DATA, page=1;
+      function render(){
+        const start=(page-1)*PER, slice=filtered.slice(start,start+PER);
+        document.getElementById('miniCount').textContent='총 '+filtered.length+'건의 실적이 있습니다.';
+        document.getElementById('miniBody').innerHTML=slice.map(r=>`<tr style="border-bottom:1px solid #e8ecf2;">
+          <td style="padding:11px 16px;font-size:12px;color:#9aa5b4;">${r.no}</td>
+          <td style="padding:11px 16px;font-size:13px;font-weight:700;color:#2563b0;">${r.year}.${r.month}</td>
+          <td style="padding:11px 16px;font-size:13px;color:#1a202c;">${r.client}</td>
+          <td style="padding:11px 16px;font-size:13px;color:#1a202c;">${r.site}</td>
+          <td style="padding:11px 16px;font-size:12px;">${r.product.split(',').map(p=>`<span style="display:inline-block;background:#f4f6f9;border-radius:4px;padding:2px 7px;margin:1px;color:#4a5568;">${p.trim()}</span>`).join('')}</td>
+        </tr>`).join('');
+        const total=Math.ceil(filtered.length/PER);
+        document.getElementById('miniPagination').innerHTML=Array.from({length:Math.min(total,5)},(_,i)=>`<button onclick="miniGo(${i+1})" style="min-width:36px;height:36px;padding:0 10px;border-radius:6px;border:1px solid ${page===i+1?'var(--navy)':'#e8ecf2'};background:${page===i+1?'var(--navy)':'white'};color:${page===i+1?'white':'#4a5568'};font-size:13px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">${i+1}</button>`).join('');
+      }
+      window.miniFilter=function(){const q=document.getElementById('miniSearch').value.toLowerCase();filtered=DATA.filter(r=>r.client.toLowerCase().includes(q)||r.site.toLowerCase().includes(q));page=1;render();};
+      window.miniGo=function(p){page=p;render();};
+      render();
+    })();
+    </script>
+
+    <div style="text-align:center;margin-top:32px;" class="reveal"><a href="projects.html" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px;">전체 납품실적 보기 &rarr;</a></div>
   </div>
 </section>
 
