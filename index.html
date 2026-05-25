@@ -74,9 +74,10 @@
     #history .section-label{color:#60a5fa}
     #history .section-desc{color:rgba(255,255,255,0.6)}
     .timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;margin-top:60px;position:relative}
-    .timeline::before{content:'';position:absolute;top:36px;left:0;right:0;height:2px;background:rgba(255,255,255,0.1)}
+    .timeline::before{content:none}
     .timeline-item{padding:30px 24px 24px;position:relative}
-    .timeline-item::before{content:'';width:14px;height:14px;background:var(--accent);border-radius:50%;position:absolute;top:29px;left:24px;box-shadow:0 0 0 4px rgba(232,57,42,0.2)}
+    .timeline-item::after{content:'';position:absolute;top:36px;left:0;right:0;height:2px;background:rgba(255,255,255,0.1);z-index:0}
+    .timeline-item::before{content:'';width:14px;height:14px;background:var(--accent);border-radius:50%;position:absolute;top:29px;left:24px;box-shadow:0 0 0 4px rgba(232,57,42,0.2);z-index:1}
     .timeline-year{font-family:'Bebas Neue',sans-serif;font-size:38px;color:rgba(255,255,255,0.15);line-height:1;margin-top:20px;margin-bottom:6px}
     .timeline-event{font-size:13.5px;color:rgba(255,255,255,0.75);line-height:1.6;font-weight:400}
     #products{background:white}
