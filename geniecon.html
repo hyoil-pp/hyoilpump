@@ -26,7 +26,7 @@ body { font-family: 'Noto Sans KR', sans-serif; color: var(--navy); background: 
 /* HEADER */
 header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(10,22,40,0.97); backdrop-filter: blur(8px);
+  background: rgba(7,69,126,0.97); backdrop-filter: blur(8px);
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
@@ -53,10 +53,10 @@ nav a {
 }
 nav a:hover { color: white; }
 nav a.nav-cta {
-  background: var(--accent); color: white !important;
-  padding: 8px 18px; border-radius: 4px; font-weight: 700;
+  background: transparent; color: var(--accent) !important;
+  padding: 8px 18px; border-radius: 4px; font-weight: 700; border: none;
 }
-nav a.nav-cta:hover { background: #c92d1f; }
+nav a.nav-cta:hover { background: rgba(232,57,42,0.1); }
 
 /* 모바일 햄버거 */
 .nav-toggle {
@@ -276,7 +276,7 @@ nav a.nav-cta:hover { background: #c92d1f; }
 .btn-outline:hover { border-color: var(--navy); }
 
 /* FOOTER */
-footer { background: #06101f; padding: 30px; text-align: center; color: rgba(255,255,255,0.35); font-size: 12.5px; }
+footer { background: #092844; padding: 30px; text-align: center; color: rgba(255,255,255,0.35); font-size: 12.5px; }
 footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
 footer a:hover { color: white; }
 
