@@ -12,7 +12,7 @@
     body{font-family:'Noto Sans KR',sans-serif;color:var(--text);background:var(--off-white);min-height:100vh;}
 
     /* 헤더 */
-    header{background:rgba(10,22,40,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.08);}
+    header{background:rgba(7,69,126,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,0.08);}
     .header-top{background:var(--accent);display:flex;align-items:center;justify-content:space-between;padding:6px 30px;font-size:12px;font-weight:500;color:#fff;}
     .header-top-center{flex:1;text-align:center;}
     .header-top-side{font-size:11px;white-space:nowrap;opacity:0.9;}
@@ -20,11 +20,12 @@
     nav{display:flex;align-items:center;gap:6px;}
     nav a{color:rgba(255,255,255,0.82);text-decoration:none;font-size:14px;font-weight:500;padding:8px 14px;border-radius:4px;transition:all 0.2s;}
     nav a:hover{color:white;background:rgba(255,255,255,0.1);}
-    .nav-cta{background:var(--accent)!important;color:white!important;padding:8px 18px!important;border-radius:4px;font-weight:700!important;}
+    .nav-cta{background:transparent!important;color:var(--accent)!important;padding:8px 18px!important;border-radius:4px;font-weight:700!important;border:none!important;}
+    .nav-cta:hover{background:rgba(232,57,42,0.1)!important;}
     @media(max-width:768px){nav{display:none}.header-top-side{display:none}}
 
     /* 페이지 히어로 */
-    .page-hero{background:linear-gradient(135deg,#07457e 0%,var(--blue) 100%);padding:80px 30px 60px;text-align:center;margin-top:0;}
+    .page-hero{background:linear-gradient(135deg,#0a1628 0%,#1a3a6e 100%);padding:80px 30px 60px;text-align:center;margin-top:0;}
     .page-hero .label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:12px;}
     .page-hero h1{font-size:clamp(28px,4vw,48px);font-weight:900;color:white;letter-spacing:-1.5px;margin-bottom:16px;}
     .page-hero p{font-size:16px;color:rgba(255,255,255,0.7);max-width:600px;margin:0 auto;line-height:1.7;}
