@@ -22,10 +22,11 @@ nav a.nav-cta{background:var(--accent);color:white!important;padding:8px 18px;bo
 .page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);padding:140px 40px 70px;position:relative;overflow:hidden}
 .page-hero::before{content:'HYOSUNG';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:180px;color:rgba(255,255,255,.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
 .container{max-width:1200px;margin:0 auto;padding:0 40px}
-.cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;padding:60px 0 80px}
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:60px 0 80px}
 footer{background:#092844;padding:30px 40px;text-align:center;color:rgba(255,255,255,.35);font-size:12.5px}
 footer a{color:rgba(255,255,255,.5);text-decoration:none}
-@media(max-width:768px){nav{display:none}.cards-grid{grid-template-columns:1fr}.header-top-side{display:none}.container{padding:0 20px}}
+@media(max-width:1024px){.cards-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:768px){nav{display:none}.cards-grid{grid-template-columns:1fr}.header-top-side{display:none}.container{padding:0 20px}}
 
 @media(max-width:768px){
   .brand-section-grid{grid-template-columns:1fr !important;gap:32px !important;}
