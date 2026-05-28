@@ -20,14 +20,14 @@
     nav a:hover{color:white}
     nav a.nav-cta{background:transparent;color:var(--accent)!important;padding:8px 18px;border-radius:4px;font-weight:700;border:none}
     nav a.nav-cta:hover{background:rgba(232,57,42,0.1)}
-    .page-hero{background:linear-gradient(135deg,var(--navy),var(--blue));padding:140px 40px 70px;position:relative;overflow:hidden}
+    .page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);padding:140px 40px 70px;position:relative;overflow:hidden}
     .page-hero::before{content:'DRAINAGE';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:200px;color:rgba(255,255,255,.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
     .container{max-width:1200px;margin:0 auto;padding:0 40px}
-    .cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:48px;margin-bottom:80px}
+    .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:60px 0 80px}
     footer{background:#092844;padding:30px 40px;text-align:center;color:rgba(255,255,255,.35);font-size:12.5px}
     footer a{color:rgba(255,255,255,.5);text-decoration:none}
-    @media(max-width:900px){.cards-grid{grid-template-columns:1fr}nav{display:none}.header-top-side{display:none}}
-    @media(max-width:600px){.cards-grid{grid-template-columns:1fr}}
+    @media(max-width:1024px){.cards-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:768px){nav{display:none}.cards-grid{grid-template-columns:1fr}.header-top-side{display:none}.container{padding:0 20px}}
   </style>
 </head>
 <body>
@@ -54,51 +54,47 @@
   <div class="container">
     <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#60a5fa;margin-bottom:12px;">제품 소개 · Products</div>
     <h1 style="font-size:clamp(28px,5vw,52px);font-weight:900;color:white;letter-spacing:-2px;margin-bottom:16px;">건식 오·배수 패키지 펌프</h1>
-    <p style="font-size:15px;color:rgba(255,255,255,.65);max-width:600px;line-height:1.8;">지하 주차장·기계실의 오배수를 자동으로 처리하는 건식 설치형 패키지 시스템. 완전 밀폐 구조로 악취 차단 및 위생적인 배수 환경을 제공합니다.</p>
-    <div style="margin-top:24px;">
-      <a href="index.html#products" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);color:white;padding:9px 18px;border-radius:6px;font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,0.3);text-decoration:none;">← 전체 제품으로 돌아가기</a>
-    </div>
+    <p style="font-size:15px;color:rgba(255,255,255,.65);max-width:680px;line-height:1.8;">지하 주차장·기계실의 오배수를 자동으로 처리하는 건식 설치형 패키지 시스템. 완전 밀폐 구조로 악취 차단 및 위생적인 배수 환경을 제공합니다.</p>
+    <div style="margin-top:24px;"><a href="index.html#products" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);color:white;padding:9px 18px;border-radius:6px;font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,0.3);text-decoration:none;">← 전체 제품으로 돌아가기</a></div>
   </div>
 </div>
 
-<div class="container">
-  <div class="cards-grid">
+<div class="container"><div class="cards-grid">
 
-    <!-- MD1, MDV 카드 -->
-    <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.06);">
-      <img src="images/MD1.jpg" alt="MULTILIFT MD1, MDV" style="width:100%;height:240px;object-fit:cover;display:block;"/>
-      <div style="padding:24px;">
-        <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.1);color:var(--blue-light);margin-bottom:10px;letter-spacing:1px;">Drainage</div>
-        <div style="font-size:20px;font-weight:800;color:var(--navy);margin-bottom:10px;letter-spacing:-0.5px;">MD1, MDV</div>
-        <div style="font-size:13.5px;color:var(--gray-dark);line-height:1.75;margin-bottom:18px;">MULTILIFT MD1, MDV는 SE 또는 SL 펌프가 장착된 올인원 리프팅 스테이션으로서 대형 상업용 빌딩의 오폐수를 수집하고 처리하도록 설계되었습니다. 이 제품에는 450 리터의 수조가 있습니다.</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:13px;background:var(--off-white);border-radius:10px;padding:14px;margin-bottom:20px;">
-          <span style="color:var(--gray-mid);">p 최대</span><span style="font-weight:700;color:var(--navy);text-align:right;">10 bar</span>
-          <span style="color:var(--gray-mid);">액 온도</span><span style="font-weight:700;color:var(--navy);text-align:right;">0 .. 40 °C</span>
-          <span style="color:var(--gray-mid);">최대 양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">45 m</span>
-          <span style="color:var(--gray-mid);">최대 유량</span><span style="font-weight:700;color:var(--navy);text-align:right;">20 l/s</span>
-        </div>
-        <a href="https://product-selection.grundfos.com/kr/products/multilift/md1-mdv?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
+  <!-- MD1, MDV -->
+  <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+    <img src="images/MD1.jpg" alt="MD1, MDV" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+    <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+      <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:var(--blue-light);margin-bottom:10px;">Drainage</div>
+      <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">MD1, MDV</div>
+      <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">MULTILIFT MD1, MDV는 SE 또는 SL 펌프가 장착된 올인원 리프팅 스테이션으로서 대형 상업용 빌딩의 오폐수를 수집하고 처리하도록 설계되었습니다. 이 제품에는 450 리터의 수조가 있습니다.</div>
+      <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;">
+        <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">p 최대</span><span style="font-weight:700;color:var(--navy);font-size:12px;">10 bar</span></div>
+        <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0 .. 40 °C</span></div>
+        <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">45 m</span></div>
+        <div style="display:flex;justify-content:space-between;padding:6px 0;"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">20 l/s</span></div>
       </div>
+      <a href="https://product-selection.grundfos.com/kr/products/multilift/md1-mdv?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
     </div>
-
-    <!-- MD 카드 -->
-    <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.06);">
-      <img src="images/MD.jpg" alt="MULTILIFT MD" style="width:100%;height:240px;object-fit:cover;display:block;"/>
-      <div style="padding:24px;">
-        <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.1);color:var(--blue-light);margin-bottom:10px;letter-spacing:1px;">Drainage</div>
-        <div style="font-size:20px;font-weight:800;color:var(--navy);margin-bottom:10px;letter-spacing:-0.5px;">MD</div>
-        <div style="font-size:13.5px;color:var(--gray-dark);line-height:1.75;margin-bottom:18px;">MULTILIFT MD는 올인원 이중 펌프 리프팅 스테이션으로서 다가구 주택과 소형 상업용 빌딩의 오폐수를 수집하고 처리할 수 있도록 설계되었습니다. 이 제품에는 130 리터의 수조가 있습니다.</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:13px;background:var(--off-white);border-radius:10px;padding:14px;margin-bottom:20px;">
-          <span style="color:var(--gray-mid);">액 온도</span><span style="font-weight:700;color:var(--navy);text-align:right;">0 .. 40 °C</span>
-          <span style="color:var(--gray-mid);">최대 양정</span><span style="font-weight:700;color:var(--navy);text-align:right;">11 m</span>
-          <span style="color:var(--gray-mid);">최대 유량</span><span style="font-weight:700;color:var(--navy);text-align:right;">16 l/s</span>
-        </div>
-        <a href="https://product-selection.grundfos.com/kr/products/multilift/md?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;">상세 보기 →</a>
-      </div>
-    </div>
-
   </div>
-</div>
+
+  <!-- MD -->
+  <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+    <img src="images/MD.jpg" alt="MD" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
+    <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
+      <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:var(--blue-light);margin-bottom:10px;">Drainage</div>
+      <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">MD</div>
+      <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">MULTILIFT MD는 올인원 이중 펌프 리프팅 스테이션으로서 다가구 주택과 소형 상업용 빌딩의 오폐수를 수집하고 처리할 수 있도록 설계되었습니다. 이 제품에는 130 리터의 수조가 있습니다.</div>
+      <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;">
+        <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0 .. 40 °C</span></div>
+        <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">11 m</span></div>
+        <div style="display:flex;justify-content:space-between;padding:6px 0;"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">16 l/s</span></div>
+      </div>
+      <a href="https://product-selection.grundfos.com/kr/products/multilift/md?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+    </div>
+  </div>
+
+</div></div>
 
 <footer>
   <div>(주)효일종합상사 | 경기도 부천시 조마루로 385번길 122, 삼보테크노타워 1607, 1608호</div>
