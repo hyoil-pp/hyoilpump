@@ -124,12 +124,12 @@
 
 
 
-  <div style="padding:40px 0 20px;">
+  <div style="padding:40px 30px 20px;max-width:1300px;margin:0 auto;">
     <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue-light);margin-bottom:10px;">납품 실적 · Projects</div>
     <h2 style="font-size:28px;font-weight:900;color:var(--navy);letter-spacing:-1px;">주요 납품 실적</h2>
   </div>
 
-  <div class="toolbar">
+  <div class="toolbar" style="max-width:1300px;margin:0 auto;padding:0 30px;">
     <div class="filter-group">
       <button class="filter-btn active" onclick="setFilter('전체',this)">전체</button>
       <button class="filter-btn" onclick="setFilter('주거',this)">주거/아파트</button>
@@ -146,9 +146,11 @@
       <input type="text" id="searchInput" placeholder="프로젝트명, 건설사 검색..." oninput="renderCards()"/>
     </div>
   </div>
-  <div class="result-count" id="resultCount"></div>
-  <div class="projects-grid" id="projectsGrid"></div>
-  <div style="height:60px;"></div>
+  <div style="max-width:1300px;margin:0 auto;padding:0 30px;">
+    <div class="result-count" id="resultCount"></div>
+    <div class="projects-grid" id="projectsGrid"></div>
+    <div style="height:60px;"></div>
+  </div>
 </div>
 
 <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
