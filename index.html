@@ -243,6 +243,7 @@
       <a href="#products">제품소개</a>
       <a href="#projects">납품실적</a>
       <a href="https://blog.naver.com/hyoil-pp" target="_blank" rel="noopener">Blog</a>
+      <a href="product-selection.html">제품선정프로그램</a>
       <a href="#grundfos">그런포스</a>
       <a href="#contact" class="nav-cta">문의하기</a>
     </nav>
@@ -508,6 +509,17 @@
       </div>
     </div>
     <div style="margin-top:60px;">
+      <!-- SFA KOREA 공식 대리점 배너 -->
+      <div style="background:#f4f6f9;border:1px solid var(--gray-light);border-radius:14px;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:28px;">
+        <div style="display:flex;align-items:center;gap:16px;">
+          <div style="background:var(--accent);color:white;font-size:10px;font-weight:800;padding:5px 12px;border-radius:20px;letter-spacing:1px;white-space:nowrap;">OFFICIAL</div>
+          <div>
+            <div style="font-size:16px;font-weight:900;color:var(--navy);letter-spacing:-0.5px;">SFA KOREA 공식 대리점 <span style="color:var(--accent);">1호</span></div>
+            <div style="font-size:12px;color:var(--gray-mid);margin-top:3px;">2024년 SFA KOREA 공식 대리점 1호 체결 · 오수·배수 전문 펌프</div>
+          </div>
+        </div>
+        <a href="product-sfa.html" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;white-space:nowrap;">제품 보기 →</a>
+      </div>
       <div style="display:flex;align-items:center;gap:16px;margin-bottom:28px;">
         <div style="width:4px;height:32px;background:var(--accent);border-radius:2px;"></div>
         <h3 style="font-size:20px;font-weight:800;color:var(--navy);letter-spacing:-0.5px;">SFA 펌프 납품군</h3>
@@ -632,108 +644,6 @@
     </div>
 
     <!-- 납품 전체 리스트 — 20건 표시, 683건 암시 + 더보기 -->
-    <div class="reveal" style="margin-top:56px;">
-      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
-        <div>
-          <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue-light);margin-bottom:6px;">납품 실적 · Full List</div>
-          <h3 style="font-size:22px;font-weight:800;color:var(--navy);letter-spacing:-0.5px;">제품 납품 전체 리스트</h3>
-        </div>
-        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-          <div style="display:flex;align-items:center;gap:8px;background:white;border:1px solid var(--gray-light);border-radius:8px;padding:8px 14px;flex:1;min-width:0;">
-            <span style="color:var(--gray-mid);">🔍</span>
-            <input type="text" id="miniSearch" placeholder="고객사 또는 현장명 검색..." oninput="miniFilter()" class="mini-search-input" style="border:none;outline:none;background:transparent;font-size:13px;font-family:'Noto Sans KR',sans-serif;width:100%;min-width:0;"/>
-          </div>
-          <button id="miniToggleBtn" onclick="miniToggle()" style="background:var(--navy);color:white;border:none;padding:9px 18px;border-radius:20px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;white-space:nowrap;flex-shrink:0;">목록 접기 ▲</button>
-        </div>
-      </div>
-
-      <div id="miniListWrap">
-        <div style="font-size:13px;color:var(--gray-mid);margin-bottom:10px;">총 <strong style="color:var(--navy);font-weight:700;">683</strong>건의 실적이 있습니다. <span style="color:var(--blue-light);font-size:12px;">(최근 20건 표시 — 전체보기는 납품실적 페이지에서)</span></div>
-        <div style="background:white;border-radius:12px;overflow:hidden;border:1px solid var(--gray-light);">
-          <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
-            <table style="width:100%;border-collapse:collapse;min-width:320px;">
-              <thead>
-                <tr style="background:var(--navy);">
-                  <th style="padding:11px 12px;text-align:left;font-size:12px;font-weight:600;color:rgba(255,255,255,.8);white-space:nowrap;">No.</th>
-                  <th style="padding:11px 12px;text-align:left;font-size:12px;font-weight:600;color:rgba(255,255,255,.8);white-space:nowrap;">납품일</th>
-                  <th style="padding:11px 12px;text-align:left;font-size:12px;font-weight:600;color:rgba(255,255,255,.8);white-space:nowrap;">고객사</th>
-                  <th style="padding:11px 12px;text-align:left;font-size:12px;font-weight:600;color:rgba(255,255,255,.8);white-space:nowrap;">현장명</th>
-                  <th class="mini-table-product" style="padding:11px 12px;text-align:left;font-size:12px;font-weight:600;color:rgba(255,255,255,.8);white-space:nowrap;">납품 제품</th>
-                </tr>
-              </thead>
-              <tbody id="miniBody"></tbody>
-            </table>
-          </div>
-        </div>
-        <!-- 페이지네이션: 1~5 + 더보기(→ projects.html) -->
-        <div style="display:flex;justify-content:center;align-items:center;gap:6px;margin-top:16px;flex-wrap:wrap;">
-          <button onclick="miniGo(1)" id="mpb1" style="min-width:36px;height:36px;padding:0 10px;border-radius:6px;border:1px solid var(--navy);background:var(--navy);color:white;font-size:13px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">1</button>
-          <button onclick="miniGo(2)" id="mpb2" style="min-width:36px;height:36px;padding:0 10px;border-radius:6px;border:1px solid #e8ecf2;background:white;color:#4a5568;font-size:13px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">2</button>
-          <button onclick="location.href='projects.html'" style="min-width:36px;height:36px;padding:0 10px;border-radius:6px;border:1px solid #e8ecf2;background:white;color:#9aa5b4;font-size:13px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">3</button>
-          <button onclick="location.href='projects.html'" style="min-width:36px;height:36px;padding:0 10px;border-radius:6px;border:1px solid #e8ecf2;background:white;color:#9aa5b4;font-size:13px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">4</button>
-          <button onclick="location.href='projects.html'" style="min-width:36px;height:36px;padding:0 10px;border-radius:6px;border:1px solid #e8ecf2;background:white;color:#9aa5b4;font-size:13px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">5</button>
-          <span style="color:#9aa5b4;font-size:13px;padding:0 4px;">···</span>
-          <button onclick="location.href='projects.html'" style="height:36px;padding:0 16px;border-radius:6px;border:1px solid var(--blue-light);background:white;color:var(--blue-light);font-size:13px;font-weight:700;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">전체보기 →</button>
-        </div>
-      </div>
-    </div>
-
-    <script>
-    (function(){
-      const DATA=[
-        {"no":683,"client":"현대건설(주)","site":"한양대학교 한마음 국제의료원","product":"부스터, 인라인","year":"2019","month":"12"},
-        {"no":682,"client":"현대건설(주)","site":"KB국민은행 통합 IT센터","product":"부스터, 인라인, 수중형, 횡형다단, 기어펌프","year":"2019","month":"11"},
-        {"no":681,"client":"현대비에스앤씨(주)","site":"삼송역 현대 헤리엇 신축공사","product":"부스터, 인라인, 수중형, 횡형다단, 패키지","year":"2019","month":"11"},
-        {"no":680,"client":"S&I","site":"생활건강 태극제약 부여공장","product":"부스터, 입형다단","year":"2019","month":"11"},
-        {"no":679,"client":"현대산업개발(주)","site":"고척 I-PARK","product":"부스터","year":"2019","month":"11"},
-        {"no":678,"client":"현대엔지니어링(주)","site":"기흥 서천지구 지식산업센터","product":"부스터, 인라인","year":"2019","month":"11"},
-        {"no":677,"client":"현대건설(주)","site":"동탄2 C1BL 주상복합","product":"부스터, 인라인","year":"2019","month":"10"},
-        {"no":676,"client":"두산건설(주)","site":"용인 동백 세브란스병원","product":"부스터, 인라인","year":"2019","month":"10"},
-        {"no":675,"client":"현대산업개발(주)","site":"별내역 I-PARK 스위트","product":"부스터, 인라인, 수중형, 횡형다단, 패키지","year":"2019","month":"09"},
-        {"no":674,"client":"아산사회복지재단","site":"서울 아산병원","product":"인라인","year":"2019","month":"09"},
-        {"no":673,"client":"S&I","site":"LG사이언스파크 동측부지 DP3","product":"인라인, 입형다단","year":"2019","month":"09"},
-        {"no":672,"client":"현대엔지니어링(주)","site":"하남미사 중심상업지역 11-1BL","product":"부스터, 인라인","year":"2019","month":"08"},
-        {"no":671,"client":"장한기술(주)","site":"풀무원 오송연구소","product":"인라인","year":"2019","month":"08"},
-        {"no":670,"client":"롯데건설(주)","site":"회원1구역 주택재개발 아파트","product":"부스터, 인라인, 수중형, 횡형다단, 입형다단","year":"2019","month":"08"},
-        {"no":669,"client":"현대산업개발(주)","site":"운정신도시 I-PARK","product":"부스터, 인라인, 수중형, 횡형다단, 입형다단, 패키지","year":"2019","month":"08"},
-        {"no":668,"client":"현대산업개발(주)","site":"용인 역북지구 I-PARK","product":"부스터, 인라인, 수중형, 횡형다단, 입형다단, 패키지","year":"2019","month":"07"},
-        {"no":667,"client":"롯데건설(주)","site":"오산세교2 A3BL 아파트","product":"부스터, 인라인, 수중형, 횡형다단, 입형다단","year":"2019","month":"07"},
-        {"no":666,"client":"롯데건설(주)","site":"김포 신곡1구역 재개발","product":"부스터, 인라인, 수중형, 횡형다단, 입형다단","year":"2019","month":"07"},
-        {"no":665,"client":"(주)신성엔지니어링","site":"현대해상 안산사옥","product":"인라인","year":"2019","month":"07"},
-        {"no":664,"client":"S&I","site":"LG U+ 평촌메가센터 전산2동","product":"인라인","year":"2019","month":"06"}
-      ];
-      const PER=10;
-      let filtered=DATA, page=1;
-      function render(){
-        const slice=filtered.slice((page-1)*PER, page*PER);
-        document.getElementById('miniBody').innerHTML=slice.map(r=>`<tr style="border-bottom:1px solid #e8ecf2;">
-          <td style="padding:11px 12px;font-size:12px;color:#9aa5b4;">${r.no}</td>
-          <td style="padding:11px 12px;font-size:13px;font-weight:700;color:#2563b0;white-space:nowrap;">${r.year}.${r.month}</td>
-          <td style="padding:11px 12px;font-size:13px;color:#1a202c;">${r.client}</td>
-          <td style="padding:11px 12px;font-size:13px;color:#1a202c;">${r.site}</td>
-          <td class="mini-table-product" style="padding:11px 12px;font-size:12px;">${r.product.split(',').map(p=>`<span style="display:inline-block;background:#f4f6f9;border-radius:4px;padding:2px 7px;margin:1px;color:#4a5568;">${p.trim()}</span>`).join('')}</td>
-        </tr>`).join('');
-        [1,2].forEach(i=>{
-          const b=document.getElementById('mpb'+i);
-          if(b){b.style.background=page===i?'var(--navy)':'white';b.style.color=page===i?'white':'#4a5568';b.style.borderColor=page===i?'var(--navy)':'#e8ecf2';}
-        });
-      }
-      window.miniFilter=function(){
-        const q=document.getElementById('miniSearch').value.toLowerCase();
-        filtered=q?DATA.filter(r=>r.client.toLowerCase().includes(q)||r.site.toLowerCase().includes(q)):DATA;
-        page=1;render();
-      };
-      window.miniGo=function(p){page=p;render();};
-      window.miniToggle=function(){
-        const w=document.getElementById('miniListWrap');
-        const btn=document.getElementById('miniToggleBtn');
-        const hidden=w.style.display==='none';
-        w.style.display=hidden?'block':'none';
-        btn.textContent=hidden?'목록 접기 ▲':'목록 펼치기 ▼';
-      };
-      render();
-    })();
-    </script>
 
     <div style="text-align:center;margin-top:32px;" class="reveal">
       <a href="projects.html" class="btn-primary" style="display:inline-flex;align-items:center;gap:8px;">전체 납품실적 보기 &rarr;</a>
