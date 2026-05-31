@@ -230,6 +230,68 @@
   </div>
 </section>
 
+<!-- 주요 납품실적 포트폴리오 슬라이드 -->
+<section style="background:#0a1628;padding:60px 0;overflow:hidden;">
+  <div class="container">
+    <div class="section-label" style="color:#60a5fa;">Portfolio · 주요 납품실적</div>
+    <h2 class="section-title" style="color:white;">주요 납품실적 포트폴리오</h2>
+  </div>
+  <style>
+    .portfolio-slider{position:relative;width:100%;overflow:hidden;margin-top:32px;}
+    .portfolio-track{display:flex;gap:16px;transition:transform .5s ease;padding:0 40px;}
+    .portfolio-slide{flex:0 0 calc(33.333% - 11px);border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.3);}
+    .portfolio-slide img{width:100%;display:block;object-fit:cover;}
+    .portfolio-nav{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:24px;}
+    .portfolio-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:all .3s;}
+    .portfolio-dot.active{background:white;width:24px;border-radius:4px;}
+    .portfolio-btn{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:white;width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+    .portfolio-btn:hover{background:rgba(255,255,255,.25);}
+    @media(max-width:768px){.portfolio-slide{flex:0 0 calc(100% - 80px);}.portfolio-track{padding:0 20px;}}
+    @media(max-width:1024px){.portfolio-slide{flex:0 0 calc(50% - 8px);}}
+  </style>
+  <div class="portfolio-slider">
+    <div class="portfolio-track" id="portfolioTrack">
+      <div class="portfolio-slide"><img src="images/portfolio_homepage_slide_1.png" alt="납품실적 포트폴리오 1"/></div>
+      <div class="portfolio-slide"><img src="images/portfolio_homepage_slide_2.png" alt="납품실적 포트폴리오 2"/></div>
+      <div class="portfolio-slide"><img src="images/portfolio_homepage_slide_3.png" alt="납품실적 포트폴리오 3"/></div>
+      <div class="portfolio-slide"><img src="images/portfolio_homepage_slide_4.png" alt="납품실적 포트폴리오 4"/></div>
+      <div class="portfolio-slide"><img src="images/portfolio_homepage_slide_5.png" alt="납품실적 포트폴리오 5"/></div>
+    </div>
+  </div>
+  <div class="portfolio-nav">
+    <button class="portfolio-btn" onclick="portfolioMove(-1)">←</button>
+    <div class="portfolio-dot active" onclick="portfolioGo(0)"></div>
+    <div class="portfolio-dot" onclick="portfolioGo(1)"></div>
+    <div class="portfolio-dot" onclick="portfolioGo(2)"></div>
+    <button class="portfolio-btn" onclick="portfolioMove(1)">→</button>
+  </div>
+  <script>
+  (function(){
+    let cur = 0;
+    const total = 3;
+    function getSlideWidth(){
+      const track = document.getElementById('portfolioTrack');
+      const slide = track.querySelector('.portfolio-slide');
+      return slide ? slide.offsetWidth + 16 : 0;
+    }
+    function update(){
+      document.getElementById('portfolioTrack').style.transform = 'translateX(-' + (cur * getSlideWidth()) + 'px)';
+      document.querySelectorAll('.portfolio-dot').forEach((d,i) => d.classList.toggle('active', i === cur));
+    }
+    window.portfolioMove = function(dir){
+      cur = (cur + dir + total) % total;
+      update();
+    };
+    window.portfolioGo = function(idx){
+      cur = idx;
+      update();
+    };
+    // 자동 슬라이드
+    setInterval(() => { cur = (cur + 1) % total; update(); }, 4000);
+  })();
+  </script>
+</section>
+
 <section class="info-section">
   <div class="container">
     <div class="section-label">Info · 회사 정보</div>
