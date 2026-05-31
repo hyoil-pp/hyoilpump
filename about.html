@@ -324,9 +324,6 @@
       const diff = pfStartX - e.changedTouches[0].clientX;
       if(Math.abs(diff)>40) pfMoveSlide(diff>0?1:-1);
     });
-
-    // 자동 슬라이드 5초
-    setInterval(()=>{ pfCurrent=(pfCurrent+1)%pfTotal; pfUpdateUI(); }, 5000);
   })();
   </script>
 </section>
