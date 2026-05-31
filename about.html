@@ -231,63 +231,102 @@
 </section>
 
 <!-- 주요 납품실적 포트폴리오 슬라이드 -->
-<section style="background:#0a1628;padding:60px 0;overflow:hidden;">
+<section style="background:#0a1628;padding:60px 0 80px;">
   <div class="container">
     <div class="section-label" style="color:#60a5fa;">Portfolio · 주요 납품실적</div>
-    <h2 class="section-title" style="color:white;">주요 납품실적 포트폴리오</h2>
-  </div>
-  <style>
-    .portfolio-slider{position:relative;width:100%;overflow:hidden;margin-top:32px;}
-    .portfolio-track{display:flex;gap:16px;transition:transform .5s ease;padding:0 40px;}
-    .portfolio-slide{flex:0 0 calc(33.333% - 11px);border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.3);}
-    .portfolio-slide img{width:100%;display:block;object-fit:cover;}
-    .portfolio-nav{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:24px;}
-    .portfolio-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:all .3s;}
-    .portfolio-dot.active{background:white;width:24px;border-radius:4px;}
-    .portfolio-btn{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:white;width:40px;height:40px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:all .2s;}
-    .portfolio-btn:hover{background:rgba(255,255,255,.25);}
-    @media(max-width:768px){.portfolio-slide{flex:0 0 calc(100% - 80px);}.portfolio-track{padding:0 20px;}}
-    @media(max-width:1024px){.portfolio-slide{flex:0 0 calc(50% - 8px);}}
-  </style>
-  <div class="portfolio-slider">
-    <div class="portfolio-track" id="portfolioTrack">
-      <div class="portfolio-slide"><img src="images/portfolio_homepage_slide_1.png" alt="납품실적 포트폴리오 1"/></div>
-      <div class="portfolio-slide"><img src="images/portfolio_homepage_slide_2.png" alt="납품실적 포트폴리오 2"/></div>
-      <div class="portfolio-slide"><img src="images/portfolio_homepage_slide_3.png" alt="납품실적 포트폴리오 3"/></div>
-      <div class="portfolio-slide"><img src="images/portfolio_homepage_slide_4.png" alt="납품실적 포트폴리오 4"/></div>
-      <div class="portfolio-slide"><img src="images/portfolio_homepage_slide_5.png" alt="납품실적 포트폴리오 5"/></div>
+    <h2 class="section-title" style="color:white;">주요 납품실적<br/>포트폴리오</h2>
+
+    <style>
+      .pf-slideshow-wrap{position:relative;margin-top:40px;border-radius:16px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);background:#000;}
+      .pf-slides-track{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1);}
+      .pf-slide{min-width:100%;position:relative;}
+      .pf-slide img{width:100%;display:block;object-fit:contain;max-height:70vh;background:#0a0f1e;}
+      .pf-slide-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(10,22,40,.75);border:1px solid rgba(255,255,255,.15);color:white;width:52px;height:52px;border-radius:50%;font-size:20px;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center;transition:all .2s;backdrop-filter:blur(6px);}
+      .pf-slide-btn:hover{background:rgba(232,57,42,.85);border-color:transparent;transform:translateY(-50%) scale(1.08);}
+      .pf-slide-btn.prev{left:20px;}
+      .pf-slide-btn.next{right:20px;}
+      .pf-slide-counter{position:absolute;bottom:16px;right:20px;background:rgba(0,0,0,.55);color:rgba(255,255,255,.8);font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px;backdrop-filter:blur(4px);pointer-events:none;}
+      .pf-thumb-strip{display:flex;gap:8px;margin-top:16px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.2) transparent;}
+      .pf-thumb{min-width:90px;height:60px;border-radius:6px;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:all .2s;flex-shrink:0;}
+      .pf-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
+      .pf-thumb.active{border-color:var(--accent,#e8392a);}
+      .pf-thumb:hover{border-color:rgba(255,255,255,.4);}
+      .pf-slide-dots{display:flex;justify-content:center;gap:8px;margin-top:20px;}
+      .pf-slide-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.25);cursor:pointer;transition:all .3s;border:none;padding:0;}
+      .pf-slide-dot.active{background:#e8392a;width:24px;border-radius:4px;}
+      @media(max-width:900px){.pf-slide-btn{width:40px;height:40px;font-size:16px;}.pf-thumb-strip{display:none;}}
+      @media(max-width:600px){.pf-slide-btn{width:36px;height:36px;font-size:14px;}.pf-slide-btn.prev{left:10px;}.pf-slide-btn.next{right:10px;}}
+    </style>
+
+    <div class="pf-slideshow-wrap">
+      <div class="pf-slides-track" id="pfSlidesTrack">
+        <div class="pf-slide"><img src="images/portfolio_homepage_slide_1.png" alt="납품실적 포트폴리오 1"/></div>
+        <div class="pf-slide"><img src="images/portfolio_homepage_slide_2.png" alt="납품실적 포트폴리오 2"/></div>
+        <div class="pf-slide"><img src="images/portfolio_homepage_slide_3.png" alt="납품실적 포트폴리오 3"/></div>
+        <div class="pf-slide"><img src="images/portfolio_homepage_slide_4.png" alt="납품실적 포트폴리오 4"/></div>
+        <div class="pf-slide"><img src="images/portfolio_homepage_slide_5.png" alt="납품실적 포트폴리오 5"/></div>
+      </div>
+      <button class="pf-slide-btn prev" onclick="pfMoveSlide(-1)">&#8592;</button>
+      <button class="pf-slide-btn next" onclick="pfMoveSlide(1)">&#8594;</button>
+      <div class="pf-slide-counter" id="pfSlideCounter">1 / 5</div>
     </div>
+
+    <!-- 썸네일 -->
+    <div class="pf-thumb-strip" id="pfThumbStrip">
+      <div class="pf-thumb active" onclick="pfGoToSlide(0)"><img src="images/portfolio_homepage_slide_1.png"/></div>
+      <div class="pf-thumb" onclick="pfGoToSlide(1)"><img src="images/portfolio_homepage_slide_2.png"/></div>
+      <div class="pf-thumb" onclick="pfGoToSlide(2)"><img src="images/portfolio_homepage_slide_3.png"/></div>
+      <div class="pf-thumb" onclick="pfGoToSlide(3)"><img src="images/portfolio_homepage_slide_4.png"/></div>
+      <div class="pf-thumb" onclick="pfGoToSlide(4)"><img src="images/portfolio_homepage_slide_5.png"/></div>
+    </div>
+
+    <!-- 인디케이터 점 -->
+    <div class="pf-slide-dots" id="pfSlideDots"></div>
   </div>
-  <div class="portfolio-nav">
-    <button class="portfolio-btn" onclick="portfolioMove(-1)">←</button>
-    <div class="portfolio-dot active" onclick="portfolioGo(0)"></div>
-    <div class="portfolio-dot" onclick="portfolioGo(1)"></div>
-    <div class="portfolio-dot" onclick="portfolioGo(2)"></div>
-    <button class="portfolio-btn" onclick="portfolioMove(1)">→</button>
-  </div>
+
   <script>
   (function(){
-    let cur = 0;
-    const total = 3;
-    function getSlideWidth(){
-      const track = document.getElementById('portfolioTrack');
-      const slide = track.querySelector('.portfolio-slide');
-      return slide ? slide.offsetWidth + 16 : 0;
+    let pfCurrent = 0;
+    const pfTotal = 5;
+    const pfTrack = document.getElementById('pfSlidesTrack');
+    const pfCounter = document.getElementById('pfSlideCounter');
+    const pfThumbs = document.getElementById('pfThumbStrip').querySelectorAll('.pf-thumb');
+    const pfDotsWrap = document.getElementById('pfSlideDots');
+
+    for(let i=0;i<pfTotal;i++){
+      const d = document.createElement('button');
+      d.className = 'pf-slide-dot' + (i===0?' active':'');
+      d.onclick = ()=>pfGoToSlide(i);
+      pfDotsWrap.appendChild(d);
     }
-    function update(){
-      document.getElementById('portfolioTrack').style.transform = 'translateX(-' + (cur * getSlideWidth()) + 'px)';
-      document.querySelectorAll('.portfolio-dot').forEach((d,i) => d.classList.toggle('active', i === cur));
+
+    function pfUpdateUI(){
+      pfTrack.style.transform = `translateX(-${pfCurrent*100}%)`;
+      pfCounter.textContent = `${pfCurrent+1} / ${pfTotal}`;
+      document.querySelectorAll('.pf-slide-dot').forEach((d,i)=>d.classList.toggle('active',i===pfCurrent));
+      pfThumbs.forEach((t,i)=>t.classList.toggle('active',i===pfCurrent));
+      pfThumbs[pfCurrent].scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
     }
-    window.portfolioMove = function(dir){
-      cur = (cur + dir + total) % total;
-      update();
-    };
-    window.portfolioGo = function(idx){
-      cur = idx;
-      update();
-    };
-    // 자동 슬라이드
-    setInterval(() => { cur = (cur + 1) % total; update(); }, 4000);
+
+    window.pfMoveSlide = function(dir){ pfCurrent=(pfCurrent+dir+pfTotal)%pfTotal; pfUpdateUI(); };
+    window.pfGoToSlide = function(idx){ pfCurrent=idx; pfUpdateUI(); };
+
+    // 키보드
+    document.addEventListener('keydown', e=>{
+      if(e.key==='ArrowLeft') pfMoveSlide(-1);
+      if(e.key==='ArrowRight') pfMoveSlide(1);
+    });
+
+    // 터치 스와이프
+    let pfStartX = 0;
+    pfTrack.addEventListener('touchstart', e=>{ pfStartX=e.touches[0].clientX; },{passive:true});
+    pfTrack.addEventListener('touchend', e=>{
+      const diff = pfStartX - e.changedTouches[0].clientX;
+      if(Math.abs(diff)>40) pfMoveSlide(diff>0?1:-1);
+    });
+
+    // 자동 슬라이드 5초
+    setInterval(()=>{ pfCurrent=(pfCurrent+1)%pfTotal; pfUpdateUI(); }, 5000);
   })();
   </script>
 </section>
