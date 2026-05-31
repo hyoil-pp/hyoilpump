@@ -84,6 +84,7 @@
       <a href="index.html#products">제품소개</a>
       <a href="projects.html">납품실적</a>
       <a href="https://blog.naver.com/hyoil-pp" target="_blank">Blog</a>
+      <a href="product-selection.html">제품선정프로그램</a>
       <a href="index.html#grundfos">그런포스</a>
       <a href="index.html#contact" class="nav-cta">문의하기</a>
     </nav>
@@ -109,7 +110,7 @@
   <div class="container">
     <div class="spec-highlight">
       <div class="spec-card">
-        <div class="spec-card"><div class="num">16<span class="unit">bar</span></div><div class="label">최대 운전 압력</div></div>
+        <div class="num">16<span class="unit">bar</span></div><div class="label">최대 운전 압력</div>
       </div>
       <div class="spec-card">
         <div class="num">306<span class="unit">m³/h</span></div><div class="label">최대 유량</div>
@@ -256,19 +257,42 @@
     <div class="img-gallery">
       <div>
         <div style="font-size:11px;font-weight:700;color:var(--gray-mid);letter-spacing:1px;margin-bottom:8px;">제품 도면</div>
-        <img src="images/Hydro MPC-E 3 CRE 64-3-2.png" alt="Hydro MPC-E 3 CRE 64-3-2 도면"/>
+        <img src="images/Hydro%20MPC-E%203%20CRE%2064-3-2.png" alt="Hydro MPC-E 3 CRE 64-3-2 도면" onclick="openLightbox(this.src, this.alt)" style="cursor:zoom-in;"/>
       </div>
       <div>
         <div style="font-size:11px;font-weight:700;color:var(--gray-mid);letter-spacing:1px;margin-bottom:8px;">설명서 1</div>
-        <img src="images/INSTRUCTIONS_01.png" alt="설치 설명서 1"/>
+        <img src="images/INSTRUCTIONS_01.png" alt="설치 설명서 1" onclick="openLightbox(this.src, this.alt)" style="cursor:zoom-in;"/>
       </div>
       <div>
         <div style="font-size:11px;font-weight:700;color:var(--gray-mid);letter-spacing:1px;margin-bottom:8px;">설명서 2</div>
-        <img src="images/INSTRUCTIONS_02.png" alt="설치 설명서 2"/>
+        <img src="images/INSTRUCTIONS_02.png" alt="설치 설명서 2" onclick="openLightbox(this.src, this.alt)" style="cursor:zoom-in;"/>
       </div>
     </div>
   </div>
 </div>
+
+<!-- 라이트박스 팝업 -->
+<div id="lightbox" onclick="closeLightbox()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;cursor:zoom-out;">
+  <div style="position:relative;max-width:90vw;max-height:90vh;" onclick="event.stopPropagation()">
+    <img id="lightboxImg" src="" alt="" style="max-width:90vw;max-height:85vh;object-fit:contain;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5);display:block;"/>
+    <div id="lightboxCaption" style="text-align:center;color:rgba(255,255,255,.8);font-size:13px;margin-top:12px;"></div>
+    <button onclick="closeLightbox()" style="position:absolute;top:-16px;right:-16px;background:white;border:none;border-radius:50%;width:36px;height:36px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.3);">✕</button>
+  </div>
+</div>
+<script>
+function openLightbox(src, alt){
+  const lb = document.getElementById('lightbox');
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightboxCaption').textContent = alt;
+  lb.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').style.display = 'none';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
+</script>
 
 <!-- 적용 분야 -->
 <div class="section" style="background:white;">
