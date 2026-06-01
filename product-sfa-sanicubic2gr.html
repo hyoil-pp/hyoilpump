@@ -12,7 +12,7 @@
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
       --navy:#0a1628;--blue:#1a3a6e;--blue-light:#2563b0;
-      --accent:#e8392a;--sfa-red:#cc0000;--sfa-dark:#1a0505;
+      --accent:#e8392a;--sfa-red:#1a6eb5;--sfa-dark:#051a2e;
       --off-white:#f4f6f9;--gray-light:#e8ecf2;--gray-mid:#9aa5b4;
       --gray-dark:#4a5568;--text:#1a202c
     }
@@ -28,15 +28,15 @@
     nav a.nav-cta{background:transparent;color:var(--accent)!important;padding:8px 18px;border-radius:4px;font-weight:700;border:none}
 
     /* 히어로 */
-    .page-hero{background:linear-gradient(135deg,#1a0505 0%,#3d0a0a 40%,#1a1a2e 100%);padding:140px 40px 80px;position:relative;overflow:hidden;}
+    .page-hero{background:linear-gradient(135deg,#051a2e 0%,#0a2a5e 40%,#0a1628 100%);padding:140px 40px 80px;position:relative;overflow:hidden;}
     .page-hero::before{content:'SANICUBIC';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:200px;color:rgba(255,255,255,.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
-    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(204,0,0,0.2);border:1px solid rgba(204,0,0,0.5);color:#ff6b6b;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px;}
-    .hero-badge span{width:6px;height:6px;background:var(--sfa-red);border-radius:50%;animation:pulse 1.5s infinite;}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(26,110,181,0.2);border:1px solid rgba(26,110,181,0.5);color:#60a5fa;padding:6px 14px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px;}
+    .hero-badge span{width:6px;height:6px;background:#1a6eb5;border-radius:50%;animation:pulse 1.5s infinite;}
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 
     .container{max-width:1200px;margin:0 auto;padding:0 40px}
     .section{padding:80px 0}
-    .section-title{font-size:26px;font-weight:800;color:var(--navy);letter-spacing:-0.5px;margin-bottom:8px;padding-bottom:16px;border-bottom:3px solid var(--sfa-red);}
+    .section-title{font-size:26px;font-weight:800;color:var(--navy);letter-spacing:-0.5px;margin-bottom:8px;padding-bottom:16px;border-bottom:3px solid var(--blue-light);}
     .section-title.white{color:white;border-bottom-color:rgba(255,255,255,0.3);}
 
     /* 핵심 스펙 바 */
@@ -45,7 +45,7 @@
     .spec-bar-item{padding:20px 16px;text-align:center;border-right:1px solid var(--gray-light);}
     .spec-bar-item:last-child{border-right:none}
     .spec-bar-num{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--navy);line-height:1;letter-spacing:1px;}
-    .spec-bar-unit{font-size:13px;color:var(--sfa-red);font-weight:700;margin-left:2px;}
+    .spec-bar-unit{font-size:13px;color:var(--blue-light);font-weight:700;margin-left:2px;}
     .spec-bar-label{font-size:11px;color:var(--gray-mid);margin-top:4px;letter-spacing:0.3px;}
 
     /* 제품 레이아웃 */
@@ -56,7 +56,7 @@
     /* 탭 */
     .tab-wrap{display:flex;gap:4px;margin-bottom:24px;border-bottom:2px solid var(--gray-light);}
     .tab-btn{padding:10px 20px;font-size:13px;font-weight:600;color:var(--gray-mid);background:none;border:none;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;font-family:'Noto Sans KR',sans-serif;transition:all .2s}
-    .tab-btn.active{color:var(--sfa-red);border-bottom-color:var(--sfa-red)}
+    .tab-btn.active{color:var(--blue-light);border-bottom-color:var(--blue-light)}
     .tab-content{display:none}
     .tab-content.active{display:block}
 
@@ -67,26 +67,26 @@
     .spec-table td{padding:12px 16px;font-size:13.5px;}
     .spec-table td:first-child{background:#fafafa;color:var(--gray-dark);font-weight:600;width:42%;font-size:12.5px;}
     .spec-table td:last-child{color:var(--navy);font-weight:500;}
-    .spec-group-row td{background:#cc0000!important;color:white!important;font-size:11px!important;font-weight:700!important;letter-spacing:1px;padding:8px 16px!important;}
+    .spec-group-row td{background:#1a3a6e!important;color:white!important;font-size:11px!important;font-weight:700!important;letter-spacing:1px;padding:8px 16px!important;}
 
     /* 비교표 */
     .compare-table{width:100%;border-collapse:collapse;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08);}
     .compare-table th{padding:14px 16px;font-size:12.5px;font-weight:700;text-align:center;}
     .compare-table th:first-child{text-align:left;background:#f8fafc;color:var(--gray-dark);}
     .compare-table th.gr1{background:#1a3a6e;color:white;}
-    .compare-table th.gr2{background:#cc0000;color:white;}
+    .compare-table th.gr2{background:#2563b0;color:white;}
     .compare-table td{padding:12px 16px;font-size:13px;border-bottom:1px solid var(--gray-light);text-align:center;}
     .compare-table td:first-child{text-align:left;font-weight:600;color:var(--gray-dark);background:#fafafa;font-size:12px;}
     .compare-table tr:last-child td{border-bottom:none}
-    .compare-table .highlight{background:rgba(204,0,0,.06);font-weight:700;color:var(--sfa-red);}
+    .compare-table .highlight{background:rgba(37,99,176,.06);font-weight:700;color:var(--blue-light);}
 
     /* 모델 카드 */
     .model-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:0;}
     .model-card{background:white;border-radius:12px;border:1px solid var(--gray-light);padding:20px;box-shadow:0 2px 8px rgba(0,0,0,.05);}
-    .model-card.featured{border-color:var(--sfa-red);border-width:2px;}
+    .model-card.featured{border-color:var(--blue-light);border-width:2px;}
     .model-name{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:4px;}
     .model-badge{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;margin-bottom:8px;}
-    .model-badge.recommend{background:rgba(204,0,0,.1);color:var(--sfa-red);}
+    .model-badge.recommend{background:rgba(26,110,181,.1);color:#1a6eb5;}
     .model-badge.standard{background:rgba(37,99,176,.1);color:var(--blue-light);}
     .model-specs{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:12px;}
     .model-spec-item{font-size:12px;}
@@ -95,22 +95,22 @@
 
     /* 특징 카드 */
     .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:0;}
-    .feature-card{background:white;border-radius:12px;padding:24px;border:1px solid var(--gray-light);border-top:4px solid var(--sfa-red);box-shadow:0 2px 8px rgba(0,0,0,.05);}
+    .feature-card{background:white;border-radius:12px;padding:24px;border:1px solid var(--gray-light);border-top:4px solid var(--blue-light);box-shadow:0 2px 8px rgba(0,0,0,.05);}
     .feature-icon{font-size:32px;margin-bottom:12px;}
     .feature-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:8px;}
     .feature-desc{font-size:13px;color:var(--gray-dark);line-height:1.7;}
 
     /* 적용 분야 */
     .use-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px;}
-    .use-tag{background:rgba(204,0,0,.08);color:var(--sfa-red);font-size:13px;font-weight:600;padding:8px 16px;border-radius:20px;border:1px solid rgba(204,0,0,.2);}
+    .use-tag{background:rgba(37,99,176,.08);color:var(--blue-light);font-size:13px;font-weight:600;padding:8px 16px;border-radius:20px;border:1px solid rgba(37,99,176,.2);}
 
     /* 설치 주의사항 */
-    .notice-box{background:#fff8f8;border:1px solid rgba(204,0,0,.2);border-left:4px solid var(--sfa-red);border-radius:8px;padding:16px 20px;margin-bottom:16px;}
-    .notice-box .notice-title{font-size:12px;font-weight:700;color:var(--sfa-red);letter-spacing:1px;margin-bottom:6px;}
+    .notice-box{background:#fff8f8;border:1px solid rgba(37,99,176,.2);border-left:4px solid var(--sfa-red);border-radius:8px;padding:16px 20px;margin-bottom:16px;}
+    .notice-box .notice-title{font-size:12px;font-weight:700;color:var(--blue-light);letter-spacing:1px;margin-bottom:6px;}
     .notice-box p{font-size:13px;color:var(--gray-dark);line-height:1.7;}
 
     /* CTA */
-    .cta-section{background:linear-gradient(135deg,var(--navy) 0%,#3d0a0a 100%);padding:80px 40px;text-align:center;}
+    .cta-section{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);padding:80px 40px;text-align:center;}
 
     footer{background:#092844;padding:30px 40px;text-align:center;color:rgba(255,255,255,.55);font-size:12.5px;}
     footer a{color:rgba(255,255,255,.65);text-decoration:none;}
@@ -174,11 +174,11 @@
       <!-- 왼쪽: 이미지 -->
       <div style="display:flex;flex-direction:column;gap:16px;">
         <div class="img-box">
-          <img src="images/Sanicubic 2GR drawing.png" alt="SFA Sanicubic 2 GR 도면" style="height:300px;"/>
+          <img src="images/Sanicubic 2GR drawing.png" alt="SFA Sanicubic 2 GR 도면" style="height:300px;cursor:zoom-in;" onclick="openLightbox(this.src, this.alt)"/>
         </div>
         <div class="img-box">
           <div style="padding:12px 16px;background:#fafafa;border-bottom:1px solid var(--gray-light);font-size:12px;font-weight:700;color:var(--gray-dark);">성능 곡선 (Performance Curve)</div>
-          <img src="images/Sanicubic 2GR curve.png" alt="Sanicubic 2 GR 성능 곡선"/>
+          <img src="images/Sanicubic 2GR curve.png" alt="Sanicubic 2 GR 성능 곡선" style="cursor:zoom-in;" onclick="openLightbox(this.src, this.alt)"/>
         </div>
       </div>
 
@@ -415,7 +415,7 @@
       <div>
         <div class="img-box">
           <div style="padding:12px 16px;background:#fafafa;border-bottom:1px solid var(--gray-light);font-size:12px;font-weight:700;color:var(--gray-dark);">설치 유의사항 도면</div>
-          <img src="images/Sanicubic 2GR setting.png" alt="Sanicubic 2 GR 설치 유의사항"/>
+          <img src="images/Sanicubic 2GR setting.png" alt="Sanicubic 2 GR 설치 유의사항" style="cursor:zoom-in;" onclick="openLightbox(this.src, this.alt)"/>
         </div>
         <div style="background:#f8fafc;border-radius:8px;padding:16px;margin-top:16px;font-size:13px;color:var(--gray-dark);line-height:1.7;">
           <strong style="color:var(--navy);">정기 점검 주기 (EN 12056-4)</strong><br/>
@@ -435,10 +435,19 @@
   <p style="font-size:15px;color:rgba(255,255,255,.65);margin-bottom:36px;">SFA KOREA 공식 대리점 1호 효일종합상사가 최적의 모델과 설치 방안을 제안해 드립니다.</p>
   <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
     <a href="tel:0323470815" style="display:inline-flex;align-items:center;gap:10px;background:white;color:var(--navy);padding:14px 28px;border-radius:8px;font-size:15px;font-weight:700;text-decoration:none;">📞 032.347.0815~7</a>
-    <a href="index.html#contact" style="display:inline-flex;align-items:center;gap:10px;background:var(--sfa-red);color:white;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:700;text-decoration:none;">✉ 온라인 문의하기</a>
+    <a href="index.html#contact" style="display:inline-flex;align-items:center;gap:10px;background:var(--blue-light);color:white;padding:14px 28px;border-radius:8px;font-size:15px;font-weight:700;text-decoration:none;">✉ 온라인 문의하기</a>
   </div>
   <div style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:13px;color:rgba(255,255,255,.4);">
     SFA KOREA 공식 대리점 1호 &nbsp;·&nbsp; (주)효일종합상사 &nbsp;·&nbsp; 경기도 부천시 조마루로 385번길 122
+  </div>
+</div>
+
+<!-- 라이트박스 팝업 -->
+<div id="lightbox" onclick="closeLightbox()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;align-items:center;justify-content:center;padding:20px;cursor:zoom-out;">
+  <div style="position:relative;max-width:92vw;max-height:92vh;" onclick="event.stopPropagation()">
+    <img id="lightboxImg" src="" alt="" style="max-width:92vw;max-height:85vh;object-fit:contain;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.6);display:block;"/>
+    <div id="lightboxCaption" style="text-align:center;color:rgba(255,255,255,.75);font-size:13px;margin-top:12px;"></div>
+    <button onclick="closeLightbox()" style="position:absolute;top:-16px;right:-16px;background:white;border:none;border-radius:50%;width:36px;height:36px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.3);">✕</button>
   </div>
 </div>
 
@@ -455,6 +464,18 @@ function switchTab(name, btn) {
   document.getElementById('tab-' + name).classList.add('active');
   btn.classList.add('active');
 }
+function openLightbox(src, alt) {
+  const lb = document.getElementById('lightbox');
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightboxCaption').textContent = alt;
+  lb.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox(); });
 </script>
 </body>
 </html>
