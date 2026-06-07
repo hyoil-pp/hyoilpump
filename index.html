@@ -264,7 +264,7 @@
       <div class="hero-content container" style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding-top:100px;padding-bottom:80px;">
         <div class="hero-badge" style="width:fit-content;"><span style="width:6px;height:6px;background:var(--accent);border-radius:50%;display:inline-block;"></span>GRUNDFOS 프리미엄 공식 대리점</div>
         <h1 class="hero-title">에너지 절감의 확실한 선택!<br/><span style="color:#60a5fa;">세계 최고 프리미엄 브랜드의</span><br/>고품질 고효율 그런포스 펌프!</h1>
-        <p class="hero-desc">1995년 설립 이후, 세계 최대 펌프 기업 Grundfos와 함께해 온 국내 유일 프리미엄 공식 대리점. 국내 1군 건설사 현장에 최고 품질의 펌프 솔루션을 공급하며 신뢰와 기술력을 쌓아온 전문 기업입니다.</p>
+        <p class="hero-desc"><strong style="color:#60a5fa;font-weight:900;">1995년 설립</strong> 이후, 세계 최대 펌프 기업 Grundfos와 함께해 온 <strong style="color:#60a5fa;font-weight:900;">국내 유일 프리미엄 공식 대리점.</strong> <strong style="color:#60a5fa;font-weight:900;">국내 1군 건설사</strong> 현장에 최고 품질의 펌프 솔루션을 공급하며 신뢰와 기술력을 쌓아온 전문 기업입니다.</p>
         <div class="hero-actions" onclick="event.stopPropagation()">
           <!-- ✅ 변경: "납품 실적 보기" → "제품소개 바로가기" (#products 링크) -->
           <a href="#products" class="btn-primary" onclick="event.stopPropagation()">제품소개 바로가기 &rarr;</a>
@@ -333,7 +333,7 @@
   const total=3;
   const track=document.getElementById('heroTrack');
   const dots=document.querySelectorAll('.hdot');
-  let timer=setInterval(autoNext,9000);
+  let timer=setInterval(autoNext,18000);
   function autoNext(){ cur=(cur+1)%total; update(); }
   function update(){
     track.style.transform=`translateX(-${cur*100}%)`;
@@ -346,13 +346,13 @@
     clearInterval(timer);
     cur=(cur+dir+total)%total;
     update();
-    timer=setInterval(autoNext,9000);
+    timer=setInterval(autoNext,18000);
   };
   window.heroGo=function(idx){
     clearInterval(timer);
     cur=idx;
     update();
-    timer=setInterval(autoNext,9000);
+    timer=setInterval(autoNext,18000);
   };
   let sx=0;
   track.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});
