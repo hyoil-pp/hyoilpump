@@ -237,97 +237,160 @@
     <h2 class="section-title" style="color:white;">주요 납품실적<br/>포트폴리오</h2>
 
     <style>
-      .pf-slideshow-wrap{position:relative;margin-top:40px;border-radius:16px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);background:#000;}
-      .pf-slides-track{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1);}
-      .pf-slide{min-width:100%;position:relative;}
-      .pf-slide img{width:100%;display:block;object-fit:contain;max-height:70vh;background:#0a0f1e;}
-      .pf-slide-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(10,22,40,.75);border:1px solid rgba(255,255,255,.15);color:white;width:52px;height:52px;border-radius:50%;font-size:20px;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center;transition:all .2s;backdrop-filter:blur(6px);}
-      .pf-slide-btn:hover{background:rgba(232,57,42,.85);border-color:transparent;transform:translateY(-50%) scale(1.08);}
-      .pf-slide-btn.prev{left:20px;}
-      .pf-slide-btn.next{right:20px;}
-      .pf-slide-counter{position:absolute;bottom:16px;right:20px;background:rgba(0,0,0,.55);color:rgba(255,255,255,.8);font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px;backdrop-filter:blur(4px);pointer-events:none;}
-      .pf-thumb-strip{display:flex;gap:8px;margin-top:16px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.2) transparent;}
-      .pf-thumb{min-width:90px;height:60px;border-radius:6px;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:all .2s;flex-shrink:0;}
-      .pf-thumb img{width:100%;height:100%;object-fit:cover;display:block;}
-      .pf-thumb.active{border-color:var(--accent,#e8392a);}
-      .pf-thumb:hover{border-color:rgba(255,255,255,.4);}
-      .pf-slide-dots{display:flex;justify-content:center;gap:8px;margin-top:20px;}
-      .pf-slide-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.25);cursor:pointer;transition:all .3s;border:none;padding:0;}
-      .pf-slide-dot.active{background:#e8392a;width:24px;border-radius:4px;}
-      @media(max-width:900px){.pf-slide-btn{width:40px;height:40px;font-size:16px;}.pf-thumb-strip{display:none;}}
-      @media(max-width:600px){.pf-slide-btn{width:36px;height:36px;font-size:14px;}.pf-slide-btn.prev{left:10px;}.pf-slide-btn.next{right:10px;}}
+      .pf-wrap{position:relative;margin-top:40px;border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);background:white;}
+      .pf-track{display:flex;transition:transform .5s cubic-bezier(.4,0,.2,1);}
+      .pf-slide-item{min-width:100%;position:relative;background:white;}
+      .pf-slide-inner{display:grid;grid-template-columns:1fr 360px;min-height:560px;}
+      .pf-slide-left{padding:40px 36px;display:flex;flex-direction:column;}
+      .pf-slide-topbar{height:6px;background:#0a1628;position:absolute;top:0;left:0;right:0;}
+      .pf-slide-goldline{height:2px;background:linear-gradient(90deg,#c9a84c,#e8d5a3,#c9a84c);position:absolute;top:6px;left:0;right:0;}
+      .pf-label{font-size:11px;font-weight:700;color:#c9a84c;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;margin-top:8px;}
+      .pf-title{font-size:clamp(18px,2vw,26px);font-weight:800;color:#0a1628;letter-spacing:-0.5px;margin-bottom:20px;display:flex;align-items:center;gap:10px;line-height:1.3;}
+      .pf-title-bar{width:5px;height:100%;background:#0a1628;flex-shrink:0;align-self:stretch;}
+      .pf-table{width:100%;border-collapse:collapse;font-size:13px;flex:1;}
+      .pf-table th{background:#0a1628;color:white;padding:10px 14px;text-align:center;font-weight:600;font-size:12px;}
+      .pf-table th:first-child{width:130px;}
+      .pf-table td{padding:10px 14px;border-bottom:1px solid #e8ecf2;vertical-align:top;line-height:1.65;color:#2a2a2a;}
+      .pf-table td:first-child{font-weight:700;color:#0a1628;text-align:center;background:#f8f9fa;font-size:12px;}
+      .pf-table tr:last-child td{border-bottom:none;}
+      .pf-slide-right{position:relative;overflow:hidden;}
+      .pf-slide-right img{width:100%;height:100%;object-fit:cover;display:block;}
+      .pf-slide-num{position:absolute;top:20px;right:24px;font-family:'Bebas Neue',sans-serif;font-size:32px;color:#c9a84c;letter-spacing:2px;line-height:1;}
+      .pf-bottom{padding:12px 36px;border-top:1px solid #e0e0e0;display:flex;align-items:center;justify-content:space-between;background:white;}
+      .pf-bottom-label{font-size:13px;color:#c9a84c;font-weight:600;letter-spacing:1px;}
+      .pf-bottom-right{font-size:12px;color:#999;}
+      .pf-nav-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(10,22,40,.7);border:1px solid rgba(255,255,255,.2);color:white;width:44px;height:44px;border-radius:50%;font-size:18px;cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center;transition:all .2s;backdrop-filter:blur(4px);}
+      .pf-nav-btn:hover{background:rgba(201,168,76,.85);border-color:transparent;}
+      .pf-nav-btn.prev{left:16px;}
+      .pf-nav-btn.next{right:16px;}
+      .pf-counter{position:absolute;bottom:60px;right:24px;background:rgba(10,22,40,.6);color:rgba(255,255,255,.8);font-size:12px;font-weight:600;padding:3px 10px;border-radius:12px;}
+      .pf-dots{display:flex;justify-content:center;gap:8px;margin-top:16px;}
+      .pf-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.25);cursor:pointer;transition:all .3s;border:none;padding:0;}
+      .pf-dot.active{background:#c9a84c;width:24px;border-radius:4px;}
+      @media(max-width:900px){.pf-slide-inner{grid-template-columns:1fr}.pf-slide-right{height:220px;}}
+      @media(max-width:600px){.pf-slide-left{padding:28px 20px;}.pf-table{font-size:12px;}}
     </style>
 
-    <div class="pf-slideshow-wrap">
-      <div class="pf-slides-track" id="pfSlidesTrack">
-        <div class="pf-slide"><img src="images/portfolio_homepage_slide_1.png" alt="납품실적 포트폴리오 1"/></div>
-        <div class="pf-slide"><img src="images/portfolio_homepage_slide_2.png" alt="납품실적 포트폴리오 2"/></div>
-        <div class="pf-slide"><img src="images/portfolio_homepage_slide_3.png" alt="납품실적 포트폴리오 3"/></div>
-        <div class="pf-slide"><img src="images/portfolio_homepage_slide_4.png" alt="납품실적 포트폴리오 4"/></div>
-        <div class="pf-slide"><img src="images/portfolio_homepage_slide_5.png" alt="납품실적 포트폴리오 5"/></div>
+    <div class="pf-wrap">
+      <div class="pf-track" id="pfTrack2">
+
+        <!-- 슬라이드 1: 연구소 및 산업/R&D -->
+        <div class="pf-slide-item">
+          <div class="pf-slide-topbar"></div>
+          <div class="pf-slide-goldline"></div>
+          <div class="pf-slide-inner">
+            <div class="pf-slide-left" style="padding-top:28px;">
+              <div class="pf-label">PREMIUM PERFORMANCE</div>
+              <div class="pf-title"><div class="pf-title-bar"></div>연구소 및 산업/R&D 시설 실적</div>
+              <table class="pf-table">
+                <tr><th>건설사</th><th>핵심 프로젝트 납품 현장 리스트</th></tr>
+                <tr><td>현대건설</td><td>현대자동차 남양·파주·I-5 연구소, 현대중공업 엔진연구소, 현대차 변속기 통합연구소, SK하이닉스(이천 A/M10X·청주·중국), 현대제철 당진 일관제철소, STATS ChipPAC Korea, 군산 풍력발전기 공장</td></tr>
+                <tr><td>현대엔지니어링</td><td>현대케피코 연구개발센터, 현대파워텍 당진공장, 현대오토넷 진천공장, 서산 변속기 공장</td></tr>
+                <tr><td>금호·쌍용</td><td>대웅제약 마곡연구소, 판교 HK이노엔 연구소, 평택 싸이머 코리아, ASML 화성 뉴 캠퍼스</td></tr>
+                <tr><td>자이C&amp;A·기타</td><td>LG BCM 구미 양극재 증설, 오산 리더십 센터, 한화 S-ONE 프로젝트, 동화약품 충주 공장</td></tr>
+              </table>
+            </div>
+            <div class="pf-slide-right"><img src="images/83.jpg" alt="산업 연구 시설"/></div>
+          </div>
+          <div class="pf-bottom"><div class="pf-bottom-label">주요 납품 실적 포트폴리오</div><div class="pf-bottom-right">(주)효일종합상사 · 1995년 설립</div></div>
+          <div class="pf-slide-num">01</div>
+        </div>
+
+        <!-- 슬라이드 2: 의료기관 및 유통·쇼핑 -->
+        <div class="pf-slide-item">
+          <div class="pf-slide-topbar"></div>
+          <div class="pf-slide-goldline"></div>
+          <div class="pf-slide-inner">
+            <div class="pf-slide-left" style="padding-top:28px;">
+              <div class="pf-label">PREMIUM PERFORMANCE</div>
+              <div class="pf-title"><div class="pf-title-bar"></div>의료기관 및 유통·쇼핑시설 실적</div>
+              <table class="pf-table">
+                <tr><th>건설사</th><th>핵심 프로젝트 납품 현장 리스트</th></tr>
+                <tr><td>현대건설</td><td>분당서울대병원, 이대목동병원, 강남성모병원, 은평성모병원, 한림대동탄성심병원, 연세중입자암치료센터, 현대백화점 미아·신촌·목동·울산점</td></tr>
+                <tr><td>HDC·현대엔지니어링</td><td>서울아산병원(신관·제3연구동), 강릉아산병원, 현대백화점 충청점, 현대아울렛 김포·대전·송도점</td></tr>
+                <tr><td>한화·두산·기타</td><td>연세의료원(ABMRC·에비슨연구소), 용인동백세브란스병원, 광명중앙대병원, 원주세브란스병원, 인천성모병원, 현대백화점 무역센터·천호점, 영등포 롯데쇼핑</td></tr>
+              </table>
+            </div>
+            <div class="pf-slide-right"><img src="images/31.jpg" alt="병원 의료 시설"/></div>
+          </div>
+          <div class="pf-bottom"><div class="pf-bottom-label">주요 납품 실적 포트폴리오</div><div class="pf-bottom-right">(주)효일종합상사 · 1995년 설립</div></div>
+          <div class="pf-slide-num">02</div>
+        </div>
+
+        <!-- 슬라이드 3: 주거 랜드마크 및 상업용 빌딩 -->
+        <div class="pf-slide-item">
+          <div class="pf-slide-topbar"></div>
+          <div class="pf-slide-goldline"></div>
+          <div class="pf-slide-inner">
+            <div class="pf-slide-left" style="padding-top:28px;">
+              <div class="pf-label">PREMIUM PERFORMANCE</div>
+              <div class="pf-title"><div class="pf-title-bar"></div>주거 랜드마크 및 상업용 빌딩 실적</div>
+              <table class="pf-table">
+                <tr><th>건설사</th><th>핵심 프로젝트 납품 현장 리스트</th></tr>
+                <tr><td>현대건설</td><td>목동 하이페리온 I·II, 서초 슈퍼빌, 부산 이진베이시티, 한남 하이페리온, 개포주공 아이파크, 킨텍스 제2전시장, BIFC, BEXCO, 분당 NHN 사옥</td></tr>
+                <tr><td>HDC·두산</td><td>삼성동 아이파크, 해운대 아이파크, 인천 시티오씨엘, 대전/부산 위브더제니스, 강남파이낸스센터, MBC사옥, 용산민자역사</td></tr>
+                <tr><td>컨소시엄·기타</td><td>올림픽파크포레온 12,032세대(현대/HDC/대우/롯데), 마곡 마이스단지(롯데), 남대문호텔(HJ중공업), 삼성전자 평택사무동(KCC)</td></tr>
+              </table>
+            </div>
+            <div class="pf-slide-right"><img src="images/94.jpg" alt="주거 랜드마크"/></div>
+          </div>
+          <div class="pf-bottom"><div class="pf-bottom-label">주요 납품 실적 포트폴리오</div><div class="pf-bottom-right">(주)효일종합상사 · 1995년 설립</div></div>
+          <div class="pf-slide-num">03</div>
+        </div>
+
+        <!-- 슬라이드 4: 데이터센터 및 특수 인프라 -->
+        <div class="pf-slide-item">
+          <div class="pf-slide-topbar"></div>
+          <div class="pf-slide-goldline"></div>
+          <div class="pf-slide-inner">
+            <div class="pf-slide-left" style="padding-top:28px;">
+              <div class="pf-label">PREMIUM PERFORMANCE</div>
+              <div class="pf-title"><div class="pf-title-bar"></div>데이터센터 및 특수 인프라 실적</div>
+              <table class="pf-table">
+                <tr><th>건설사</th><th>핵심 프로젝트 납품 현장 리스트</th></tr>
+                <tr><td>현대건설</td><td>NH농협 IT센터, 김포 국민은행 통합 IT센터, 국가정보자원관리원 대구센터</td></tr>
+                <tr><td>자이C&amp;A</td><td>LG U+ 평촌 메가센터(전 단계), LG U+ 평촌 NEXT IDC 및 증축공사, 세종 네이버 데이터센터(2·3차), 파주 데이터센터(진행 중)</td></tr>
+                <tr><td>기타 건설사</td><td>IBK 하남 데이터센터(에이스건설), 신세종 복합화력발전소(HJ중공업), 필리핀 조선소</td></tr>
+              </table>
+            </div>
+            <div class="pf-slide-right"><img src="images/76.jpg" alt="데이터센터 인프라"/></div>
+          </div>
+          <div class="pf-bottom"><div class="pf-bottom-label">주요 납품 실적 포트폴리오</div><div class="pf-bottom-right">(주)효일종합상사 · 1995년 설립</div></div>
+          <div class="pf-slide-num">04</div>
+        </div>
+
       </div>
-      <button class="pf-slide-btn prev" onclick="pfMoveSlide(-1)">&#8592;</button>
-      <button class="pf-slide-btn next" onclick="pfMoveSlide(1)">&#8594;</button>
-      <div class="pf-slide-counter" id="pfSlideCounter">1 / 5</div>
+      <button class="pf-nav-btn prev" onclick="pfMove2(-1)">&#8592;</button>
+      <button class="pf-nav-btn next" onclick="pfMove2(1)">&#8594;</button>
+      <div class="pf-counter" id="pfCounter2">1 / 4</div>
     </div>
 
-    <!-- 썸네일 -->
-    <div class="pf-thumb-strip" id="pfThumbStrip">
-      <div class="pf-thumb active" onclick="pfGoToSlide(0)"><img src="images/portfolio_homepage_slide_1.png"/></div>
-      <div class="pf-thumb" onclick="pfGoToSlide(1)"><img src="images/portfolio_homepage_slide_2.png"/></div>
-      <div class="pf-thumb" onclick="pfGoToSlide(2)"><img src="images/portfolio_homepage_slide_3.png"/></div>
-      <div class="pf-thumb" onclick="pfGoToSlide(3)"><img src="images/portfolio_homepage_slide_4.png"/></div>
-      <div class="pf-thumb" onclick="pfGoToSlide(4)"><img src="images/portfolio_homepage_slide_5.png"/></div>
-    </div>
-
-    <!-- 인디케이터 점 -->
-    <div class="pf-slide-dots" id="pfSlideDots"></div>
+    <div class="pf-dots" id="pfDots2"></div>
   </div>
 
   <script>
   (function(){
-    let pfCurrent = 0;
-    const pfTotal = 5;
-    const pfTrack = document.getElementById('pfSlidesTrack');
-    const pfCounter = document.getElementById('pfSlideCounter');
-    const pfThumbs = document.getElementById('pfThumbStrip').querySelectorAll('.pf-thumb');
-    const pfDotsWrap = document.getElementById('pfSlideDots');
-
-    for(let i=0;i<pfTotal;i++){
-      const d = document.createElement('button');
-      d.className = 'pf-slide-dot' + (i===0?' active':'');
-      d.onclick = ()=>pfGoToSlide(i);
-      pfDotsWrap.appendChild(d);
+    let cur=0; const total=4;
+    const track=document.getElementById('pfTrack2');
+    const counter=document.getElementById('pfCounter2');
+    const dotsWrap=document.getElementById('pfDots2');
+    for(let i=0;i<total;i++){const d=document.createElement('button');d.className='pf-dot'+(i===0?' active':'');d.onclick=()=>pfGo2(i);dotsWrap.appendChild(d);}
+    function update(){
+      track.style.transform=`translateX(-${cur*100}%)`;
+      counter.textContent=`${cur+1} / ${total}`;
+      document.querySelectorAll('.pf-dot').forEach((d,i)=>d.classList.toggle('active',i===cur));
     }
-
-    function pfUpdateUI(){
-      pfTrack.style.transform = `translateX(-${pfCurrent*100}%)`;
-      pfCounter.textContent = `${pfCurrent+1} / ${pfTotal}`;
-      document.querySelectorAll('.pf-slide-dot').forEach((d,i)=>d.classList.toggle('active',i===pfCurrent));
-      pfThumbs.forEach((t,i)=>t.classList.toggle('active',i===pfCurrent));
-      pfThumbs[pfCurrent].scrollIntoView({behavior:'smooth',inline:'center',block:'nearest'});
-    }
-
-    window.pfMoveSlide = function(dir){ pfCurrent=(pfCurrent+dir+pfTotal)%pfTotal; pfUpdateUI(); };
-    window.pfGoToSlide = function(idx){ pfCurrent=idx; pfUpdateUI(); };
-
-    // 키보드
-    document.addEventListener('keydown', e=>{
-      if(e.key==='ArrowLeft') pfMoveSlide(-1);
-      if(e.key==='ArrowRight') pfMoveSlide(1);
-    });
-
-    // 터치 스와이프
-    let pfStartX = 0;
-    pfTrack.addEventListener('touchstart', e=>{ pfStartX=e.touches[0].clientX; },{passive:true});
-    pfTrack.addEventListener('touchend', e=>{
-      const diff = pfStartX - e.changedTouches[0].clientX;
-      if(Math.abs(diff)>40) pfMoveSlide(diff>0?1:-1);
-    });
+    window.pfMove2=function(dir){cur=(cur+dir+total)%total;update();};
+    window.pfGo2=function(idx){cur=idx;update();};
+    let sx=0;
+    track.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});
+    track.addEventListener('touchend',e=>{const dx=sx-e.changedTouches[0].clientX;if(Math.abs(dx)>40)pfMove2(dx>0?1:-1);});
+    update();
   })();
   </script>
 </section>
 
+<!-- 협력 건설사 -->
 <!-- 협력 건설사 -->
 <section style="background:#f4f6f9;padding:80px 0;">
   <div class="container">
