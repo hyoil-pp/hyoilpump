@@ -36,6 +36,12 @@
     .product-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-top:48px}
     .product-img-wrap{background:white;border-radius:16px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 4px 20px rgba(0,0,0,.08)}
     .product-img-wrap img{width:100%;display:block;object-fit:contain;background:white;padding:24px}
+    .product-img-wrap{cursor:zoom-in;position:relative;}
+    .product-img-wrap .zoom-icon{position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,.45);color:white;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;font-size:16px;opacity:0;transition:opacity .2s;pointer-events:none;}
+    .product-img-wrap:hover .zoom-icon{opacity:1;}
+    .graph-wrap{background:white;border-radius:12px;border:1px solid var(--gray-light);overflow:hidden;cursor:zoom-in;position:relative;}
+    .graph-wrap .zoom-icon{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.45);color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none;}
+    .graph-wrap:hover .zoom-icon{opacity:1;}
     /* 탭 */
     .tab-wrap{display:flex;gap:8px;margin-bottom:24px;border-bottom:2px solid var(--gray-light);padding-bottom:0}
     .tab-btn{padding:10px 20px;font-size:13px;font-weight:600;color:var(--gray-mid);background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;font-family:'Noto Sans KR',sans-serif;transition:all .2s}
@@ -63,7 +69,10 @@
     .cta-box{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);border-radius:16px;padding:48px 40px;text-align:center;margin:60px 0}
     /* 이미지 갤러리 */
     .img-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:0}
-    .img-gallery img{width:100%;border-radius:10px;border:1px solid var(--gray-light);background:white;object-fit:contain;padding:12px;cursor:pointer}
+    .img-gallery-item{background:white;border-radius:10px;border:1px solid var(--gray-light);height:220px;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:zoom-in;position:relative;}
+    .img-gallery-item img{max-width:100%;max-height:100%;object-fit:contain;padding:12px;display:block;}
+    .img-gallery-item .zoom-icon{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.45);color:white;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:14px;opacity:0;transition:opacity .2s;}
+    .img-gallery-item:hover .zoom-icon{opacity:1;}
     footer{background:#092844;padding:30px 40px;text-align:center;color:rgba(255,255,255,.55);font-size:12.5px}
     footer a{color:rgba(255,255,255,.6);text-decoration:none}
     @media(max-width:1024px){.spec-highlight{grid-template-columns:repeat(2,1fr)}.product-layout{grid-template-columns:1fr}.features-grid{grid-template-columns:1fr 1fr}.img-gallery{grid-template-columns:1fr 1fr}}
@@ -133,11 +142,13 @@
       <!-- 왼쪽: 이미지 -->
       <div>
         <div class="product-img-wrap" style="margin-bottom:16px;">
-          <img src="images/Hydro MPC-E image.jpg" alt="Hydro MPC-E 3 CRE 64-3-2 제품 이미지" onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80'"/>
+          <img onclick="openLightbox('images/Hydro MPC-E image.jpg','Hydro MPC-E 3 CRE 64-3-2 제품 이미지')" src="images/Hydro MPC-E image.jpg" alt="Hydro MPC-E 3 CRE 64-3-2 제품 이미지" onerror="this.src='https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=80'"/>
+        <div class="zoom-icon">🔍</div>
         </div>
         <!-- 성능 그래프 -->
-        <div style="background:white;border-radius:12px;border:1px solid var(--gray-light);overflow:hidden;">
-          <div style="padding:12px 16px;background:#f8fafc;border-bottom:1px solid var(--gray-light);font-size:12px;font-weight:700;color:var(--gray-dark);letter-spacing:0.5px;">성능 곡선 그래프</div>
+        <div class="graph-wrap" onclick="openLightbox('','')">
+          <div style="padding:12px 16px;background:#f8fafc;border-bottom:1px solid var(--gray-light);font-size:12px;font-weight:700;color:var(--gray-dark);letter-spacing:0.5px;">성능 곡선 그래프<div class="zoom-icon">🔍</div>
+        </div>
           <img src="images/Hydro MPC-E 3 CRE 64-3-2(graph).png" alt="성능 곡선" style="width:100%;display:block;object-fit:contain;padding:16px;background:white;"/>
         </div>
       </div>
