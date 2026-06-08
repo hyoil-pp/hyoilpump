@@ -116,7 +116,7 @@
     footer a{color:rgba(255,255,255,.65);text-decoration:none;}
 
     @media(max-width:1024px){.product-layout{grid-template-columns:1fr}.feature-grid{grid-template-columns:1fr 1fr}.spec-bar-inner{grid-template-columns:repeat(3,1fr)}}
-    @media(max-width:768px){nav{display:none}.container{padding:0 20px}.spec-bar-inner{grid-template-columns:repeat(2,1fr);padding:0 20px}.feature-grid{grid-template-columns:1fr}.model-grid{grid-template-columns:1fr}.page-hero{padding:120px 20px 60px}.header-top-side{display:none}.compare-table{font-size:11px}}
+    @media(max-width:768px){.hero-img-hide{display:none!important}nav{display:none}.container{padding:0 20px}.spec-bar-inner{grid-template-columns:repeat(2,1fr);padding:0 20px}.feature-grid{grid-template-columns:1fr}.model-grid{grid-template-columns:1fr}.page-hero{padding:120px 20px 60px}.header-top-side{display:none}.compare-table{font-size:11px}}
   </style>
 </head>
 <body>
@@ -144,6 +144,8 @@
 <!-- 히어로 -->
 <div class="page-hero">
   <div class="container">
+    <div style="display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;">
+      <div>
     <div class="hero-badge"><span></span>SFA KOREA 공식 대리점 1호 · 효일종합상사</div>
     <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:10px;">SFA PUMPS · 오수 리프팅 스테이션</div>
     <h1 style="font-size:clamp(28px,5vw,56px);font-weight:900;color:white;letter-spacing:-2px;margin-bottom:12px;line-height:1.15;">사니큐빅 2 GR<br/><span style="color:#ff6b6b;font-size:0.7em;">Sanicubic 2 GR</span></h1>
@@ -151,6 +153,12 @@
     <div style="display:flex;gap:12px;flex-wrap:wrap;">
       <a href="product-sfa.html" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);color:white;padding:9px 18px;border-radius:6px;font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,0.3);text-decoration:none;">← SFA 펌프 목록 돌아가기</a>
       <a href="#contact-section" style="display:inline-flex;align-items:center;gap:8px;background:var(--sfa-red);color:white;padding:9px 18px;border-radius:6px;font-size:13px;font-weight:700;text-decoration:none;">견적 문의하기</a>
+    </div>
+  
+      </div>
+      <div class="hero-img-hide" style="flex-shrink:0;display:flex;align-items:center;justify-content:center;">
+        <img src="images/sanicubic-2-gr.png" alt="사니큐빅 2 GR" style="height:260px;width:auto;object-fit:contain;filter:drop-shadow(0 8px 32px rgba(0,0,0,.4));"/>
+      </div>
     </div>
   </div>
 </div>
