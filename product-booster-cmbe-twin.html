@@ -303,75 +303,8 @@
 </div>
       </div>
       <div>
-        <div class="tab-wrap">
-          <button class="tab-btn active" onclick="switchTab('basic')">기본 사양</button>
-          <button class="tab-btn" onclick="switchTab('install')">설치 정보</button>
-          <button class="tab-btn" onclick="switchTab('electric')">전기 데이터</button>
-        </div>
-        <div id="tab-basic" class="tab-content active">
-          <table class="spec-table">
-            <tr><td class="spec-group" colspan="2">유량 / 양정</td></tr>
-            <tr><td>정격 유량</td><td>4.2 m³/h</td></tr>
-            <tr><td>최대 유량</td><td>15 m³/h</td></tr>
-            <tr><td>정격 양정</td><td>45.2 m</td></tr>
-            <tr><td>최대 양정</td><td>102 m</td></tr>
-            <tr><td class="spec-group" colspan="2">펌프 구성</td></tr>
-            <tr><td>펌프 개수</td><td>2 (병렬 캐스케이드)</td></tr>
-            <tr><td>임펠러 단수</td><td>4단</td></tr>
-            <tr><td>펌프 속도</td><td>3,780 rpm</td></tr>
-            <tr><td>주 펌프 형식</td><td>CMBE TWIN</td></tr>
-            <tr><td>샤프트 씰</td><td>AVBE (EPDM)</td></tr>
-            <tr><td class="spec-group" colspan="2">재질</td></tr>
-            <tr><td>펌프 하우징</td><td>Stainless steel EN 1.4301 / AISI 304</td></tr>
-            <tr><td>임펠러 재질</td><td>Stainless steel EN 1.4301 / AISI 304</td></tr>
-            <tr><td class="spec-group" colspan="2">탱크 / 중량</td></tr>
-            <tr><td>탱크 부피</td><td>4 L (각 유닛)</td></tr>
-            <tr><td>순 중량</td><td>38.7 kg</td></tr>
-            <tr><td>총 중량</td><td>46.7 kg</td></tr>
-          </table>
-        </div>
-        <div id="tab-install" class="tab-content">
-          <table class="spec-table">
-            <tr><td class="spec-group" colspan="2">설치 환경</td></tr>
-            <tr><td>최대 주변 온도</td><td>55 °C</td></tr>
-            <tr><td>유체 온도 범위</td><td>0 ~ 60 °C</td></tr>
-            <tr><td>이송 유체</td><td>물</td></tr>
-            <tr><td>밀도</td><td>998.2 kg/m³</td></tr>
-            <tr><td class="spec-group" colspan="2">압력 / 연결</td></tr>
-            <tr><td>최대 운전 압력</td><td>10 bar</td></tr>
-            <tr><td>연결 압력 등급</td><td>PN 10</td></tr>
-            <tr><td>펌프 인입</td><td>RP 1 inch</td></tr>
-            <tr><td>펌프 토출</td><td>RP 1 inch</td></tr>
-            <tr><td class="spec-group" colspan="2">흡입 주의사항</td></tr>
-            <tr><td>최대 흡입 리프트</td><td>1 m (20°C 기준, 비자흡식)</td></tr>
-            <tr><td class="spec-group" colspan="2">승인</td></tr>
-            <tr><td>승인</td><td>CE, EAC, CN ROHS EX, MORO</td></tr>
-            <tr><td>식수 승인</td><td>UBA</td></tr>
-            <tr><td>환경 승인</td><td>WEEE</td></tr>
-          </table>
-        </div>
-        <div id="tab-electric" class="tab-content">
-          <table class="spec-table">
-            <tr><td class="spec-group" colspan="2">전기 사양</td></tr>
-            <tr><td>정격 출력 (P2)</td><td>1.1 kW</td></tr>
-            <tr><td>메인 주파수</td><td>60 Hz</td></tr>
-            <tr><td>정격 전압</td><td>1 × 200-240 V</td></tr>
-            <tr><td>최대 전류 소비</td><td>6.70 ~ 5.60 A</td></tr>
-            <tr><td>외함 등급</td><td>IP55</td></tr>
-            <tr><td>절연 등급</td><td>F</td></tr>
-            <tr><td>케이블 길이</td><td>1.5 m</td></tr>
-            <tr><td>전원 플러그</td><td>Schuko plug (Type E/F, CEE7/7)</td></tr>
-            <tr><td class="spec-group" colspan="2">제품 번호</td></tr>
-            <tr><td>제품번호</td><td>99219420</td></tr>
-            <tr><td>EAN 번호</td><td>5712608909276</td></tr>
-            <tr><td>주 펌프 제품번호</td><td>98586111</td></tr>
-            <tr><td>펌프 설정 파일</td><td>93448123</td></tr>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        
+        
 
 <!-- 제품 특징 -->
 <div class="section" style="background:white;">
@@ -586,22 +519,20 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
 
 <script>
 function switchTab(name){
-  // 같은 탭 그룹(같은 부모 tab-wrap)만 토글
   const btn = event.target;
-  const tabWrap = btn.closest('.tab-wrap') || btn.parentElement;
-  // 같은 섹션 내 버튼만 비활성
-  tabWrap.querySelectorAll('.tab-btn').forEach(el=>el.classList.remove('active'));
+  // 현재 버튼의 tab-wrap 찾기
+  const tabWrap = btn.parentElement;
+  // 같은 tab-wrap 내 버튼만 비활성화
+  tabWrap.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
   btn.classList.add('active');
-  // 탭 ID로 콘텐츠 전환
-  document.getElementById('tab-'+name).classList.add('active');
-  // 같은 섹션 내 다른 탭 콘텐츠 숨기기
-  const allIds = ['tab-basic362','tab-install362','tab-electric362','tab-basic562','tab-install562','tab-electric562'];
-  allIds.forEach(id=>{
-    if(id !== 'tab-'+name){
-      const el = document.getElementById(id);
-      if(el && el.closest('.product-layout') === document.getElementById('tab-'+name).closest('.product-layout')){
-        el.classList.remove('active');
-      }
+  // 현재 모델 섹션(product-layout) 내 탭만 전환
+  const layout = btn.closest('.product-layout');
+  if(layout){
+    layout.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    const target = layout.querySelector('#tab-' + name);
+    if(target) target.classList.add('active');
+  }
+}
     }
   });
 }
