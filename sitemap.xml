@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://hyoilpump.co.kr/about.html</loc>
-    <lastmod>2025-05-30</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -90,9 +90,9 @@
   </url>
   <url>
     <loc>https://hyoilpump.co.kr/product-sfa.html</loc>
-    <lastmod>2025-05-30</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://hyoilpump.co.kr/product-kone.html</loc>
@@ -105,6 +105,56 @@
     <lastmod>2025-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+
+  <!-- SFA 상세 페이지 (신규) -->
+  <url>
+    <loc>https://hyoilpump.co.kr/product-sfa-sanicom1.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hyoilpump.co.kr/product-sfa-sanicom2.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hyoilpump.co.kr/product-sfa-sanicubic1wp.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hyoilpump.co.kr/product-sfa-sanicubic2classic.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hyoilpump.co.kr/product-sfa-sanicubic2gr.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hyoilpump.co.kr/product-sfa-sanicubic2grhps.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hyoilpump.co.kr/product-sfa-sanicubic2sc.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hyoilpump.co.kr/product-sfa-sanicubic2vx.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- 부스터 펌프 상세 페이지 (신규) -->
@@ -146,6 +196,18 @@
   </url>
   <url>
     <loc>https://hyoilpump.co.kr/product-booster-scala2.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hyoilpump.co.kr/product-booster-scala1.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hyoilpump.co.kr/product-booster-jp.html</loc>
     <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
