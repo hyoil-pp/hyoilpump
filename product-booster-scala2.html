@@ -154,9 +154,9 @@
       </div>
       <div>
         <div class="tab-wrap">
-          <button class="tab-btn active" onclick="switchTab('basic')">기본 사양</button>
-          <button class="tab-btn" onclick="switchTab('install')">설치 정보</button>
-          <button class="tab-btn" onclick="switchTab('electric')">전기 데이터</button>
+          <button class="tab-btn active" onclick="switchTab(event,'basic')">기본 사양</button>
+          <button class="tab-btn" onclick="switchTab(event,'install')">설치 정보</button>
+          <button class="tab-btn" onclick="switchTab(event,'electric')">전기 데이터</button>
         </div>
         <div id="tab-basic" class="tab-content active">
           <table class="spec-table">
@@ -428,8 +428,8 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
 </footer>
 
 <script>
-function switchTab(name){
-  const btn = event.target;
+function switchTab(e, name){
+  const btn = e.target;
   const tabWrap = btn.parentElement;
   tabWrap.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
   btn.classList.add('active');
