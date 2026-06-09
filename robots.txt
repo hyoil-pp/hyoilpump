@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.hyoilpump.co.kr/sitemap.xml
+Sitemap: https://hyoilpump.co.kr/sitemap.xml
