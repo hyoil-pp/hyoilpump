@@ -153,10 +153,10 @@
         </div>
       </div>
       <div>
-        <div class="tab-wrap">
-          <button class="tab-btn active" onclick="switchTab(event,'basic')">기본 사양</button>
-          <button class="tab-btn" onclick="switchTab(event,'install')">설치 정보</button>
-          <button class="tab-btn" onclick="switchTab(event,'electric')">전기 데이터</button>
+                <div class="tab-wrap">
+          <button class="tab-btn active" id="btn-basic" onclick="showTab('basic')">기본 사양</button>
+          <button class="tab-btn" id="btn-install" onclick="showTab('install')">설치 정보</button>
+          <button class="tab-btn" id="btn-electric" onclick="showTab('electric')">전기 데이터</button>
         </div>
         <div id="tab-basic" class="tab-content active">
           <table class="spec-table">
@@ -172,8 +172,8 @@
             <tr><td>펌프 하우징</td><td>Composite (NORYL FE1630PW PPE+PS-GS30)</td></tr>
             <tr><td>임펠러</td><td>Composite (NORYL FE1630PW PPE+PS-GS30)</td></tr>
             <tr><td class="spec-group" colspan="2">중량</td></tr>
-            <tr><td>순 중량</td><td>9.8 kg</td></tr>
-            <tr><td>총 중량</td><td>12.1 kg</td></tr>
+            <tr><td>순 중량</td><td>9.45 kg</td></tr>
+            <tr><td>총 중량</td><td>12.2 kg</td></tr>
           </table>
         </div>
         <div id="tab-install" class="tab-content">
@@ -183,15 +183,17 @@
             <tr><td>저장 온도 범위</td><td>-40 ~ 70 °C</td></tr>
             <tr><td>유체 온도 범위</td><td>0 ~ 45 °C</td></tr>
             <tr><td>이송 유체</td><td>물</td></tr>
+            <tr><td>밀도</td><td>998.2 kg/m³</td></tr>
             <tr><td class="spec-group" colspan="2">압력 / 연결</td></tr>
             <tr><td>최대 운전 압력</td><td>10 bar</td></tr>
             <tr><td>최대 허용 인입 압력</td><td>6 bar</td></tr>
+            <tr><td>연결 압력 등급</td><td>PN 10</td></tr>
             <tr><td>파이프 연결 표준</td><td>EN 10226-1</td></tr>
             <tr><td>흡입구 연결</td><td>R 1 inch</td></tr>
             <tr><td>토출구 연결</td><td>R 1 inch</td></tr>
             <tr><td class="spec-group" colspan="2">승인</td></tr>
-            <tr><td>승인</td><td>CE, VDE, MORO, UKCA, KC, SEPRO, AAA</td></tr>
-            <tr><td>식수 승인</td><td>KIWA, WRAS, ACS</td></tr>
+            <tr><td>승인</td><td>CE, VDE, UKCA</td></tr>
+            <tr><td>식수 승인</td><td>WRAS, ACS</td></tr>
             <tr><td>곡선 공차</td><td>ISO 9906:2012 3B</td></tr>
           </table>
         </div>
@@ -206,10 +208,10 @@
             <tr><td>외함 등급</td><td>IPX4D</td></tr>
             <tr><td>절연 등급</td><td>F</td></tr>
             <tr><td>전원 케이블 길이</td><td>1.5 m</td></tr>
-            <tr><td>전원 플러그</td><td>Schuko plug (Type E/F, CEE7/7)</td></tr>
+            <tr><td>전원 플러그</td><td>No plug</td></tr>
             <tr><td class="spec-group" colspan="2">제품 번호</td></tr>
-            <tr><td>제품번호</td><td>93013252</td></tr>
-            <tr><td>EAN 번호</td><td>5715122954975</td></tr>
+            <tr><td>제품번호</td><td>98562865</td></tr>
+            <tr><td>EAN 번호</td><td>5711497234247</td></tr>
           </table>
         </div>
       </div>
@@ -427,17 +429,14 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
   <div style="margin-top:10px;">© 2025 HYOIL Co., Ltd. All rights reserved.</div>
 </footer>
 
+
 <script>
-function switchTab(e, name){
-  const btn = e.target;
-  const tabWrap = btn.parentElement;
-  tabWrap.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-  document.getElementById('tab-' + name).classList.add('active');
-}
-}
-    }
+function showTab(name) {
+  ['basic','install','electric'].forEach(function(t) {
+    var content = document.getElementById('tab-' + t);
+    var btn = document.getElementById('btn-' + t);
+    if (content) content.className = 'tab-content' + (t === name ? ' active' : '');
+    if (btn) btn.className = 'tab-btn' + (t === name ? ' active' : '');
   });
 }
 </script>
