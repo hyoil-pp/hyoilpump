@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- 메인 페이지 -->
   <url>
     <loc>https://hyoilpump.co.kr/</loc>
-    <lastmod>2025-05-30</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
     <loc>https://hyoilpump.co.kr/about.html</loc>
     <lastmod>2025-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://hyoilpump.co.kr/projects.html</loc>
     <lastmod>2025-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://hyoilpump.co.kr/geniecon.html</loc>
     <lastmod>2025-05-30</lastmod>
@@ -29,95 +27,128 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- 제품 카테고리 페이지 -->
   <url>
     <loc>https://hyoilpump.co.kr/product-booster.html</loc>
-    <lastmod>2025-05-30</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://hyoilpump.co.kr/product-inline.html</loc>
     <lastmod>2025-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://hyoilpump.co.kr/product-multistage.html</loc>
     <lastmod>2025-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://hyoilpump.co.kr/product-nkf.html</loc>
     <lastmod>2025-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://hyoilpump.co.kr/product-doublesuction.html</loc>
     <lastmod>2025-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://hyoilpump.co.kr/product-submersible.html</loc>
     <lastmod>2025-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://hyoilpump.co.kr/product-firepump.html</loc>
     <lastmod>2025-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://hyoilpump.co.kr/product-drainage.html</loc>
     <lastmod>2025-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://hyoilpump.co.kr/product-danfoss.html</loc>
     <lastmod>2025-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
   <url>
     <loc>https://hyoilpump.co.kr/product-hyosung.html</loc>
     <lastmod>2025-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
   <url>
     <loc>https://hyoilpump.co.kr/product-sfa.html</loc>
     <lastmod>2025-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
   <url>
     <loc>https://hyoilpump.co.kr/product-kone.html</loc>
     <lastmod>2025-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
   <url>
     <loc>https://hyoilpump.co.kr/product-selection.html</loc>
     <lastmod>2025-05-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+
+  <!-- 부스터 펌프 상세 페이지 (신규) -->
+  <url>
+    <loc>https://hyoilpump.co.kr/product-booster-hydrompc-e.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hyoilpump.co.kr/product-booster-hydrompcf.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hyoilpump.co.kr/product-booster-hydro-multi-e.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hyoilpump.co.kr/product-booster-hydrosolo-e.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hyoilpump.co.kr/product-booster-cmbe-twin.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hyoilpump.co.kr/product-booster-cmbe.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://hyoilpump.co.kr/product-booster-scala2.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
 </urlset>
