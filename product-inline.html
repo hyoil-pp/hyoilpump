@@ -43,7 +43,7 @@
     .compare-table tr:last-child td{border-bottom:none}
     .compare-table .best{color:var(--blue-light);font-weight:700}
     /* 제품 카드 */
-    .cards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:0 0 80px}
+    .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:0 0 80px}
     .product-card{background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column}
     .card-badge{display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#1d4ed8;margin-bottom:10px}
     .card-name{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:4px;letter-spacing:-.3px}
@@ -57,7 +57,7 @@
     .card-btn{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin:0 16px 16px}
     footer{background:#092844;padding:30px 40px;text-align:center;color:rgba(255,255,255,.55);font-size:12.5px}
     footer a{color:rgba(255,255,255,.5);text-decoration:none}
-    @media(max-width:1024px){.feature-grid{grid-template-columns:1fr 1fr}.cards-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:1024px){.feature-grid{grid-template-columns:1fr 1fr}.cards-grid{grid-template-columns:repeat(2,1fr)}.compare-table{font-size:12px}}
     @media(max-width:768px){nav{display:none}.feature-grid{grid-template-columns:1fr}.cards-grid{grid-template-columns:1fr}.container{padding:0 20px}.page-hero{padding:120px 20px 50px}.compare-table{font-size:12px}}
   </style>
 </head>
@@ -239,6 +239,42 @@
           </div>
         </div>
         <a href="https://product-selection.grundfos.com/kr/products/tp-tpe/tpe2?tab=models" target="_blank" rel="noopener" class="card-btn">제품 상세 확인 →</a>
+      </div>
+
+      <!-- TPD -->
+      <div class="product-card">
+        <img src="images/TPD.jpg" alt="그런포스 TPD 트윈헤드 인라인펌프" style="width:100%;height:200px;object-fit:contain;background:white;padding:16px;display:block;" onerror="this.style.display='none'"/>
+        <div style="padding:20px 20px 0;">
+          <span class="card-badge">트윈헤드</span>
+          <div class="card-name">TPD</div>
+          <div class="card-model">트윈헤드 단단 인라인 펌프</div>
+          <div class="card-desc">두 개의 펌프 헤드를 가진 트윈헤드 인라인 펌프. 하나의 배관에 병렬 운전으로 고유량 대응 및 예비 펌프 역할 동시 수행.</div>
+          <div class="card-specs">
+            <div class="card-spec-row"><span>최대 유량</span><span>2,118 m³/h</span></div>
+            <div class="card-spec-row"><span>최대 양정</span><span>107 m</span></div>
+            <div class="card-spec-row"><span>최대 압력</span><span>25 bar</span></div>
+            <div class="card-spec-row"><span>액체 온도</span><span>-40 ~ 140 °C</span></div>
+          </div>
+        </div>
+        <a href="https://product-selection.grundfos.com/kr/products/tp-tpe/tpd?tab=models" target="_blank" rel="noopener" class="card-btn">제품 상세 확인 →</a>
+      </div>
+
+      <!-- TPED 시리즈 2000 -->
+      <div class="product-card">
+        <img src="images/TPED 시리즈 2000.jpg" alt="그런포스 TPED 시리즈 2000 인라인펌프" style="width:100%;height:200px;object-fit:contain;background:white;padding:16px;display:block;" onerror="this.style.display='none'"/>
+        <div style="padding:20px 20px 0;">
+          <span class="card-badge">트윈헤드 인버터</span>
+          <div class="card-name">TPED 시리즈 2000</div>
+          <div class="card-model">트윈헤드 인버터 인라인 펌프</div>
+          <div class="card-desc">TPD에 인버터를 결합한 에너지 절약형 트윈헤드 펌프. 고유량 설비에서 에너지 절감과 예비 펌프 기능을 동시에 제공.</div>
+          <div class="card-specs">
+            <div class="card-spec-row"><span>최대 유량</span><span>564 m³/h</span></div>
+            <div class="card-spec-row"><span>최대 양정</span><span>96 m</span></div>
+            <div class="card-spec-row"><span>최대 압력</span><span>16 bar</span></div>
+            <div class="card-spec-row"><span>액체 온도</span><span>-25 ~ 140 °C</span></div>
+          </div>
+        </div>
+        <a href="https://product-selection.grundfos.com/kr/products/tp-tpe/tped-series-2000?tab=models" target="_blank" rel="noopener" class="card-btn">제품 상세 확인 →</a>
       </div>
 
     </div>
