@@ -2,8 +2,9 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="description" content="그런포스 TP·TPE 인라인펌프 공식 대리점. 냉온수 순환, 공조 시스템 최적화 펌프. 배관 중간 직접 설치형. 에너지 절감 인버터 내장. 견적문의 032-347-0815."/>
-  <meta name="keywords" content="그런포스 인라인펌프, TP 펌프, TPE 펌프, 순환펌프, 냉온수 펌프, 공조펌프"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+  <meta name="description" content="그런포스 TP·TPE 인라인펌프 공식 대리점. TP 정속형·TPE 인버터형 단단 인라인 원심펌프. 냉난방·HVAC·급수설비 최적화. 에너지 절감. 견적문의 032-347-0815."/>
+  <meta name="keywords" content="그런포스 인라인펌프, TP 펌프, TPE 펌프, TPE2 펌프, 순환펌프, 냉온수 펌프, 인버터 펌프, HVAC 펌프, 그런포스 대리점, 효일종합상사"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="canonical" href="https://hyoilpump.co.kr/product-inline.html"/>
   <title>그런포스 인라인펌프 TP TPE | 효일종합상사 공식 대리점</title>
@@ -25,14 +26,43 @@
     .page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);padding:140px 40px 70px;position:relative;overflow:hidden}
     .page-hero::before{content:'INLINE';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:180px;color:rgba(255,255,255,.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
     .container{max-width:1200px;margin:0 auto;padding:0 40px}
-    .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:60px 0 80px}
+    .section{padding:60px 0}
+    .section-title{font-size:24px;font-weight:800;color:var(--navy);letter-spacing:-0.5px;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--gray-light)}
+    /* 특징 그리드 */
+    .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+    .feature-item{background:white;border-radius:12px;padding:24px;border:1px solid var(--gray-light);border-left:4px solid var(--blue-light)}
+    .feature-item .icon{font-size:28px;margin-bottom:12px}
+    .feature-item .title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:8px}
+    .feature-item .desc{font-size:13px;color:var(--gray-dark);line-height:1.7}
+    /* 비교표 */
+    .compare-table{width:100%;border-collapse:collapse;background:white;border-radius:12px;overflow:hidden;border:1px solid var(--gray-light)}
+    .compare-table th{background:var(--navy);color:white;padding:14px 16px;font-size:13px;font-weight:700;text-align:center}
+    .compare-table th:first-child{text-align:left}
+    .compare-table td{padding:12px 16px;font-size:13px;border-bottom:1px solid var(--gray-light);text-align:center}
+    .compare-table td:first-child{text-align:left;font-weight:600;color:var(--gray-dark);background:#f8fafc}
+    .compare-table tr:last-child td{border-bottom:none}
+    .compare-table .best{color:var(--blue-light);font-weight:700}
+    /* 제품 카드 */
+    .cards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:0 0 80px}
+    .product-card{background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column}
+    .card-badge{display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(37,99,176,.12);color:#1d4ed8;margin-bottom:10px}
+    .card-name{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:4px;letter-spacing:-.3px}
+    .card-model{font-size:11px;color:var(--gray-mid);margin-bottom:10px}
+    .card-desc{font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1}
+    .card-specs{background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:14px}
+    .card-spec-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--gray-light);font-size:12px}
+    .card-spec-row:last-child{border-bottom:none}
+    .card-spec-row span:first-child{color:var(--gray-mid)}
+    .card-spec-row span:last-child{font-weight:700;color:var(--navy)}
+    .card-btn{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin:0 16px 16px}
     footer{background:#092844;padding:30px 40px;text-align:center;color:rgba(255,255,255,.55);font-size:12.5px}
     footer a{color:rgba(255,255,255,.5);text-decoration:none}
-    @media(max-width:1024px){.cards-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(max-width:768px){nav{display:none}.cards-grid{grid-template-columns:1fr}.header-top-side{display:none}.container{padding:0 20px}}
+    @media(max-width:1024px){.feature-grid{grid-template-columns:1fr 1fr}.cards-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:768px){nav{display:none}.feature-grid{grid-template-columns:1fr}.cards-grid{grid-template-columns:1fr}.container{padding:0 20px}.page-hero{padding:120px 20px 50px}.compare-table{font-size:12px}}
   </style>
 </head>
 <body>
+
 <header>
   <div class="header-top">
     <span class="header-top-side">📞 032.347.0815~7</span>
@@ -53,100 +83,165 @@
   </div>
 </header>
 
+<!-- 히어로 -->
 <div class="page-hero">
   <div class="container">
     <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#60a5fa;margin-bottom:12px;">제품 소개 · Products</div>
     <h1 style="font-size:clamp(28px,5vw,52px);font-weight:900;color:white;letter-spacing:-2px;margin-bottom:16px;">인라인 펌프</h1>
-    <p style="font-size:15px;color:rgba(255,255,255,.65);max-width:680px;line-height:1.8;">주로 상업용 빌딩의 냉난방에 사용되는 인라인 단단 펌프입니다. 기본 모터와 기계 샤프트씰을 탑재한 밀접복식 구조로 배관 중간에 직접 설치합니다.</p>
-    <div style="margin-top:24px;">
-      <a href="index.html#products" style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);color:white;padding:9px 18px;border-radius:6px;font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,0.3);text-decoration:none;">← 전체 제품으로 돌아가기</a>
+    <p style="font-size:15px;color:rgba(255,255,255,.65);max-width:680px;line-height:1.8;">배관에 직접 설치하는 인라인 원심 펌프. 정속형 TP부터 고성능 스마트 TPE2까지, 현장 조건에 맞는 최적의 모델을 제안해 드립니다.</p>
+  </div>
+</div>
+
+<!-- 인라인 펌프 개괄 -->
+<div class="section" style="background:white;">
+  <div class="container">
+    <h2 class="section-title">인라인 펌프란?</h2>
+    <p style="font-size:15px;color:var(--gray-dark);line-height:1.9;margin-bottom:32px;">인라인 펌프는 흡입구와 토출구가 동일 직선상에 위치해 배관 중간에 직접 설치할 수 있는 원심 펌프입니다. 별도의 기초 공사 없이 배관에 바로 연결되어 설치 공간을 최소화하고, 냉난방 순환·급수·HVAC 등 다양한 설비에 폭넓게 활용됩니다.</p>
+    <div class="feature-grid">
+      <div class="feature-item">
+        <div class="icon">🔧</div>
+        <div class="title">배관 직접 설치</div>
+        <div class="desc">흡입구·토출구가 동일 직선상 배치. 별도 기초 없이 배관 중간에 바로 설치 가능해 시공 비용과 시간을 절감합니다.</div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">📐</div>
+        <div class="title">공간 절약</div>
+        <div class="desc">모터와 펌프가 일체형으로 설계되어 기계실 공간을 최소화. 도심 빌딩, 지하 기계실 등 협소한 공간에 적합합니다.</div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">🛠️</div>
+        <div class="title">유지보수 용이</div>
+        <div class="desc">TPO(Top Pull Out) 설계 적용 모델은 배관 연결 상태에서 파워헤드만 분리해 유지보수 가능. 정비 시간과 비용이 절감됩니다.</div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">❄️</div>
+        <div class="title">냉난방·HVAC 최적화</div>
+        <div class="desc">냉수·온수 순환, 지역 냉난방, 공조 시스템에 폭넓게 적용. 유체 온도 -40~140°C 범위까지 대응하는 모델이 준비되어 있습니다.</div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">⚡</div>
+        <div class="title">에너지 효율 IE3·IE4</div>
+        <div class="desc">IE3~IE4 고효율 모터 탑재. TPE 인버터 모델은 부하에 따라 자동 속도 조절로 에너지 사용량을 최대 50% 절감합니다.</div>
+      </div>
+      <div class="feature-item">
+        <div class="icon">📡</div>
+        <div class="title">BMS·스마트 빌딩 연동</div>
+        <div class="desc">TPE 시리즈는 Modbus, BACnet, LON 등 다양한 통신 프로토콜 지원. BMS와 연동해 원격 모니터링·제어가 가능합니다.</div>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="container">
-  <div class="cards-grid">
-    
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
-          <img src="images/TP.jpg" alt="TP" style="width:100%;height:240px;object-fit:contain;object-position:center;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
-          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
-            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(21,128,61,.12);color:#15803d;margin-bottom:10px;">Inline</div>
-            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">TP</div>
-            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">메카니컬 샤프트 씰이 포함된 단단 인라인 원심 펌프. 단축 연결 방식(펌프와 모터가 분리)으로 액체 속 불순물의 영향을 덜 받습니다.</div>
-            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">p 최대</span><span style="font-weight:700;color:var(--navy);font-size:12px;">25 bar</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">-40~140°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">107 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">2118 m³/h</span></div></div>
-            <a href="product-inline-tp.html" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+<!-- 제품군 비교표 -->
+<div class="section" style="background:var(--off-white);">
+  <div class="container">
+    <h2 class="section-title">제품군 비교</h2>
+    <p style="font-size:14px;color:var(--gray-dark);margin-bottom:24px;line-height:1.8;">현장 조건과 에너지 절감 목표에 따라 최적 시리즈를 선택하세요.</p>
+    <div style="overflow-x:auto;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>구분</th>
+            <th>TP</th>
+            <th>TPE 1000</th>
+            <th>TPE 2000</th>
+            <th>TPE2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>운전 방식</td><td>정속</td><td>가변속</td><td>가변속</td><td>가변속</td></tr>
+          <tr><td>인버터</td><td>없음</td><td>내장</td><td>내장</td><td class="best">최신 내장</td></tr>
+          <tr><td>에너지 절감</td><td>△</td><td>◎</td><td>◎</td><td class="best">◎◎</td></tr>
+          <tr><td>통신 기능</td><td>없음</td><td>기본</td><td>고급</td><td class="best">최고</td></tr>
+          <tr><td>BMS 연동</td><td>✕</td><td>○</td><td>○</td><td class="best">○</td></tr>
+          <tr><td>Grundfos GO</td><td>✕</td><td>✕</td><td>△</td><td class="best">○</td></tr>
+          <tr><td>유지보수</td><td>쉬움</td><td>쉬움</td><td>쉬움</td><td>쉬움</td></tr>
+          <tr><td>추천 현장</td><td>일반 설비</td><td>빌딩·학교</td><td>병원·호텔</td><td class="best">스마트 빌딩</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- 대표 제품 카드 4개 -->
+<div class="section" style="background:white;">
+  <div class="container">
+    <h2 class="section-title">대표 제품</h2>
+    <div class="cards-grid">
+
+      <!-- TP -->
+      <div class="product-card">
+        <img src="images/TP.jpg" alt="그런포스 TP 인라인펌프" style="width:100%;height:200px;object-fit:contain;background:white;padding:16px;display:block;" onerror="this.style.display='none'"/>
+        <div style="padding:20px 20px 0;">
+          <span class="card-badge">정속형</span>
+          <div class="card-name">TP</div>
+          <div class="card-model">대표 모델: TP 300-440/4</div>
+          <div class="card-desc">단단 인라인 원심펌프. 구조가 단순하고 유지보수가 용이. 냉난방·급수·산업설비에 폭넓게 사용.</div>
+          <div class="card-specs">
+            <div class="card-spec-row"><span>최대 유량</span><span>2,118 m³/h</span></div>
+            <div class="card-spec-row"><span>최대 양정</span><span>107 m</span></div>
+            <div class="card-spec-row"><span>최대 압력</span><span>25 bar</span></div>
+            <div class="card-spec-row"><span>액체 온도</span><span>-40 ~ 140 °C</span></div>
           </div>
         </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
-          <img src="images/TP (B), North America.jpg" alt="TP (B), North America" style="width:100%;height:240px;object-fit:contain;object-position:center;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
-          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
-            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(21,128,61,.12);color:#15803d;margin-bottom:10px;">Inline</div>
-            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">TP (B), North America</div>
-            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">MGE 모터가 장착된 단단 인라인 펌프.</div>
-            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">p 최대</span><span style="font-weight:700;color:var(--navy);font-size:12px;">12 bar</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">-25~140°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">15 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">68 m³/h</span></div></div>
-            <a href="https://product-selection.grundfos.com/kr/products/tp-tpe/tp-b-north-america?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+        <a href="product-inline-tp.html" class="card-btn">제품 상세 확인 →</a>
+      </div>
+
+      <!-- TPE 1000 -->
+      <div class="product-card">
+        <img src="images/TPE 시리즈 1000.jpg" alt="그런포스 TPE 시리즈 1000 인라인펌프" style="width:100%;height:200px;object-fit:contain;background:white;padding:16px;display:block;" onerror="this.style.display='none'"/>
+        <div style="padding:20px 20px 0;">
+          <span class="card-badge">인버터형</span>
+          <div class="card-name">TPE 시리즈 1000</div>
+          <div class="card-model">대표 모델: TPE 80-290/2</div>
+          <div class="card-desc">인버터 내장 에너지 절약형. 부하에 따라 자동 속도 조절. 빌딩·학교·상업시설 냉난방 최적화.</div>
+          <div class="card-specs">
+            <div class="card-spec-row"><span>최대 유량</span><span>382 m³/h</span></div>
+            <div class="card-spec-row"><span>최대 양정</span><span>93 m</span></div>
+            <div class="card-spec-row"><span>최대 압력</span><span>25 bar</span></div>
+            <div class="card-spec-row"><span>액체 온도</span><span>-40 ~ 140 °C</span></div>
           </div>
         </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
-          <img src="images/TPD.jpg" alt="TPD" style="width:100%;height:240px;object-fit:contain;object-position:center;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
-          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
-            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(21,128,61,.12);color:#15803d;margin-bottom:10px;">Inline</div>
-            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">TPD</div>
-            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">트윈 헤드 단단 인라인 펌프. 높은 신뢰성이 요구되는 냉난방 시스템에 적합.</div>
-            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">p 최대</span><span style="font-weight:700;color:var(--navy);font-size:12px;">16 bar</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">-25~120°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">41 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">187 m³/h</span></div></div>
-            <a href="https://product-selection.grundfos.com/kr/products/tp-tpe/tpd?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+        <a href="https://product-selection.grundfos.com/kr/products/tp-tpe/tpe-series-1000?tab=models" target="_blank" rel="noopener" class="card-btn">제품 상세 확인 →</a>
+      </div>
+
+      <!-- TPE 2000 -->
+      <div class="product-card">
+        <img src="images/TPE 시리즈 2000.jpg" alt="그런포스 TPE 시리즈 2000 인라인펌프" style="width:100%;height:200px;object-fit:contain;background:white;padding:16px;display:block;" onerror="this.style.display='none'"/>
+        <div style="padding:20px 20px 0;">
+          <span class="card-badge">고성능 스마트</span>
+          <div class="card-name">TPE 시리즈 2000</div>
+          <div class="card-model">대표 모델: TPE 100-360/2</div>
+          <div class="card-desc">고급 제어·통신 기능. BMS 연동 최적화. 병원·호텔·데이터센터·대형 오피스에 적합.</div>
+          <div class="card-specs">
+            <div class="card-spec-row"><span>최대 유량</span><span>564 m³/h</span></div>
+            <div class="card-spec-row"><span>최대 양정</span><span>96 m</span></div>
+            <div class="card-spec-row"><span>최대 압력</span><span>16 bar</span></div>
+            <div class="card-spec-row"><span>액체 온도</span><span>-25 ~ 140 °C</span></div>
           </div>
         </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
-          <img src="images/TPE 시리즈 1000.jpg" alt="TPE 시리즈 1000" style="width:100%;height:240px;object-fit:contain;object-position:center;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
-          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
-            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(21,128,61,.12);color:#15803d;margin-bottom:10px;">Inline</div>
-            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">TPE 시리즈 1000</div>
-            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">MGE 모터가 장착된 단단 인라인 펌프. 에너지 절감형 인버터 내장.</div>
-            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">p 최대</span><span style="font-weight:700;color:var(--navy);font-size:12px;">25 bar</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">-40~140°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">93 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">382 m³/h</span></div></div>
-            <a href="https://product-selection.grundfos.com/kr/products/tp-tpe/tpe-series-1000-tpe2?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+        <a href="https://product-selection.grundfos.com/kr/products/tp-tpe/tpe-series-2000?tab=models" target="_blank" rel="noopener" class="card-btn">제품 상세 확인 →</a>
+      </div>
+
+      <!-- TPE2 -->
+      <div class="product-card">
+        <img src="images/TPE2 (I).jpg" alt="그런포스 TPE2 인라인펌프" style="width:100%;height:200px;object-fit:contain;background:white;padding:16px;display:block;" onerror="this.style.display='none'"/>
+        <div style="padding:20px 20px 0;">
+          <span class="card-badge">프리미엄</span>
+          <div class="card-name">TPE2</div>
+          <div class="card-model">대표 모델: TPE2 100-540</div>
+          <div class="card-desc">최신 MGE 모터·Grundfos GO 지원. 스마트 빌딩·반도체·데이터센터 등 최고 수준의 효율과 제어 필요 현장.</div>
+          <div class="card-specs">
+            <div class="card-spec-row"><span>최대 유량</span><span>39 m³/h</span></div>
+            <div class="card-spec-row"><span>최대 양정</span><span>22 m</span></div>
+            <div class="card-spec-row"><span>최대 압력</span><span>10 bar</span></div>
+            <div class="card-spec-row"><span>액체 온도</span><span>-25 ~ 120 °C</span></div>
           </div>
         </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
-          <img src="images/TPE 시리즈 2000.jpg" alt="TPE 시리즈 2000" style="width:100%;height:240px;object-fit:contain;object-position:center;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
-          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
-            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(21,128,61,.12);color:#15803d;margin-bottom:10px;">Inline</div>
-            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">TPE 시리즈 2000</div>
-            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">MGE 모터가 장착된 단단 인라인 펌프. 대유량 고효율 냉난방 순환에 최적화.</div>
-            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">p 최대</span><span style="font-weight:700;color:var(--navy);font-size:12px;">16 bar</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">-25~140°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">96 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">564 m³/h</span></div></div>
-            <a href="https://product-selection.grundfos.com/kr/products/tp-tpe/tpe-series-2000-tpe3-1?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
-          </div>
-        </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
-          <img src="images/TPE Series 2000, TPE3, North America.jpg" alt="TPE Series 2000, TPE3, North America" style="width:100%;height:240px;object-fit:contain;object-position:center;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
-          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
-            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(21,128,61,.12);color:#15803d;margin-bottom:10px;">Inline</div>
-            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">TPE Series 2000, TPE3, North America</div>
-            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">MGE 모터가 장착된 단단 인라인 펌프.</div>
-            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">p 최대</span><span style="font-weight:700;color:var(--navy);font-size:12px;">12 bar</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">-25~140°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">15 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">68 m³/h</span></div></div>
-            <a href="https://product-selection.grundfos.com/kr/products/tp-tpe/tpe-series-2000-tpe3-north-america?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
-          </div>
-        </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
-          <img src="images/TPE2 (I).jpg" alt="TPE2 (I)" style="width:100%;height:240px;object-fit:contain;object-position:center;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
-          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
-            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(21,128,61,.12);color:#15803d;margin-bottom:10px;">Inline</div>
-            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">TPE2 (I)</div>
-            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">MGE 모터가 장착된 스테인리스 스틸 단단 인라인 펌프. 내식성이 뛰어난 위생 환경에 적합.</div>
-            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">p 최대</span><span style="font-weight:700;color:var(--navy);font-size:12px;">10 bar</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">-25~120°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">22 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">39 m³/h</span></div></div>
-            <a href="https://product-selection.grundfos.com/kr/products/tp-tpe/tpe2-i?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
-          </div>
-        </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
-          <img src="images/TPED 시리즈 2000.jpg" alt="TPED 시리즈 2000" style="width:100%;height:240px;object-fit:contain;object-position:center;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
-          <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
-            <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(21,128,61,.12);color:#15803d;margin-bottom:10px;">Inline</div>
-            <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">TPED 시리즈 2000</div>
-            <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">MGE 모터가 장착된 트윈헤드 단단 인라인 펌프. 이중 헤드 구조로 높은 신뢰성 제공.</div>
-            <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">p 최대</span><span style="font-weight:700;color:var(--navy);font-size:12px;">16 bar</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">-25~140°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">57 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">120 m³/h</span></div></div>
-            <a href="https://product-selection.grundfos.com/kr/products/tp-tpe/tped-series-2000-tpe3-d?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
-          </div>
-        </div>
+        <a href="https://product-selection.grundfos.com/kr/products/tp-tpe/tpe2?tab=models" target="_blank" rel="noopener" class="card-btn">제품 상세 확인 →</a>
+      </div>
+
+    </div>
   </div>
 </div>
 
@@ -155,5 +250,8 @@
   <div style="margin-top:6px;">T. 032.347.0815~7 | <a href="mailto:hyoilpump@daum.net">hyoilpump@daum.net</a></div>
   <div style="margin-top:10px;">© 2025 HYOIL Co., Ltd. All rights reserved.</div>
 </footer>
+</body>
+</html>
+
 </body>
 </html>
