@@ -296,15 +296,39 @@
 <!-- 도면 및 설명서 -->
 <div class="section" style="background:white;">
   <div class="container">
-    <h2 class="section-title">도면 및 다운로드 자료</h2>
-    <div class="img-gallery" style="margin-bottom:24px;">
+    <h2 class="section-title">도면 및 영상 자료</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px;">
       <div>
         <div style="font-size:11px;font-weight:700;color:var(--gray-mid);letter-spacing:1px;margin-bottom:8px;">제품 도면</div>
-        <div class="img-gallery-item" onclick="openLightbox('images/TP%20drawing.png','TP 300-440/4 도면')">
+        <div class="img-gallery-item" onclick="openLightbox('images/TP%20drawing.png','TP 300-440/4 도면')" style="height:220px;">
           <img src="images/TP%20drawing.png" alt="TP 300-440/4 도면" onerror="this.style.display='none'"/>
           <div class="zoom-icon">🔍</div>
         </div>
       </div>
+      <div>
+        <div style="font-size:11px;font-weight:700;color:var(--gray-mid);letter-spacing:1px;margin-bottom:8px;">TP 300-440/4 영상 자료</div>
+        <div style="position:relative;width:100%;height:220px;border-radius:10px;overflow:hidden;background:#000;border:0.5px solid var(--gray-light);">
+          <iframe
+            src="https://www.youtube.com/embed/VWhObaktNrE"
+            title="Grundfos TP 300-440/4"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="position:absolute;top:0;left:0;width:100%;height:100%;">
+          </iframe>
+        </div>
+      </div>
+    </div>
+    <!-- PDF 다운로드 -->
+    <div style="background:var(--navy);border-radius:12px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+      <div>
+        <div style="font-size:15px;font-weight:700;color:white;margin-bottom:4px;">📄 제품 브로셔 다운로드 (영문)</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.7);">HIGH-EFFICIENCY IN-LINE PUMPS TP/TPE 제품 설명서</div>
+      </div>
+      <a href="https://raw.githubusercontent.com/hyoil-pp/hyoilpump/main/manuals/TP_TPE_Broch.pdf" download="TP_TPE_Broch.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:white;color:var(--navy);padding:12px 24px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap;">⬇ PDF 다운로드</a>
+    </div>
+  </div>
+</div>
     </div>
     <!-- PDF 다운로드 -->
     <div style="background:var(--navy);border-radius:12px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
