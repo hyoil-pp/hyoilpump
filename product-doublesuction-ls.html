@@ -297,15 +297,48 @@
 <!-- 도면 및 설명서 -->
 <div class="section" style="background:white;">
   <div class="container">
-    <h2 class="section-title">도면 및 다운로드 자료</h2>
-    <div class="img-gallery" style="margin-bottom:32px;">
+    <h2 class="section-title">도면 및 영상 자료</h2>
+    <!-- 도면 + 영상 2개 나란히 -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:32px;">
+      <!-- 도면 -->
       <div>
         <div style="font-size:11px;font-weight:700;color:var(--gray-mid);letter-spacing:1px;margin-bottom:8px;">제품 도면</div>
-        <div class="img-gallery-item" onclick="openLightbox('images/LS%20drawing.png','LS 200-150-381A 도면')">
+        <div class="img-gallery-item" onclick="openLightbox('images/LS%20drawing.png','LS 200-150-381A 도면')" style="height:220px;">
           <img src="images/LS%20drawing.png" alt="LS 200-150-381A 도면" onerror="this.style.display='none'"/>
           <div class="zoom-icon">🔍</div>
         </div>
       </div>
+      <!-- 영상 1 -->
+      <div>
+        <div style="font-size:11px;font-weight:700;color:var(--gray-mid);letter-spacing:1px;margin-bottom:8px;">LS 200-150 분해·조립 (42분)</div>
+        <div style="position:relative;width:100%;height:220px;border-radius:10px;overflow:hidden;background:#000;border:0.5px solid var(--gray-light);">
+          <iframe
+            src="https://www.youtube.com/embed/Tj0Q56l-P1g"
+            title="How to dismantle and assemble a Grundfos LS 200-150"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="position:absolute;top:0;left:0;width:100%;height:100%;">
+          </iframe>
+        </div>
+      </div>
+      <!-- 영상 2 -->
+      <div>
+        <div style="font-size:11px;font-weight:700;color:var(--gray-mid);letter-spacing:1px;margin-bottom:8px;">LS 350-250 분해·조립 (52분)</div>
+        <div style="position:relative;width:100%;height:220px;border-radius:10px;overflow:hidden;background:#000;border:0.5px solid var(--gray-light);">
+          <iframe
+            src="https://www.youtube.com/embed/pC_tseJTgNw"
+            title="How to dismantle and assemble a Grundfos LS 350-250"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="position:absolute;top:0;left:0;width:100%;height:100%;">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     </div>
     <!-- 영상 자료 -->
     <div>
