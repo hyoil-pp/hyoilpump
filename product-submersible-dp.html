@@ -157,7 +157,7 @@
         </div>
       </div>
       <div>
-                                                                                        <div class="tab-wrap">
+                                                                                                <div class="tab-wrap">
           <button class="tab-btn active" id="btn-basic" onclick="showTab('basic')">기본 사양</button>
           <button class="tab-btn" id="btn-install" onclick="showTab('install')">설치 정보</button>
           <button class="tab-btn" id="btn-electric" onclick="showTab('electric')">전기 데이터</button>
@@ -240,7 +240,18 @@
         
 
 <!-- 모델 비교표 -->
-
+<div class="section" style="background:var(--off-white);">
+  <div class="container">
+    <h2 class="section-title">CRE vs CRIE 비교</h2>
+    <p style="font-size:14px;color:var(--gray-dark);margin-bottom:24px;line-height:1.8;">★ 표시가 현재 페이지 모델입니다. 현장 조건에 맞는 최적 시리즈를 선택하세요.</p>
+    <div style="overflow-x:auto;">
+      <table class="compare-table">
+        <thead><tr><th style="text-align:left;">항목</th><th>CRE</th><th style="background:#1a3a6e;">★ CRIE</th></tr></thead>
+        <tbody><tr><td style="text-align:left;font-weight:600;color:var(--gray-dark);background:#f8fafc;">운전 방식</td><td>가변속</td><td style="color:var(--blue-light);font-weight:700;">가변속</td></tr><tr><td style="text-align:left;font-weight:600;color:var(--gray-dark);background:#f8fafc;">인버터</td><td>IE5 내장</td><td style="color:var(--blue-light);font-weight:700;">IE5 내장</td></tr><tr><td style="text-align:left;font-weight:600;color:var(--gray-dark);background:#f8fafc;">에너지 절감</td><td>◎</td><td style="color:var(--blue-light);font-weight:700;">◎</td></tr><tr><td style="text-align:left;font-weight:600;color:var(--gray-dark);background:#f8fafc;">베이스 재질</td><td>주철 EN-GJL-250</td><td style="color:var(--blue-light);font-weight:700;">AISI 316 (EN 1.4408)</td></tr><tr><td style="text-align:left;font-weight:600;color:var(--gray-dark);background:#f8fafc;">임펠러 재질</td><td>AISI 304</td><td style="color:var(--blue-light);font-weight:700;">AISI 304</td></tr><tr><td style="text-align:left;font-weight:600;color:var(--gray-dark);background:#f8fafc;">배관 연결</td><td>DIN / JIS</td><td style="color:var(--blue-light);font-weight:700;">FlexiClamp</td></tr><tr><td style="text-align:left;font-weight:600;color:var(--gray-dark);background:#f8fafc;">통신 기능</td><td>GENIbus·Modbus·GO앱</td><td style="color:var(--blue-light);font-weight:700;">GENIbus·Modbus·GO앱</td></tr><tr><td style="text-align:left;font-weight:600;color:var(--gray-dark);background:#f8fafc;">식수 승인</td><td>WRAS · ACS</td><td style="color:var(--blue-light);font-weight:700;">WRAS · ACS</td></tr><tr><td style="text-align:left;font-weight:600;color:var(--gray-dark);background:#f8fafc;">추천 현장</td><td>에너지 절감 일반 설비</td><td style="color:var(--blue-light);font-weight:700;">에너지 절감 + 내식성 필요</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
 <!-- 제품 특징 -->
 <div class="section" style="background:white;">
@@ -304,6 +315,8 @@
 </div>
   </div>
 </div>
+  </div>
+</div>
 
 
 
@@ -325,45 +338,80 @@
 
 
 
-<footer>
-  <div>(주)효일종합상사 | 경기도 부천시 조마루로 385번길 122, 삼보테크노타워 1607, 1608호</div>
-  <div style="margin-top:6px;">T. 032.347.0815~7 &nbsp;|&nbsp; F. 032.347.0818 &nbsp;|&nbsp; <a href="mailto:hyoilpump@daum.net">hyoilpump@daum.net</a></div>
-  <div style="margin-top:10px;">© 2025 HYOIL Co., Ltd. All rights reserved.</div>
-</footer>
-
 
 <script>
-function showTab(name) {
-  ['basic','install','electric'].forEach(function(t) {
-    var content = document.getElementById('tab-' + t);
-    var btn = document.getElementById('btn-' + t);
-    if (content) content.className = 'tab-content' + (t === name ? ' active' : '');
-    if (btn) btn.className = 'tab-btn' + (t === name ? ' active' : '');
-  });
-}
+function openLightbox(src,alt){const lb=document.getElementById('lightbox');document.getElementById('lightboxImg').src=src;document.getElementById('lightboxCaption').textContent=alt;lb.style.display='flex';document.body.style.overflow='hidden';}
+function closeLightbox(){document.getElementById('lightbox').style.display='none';document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
 </script>
-</body>
-</html><div class="section" style="background:var(--off-white);">
+
+<!-- 인증 -->
+<div class="section" style="background:var(--off-white);">
+  <div class="container">
+    <h2 class="section-title">인증 및 승인</h2>
+    <div class="cert-badges">
+      <div class="cert-badge"><span>✅</span> CCSAUS 인증</div>
+      <div class="cert-badge"><span>🛡️</span> IP68 완전 방수</div>
+      <div class="cert-badge"><span>📐</span> ANSI/HI 11.6:2017</div>
+      <div class="cert-badge"><span>⚙️</span> 오토커플링 지원</div>
+      <div class="cert-badge"><span>💧</span> 습도 센서 내장</div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+    <div>
+      
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- 적용 분야 -->
+<div class="section" style="background:white;">
+  <div class="container">
+    <h2 class="section-title">적용 분야</h2>
+    <p style="font-size:14px;color:var(--gray-dark);line-height:1.8;margin-bottom:20px;">TP 펌프는 상업용 냉방·공조 시스템 등 고유량 순환이 필요한 분야에 최적화된 인라인 펌프입니다.</p>
+    <div class="use-tags">
+      <span class="use-tag">🏠 가정용 폐수</span>
+      <span class="use-tag">🏢 상업용 폐수</span>
+      <span class="use-tag">🏭 오폐수 이송</span>
+      <span class="use-tag">💧 배수·지하수</span>
+      <span class="use-tag">🌾 표면 배수</span>
+    </div>
+  </div>
+</div>
+
+<!-- 관련 제품 -->
+<div class="section" style="background:var(--off-white);">
   <div class="container">
     <h2 class="section-title">관련 제품</h2>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
-      <a href="product-multistage-cr.html" class="related-card">
-        <div style="font-size:11px;font-weight:700;color:var(--blue-light);letter-spacing:1px;margin-bottom:8px;">입형 다단 펌프</div>
-        <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;">CR 10-16</div>
-        <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.6;margin-bottom:12px;">주철 베이스 정속형 수직 다단 펌프.</div>
-        <div style="font-size:13px;font-weight:600;color:var(--blue-light);">상세 보기 →</div>
-      </a>
-      <a href="product-multistage-cre.html" class="related-card">
-        <div style="font-size:11px;font-weight:700;color:var(--blue-light);letter-spacing:1px;margin-bottom:8px;">입형 다단 펌프</div>
-        <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;">CRE 10-12</div>
-        <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.6;margin-bottom:12px;">IE5 인버터 내장 스마트 다단 펌프.</div>
-        <div style="font-size:13px;font-weight:600;color:var(--blue-light);">상세 보기 →</div>
-      </a>
-      <a href="product-multistage.html" class="related-card">
-        <div style="font-size:11px;font-weight:700;color:var(--blue-light);letter-spacing:1px;margin-bottom:8px;">입형 다단 펌프</div>
-        <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;">전체 CR 라인업</div>
-        <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.6;margin-bottom:12px;">CR·CRE·CRI·CRN 전 시리즈.</div>
+      <a href="product-submersible.html" class="related-card">
+        <div style="font-size:11px;font-weight:700;color:var(--blue-light);letter-spacing:1px;margin-bottom:8px;">수중 펌프</div>
+        <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;">전체 수중 펌프 라인업</div>
+        <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.6;margin-bottom:12px;">DP·DPK·SE·Unilift 전 시리즈.</div>
         <div style="font-size:13px;font-weight:600;color:var(--blue-light);">목록 보기 →</div>
+      </a>
+      <a href="https://product-selection.grundfos.com/kr/products/dp-dpk/dp?tab=models" target="_blank" rel="noopener" class="related-card">
+        <div style="font-size:11px;font-weight:700;color:var(--blue-light);letter-spacing:1px;margin-bottom:8px;">그런포스 공식</div>
+        <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;">DP 전 모델 보기</div>
+        <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.6;margin-bottom:12px;">그런포스 공식 사이트에서 확인.</div>
+        <div style="font-size:13px;font-weight:600;color:var(--blue-light);">바로가기 →</div>
+      </a>
+      <a href="index.html#contact" class="related-card">
+        <div style="font-size:11px;font-weight:700;color:var(--blue-light);letter-spacing:1px;margin-bottom:8px;">문의</div>
+        <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;">펌프 선정 상담</div>
+        <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.6;margin-bottom:12px;">현장 조건에 맞는 모델 추천.</div>
+        <div style="font-size:13px;font-weight:600;color:var(--blue-light);">문의하기 →</div>
       </a>
     </div>
   </div>
@@ -373,10 +421,10 @@ function showTab(name) {
 <div style="background:white;padding:40px 0;border-top:1px solid var(--gray-light);border-bottom:1px solid var(--gray-light);">
   <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;">
     <div>
-      <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;">TPE 전체 시리즈 보기</div>
-      <div style="font-size:13px;color:var(--gray-mid);">TPE 전 모델 — 그런포스 공식 사이트에서 확인하세요.</div>
+      <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;">DP 전체 시리즈 보기</div>
+      <div style="font-size:13px;color:var(--gray-mid);">DP 전 모델 — 그런포스 공식 사이트에서 확인하세요.</div>
     </div>
-    <a href="https://product-selection.grundfos.com/kr/products/cr-cre-cri-crie-crn-crne-crt-crte/cri?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:white;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;">전체 모델 보기 →</a>
+    <a href="https://product-selection.grundfos.com/kr/products/dp-dpk/dp?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:white;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;">전체 모델 보기 →</a>
   </div>
 </div>
 
