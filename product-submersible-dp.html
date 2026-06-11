@@ -458,5 +458,12 @@ function showTab(name) {
   });
 }
 </script>
+<div id="lightbox" onclick="closeLightbox()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;align-items:center;justify-content:center;padding:20px;cursor:zoom-out;">
+  <div style="position:relative;max-width:90vw;max-height:90vh;" onclick="event.stopPropagation()">
+    <img id="lightboxImg" src="" alt="" style="max-width:90vw;max-height:85vh;object-fit:contain;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5);display:block;"/>
+    <div id="lightboxCaption" style="text-align:center;color:rgba(255,255,255,.8);font-size:13px;margin-top:12px;"></div>
+    <button onclick="closeLightbox()" style="position:absolute;top:-16px;right:-16px;background:white;border:none;border-radius:50%;width:36px;height:36px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.3);">✕</button>
+  </div>
+</div>
 </body>
 </html>
