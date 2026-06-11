@@ -75,6 +75,13 @@
     .compare-hl{background:#eef4ff!important;font-weight:700;color:var(--navy)!important}
     .cert-badges{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}
     .cert-badge{display:flex;align-items:center;gap:8px;background:white;border:1px solid var(--gray-light);border-radius:10px;padding:10px 16px;font-size:13px;font-weight:600;color:var(--navy)}
+    .compare-table{width:100%;border-collapse:collapse;background:white;border-radius:12px;overflow:hidden;border:1px solid var(--gray-light)}
+    .compare-table th{background:var(--navy);color:white;padding:14px 16px;font-size:13px;font-weight:700;text-align:center}
+    .compare-table th:first-child{text-align:left}
+    .compare-table td{padding:12px 16px;font-size:13px;border-bottom:1px solid var(--gray-light);text-align:center}
+    .compare-table td:first-child{text-align:left;font-weight:600;color:var(--gray-dark);background:#f8fafc}
+    .compare-table tr:last-child td{border-bottom:none}
+    .compare-hl{background:#eef4ff!important;font-weight:700;color:var(--navy)!important}
     .pdf-btn{display:inline-flex;align-items:center;gap:10px;background:white;border:2px solid var(--navy);color:var(--navy);padding:12px 24px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;transition:all .2s}
     .pdf-btn:hover{background:var(--navy);color:white}
     .related-card{background:white;border-radius:12px;padding:20px;border:1px solid var(--gray-light);text-decoration:none;display:block;transition:box-shadow .2s}
@@ -309,6 +316,40 @@
 
 
 
+<!-- 모델 라인업 -->
+<div class="section" style="background:white;">
+  <div class="container">
+    <h2 class="section-title">DP 모델 라인업</h2>
+    <p style="font-size:14px;color:var(--gray-dark);line-height:1.8;margin-bottom:24px;">DP 시리즈는 동일한 DP04.A20 플랫폼에서 회전수(rpm)에 따라 2개 모델로 구성됩니다. 세미오픈·멀티베인 임펠러 탑재로 최대 10mm 고형물 이송이 가능하며, 출력 범위는 1.1~1.5 kW입니다.</p>
+    <div style="overflow-x:auto;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th style="text-align:left;">모델명</th>
+            <th>회전수 (rpm)</th>
+            <th>최대 유량 (l/s)</th>
+            <th>P2 (kW)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="compare-hl">
+            <td>DP04.A20.15.2.60M ★</td>
+            <td>3,460</td>
+            <td>12</td>
+            <td>1.1</td>
+          </tr>
+          <tr>
+            <td>DP04.A20</td>
+            <td>3,385</td>
+            <td>13.2</td>
+            <td>1.5</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
 <!-- 도면 및 설명서 -->
 <div class="section" style="background:white;">
   <div class="container">
@@ -368,11 +409,11 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
 <div class="section" style="background:white;">
   <div class="container">
     <h2 class="section-title">적용 분야</h2>
-    <p style="font-size:14px;color:var(--gray-dark);line-height:1.8;margin-bottom:20px;">TP 펌프는 상업용 냉방·공조 시스템 등 고유량 순환이 필요한 분야에 최적화된 인라인 펌프입니다.</p>
+    <p style="font-size:14px;color:var(--gray-dark);line-height:1.8;margin-bottom:20px;">DP 펌프는 가정·상업용 건물 및 경량 산업 환경에서 발생하는 폐수 배수에 적합한 소형 수중 펌프입니다.</p>
     <div class="use-tags">
-      <span class="use-tag">🏠 가정용 폐수</span>
+      <span class="use-tag">🏠 가정 폐수</span>
       <span class="use-tag">🏢 상업용 폐수</span>
-      <span class="use-tag">🏭 오폐수 이송</span>
+      <span class="use-tag">🔄 오폐수 이송</span>
       <span class="use-tag">💧 배수·지하수</span>
       <span class="use-tag">🌾 표면 배수</span>
     </div>
@@ -390,7 +431,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
         <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.6;margin-bottom:12px;">DP·DPK·SE·Unilift 전 시리즈.</div>
         <div style="font-size:13px;font-weight:600;color:var(--blue-light);">목록 보기 →</div>
       </a>
-      <a href="https://product-selection.grundfos.com/kr/products/dp-dpk/dp?tab=models" target="_blank" rel="noopener" class="related-card">
+      <a href="https://product-selection.grundfos.com/kr/products/dp?tab=models" target="_blank" rel="noopener" class="related-card">
         <div style="font-size:11px;font-weight:700;color:var(--blue-light);letter-spacing:1px;margin-bottom:8px;">그런포스 공식</div>
         <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;">DP 전 모델 보기</div>
         <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.6;margin-bottom:12px;">그런포스 공식 사이트에서 확인.</div>
@@ -413,7 +454,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLightbox();});
       <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;">DP 전체 시리즈 보기</div>
       <div style="font-size:13px;color:var(--gray-mid);">DP 전 모델 — 그런포스 공식 사이트에서 확인하세요.</div>
     </div>
-    <a href="https://product-selection.grundfos.com/kr/products/dp-dpk/dp?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:white;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;">전체 모델 보기 →</a>
+    <a href="https://product-selection.grundfos.com/kr/products/dp?tab=models" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:white;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;">전체 모델 보기 →</a>
   </div>
 </div>
 
