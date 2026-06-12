@@ -26,6 +26,8 @@
     .page-hero::before{content:'DOUBLE SUCTION';position:absolute;font-family:'Bebas Neue',sans-serif;font-size:180px;color:rgba(255,255,255,.03);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none}
     .container{max-width:1200px;margin:0 auto;padding:0 40px}
     .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:60px 0 80px}
+    .cards-grid > div{transition:transform .2s,box-shadow .2s;cursor:pointer;}
+    .cards-grid > div:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(10,22,40,.12)!important;border-color:var(--blue-light)!important;}
     footer{background:#092844;padding:30px 40px;text-align:center;color:rgba(255,255,255,.55);font-size:12.5px}
     footer a{color:rgba(255,255,255,.5);text-decoration:none}
     @media(max-width:1024px){.cards-grid{grid-template-columns:repeat(2,1fr)}}
@@ -61,25 +63,25 @@
   </div>
 </div>
 <div class="container"><div class="cards-grid">
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;" onclick="location.href='product-doublesuction-ls.html'">
           <img src="images/LS.jpg" alt="LS" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
           <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
             <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(8,145,178,.12);color:#0891b2;margin-bottom:10px;">Double Suction</div>
             <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">LS</div>
             <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">횡형 스플릿케이스 양흡입 더블볼류트 펌프. 고유량·낮은 NPSH·고효율. 지역 급수·냉방·HVAC 시스템에 최적.</div>
             <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">p 최대</span><span style="font-weight:700;color:var(--navy);font-size:12px;">25 bar</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~120°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">149 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">3186 m³/h</span></div></div>
-            <a href="product-doublesuction-ls.html" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+            <a href="product-doublesuction-ls.html" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;" onclick="event.stopPropagation()">제품 상세 확인 →</a>
           </div>
           
         </div>
-        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;">
+        <div style="background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;" onclick="location.href='product-doublesuction-ls.html'">
           <img src="images/LS, LSV.jpg" alt="LS, LSV" style="width:100%;height:240px;object-fit:contain;background:white;display:block;padding:20px;" onerror="this.style.display='none'"/>
           <div style="padding:20px;flex:1;display:flex;flex-direction:column;">
             <div style="display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:12px;background:rgba(8,145,178,.12);color:#0891b2;margin-bottom:10px;">Double Suction</div>
             <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:-.3px;">LS, LSV</div>
             <div style="font-size:12.5px;color:var(--gray-dark);line-height:1.7;margin-bottom:14px;flex:1;">횡형 분할 케이스 양흡입 인라인 펌프. 고효율·저소음·간편 운전. 지역 급수·냉방·HVAC 시스템 등 다양한 분야에 적용.</div>
             <div style="background:var(--off-white);border-radius:8px;padding:12px 14px;margin-bottom:4px;"><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">p 최대</span><span style="font-weight:700;color:var(--navy);font-size:12px;">25 bar</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">액 온도</span><span style="font-weight:700;color:var(--navy);font-size:12px;">0~120°C</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 양정</span><span style="font-weight:700;color:var(--navy);font-size:12px;">149 m</span></div><div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--gray-light);"><span style="color:var(--gray-mid);font-size:12px;">최대 유량</span><span style="font-weight:700;color:var(--navy);font-size:12px;">3186 m³/h</span></div></div>
-            <a href="product-doublesuction-ls.html" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;">제품 상세 확인 →</a>
+            <a href="product-doublesuction-ls.html" style="display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;font-size:13px;font-weight:600;padding:9px 18px;border-radius:6px;text-decoration:none;margin-top:14px;" onclick="event.stopPropagation()">제품 상세 확인 →</a>
           </div>
           
         </div></div></div>
