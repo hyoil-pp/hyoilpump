@@ -361,44 +361,53 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbo
   </div>
 </div>
 
+
+
+
+
+<style>
+.pg-btn{padding:6px 14px;border:1px solid var(--gray-light);background:white;border-radius:6px;font-size:13px;font-weight:600;color:var(--navy);cursor:pointer;font-family:'Noto Sans KR',sans-serif;transition:all .15s}
+.pg-btn:hover{background:var(--off-white)}
+.pg-btn.pg-active{background:var(--navy);color:white;border-color:var(--navy)}
+</style>
 <script>
-function initPagination(tableId, pageSize) {
-  var tbody = document.querySelector('#' + tableId + ' tbody');
-  if (!tbody) return;
-  var rows = Array.from(tbody.querySelectorAll('tr'));
-  var total = rows.length;
-  if (total <= pageSize) return; // 페이지네이션 불필요
-  var totalPages = Math.ceil(total / pageSize);
-  var currentPage = 1;
+(function(){
+  function initPagination(tableId, pageSize){
+    var tbody = document.querySelector('#'+tableId+' tbody');
+    if(!tbody) return;
+    var rows = Array.from(tbody.querySelectorAll('tr'));
+    if(rows.length <= pageSize) return;
+    var total = rows.length;
+    var totalPages = Math.ceil(total/pageSize);
 
-  function showPage(page) {
-    currentPage = page;
-    rows.forEach(function(row, i) {
-      row.style.display = (i >= (page-1)*pageSize && i < page*pageSize) ? '' : 'none';
-    });
-    // 페이지 버튼 업데이트
-    document.querySelectorAll('.pg-btn').forEach(function(btn) {
-      btn.classList.toggle('pg-active', parseInt(btn.dataset.page) === page);
-    });
-    // 페이지 정보 업데이트
-    var info = document.getElementById(tableId + '-info');
-    if (info) info.textContent = '총 ' + total + '개 모델 중 ' + ((page-1)*pageSize+1) + '~' + Math.min(page*pageSize, total) + '번째';
-  }
-
-  // 컨트롤 생성
-  var ctrl = document.getElementById(tableId + '-ctrl');
-  if (ctrl) {
-    var html = '<div id="' + tableId + '-info" style="font-size:12px;color:var(--gray-mid);margin-bottom:10px;"></div><div style="display:flex;gap:6px;flex-wrap:wrap;">';
-    for (var p = 1; p <= totalPages; p++) {
-      html += '<button class="pg-btn" data-page="' + p + '" onclick="(function(pg){var rows=Array.from(document.querySelector('#' + tableId + ' tbody').querySelectorAll('tr'));var ps=' + pageSize + ';rows.forEach(function(r,i){r.style.display=(i>=(pg-1)*ps&&i<pg*ps)?'':'none';});document.querySelectorAll('.pg-btn').forEach(function(b){b.classList.toggle('pg-active',parseInt(b.dataset.page)===pg);});var info=document.getElementById('' + tableId + '-info');if(info)info.textContent='총 ' + total + '개 모델 중 '+(( pg-1)*ps+1)+'~'+Math.min(pg*ps,' + total + ')+'번째';})(this.dataset.page*1)" style="padding:6px 12px;border:1px solid var(--gray-light);background:white;border-radius:6px;font-size:13px;font-weight:600;color:var(--navy);cursor:pointer;font-family:'Noto Sans KR',sans-serif;">' + p + '</button>';
+    function showPage(p){
+      rows.forEach(function(r,i){
+        r.style.display=(i>=(p-1)*pageSize && i<p*pageSize)?'':'none';
+      });
+      document.querySelectorAll('#'+tableId+'-ctrl .pg-btn').forEach(function(b){
+        b.classList.toggle('pg-active', +b.dataset.page===p);
+      });
+      var info=document.getElementById(tableId+'-info');
+      if(info) info.textContent='총 '+total+'개 모델 중 '+((p-1)*pageSize+1)+'~'+Math.min(p*pageSize,total)+'번째';
     }
-    html += '</div>';
-    ctrl.innerHTML = html;
+
+    var ctrl=document.getElementById(tableId+'-ctrl');
+    if(!ctrl) return;
+    var infoDiv='<div id="'+tableId+'-info" style="font-size:12px;color:var(--gray-mid);margin-bottom:10px;"></div>';
+    var btnDiv='<div style="display:flex;gap:6px;flex-wrap:wrap;">';
+    for(var i=1;i<=totalPages;i++){
+      btnDiv+='<button class="pg-btn" data-page="'+i+'">'+i+'</button>';
+    }
+    btnDiv+='</div>';
+    ctrl.innerHTML=infoDiv+btnDiv;
+    ctrl.querySelectorAll('.pg-btn').forEach(function(btn){
+      btn.addEventListener('click',function(){ showPage(+this.dataset.page); });
+    });
+    showPage(1);
   }
-  showPage(1);
-}
+  document.addEventListener('DOMContentLoaded',function(){ initPagination('model-table',10); });
+})();
 </script>
 
-<script>document.addEventListener("DOMContentLoaded",function(){initPagination("model-table",10);});</script>
 </body>
 </html>
