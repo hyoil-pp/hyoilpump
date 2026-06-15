@@ -79,6 +79,32 @@
     footer a{color:rgba(255,255,255,.6);text-decoration:none}
     @media(max-width:1024px){.spec-highlight,.voltage-cards,.features-grid,.tools-grid{grid-template-columns:repeat(2,1fr)}.check-list{grid-template-columns:1fr}}
     @media(max-width:768px){nav{display:none}.page-hero .container>div{grid-template-columns:1fr!important}.page-hero .container>div>div:last-child{display:none}.spec-highlight,.voltage-cards{grid-template-columns:repeat(2,1fr)}.features-grid,.tools-grid{grid-template-columns:1fr}.container{padding:0 20px}.page-hero{padding:120px 20px 50px}}
+
+    /* ── 모바일 공통 추가 ── */
+    @media(max-width:600px){
+      /* 문서 테이블 → 카드형 */
+      .doc-table thead{display:none}
+      .doc-table tr{display:block;border-bottom:1px solid var(--gray-light);padding:12px 0}
+      .doc-table tr:last-child{border-bottom:none}
+      .doc-table td{display:block;padding:3px 14px;border:none;font-size:13px}
+      .doc-table td:first-child{padding-top:10px}
+      .doc-table td:last-child{padding-bottom:10px}
+      .sw-table thead{display:none}
+      .sw-table tr{display:block;border-bottom:1px solid var(--gray-light);padding:12px 0}
+      .sw-table td{display:block;padding:3px 14px;border:none;font-size:13px}
+      /* 관련 제품 그리드 1열 */
+      div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important}
+      div[style*="grid-template-columns: repeat(3, 1fr)"]{grid-template-columns:1fr!important}
+      /* top-bar 줄바꿈 방지 */
+      .header-top{flex-direction:column;text-align:center;gap:2px;font-size:11px}
+      .header-top-side{white-space:normal}
+      /* contact section 패딩 */
+      #contact-section{padding:60px 20px!important}
+      /* official-bar */
+      .official-bar .container{flex-direction:column;text-align:center}
+      /* footer */
+      footer{padding:24px 16px}
+    }
   </style>
 </head>
 <body>
