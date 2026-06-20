@@ -351,7 +351,7 @@ footer a:hover { color: white; }
   <div class="cards-grid">
 
     <!-- GENIECON PANEL-EC -->
-    <div class="prod-card">
+    <div class="prod-card" style="cursor:pointer;" onclick="location.href='geniecon-panel-ec.html'">
       <img class="prod-card-img" src="images/genie2.png" alt="GENIECON PANEL-EC"
         onerror="this.style.background='#f4f6f9';"/>
       <div class="prod-card-body">
@@ -365,7 +365,7 @@ footer a:hover { color: white; }
             <li>BMS 및 SCADA 등 외부 통합 제어 시스템과의 통신 지원</li>
           </ul>
         </div>
-        <a href="geniecon-panel-ec.html" class="prod-card-link">제품 상세 확인 →</a>
+        <a href="geniecon-panel-ec.html" class="prod-card-link" onclick="event.stopPropagation()">제품 상세 확인 →</a>
       </div>
     </div>
 
