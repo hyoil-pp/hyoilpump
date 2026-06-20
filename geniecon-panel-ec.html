@@ -83,8 +83,14 @@ nav a.nav-cta { background: transparent; color: var(--accent) !important; paddin
 @media(max-width:900px){ .spec-box-grid{grid-template-columns:1fr 1fr;} }
 
 /* 적용 예시 */
-.usecase-card { background:white; border:1px solid var(--gray-light); border-radius:16px; padding:36px; display:flex; gap:28px; align-items:center; }
-.usecase-icon { width:64px; height:64px; flex-shrink:0; background:var(--off-white); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:30px; }
+.usecase-card { background:white; border:1px solid var(--gray-light); border-radius:16px; padding:36px; display:grid; grid-template-columns:280px 1fr; gap:32px; align-items:center; }
+.usecase-icon { width:100%; aspect-ratio:1/1; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:30px; overflow:hidden; }
+.info-table { width:100%; border-collapse:collapse; background:white; border:1px solid var(--gray-light); border-radius:12px; overflow:hidden; margin-top:16px; }
+.info-table tr { border-bottom:1px solid var(--gray-light); }
+.info-table tr:last-child { border-bottom:none; }
+.info-table td { padding:16px 18px; font-size:13.5px; vertical-align:top; }
+.info-table td:first-child { background:#f8fafc; color:var(--navy); font-weight:700; width:180px; font-size:12.5px; letter-spacing:0.3px; }
+.info-table td:last-child { color:var(--gray-dark); line-height:1.7; }
 
 /* 관련 제품 */
 .related-card { background:white; border-radius:12px; padding:24px; border:1px solid var(--gray-light); text-decoration:none; display:block; transition:box-shadow .2s; }
@@ -111,7 +117,9 @@ footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
   .overview-pillars { grid-template-columns: 1fr; }
   .spec-box-grid { grid-template-columns: 1fr; }
   .container { padding: 0 20px; }
-  .usecase-card { flex-direction:column; text-align:center; }
+  .usecase-card { grid-template-columns:1fr; text-align:center; }
+  .usecase-icon { max-width:220px; margin:0 auto; }
+  .info-table td:first-child { width:130px; }
 }
 </style>
 </head>
@@ -328,7 +336,7 @@ footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
     <div class="section-label">적용 예시 · Use Case</div>
     <h2 class="section-title">실제 적용 사례</h2>
     <div class="usecase-card">
-      <div class="usecase-icon" style="width:120px;height:120px;border-radius:14px;overflow:hidden;background:white;border:1px solid var(--gray-light);padding:0;">
+      <div class="usecase-icon" style="background:white;border:1px solid var(--gray-light);">
         <img src="images/GENIECON-PANEL-EC-image.jpg" alt="Hydro MPC-EC 부스터 시스템" style="width:100%;height:100%;object-fit:contain;" onerror="this.parentElement.innerHTML='💧';this.parentElement.style.fontSize='30px';this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';"/>
       </div>
       <div>
@@ -337,6 +345,37 @@ footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
         <a href="https://product-selection.grundfos.com/products/hydro-mpc-with-geniecon-panel/hydro-mpc-ec-with-geniecon-panel/hydro-mpc-ec-3-cr-95-3-2-93559620?frequency=60&pumpsystemid=2990043375&tab=variant-specifications" target="_blank" rel="noopener" style="font-size:13px;font-weight:700;color:var(--blue-light);text-decoration:none;">Hydro MPC-EC 3 CR 95-3-2 모델 사양 보기 →</a>
       </div>
     </div>
+
+    <table class="info-table">
+      <tr>
+        <td>용도</td>
+        <td>급수 시스템, 관개 시스템, 산업용 설비, 상업용 건물·고층빌딩 등에서 청수의 이송 및 압력 부스팅에 사용됩니다.</td>
+      </tr>
+      <tr>
+        <td>시스템 구성</td>
+        <td>CR 펌프 2~6대를 병렬로 연결해 공통 베이스프레임에 장착하고, 첨단 컨트롤러와 매니폴드·체크밸브·차단밸브·압력센서(트랜스미터)·압력게이지 등 필요한 모든 부속품을 함께 제공합니다.</td>
+      </tr>
+      <tr>
+        <td>운전 방식</td>
+        <td>펌프 속도를 연속적으로 조정해 일정한 압력을 유지합니다. 필요한 펌프 대수를 자동으로 투입·차단하고, 운전 중인 펌프를 병렬 제어하여 수요 변화에 대응합니다. 펌프 교대 운전은 부하·시간·고장 여부에 따라 자동으로 이루어집니다.</td>
+      </tr>
+      <tr>
+        <td>모터 / 인버터</td>
+        <td>20~25hp(3×208-240V), 40~60hp(3×440-460V) 시스템에는 속도제어 모터가 적용됩니다. CR 펌프는 완전밀폐형 팬냉각 2극 그런포스 표준 모터를 사용하며, 각 펌프는 제어반 내 그런포스 CUE 인버터 1대와 개별 연결됩니다.</td>
+      </tr>
+      <tr>
+        <td>GENIECON 제어</td>
+        <td>고급형 터치스크린 컨트롤러인 GENIECON UNIT이 각 펌프의 가변속을 연속 조정하여 정압 제어 및 비례 압력 제어를 실현합니다. 저전력 소비와 전력 최적화 캐스케이드 제어로 고신뢰성 시스템을 구현합니다.</td>
+      </tr>
+      <tr>
+        <td>옵션 / 보호</td>
+        <td>유량 변동이 큰 현장에는 파일럿 펌프를 추가해 저유량 구간 효율을 높일 수 있습니다. 흡입측 압력센서 또는 레벨스위치로 건식운전을 방지합니다. 다이어프램 탱크는 표준 공급 범위에 포함되지 않으며, 옵션 품목으로 별도 제공됩니다.</td>
+      </tr>
+      <tr>
+        <td>출고 방식</td>
+        <td>모든 시스템은 공장에서 사전 구성 및 테스트를 완료한 상태로 출고됩니다.</td>
+      </tr>
+    </table>
   </div>
 </section>
 
