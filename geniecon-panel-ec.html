@@ -141,7 +141,7 @@ footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
 
 <!-- HERO -->
 <div class="page-hero">
-  <div class="page-hero-bg" style="background-image:url('images/GENIECON-PANEL-EC-hero.jpg');"></div>
+  <div class="page-hero-bg" style="background:none;"></div>
   <div class="page-hero-inner">
     <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#60a5fa;margin-bottom:12px;">GENIECON 시리즈 · 컨트롤 패널</div>
     <h1 style="font-size:clamp(28px,5vw,52px);font-weight:900;color:white;letter-spacing:-2px;margin-bottom:16px;">GENIECON PANEL-EC</h1>
@@ -169,7 +169,7 @@ footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
         </div>
       </div>
       <div class="overview-img">
-        <img src="images/GENIECON-PANEL-EC-image.jpg" alt="GENIECON PANEL-EC 제품 이미지" onerror="this.style.background='#f4f6f9';this.style.minHeight='320px'"/>
+        <img src="images/GENIECON-PANEL-EC-hero.jpg" alt="GENIECON PANEL-EC 제어 화면" onerror="this.style.background='#f4f6f9';this.style.minHeight='320px'"/>
       </div>
     </div>
   </div>
@@ -323,15 +323,18 @@ footer a { color: rgba(255,255,255,0.5); text-decoration: none; }
 </section>
 
 <!-- 적용 예시 -->
-<section class="section" style="background:var(--off-white);padding-top:0;">
+<section class="section" style="background:var(--off-white);">
   <div class="container">
     <div class="section-label">적용 예시 · Use Case</div>
     <h2 class="section-title">실제 적용 사례</h2>
     <div class="usecase-card">
-      <div class="usecase-icon">💧</div>
+      <div class="usecase-icon" style="width:120px;height:120px;border-radius:14px;overflow:hidden;background:white;border:1px solid var(--gray-light);padding:0;">
+        <img src="images/GENIECON-PANEL-EC-image.jpg" alt="Hydro MPC-EC 부스터 시스템" style="width:100%;height:100%;object-fit:contain;" onerror="this.parentElement.innerHTML='💧';this.parentElement.style.fontSize='30px';this.parentElement.style.display='flex';this.parentElement.style.alignItems='center';this.parentElement.style.justifyContent='center';"/>
+      </div>
       <div>
         <div style="font-size:16px;font-weight:800;color:var(--navy);margin-bottom:8px;">Hydro MPC-EC 부스터 시스템</div>
-        <p style="font-size:14px;color:var(--gray-dark);line-height:1.8;">GENIECON PANEL-EC는 Hydro MPC-EC와 같은 다중 펌프 부스터 시스템에도 탑재되어 운전됩니다. CR 펌프 2~6대를 병렬로 구성한 시스템에서, 개별 펌프에 연결된 CUE 인버터를 통합 제어하며 정압 제어와 비례 압력 제어로 저전력·고신뢰성 운전을 실현합니다.</p>
+        <p style="font-size:14px;color:var(--gray-dark);line-height:1.8;margin-bottom:12px;">GENIECON PANEL-EC는 Hydro MPC-EC와 같은 다중 펌프 부스터 시스템에도 탑재되어 운전됩니다. CR 펌프 2~6대를 병렬로 구성한 시스템에서, 개별 펌프에 연결된 CUE 인버터를 통합 제어하며 정압 제어와 비례 압력 제어로 저전력·고신뢰성 운전을 실현합니다.</p>
+        <a href="https://product-selection.grundfos.com/products/hydro-mpc-with-geniecon-panel/hydro-mpc-ec-with-geniecon-panel/hydro-mpc-ec-3-cr-95-3-2-93559620?frequency=60&pumpsystemid=2990043375&tab=variant-specifications" target="_blank" rel="noopener" style="font-size:13px;font-weight:700;color:var(--blue-light);text-decoration:none;">Hydro MPC-EC 3 CR 95-3-2 모델 사양 보기 →</a>
       </div>
     </div>
   </div>
