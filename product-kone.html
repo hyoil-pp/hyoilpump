@@ -45,6 +45,15 @@ nav a.nav-cta{background:transparent;color:var(--accent)!important;padding:8px 1
 /* 카드 그리드 */
 .cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:20px}
 
+/* 카탈로그 다운로드 그리드 */
+.catalog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+.catalog-item{display:flex;align-items:center;gap:12px;background:white;border:1px solid var(--gray-light);border-radius:10px;padding:13px 16px;text-decoration:none;color:var(--text);transition:all .2s}
+.catalog-item:hover{border-color:var(--blue-light);box-shadow:0 6px 16px rgba(10,22,40,.08);transform:translateY(-2px)}
+.catalog-icon{font-size:18px;flex-shrink:0}
+.catalog-name{flex:1;font-size:13px;font-weight:700;color:var(--navy);line-height:1.45}
+.catalog-name small{display:block;font-size:11px;font-weight:500;color:var(--gray-dark);margin-top:2px}
+.catalog-dl{color:var(--blue-light);font-size:15px;flex-shrink:0}
+
 /* 제품 카드 */
 .prod-card{background:white;border-radius:14px;overflow:hidden;border:1px solid var(--gray-light);box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;flex-direction:column;cursor:pointer;transition:all .3s}
 .prod-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(10,22,40,.12);border-color:var(--blue-light)}
@@ -80,8 +89,8 @@ nav a.nav-cta{background:transparent;color:var(--accent)!important;padding:8px 1
 footer{background:#092844;padding:30px 40px;text-align:center;color:rgba(255,255,255,.55);font-size:12.5px}
 footer a{color:rgba(255,255,255,.5);text-decoration:none}
 
-@media(max-width:1024px){.cards-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){nav{display:none}.header-top-side{display:none}.container{padding:0 20px}.cards-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:1024px){.cards-grid{grid-template-columns:1fr 1fr}.catalog-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){nav{display:none}.header-top-side{display:none}.container{padding:0 20px}.cards-grid{grid-template-columns:1fr 1fr}.catalog-grid{grid-template-columns:1fr}}
 @media(max-width:480px){.cards-grid{grid-template-columns:1fr}}
 
 @media(max-width:768px){
@@ -342,6 +351,37 @@ footer a{color:rgba(255,255,255,.5);text-decoration:none}
       </div>
     </div>
 
+  </div>
+</div><!-- /container -->
+
+<!-- ── 카탈로그 다운로드 ── -->
+<div class="container" style="padding-bottom:80px;">
+  <div class="cat-header">
+    <div class="cat-bar blue"></div>
+    <div class="cat-title">제품 카탈로그 다운로드</div>
+  </div>
+  <p style="font-size:13px;color:var(--gray-dark);margin:-8px 0 24px;">효성굿스프링스 제품 카탈로그(PDF)를 카테고리별로 받아보실 수 있습니다.</p>
+  <div class="catalog-grid">
+    <a class="catalog-item" href="manuals/Hyosung-HSE-HSO-HSV.pdf" download><span class="catalog-icon">📄</span><span class="catalog-name">배수 수중펌프<small>HSE / HSO / HSV</small></span><span class="catalog-dl">⬇</span></a>
+    <a class="catalog-item" href="manuals/Hyosung-Booster-Standard.pdf" download><span class="catalog-icon">📄</span><span class="catalog-name">부스터 펌프<small>보급형</small></span><span class="catalog-dl">⬇</span></a>
+    <a class="catalog-item" href="manuals/Hyosung-Booster-Premium.pdf" download><span class="catalog-icon">📄</span><span class="catalog-name">부스터 펌프<small>프리미엄</small></span><span class="catalog-dl">⬇</span></a>
+    <a class="catalog-item" href="manuals/Hyosung-Domestic-Pump.pdf" download><span class="catalog-icon">📄</span><span class="catalog-name">생활용 펌프</span><span class="catalog-dl">⬇</span></a>
+    <a class="catalog-item" href="manuals/Hyosung-HDR.pdf" download><span class="catalog-icon">📄</span><span class="catalog-name">양흡입 펌프<small>순환펌프 HDR</small></span><span class="catalog-dl">⬇</span></a>
+    <a class="catalog-item" href="manuals/Hyosung-HDDS.pdf" download><span class="catalog-icon">📄</span><span class="catalog-name">오배수 패키지<small>건식 HDDS</small></span><span class="catalog-dl">⬇</span></a>
+    <a class="catalog-item" href="manuals/Hyosung-HWE.pdf" download><span class="catalog-icon">📄</span><span class="catalog-name">웨스코 펌프<small>소방 충압펌프 HWE</small></span><span class="catalog-dl">⬇</span></a>
+    <a class="catalog-item" href="manuals/Hyosung-ILP.pdf" download><span class="catalog-icon">📄</span><span class="catalog-name">인라인 펌프<small>순환펌프 ILP</small></span><span class="catalog-dl">⬇</span></a>
+    <a class="catalog-item" href="manuals/Hyosung-VM.pdf" download><span class="catalog-icon">📄</span><span class="catalog-name">입형 다단터빈<small>소방·가압펌프 VM</small></span><span class="catalog-dl">⬇</span></a>
+    <a class="catalog-item" href="manuals/Hyosung-HFM-V-SS.pdf" download><span class="catalog-icon">📄</span><span class="catalog-name">입형 다단터빈<small>소방·가압펌프 HFM-V(SS)</small></span><span class="catalog-dl">⬇</span></a>
+    <a class="catalog-item" href="manuals/Hyosung-EVMS.pdf" download><span class="catalog-icon">📄</span><span class="catalog-name">입형 다단펌프<small>순환펌프 EVMS</small></span><span class="catalog-dl">⬇</span></a>
+    <a class="catalog-item" href="manuals/Hyosung-HMS.pdf" download><span class="catalog-icon">📄</span><span class="catalog-name">입형 다단펌프<small>순환펌프 HMS</small></span><span class="catalog-dl">⬇</span></a>
+    <a class="catalog-item" href="manuals/Hyosung-HMSF.pdf" download><span class="catalog-icon">📄</span><span class="catalog-name">입형 다단펌프<small>소방펌프 HMSF</small></span><span class="catalog-dl">⬇</span></a>
+    <a class="catalog-item" href="manuals/Hyosung-VD.pdf" download><span class="catalog-icon">📄</span><span class="catalog-name">입형 양흡입<small>순환펌프 VD</small></span><span class="catalog-dl">⬇</span></a>
+    <a class="catalog-item" href="manuals/Hyosung-HES.pdf" download><span class="catalog-icon">📄</span><span class="catalog-name">편흡입 볼류트<small>순환펌프 HES</small></span><span class="catalog-dl">⬇</span></a>
+    <a class="catalog-item" href="manuals/Hyosung-CFP.pdf" download><span class="catalog-icon">📄</span><span class="catalog-name">편흡입 볼류트<small>프로세스 펌프 CFP</small></span><span class="catalog-dl">⬇</span></a>
+    <a class="catalog-item" href="manuals/Hyosung-CFPS.pdf" download><span class="catalog-icon">📄</span><span class="catalog-name">편흡입 볼류트<small>프로세스 펌프 CFPS</small></span><span class="catalog-dl">⬇</span></a>
+    <a class="catalog-item" href="manuals/Hyosung-CAP.pdf" download><span class="catalog-icon">📄</span><span class="catalog-name">편흡입 볼류트<small>프로세스 펌프 CAP</small></span><span class="catalog-dl">⬇</span></a>
+    <a class="catalog-item" href="manuals/Hyosung-HFM-SS-Horizontal.pdf" download><span class="catalog-icon">📄</span><span class="catalog-name">횡형 다단터빈<small>소방·가압펌프 HFM(SS)</small></span><span class="catalog-dl">⬇</span></a>
+    <a class="catalog-item" href="manuals/Hyosung-HTM.pdf" download><span class="catalog-icon">📄</span><span class="catalog-name">횡형 다단터빈<small>소방·가압펌프 HTM</small></span><span class="catalog-dl">⬇</span></a>
   </div>
 </div><!-- /container -->
 
